@@ -1,7 +1,9 @@
 .mol-cont{
-	width: 60%;
-	height: 400px;
+	width: 20%;
+	height: 300px;
 	position: relative;
+	margin-left: 10%;
+	margin-top: 10%;
 }
 
 #name{
