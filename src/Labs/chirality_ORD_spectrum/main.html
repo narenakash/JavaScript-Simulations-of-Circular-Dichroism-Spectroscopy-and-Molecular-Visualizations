@@ -7,12 +7,33 @@
       integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
       crossorigin="anonymous"
     />
+    <link rel="stylesheet" href="./mol.css" />
 
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Experiment 3</title>
   </head>
   <body>
+    <div>
+      <h1 class="set">Understanding Structure of Chiral Molecules</h1>
+      <h3 class="set">
+        Find out the chiral centers and colour the asymmetric carbon in six
+        samples.
+      </h3>
+    </div>
+    <div><button class="btn btn-primary" id="nw">Next</button></div>
+
+    <div class="board">
+      <div data-cell class="cell" id="cont6"></div>
+
+      <div data-cell class="cell" id="cont1"></div>
+      <div data-cell class="cell" id="cont2"></div>
+      <div data-cell class="cell" id="cont3"></div>
+      <div data-cell class="cell" id="cont4"></div>
+      <div data-cell class="cell" id="cont5"><</div>
+    </div>
+    <div></div>
+
     <script
       src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
       integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
@@ -28,5 +49,13 @@
       integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
       crossorigin="anonymous"
     ></script>
+    <script src="http://3Dmol.csb.pitt.edu/build/3Dmol-min.js"></script>
+    <script src="./mol.js"></script>
+    <script src="./mol2.js"></script>
+    <script src="./mol3.js"></script>
+    <script src="./mol4.js"></script>
+    <script src="./mol5.js"></script>
+    <script src="./mol6.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   </body>
 </html>

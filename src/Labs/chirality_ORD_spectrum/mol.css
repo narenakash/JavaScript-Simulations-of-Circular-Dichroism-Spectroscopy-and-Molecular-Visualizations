@@ -1,13 +1,50 @@
-.mol-cont{
-	width: 20%;
-	height: 300px;
-	position: relative;
-	margin-left: 10%;
-	margin-top: 10%;
+*::after,
+*::before {
+  box-sizing: border-box;
 }
-
-#name{
-	/*position: relative;*/
-	width: 30%;
-	height: 14px;
+body {
+  margin: 0;
+  background-color: #f4f4f4;
+}
+:root {
+  --cell-size: 300px;
+}
+.board {
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  justify-items: center;
+  align-items: center;
+  grid-template-columns: repeat(3, auto);
+}
+.cell {
+  width: 300px;
+  height: 300px;
+  background-color: black;
+  border: 10px solid white;
+}
+#new {
+  margin-left: 50px;
+  margin-top: 10px;
+}
+#cont1,
+#cont2,
+#cont3,
+#cont4,
+#cont5,
+#cont6 {
+  position: relative;
+}
+#name {
+  /*position: relative;*/
+  width: 30%;
+  height: 14px;
+}
+.set {
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  border-bottom: 10px;
 }
