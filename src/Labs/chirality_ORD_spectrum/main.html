@@ -14,14 +14,22 @@
     <title>Experiment 3</title>
   </head>
   <body>
-    <div>
+    <div class="top">
       <h1 class="set">Understanding Structure of Chiral Molecules</h1>
       <h3 class="set">
         Find out the chiral centers and colour the asymmetric carbon in six
         samples.
       </h3>
     </div>
-    <div><button class="btn btn-primary" id="nw">Next</button></div>
+    <div>
+      <button
+        class="btn btn-danger"
+        id="new"
+        onclick="window.location.href = './help.html';"
+      >
+        Help!
+      </button>
+    </div>
 
     <div class="board">
       <div data-cell class="cell" id="cont6"></div>
@@ -32,6 +40,13 @@
       <div data-cell class="cell" id="cont4"></div>
       <div data-cell class="cell" id="cont5"><</div>
     </div>
+    <button
+      class="btn btn-success"
+      id="new"
+      onclick="window.location.href = './SRconfig.html';"
+    >
+      Next!
+    </button>
     <div></div>
 
     <script
