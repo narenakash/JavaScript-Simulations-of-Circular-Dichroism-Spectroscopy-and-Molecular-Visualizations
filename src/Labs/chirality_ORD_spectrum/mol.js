@@ -1,5 +1,7 @@
 // var x=1;
 $(function() {
+
+  // 1st Molecule
   let element = $('#cont1');
   let config = { backgroundColor: 'skyblue' };
   let viewer = $3Dmol.createViewer( element, config );
@@ -84,4 +86,8 @@ $(function() {
   viewer.zoomTo();
   viewer.render();
   viewer.setBackgroundColor('black');
+
+
+  // 2nd Molecule
+  
 });
