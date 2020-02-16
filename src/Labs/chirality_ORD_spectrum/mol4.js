@@ -1,6 +1,8 @@
 // var x=1;
 $(function() {
 
+  var x1=1;
+  var x2=1;
   var c1={x:-1.772 , y:-3.952 , z:-2.282};
   var c2={x:-0.450 , y:-4.098 , z:-2.930};
   var c3={x:0.692 , y:-3.337 , z:-2.382};
@@ -48,9 +50,37 @@ $(function() {
   viewer1.addSphere({center: c2, color: 'skyblue',radius:0.4});
   viewer1.addSphere({center: c3, color: 'skyblue',radius:0.4});
   viewer1.addSphere({center: c4, color: 'skyblue',radius:0.4});
-  viewer1.addSphere({center: c5, color: 'skyblue',radius:0.4});
+  // viewer1.addSphere({center: c5, color: 'skyblue',radius:0.4});
+  viewer1.addSphere({ center: c5, radius: 0.4, color: 'skyblue',
+  mid:1.0,   clickable:true,
+  callback:function(){
+      if(x1===1){
+        this.color.setHex(0x0000FF00);
+        x1=0;
+        alert("Correct Choice");
+      }
+      else{
+        this.color.setHex(0XF698FFFF);
+        x1=1;
+      }
+      viewer1.render();
+  }});
   viewer1.addSphere({center: c6, color: 'skyblue',radius:0.4});
-  viewer1.addSphere({center: c7, color: 'skyblue',radius:0.4});
+  // viewer1.addSphere({center: c7, color: 'skyblue',radius:0.4});
+  viewer1.addSphere({ center: c7, radius: 0.4, color: 'skyblue',
+  mid:1.0,   clickable:true,
+  callback:function(){
+      if(x2===1){
+        this.color.setHex(0x0000FF00);
+        x2=0;
+        alert("Correct Choice");
+      }
+      else{
+        this.color.setHex(0XF698FFFF);
+        x2=1;
+      }
+      viewer1.render();
+  }});
   viewer1.addSphere({center: c8, color: 'skyblue',radius:0.4});
   viewer1.addSphere({center: c9, color: 'skyblue',radius:0.4});
   viewer1.addSphere({center: c01, color: 'skyblue',radius:0.4});
@@ -115,19 +145,6 @@ $(function() {
   viewer1.addCylinder({ start:c01, end: h06,radius: .13,color:'white',radiusRadio:0.1,});
   viewer1.addCylinder({ start:c02, end: h07,radius: .13,color:'white',radiusRadio:0.1,});
   viewer1.addCylinder({ start:c02, end: h08,radius: .13,color:'white',radiusRadio:0.1,});
-
-  // viewer1.addSphere({ center: {x:0, y:0, z:0}, radius: 0.42, color: 'skyblue',
-  // mid:1.0,   clickable:true,
-  // callback:function(){
-  //     console.log(x);
-  //     this.color.setHex(0xFFFF3352-x);
-  //     // document.querySelector(".cc").innerHTML="Chiral Center"
-  //     x+=100;
-  //     if(x>10000000000){
-  //       x=0;
-  //     }
-  //     viewer1.render( );
-  // }});
   
   viewer1.zoomTo();
   viewer1.render();

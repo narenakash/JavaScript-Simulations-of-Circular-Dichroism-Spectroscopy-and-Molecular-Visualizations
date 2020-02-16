@@ -1,6 +1,9 @@
 // var x:=1;
+
 $(function() {
 
+var x1=1;
+var x2=1;
   var c1={x:-3.598  , y:-1.686   , z:1.657};
   var c2={x:-3.462  , y:-0.580   , z:0.561};
   var c3={x:-2.325  , y:-1.782   , z:2.543};
@@ -40,8 +43,36 @@ $(function() {
   viewer1.addLabel("Hydrogen", {position: {x:0 , y:2.3, z:5}, backgroundColor: 'silver',backgroundOpacity: 0.8,fontSize: 13});
 
   viewer1.addSphere({center: c1, color: 'skyblue',radius:0.4});
-  viewer1.addSphere({center: c2, color: 'skyblue',radius:0.4});
-  viewer1.addSphere({center: c3, color: 'skyblue',radius:0.4});
+  // viewer1.addSphere({center: c2, color: 'green',radius:0.4});
+  viewer1.addSphere({ center: c2, radius: 0.4, color: 'skyblue',
+  mid:1.0,   clickable:true,
+  callback:function(){
+      if(x1===1){
+        this.color.setHex(0x0000FF00);
+        x1=0;
+        alert("Correct Choice");
+      }
+      else{
+        this.color.setHex(0XF698FFFF);
+        x1=1;
+      }
+      viewer1.render();
+  }});
+  // viewer1/.addSphere({center: c3, color: 'green',radius:0.4});
+  viewer1.addSphere({ center: c3, radius: 0.4, color: 'skyblue',
+  mid:1.0,   clickable:true,
+  callback:function(){
+      if(x2===1){
+        this.color.setHex(0x0000FF00);
+        x2=0;
+        alert("Correct Choice");
+      }
+      else{
+        this.color.setHex(0XF698FFFF);
+        x2=1;
+      }
+      viewer1.render();
+  }});
   viewer1.addSphere({center: c4, color: 'skyblue',radius:0.4});
   viewer1.addSphere({center: c5, color: 'skyblue',radius:0.4});
   viewer1.addSphere({center: c6, color: 'skyblue',radius:0.4});
@@ -101,19 +132,6 @@ $(function() {
   viewer1.addCylinder({ start: c8, end: h05,radius: .13,color:'white',radiusRadio:0.1,});
   viewer1.addCylinder({ start:c9, end: h06,radius: .13,color:'white',radiusRadio:0.1,});
   viewer1.addCylinder({ start:c9, end: h07,radius: .13,color:'white',radiusRadio:0.1,});
-
-  // viewer1.addSphere({ center: {x:0, y:0, z:0}, radius: 0.42, color: 'skyblue',
-  // mid:1.0,   clickable:true,
-  // callback:function(){
-  //     console.log(x);
-  //     this.color.setHex(0xFFFF3352-x);
-  //     // document.querySelector(".cc").innerHTML="Chiral Center"
-  //     x+=100;
-  //     if(x>10000000000){
-  //       x=0;
-  //     }
-  //     viewer1.render( );
-  // }});
   
   viewer1.zoomTo();
   viewer1.render();
