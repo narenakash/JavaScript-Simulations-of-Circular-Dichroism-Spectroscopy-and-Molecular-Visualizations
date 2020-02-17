@@ -75,6 +75,7 @@ body {
 #cont5,
 #cont6 {
   position: relative;
+  /*width: 400px;*/
 }
 #name {
   /*position: relative;*/

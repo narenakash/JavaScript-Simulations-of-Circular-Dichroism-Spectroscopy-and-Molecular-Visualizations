@@ -1,5 +1,9 @@
-// var x=1;
+
 $(function() {
+
+  var x2=1;
+  var x1=1;
+  // 1st Molecule
   let element = $('#cont1');
   let config = { backgroundColor: 'skyblue' };
   let viewer = $3Dmol.createViewer( element, config );
@@ -7,11 +11,38 @@ $(function() {
   viewer.addLabel("Oxygen", {position: {x:-6 , y:3, z:5}, backgroundColor: 'red',backgroundOpacity: 0.8,fontSize: 13});
   viewer.addLabel("Hydrogen", {position: {x:-6 , y:2.3, z:5}, backgroundColor: 'silver',backgroundOpacity: 0.8,fontSize: 13});
 
-  viewer.addSphere({center: {x:-3.498 , y:-1.395, z:-1.877}, color: 'skyblue',radius:0.4});
+  // viewer.addSphere({center: {x:-3.498 , y:-1.395, z:-1.877}, color: 'green',radius:0.4});
+  viewer.addSphere({ center: {x:-3.498 , y:-1.395, z:-1.877}, radius: 0.4, color: 'magenta',
+  mid:1.0,   clickable:true,
+  callback:function(){
+      if(x1===1){
+        this.color.setHex(0x0000FF00);
+        x1=0;
+        alert("Correct Choice");
+      }
+      else{
+        this.color.setHex(0XF698FFFF);
+        x1=1;
+      }
+      viewer.render();
+  }});
   viewer.addSphere({center: {x:-4.783 , y:-1.579, z:-1.029}, color: 'skyblue',radius:0.4});
   viewer.addSphere({center: {x:-2.260 , y:-1.206, z:-0.963}, color: 'skyblue',radius:0.4});
   viewer.addSphere({center: {x:-4.893 , y:-0.478 , z:0.053}, color: 'skyblue',radius:0.4});
-  viewer.addSphere({center: {x:-2.472 , y:-0.107 ,  z:0.127}, color: 'skyblue',radius:0.4});
+  viewer.addSphere({ center: {x:-2.472 , y:-0.107 ,  z:0.127}, radius: 0.4, color: 'orange',
+  mid:1.0,   clickable:true,
+  callback:function(){
+      if(x2===1){
+        this.color.setHex(0x0000FF00);
+        x2=0;
+        alert("Correct Choice");
+      }
+      else{
+        this.color.setHex(0XF698FFFF);
+        x2=1;
+      }
+      viewer.render();
+  }});
   viewer.addSphere({center: {x:-1.276 , y:-0.136 ,  z:1.134}, color: 'skyblue',radius:0.4});
   viewer.addSphere({center: {x:-1.321 , y:1.054 ,  z:2.125}, color: 'skyblue',radius:0.4});
   viewer.addSphere({center: {x:-1.471 ,  y:2.397 ,  z:1.375}, color: 'skyblue',radius:0.4});
@@ -67,21 +98,12 @@ $(function() {
   viewer.addCylinder({ start: {x:-1.471 ,  y:2.397 ,  z:1.375}, end: {x:-0.546 , y:2.614  , z:0.831},radius: .13,color:'white',radiusRadio:0.1,});
   viewer.addCylinder({ start: {x:-2.649 ,  y:2.325 ,  z:0.373}, end: {x:-3.597 , y:2.276  , z:0.915},radius: .13,color:'white',radiusRadio:0.1,});
   viewer.addCylinder({ start: {x:-2.649 ,  y:2.325 ,  z:0.373}, end: {x:-2.658 , y:3.235 , z:-0.228},radius: .13,color:'white',radiusRadio:0.1,});
-
-  // viewer.addSphere({ center: {x:0, y:0, z:0}, radius: 0.42, color: 'skyblue',
-  // mid:1.0,   clickable:true,
-  // callback:function(){
-  //     console.log(x);
-  //     this.color.setHex(0xFFFF3352-x);
-  //     // document.querySelector(".cc").innerHTML="Chiral Center"
-  //     x+=100;
-  //     if(x>10000000000){
-  //       x=0;
-  //     }
-  //     viewer.render( );
-  // }});
   
   viewer.zoomTo();
   viewer.render();
   viewer.setBackgroundColor('black');
+
+
+  // 2nd Molecule
+  
 });

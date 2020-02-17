@@ -17,7 +17,7 @@
     <div class="top">
       <h1 class="set">Assigning R & S Configuration</h1>
       <h3 class="set">
-        The Asymmetric carbon atoms are coloured in Magenta and Blue. Determine
+        The Asymmetric carbon atoms are coloured in Magenta and Orange. Determine
         the type of chirality.
       </h3>
     </div>
@@ -31,10 +31,10 @@
     </div>
 
     <div class="boardSR" onclick="off()">
-      <div data-cell class="cell" id="cont6"></div>
+      <div data-cell class="cell" id="cont1"></div>
       <div data-cell class="cellOption" class="container">
         <div class="labels">
-          <h2>C4 : &emsp;</h2>
+          <h2 style="color:magenta">C4 : &emsp;</h2>
           <form>
             <label class="container parallel"
               >R
@@ -49,7 +49,7 @@
           </form>
         </div>
         <div class="labels">
-          <h2>C6 : &emsp;</h2>
+          <h2 style="color:orange">C6 : &emsp;</h2>
           <form>
             <label class="container"
               >R
@@ -65,43 +65,10 @@
         </div>
       </div>
 
-      <div data-cell class="cell" id="cont1"></div>
-      <div data-cell class="cellOption" class="container">
-        <div class="labels">
-          <h2>C4 : &emsp;</h2>
-          <form>
-            <label class="container parallel"
-              >R
-              <input type="radio" name="radio" checked="checked" />
-              <span class="checkmark"></span>
-            </label>
-            <label class="container parallel"
-              >S
-              <input type="radio" name="radio" />
-              <span class="checkmark"></span>
-            </label>
-          </form>
-        </div>
-        <div class="labels">
-          <h2>C6 : &emsp;</h2>
-          <form>
-            <label class="container"
-              >R
-              <input type="radio" name="radio" checked="checked" />
-              <span class="checkmark"></span>
-            </label>
-            <label class="container"
-              >S
-              <input type="radio" name="radio" />
-              <span class="checkmark"></span>
-            </label>
-          </form>
-        </div>
-      </div>
       <div data-cell class="cell" id="cont2"></div>
       <div data-cell class="cellOption" class="container">
         <div class="labels">
-          <h2>C4 : &emsp;</h2>
+          <h2 style="color:magenta">C6 : &emsp;</h2>
           <form>
             <label class="container parallel"
               >R
@@ -116,7 +83,7 @@
           </form>
         </div>
         <div class="labels">
-          <h2>C6 : &emsp;</h2>
+          <h2 style="color:orange">C9 : &emsp;</h2>
           <form>
             <label class="container"
               >R
@@ -134,7 +101,7 @@
       <div data-cell class="cell" id="cont3"></div>
       <div data-cell class="cellOption" class="container">
         <div class="labels">
-          <h2>C4 : &emsp;</h2>
+          <h2 style="color:magenta">C4 : &emsp;</h2>
           <form>
             <label class="container parallel"
               >R
@@ -149,7 +116,7 @@
           </form>
         </div>
         <div class="labels">
-          <h2>C6 : &emsp;</h2>
+          <h2 style="color:orange">C6 : &emsp;</h2>
           <form>
             <label class="container"
               >R
@@ -167,7 +134,7 @@
       <div data-cell class="cell" id="cont4"></div>
       <div data-cell class="cellOption" class="container">
         <div class="labels">
-          <h2>C4 : &emsp;</h2>
+          <h2 style="color:magenta">C6 : &emsp;</h2>
           <form>
             <label class="container parallel"
               >R
@@ -182,7 +149,7 @@
           </form>
         </div>
         <div class="labels">
-          <h2>C6 : &emsp;</h2>
+          <h2 style="color:orange">C9 : &emsp;</h2>
           <form>
             <label class="container"
               >R
@@ -197,10 +164,10 @@
           </form>
         </div>
       </div>
-      <div data-cell class="cell" id="cont5"><</div>
+      <div data-cell class="cell" id="cont5"></div>
       <div data-cell class="cellOption" class="container">
         <div class="labels">
-          <h2>C4 : &emsp;</h2>
+          <h2 style="color:magenta">C4 : &emsp;</h2>
           <form>
             <label class="container parallel"
               >R
@@ -215,7 +182,40 @@
           </form>
         </div>
         <div class="labels">
-          <h2>C6 : &emsp;</h2>
+          <h2 style="color:orange">C6 : &emsp;</h2>
+          <form>
+            <label class="container"
+              >R
+              <input type="radio" name="radio" checked="checked" />
+              <span class="checkmark"></span>
+            </label>
+            <label class="container"
+              >S
+              <input type="radio" name="radio" />
+              <span class="checkmark"></span>
+            </label>
+          </form>
+        </div>
+      </div>
+      <div data-cell class="cell" id="cont6"></div>
+      <div data-cell class="cellOption" class="container">
+        <div class="labels">
+          <h2 style="color:magenta">C4 : &emsp;</h2>
+          <form>
+            <label class="container parallel"
+              >R
+              <input type="radio" name="radio" checked="checked" />
+              <span class="checkmark"></span>
+            </label>
+            <label class="container parallel"
+              >S
+              <input type="radio" name="radio" />
+              <span class="checkmark"></span>
+            </label>
+          </form>
+        </div>
+        <div class="labels">
+          <h2 style="color:orange">C6 : &emsp;</h2>
           <form>
             <label class="container"
               >R
@@ -248,12 +248,12 @@
       crossorigin="anonymous"
     ></script>
     <script src="http://3Dmol.csb.pitt.edu/build/3Dmol-min.js"></script>
-    <script src="./mol.js"></script>
-    <script src="./mol2.js"></script>
-    <script src="./mol3.js"></script>
-    <script src="./mol4.js"></script>
-    <script src="./mol5.js"></script>
-    <script src="./mol6.js"></script>
+    <script src="./mol21.js"></script>
+    <script src="./mol22.js"></script>
+    <script src="./mol23.js"></script>
+    <script src="./mol24.js"></script>
+    <script src="./mol25.js"></script>
+    <script src="./mol26.js"></script>
     <script src="./overlay.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   </body>

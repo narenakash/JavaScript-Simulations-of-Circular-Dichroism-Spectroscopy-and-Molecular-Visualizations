@@ -1,36 +1,36 @@
 // var x=1;
 $(function() {
 
-  var c1={x:-3.498 , y:-1.395, z:-1.877};
-  var c2={x:-3.498 , y:-1.395, z:-1.877};
-  var c3={x:-3.498 , y:-1.395, z:-1.877};
-  var c4={x:-3.498 , y:-1.395, z:-1.877};
-  var c5={x:-3.498 , y:-1.395, z:-1.877};
-  var c6={x:-3.498 , y:-1.395, z:-1.877};
-  var c7={x:-3.498 , y:-1.395, z:-1.877};
-  var c8={x:-3.498 , y:-1.395, z:-1.877};
-  var c9={x:-3.498 , y:-1.395, z:-1.877};
+  var c1={x};
+  var c2={x};
+  var c3={x};
+  var c4={x};
+  var c5={x};
+  var c6={x};
+  var c7={x};
+  var c8={x};
+  var c9={x};
   
-  var o1={x:-3.498 , y:-1.395, z:-1.877};
-  var o2={x:-3.498 , y:-1.395, z:-1.877};
-  var o3={x:-3.498 , y:-1.395, z:-1.877};
+  var o1={x};
+  var o2={x};
+  var o3={x};
 
-  var h1={x:-3.498 , y:-1.395, z:-1.877};
-  var h2={x:-3.498 , y:-1.395, z:-1.877};
-  var h3={x:-3.498 , y:-1.395, z:-1.877};
-  var h4={x:-3.498 , y:-1.395, z:-1.877};
-  var h5={x:-3.498 , y:-1.395, z:-1.877};
-  var h6={x:-3.498 , y:-1.395, z:-1.877};
-  var h7={x:-3.498 , y:-1.395, z:-1.877};
-  var h8={x:-3.498 , y:-1.395, z:-1.877};
-  var h9={x:-3.498 , y:-1.395, z:-1.877};
-  var h01={x:-3.498 , y:-1.395, z:-1.877};
-  var h02={x:-3.498 , y:-1.395, z:-1.877};
-  var h03={x:-3.498 , y:-1.395, z:-1.877};
-  var h04={x:-3.498 , y:-1.395, z:-1.877};
-  var h05={x:-3.498 , y:-1.395, z:-1.877};
-  var h06={x:-3.498 , y:-1.395, z:-1.877};
-  var h07={x:-3.498 , y:-1.395, z:-1.877};
+  var h1={x};
+  var h2={x};
+  var h3={x};
+  var h4={x};
+  var h5={x};
+  var h6={x};
+  var h7={x};
+  var h8={x};
+  var h9={x};
+  var h01={x};
+  var h02={x};
+  var h03={x};
+  var h04={x};
+  var h05={x};
+  var h06={x};
+  var h07={x};
 
   // 2nd Molecule
   let element1 = $('#cont2');
@@ -40,7 +40,7 @@ $(function() {
   viewer1.addLabel("Oxygen", {position: {x:-6 , y:3, z:5}, backgroundColor: 'red',backgroundOpacity: 0.8,fontSize: 13});
   viewer1.addLabel("Hydrogen", {position: {x:-6 , y:2.3, z:5}, backgroundColor: 'silver',backgroundOpacity: 0.8,fontSize: 13});
 
-  viewer1.addSphere({center: , color: 'green',radius:0.4});
+  viewer1.addSphere({center: c1, color: 'green',radius:0.4});
   viewer1.addSphere({center: c2, color: 'skyblue',radius:0.4});
   viewer1.addSphere({center: c3, color: 'skyblue',radius:0.4});
   viewer1.addSphere({center: c4, color: 'skyblue',radius:0.4});
@@ -48,7 +48,7 @@ $(function() {
   viewer1.addSphere({center: c6, color: 'skyblue',radius:0.4});
   viewer1.addSphere({center: c7, color: 'skyblue',radius:0.4});
   viewer1.addSphere({center: c8, color: 'skyblue',radius:0.4});
-  viewer1.addSphere({center: c8, color: 'skyblue',radius:0.4});
+  viewer1.addSphere({center: c9, color: 'skyblue',radius:0.4});
   
   viewer1.addSphere({ center: o1, radius: 0.42, color: 'red' });
   viewer1.addSphere({ center: o2, radius: 0.42, color: 'red' });
@@ -98,8 +98,8 @@ $(function() {
   viewer1.addCylinder({ start: c8, end:c8,radius: .13,color:'white',radiusRadio:0.1,});
   viewer1.addCylinder({ start: c8, end: h04,radius: .13,color:'white',radiusRadio:0.1,});
   viewer1.addCylinder({ start: c8, end: h05,radius: .13,color:'white',radiusRadio:0.1,});
-  viewer1.addCylinder({ start:c8, end: h06,radius: .13,color:'white',radiusRadio:0.1,});
-  viewer1.addCylinder({ start:c8, end: h07,radius: .13,color:'white',radiusRadio:0.1,});
+  viewer1.addCylinder({ start:c9, end: h06,radius: .13,color:'white',radiusRadio:0.1,});
+  viewer1.addCylinder({ start:c9, end: h07,radius: .13,color:'white',radiusRadio:0.1,});
 
   // viewer1.addSphere({ center: {x:0, y:0, z:0}, radius: 0.42, color: 'skyblue',
   // mid:1.0,   clickable:true,
