@@ -10,14 +10,14 @@ body {
   --cell-size: 300px;
 }
 .board {
-  width: 100vw;
+  width:100vw;
   height: 100vh;
   display: grid;
-  justify-content: center;
-  align-content: center;
-  justify-items: center;
-  align-items: center;
-  grid-template-columns: repeat(3, auto);
+  justify-content: left;
+  align-content: left;
+  /*justify-items: center;*/
+  /*align-items: center;*/
+  grid-template-columns: repeat(6, auto);
 }
 .boardhelp {
   width: 100vw;
@@ -79,6 +79,24 @@ body {
   text-decoration: none;
   display: inline-block;
   font-size: 20px;
+}
+.btnC {
+  background-color:skyblue;
+}
+.btnC:focus {
+  background-color:skyblue;
+}
+.btnC:hover {
+  background-color: skyblue;
+}
+.btnH {
+  background-color: silver;
+}
+.btnH:focus {
+  background-color: silver;
+}
+.btnH:hover {
+  background-color: silver;
 }
 .btn1:hover {
   background-color: lightgreen;
@@ -221,6 +239,18 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.flexing1 {
+  flex-direction: column;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flexing cont {
+  width: 100px;
+  height: 100px;
 }
 
 #new {
