@@ -1,0 +1,70 @@
+<html>
+<head>
+	<link rel="stylesheet" href="./css/page5.css">
+	<script type="text/javascript">
+	function getOptions(opt){
+		var options = "";
+		for(var i = parseInt(opt) ; i <= 100 ; i += 5){
+			if(i == 100){	
+				options =  options + "<option value='"+i+"' selected='true'>"+i+" C</option>\n";
+			}
+			else{
+				options =  options + "<option value='"+i+"'>"+i+" C</option>\n";
+			}
+		}
+		document.getElementById("end").innerHTML = options;
+	}
+	</script>
+</head>
+
+<body>
+	<div id="content"> <br> <br> <br>
+	<h1 class="boundingBox">Select the Parameters</h1><br>
+
+	<form name="paramSelect" action="graph.php" method="POST">
+		
+	<table align="center" cellspacing="20px" cellpadding="10px">
+		<tr> <br>
+
+		<td class="boundingBox"><strong>Select Starting Temperature</strong></td>
+		<td><select name="start" class="boundingBox" id="start" onchange="getOptions(this.options[this.selectedIndex].value)">
+		<script type="text/javascript">
+		for(var i = 5 ; i <= 100 ; i+=5){
+			document.write("<option value='"+i+"'>"+i+" C</option>");
+		}
+		</script>
+		</select></td></tr>
+		<tr> <br>
+
+		<td class="tableHead"><strong>Select Final Temperature</strong></td>
+		<td><select name="end" class="boundingBox" id="end">
+		<script type="text/javascript">
+		for(var i = 5 ; i <= 100 ; i+=5){
+			if(i == 100){	
+					document.write("<option value='"+i+"' selected='true'>"+i+" C</option>");
+			}
+			else{
+				document.write("<option value='"+i+"'>"+i+" C</option>");
+			}
+		}
+		</script>
+		</select></td></tr> <br>
+
+		<tr>
+		<td class="boundingBox"><strong>Select the Step Size</strong></td>
+		<td><select name="gap" class="boundingBox">
+		<script type="text/javascript">
+		for(var i = 5 ; i < 25 ; i+=5){
+			document.write("<option value='"+i+"'>"+i+" C</option>");
+		}
+		</script>
+		</select></td></tr>	
+	</table> <br>
+		
+		<input type="submit" id="go" class="boundingBox" value="Measure CD Spectra">
+
+	</div>
+</body>
+
+</html>
+
