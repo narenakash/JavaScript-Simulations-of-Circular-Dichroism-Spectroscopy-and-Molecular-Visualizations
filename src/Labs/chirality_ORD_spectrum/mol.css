@@ -28,8 +28,8 @@ body {
   grid-template-columns: repeat(1, auto);
 }
 .boardSR {
-  width: 100vw;
-  height: 100vh;
+  width: 120vw;
+  height: 120vh;
   display: grid;
   justify-content: left;
   align-content: left;
@@ -54,11 +54,13 @@ body {
   border: 20px solid white;
   display: block;
 }
-#new {
+#new1 {
   position: relative;
   margin-left: 47%;
   margin-top: 10px;
 }
+
+
 .btn {
   border: none;
   color: white;
@@ -67,6 +69,22 @@ body {
   text-decoration: none;
   display: inline-block;
   font-size: 20px;
+}
+.btn1 {
+  background-color: blue;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+}
+.btn1:hover {
+  background-color: lightgreen;
+}
+.btn1:focus {
+  background-color: lightgreen;
 }
 #cont1,
 #cont2,
@@ -84,6 +102,8 @@ body {
 }
 .set {
   display: grid;
+  font-family: Courier New;
+  /*font-style: oblique;*/
   justify-content: center;
   align-content: center;
   border-bottom: 10px;
@@ -167,7 +187,7 @@ body {
   justify-content: center;
   align-content: center;
 }
-#overlay {
+#overlay0 {
   position: fixed;
   display: none;
   width: 100%;
@@ -195,11 +215,91 @@ body {
 
 #submitq {
   background-color: blue;
-  border: 2px solid blue;
-  color: white;
-  padding: 6px 36px;
-  curson: pointer;
-  margin: 4px 2px;
 }
+
+.flexing {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#new {
+  position: relative;
+  margin-left: 5%;
+  margin-top: 10px;
+}
+
+.flex-container{
+    width: 80%;
+    min-height: 300px;
+    margin: 0 auto;
+    display: -webkit-flex; /* Safari */     
+    display: flex; /* Standard syntax */
+}
+
+.flex-container .labels {
+    padding: 10px;
+    /*background: #dbdfe5;*/
+    -webkit-flex: 1; /* Safari */
+    -ms-flex: 1; /* IE 10 */
+    flex: 1; /* Standard syntax */
+}
+
+.flex-container .labels1{
+  padding: 10px;
+}
+
+#overlay1 {
+  position: fixed;
+  display: none;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  /*background-color: rgba(0, 0, 0, .8);*/
+  z-index: 3;
+  cursor: pointer;
+}
+
+#result {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-size: 50px;
+  font-family: Courier New;
+  font-style: oblique;
+  color: silver;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+}
+
+#overlay2 {
+  position: fixed;
+  display: none;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  /*background-color: rgba(0, 0, 0, .8);*/
+  z-index: 3;
+  cursor: pointer;
+}
+
+#result1 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-size: 50px;
+  font-family: Courier New;
+  font-style: oblique;
+  color: silver;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+}
+
 
 

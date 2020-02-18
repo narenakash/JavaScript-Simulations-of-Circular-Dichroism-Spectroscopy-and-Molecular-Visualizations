@@ -47,7 +47,6 @@ var x2=1;
       if(x1===1){
         this.color.setHex(0x0000FF00);
         x1=0;
-        alert("Correct Choice");
       }
       else{
         this.color.setHex(0XF698FFFF);
@@ -65,7 +64,7 @@ var x2=1;
       if(x2===1){
         this.color.setHex(0x0000FF00);
         x2=0;
-        alert("Correct Choice");
+        
       }
       else{
         this.color.setHex(0XF698FFFF);

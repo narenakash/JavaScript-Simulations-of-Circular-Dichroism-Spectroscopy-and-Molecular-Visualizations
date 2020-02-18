@@ -42,9 +42,9 @@ $(function() {
   let element1 = $('#cont4');
   let config1 = { backgroundColor: 'skyblue' };
   let viewer1 = $3Dmol.createViewer( element1, config1 );
-  viewer1.addLabel("Carbon", {position: {x:0 , y:3.0, z:5}, backgroundColor: 'skyblue',backgroundOpacity: 0.9,fontSize: 13});
-  viewer1.addLabel("Oxygen", {position: {x:0, y:2.3, z:5}, backgroundColor: 'red',backgroundOpacity: 0.8,fontSize: 13});
-  viewer1.addLabel("Hydrogen", {position: {x:0 , y:1.6, z:5}, backgroundColor: 'silver',backgroundOpacity: 0.8,fontSize: 13});
+  viewer1.addLabel("Carbon", {position: {x:-0.5 , y:2.5, z:5}, backgroundColor: 'skyblue',backgroundOpacity: 0.9,fontSize: 13});
+  viewer1.addLabel("Oxygen", {position: {x:-0.5, y:1.8, z:5}, backgroundColor: 'red',backgroundOpacity: 0.8,fontSize: 13});
+  viewer1.addLabel("Hydrogen", {position: {x:-0.5 , y:1.1, z:5}, backgroundColor: 'silver',backgroundOpacity: 0.8,fontSize: 13});
 
   viewer1.addSphere({center: c1, color: 'skyblue',radius:0.4});
   viewer1.addSphere({center: c2, color: 'skyblue',radius:0.4});
@@ -57,7 +57,7 @@ $(function() {
       if(x1===1){
         this.color.setHex(0x0000FF00);
         x1=0;
-        alert("Correct Choice");
+        
       }
       else{
         this.color.setHex(0XF698FFFF);
@@ -73,7 +73,7 @@ $(function() {
       if(x2===1){
         this.color.setHex(0x0000FF00);
         x2=0;
-        alert("Correct Choice");
+        
       }
       else{
         this.color.setHex(0XF698FFFF);

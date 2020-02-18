@@ -1,7 +1,12 @@
-function on() {
-    document.getElementById("overlay").style.display = "block";
+function on(x) {
+	s="overlay"+x;
+	console.log(s);
+    document.getElementById(s).style.display = "block";
 }
 
-function off() {
-    document.getElementById("overlay").style.display = "none";
+function off(x) {
+	s="overlay"+x;
+    document.getElementById(s).style.display = "none";
 }
+
+

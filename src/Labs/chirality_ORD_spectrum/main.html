@@ -15,13 +15,13 @@
   </head>
   <body>
     <div class="top">
-      <h1 class="set">Understanding Structure of Chiral Molecules</h1>
+      <h1 class="set"><b>Understanding Structure of Chiral Molecules<b></h1>
       <h3 class="set">
-        Find out the chiral centers and colour the asymmetric carbon in six
-        samples.
+        <b>Find out the chiral centers and colour the asymmetric carbon in six
+        samples.<b>
       </h3>
     </div>
-    <div>
+    <div class="flexing">
       <button
         class="btn btn-danger"
         id="new"
@@ -29,9 +29,29 @@
       >
         Help!
       </button>
+
+      <button class="btn btn-warning btn-lg" id="new" onclick="on(0)">
+        Instructions!
+      </button>
+
+      <button
+      class="btn btn-success"
+      id="new"
+      onclick="window.location.href = './SRconfig.html';"
+    >
+      Next!
+    </button>
     </div>
 
-    <div class="board">
+    <div id="overlay0" onclick="off(0)">
+      <div id="text"><b>1) For each of the molecule coloured in blue(carbon atoms) you have to find chiral/asymmetric ones(ones with all four groups attached to it are pairwise different...<br>
+        2) If the directly attached atoms are same for two or more groups go to the next attached to these attached atoms until you find some difference...<br>
+        3) If atleast two of the attached atoms are same for any carbon atoms than it is for sure not asymmetric...<br>
+      4) If you find out some carbon atom to be chiral than click it if it changes color than you are correct otherwise you are wrong<br>
+      5) Click it again to revert the color back to blue<b></div>
+    </div>
+
+    <div class="board" onclick="off()">
       <div data-cell class="cell" id="cont1"></div>
       <div data-cell class="cell" id="cont2"></div>
       <div data-cell class="cell" id="cont3"></div>
@@ -39,13 +59,7 @@
       <div data-cell class="cell" id="cont5"></div>
       <div data-cell class="cell" id="cont6"></div>
     </div>
-    <button
-      class="btn btn-success"
-      id="new"
-      onclick="window.location.href = './SRconfig.html';"
-    >
-      Next!
-    </button>
+    
     <div></div>
 
     <script
@@ -70,6 +84,7 @@
     <script src="./mol4.js"></script>
     <script src="./mol5.js"></script>
     <script src="./mol6.js"></script>
+    <script src="./overlay.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   </body>
 </html>

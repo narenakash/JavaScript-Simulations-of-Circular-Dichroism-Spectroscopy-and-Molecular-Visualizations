@@ -8,32 +8,43 @@
     
       function test(x,y,form){
     
-        s="result"+x;
+        s="result";
+        console.log(s,y);
        
         if(form.elements[0].checked){
-          if(y==1){
-            document.getElementById(s).innerHTML = "Correct";
-            document.getElementById(s).style.color = 'green';
+          if(y===1){
+            // console.log("m");
+            document.getElementById(s).innerHTML = "That's Correct!!!";
+            document.getElementById(s).style.color = 'white';
+            document.getElementById("overlay1").style.backgroundColor="rgba(0,255,0,0.50)";
           }
           else{
-            document.getElementById(s).innerHTML = "InCorrect";
-            document.getElementById(s).style.color = 'red';
+            // console.log("a");
+            document.getElementById(s).innerHTML = "That's InCorrect, try again!!!";
+            document.getElementById(s).style.color = 'white';
+            document.getElementById("overlay1").style.backgroundColor="rgba(255,0,0,0.45)";
           }
         }
 
         else if(form.elements[1].checked){
-          if(y==2){
-            document.getElementById(s).innerHTML = "Correct";
-            document.getElementById(s).style.color = 'green';
+          if(y===2){
+            // console.log("c");
+            document.getElementById(s).innerHTML = "That's Correct!!!";
+            document.getElementById(s).style.color = 'white';
+            document.getElementById("overlay1").style.backgroundColor="rgba(0,255,0,0.50)";
           }
-          else
-            document.getElementById(s).innerHTML = "InCorrect";
-          document.getElementById(s).style.color = 'red';
+          else{
+            document.getElementById(s).innerHTML = "That's InCorrect, try again!!!";
+          document.getElementById(s).style.color = 'white';
+          document.getElementById("overlay1").style.backgroundColor="rgba(255,0,0,0.45)";
+          }
         }
 
         else{
           document.getElementById(s).innerHTML = "Select one of the option";
+          document.getElementById(s).style.color = 'orange';
         }
+        on(1);
       }
       </script>
   </head>
@@ -47,79 +58,101 @@
 
   <body>
     <div class="top">
-      <h1 class="set">Assigning R & S Configuration</h1>
+      <h1 class="set"><b>Assigning R & S Configuration<b></h1>
       <h3 class="set">
-        The Asymmetric carbon atoms are coloured in Magenta and Orange. Determine
-        the type of chirality.
+        <b>The Asymmetric carbon atoms are coloured in Magenta and Orange. Determine
+        the type of chirality.<b>
       </h3>
     </div>
-    <div>
-      <button class="btn btn-warning btn-lg" id="new" onclick="on()">
+
+     <div class="flexing">
+      <button
+      class="btn btn-success"
+      id="new"
+      onclick="window.location.href = './main.html';"
+    >
+      Previous!
+    </button>
+
+      <button
+        class="btn btn-danger"
+        id="new"
+        onclick="window.location.href = './help.html';"
+      >
+        Help!
+      </button>
+
+      <button class="btn btn-warning btn-lg" id="new" onclick="on(0)">
         Instructions!
       </button>
     </div>
-    <div id="overlay" onclick="off()">
+    <div id="overlay0" onclick="off(0)">
       <div id="text"><b>For each sample there are 2 asymmetric carbons coloured in magenta and orange color.<br />
         For each of the 2 carbon atoms you have to find its configuration by rotating the molecule in such a way such that the lowest priority group attached to that carbon will not be visible to you.You can only be able to see the remaining three groups than assign them priority number with highest priority as 1 after that 2 and so on...<br />
         Make an arc from 1->2->3 <br />
       If that arc rotation sense is clockwise than configuration of that atom is R else S<br />
     Select the option (R or S) whatever you get</b></div>
     </div>
+     <div id="overlay1" onclick="off(1)">
+      <div id="result"></div>
+    </div>
 
     <div class="boardSR" onclick="off()">
       <div data-cell class="cell" id="cont1"></div>
       <div data-cell class="cellOption" class="container">
+      <div class="flex-container">
         <div class="labels">
           <h2 style="color:magenta">C4 : &emsp;</h2>
           <form>
             <label class="container parallel"
               >R
-              <input type="radio" name="radio" value="R" />
+              <input type="radio"  name="radio" value="R" onclick="test(1,1,this.form)"/>
               <span class="checkmark"></span>
             </label>
             <label class="container parallel"
               >S
-              <input type="radio" name="radio" value="S"/>
+              <input type="radio"  name="radio" value="R" onclick="test(1,1,this.form)" value="S"/>
               <span class="checkmark"></span>
             </label>
+            <div id="result1"></div>
           </form>
         </div>
-        <div class="labels">
+        <div class="labels1">
           <h2 style="color:orange">C6 : &emsp;</h2>
           <form class="form-horizontal">
             <label class="container parallel"
               >R
-              <input type="radio" name="radio" style="display=inline" />
+              <input type="radio"  name="radio" value="R" onclick="test(2,2,this.form)" style="display=inline" />
               <span class="checkmark"></span>
             </label>
             <label class="container parallel"
               >S
-              <input type="radio" name="radio" />
+              <input type="radio"  name="radio" value="R" onclick="test(2,2,this.form)" />
               <span class="checkmark"></span>
             </label>  
             <div id="result2"></div>
-            <input type="button" onclick="test(2,1,this.form)" id="submitq" value="Submit"/>
-            <br>
-            
           </form>
         </div>
        </div>
+     </div>
 
       <div data-cell class="cell" id="cont2"></div>
       <div data-cell class="cellOption" class="container">
+      <div class="flex-container">
         <div class="labels">
           <h2 style="color:magenta">C6 : &emsp;</h2>
           <form>
             <label class="container parallel"
               >R
-              <input type="radio" name="radio" checked="checked" />
+              <input type="radio"  name="radio" value="R" onclick="test(3,1,this.form)" />
               <span class="checkmark"></span>
             </label>
             <label class="container parallel"
               >S
-              <input type="radio" name="radio" />
+              <input type="radio"  name="radio" value="R" onclick="test(3,1,this.form)" />
               <span class="checkmark"></span>
             </label>
+            <div id="result3"></div>
           </form>
         </div>
         <div class="labels">
@@ -127,32 +160,36 @@
           <form>
             <label class="container"
               >R
-              <input type="radio" name="radio" checked="checked" />
+              <input type="radio"  name="radio" value="R" onclick="test(4,1,this.form)" />
               <span class="checkmark"></span>
             </label>
             <label class="container"
               >S
-              <input type="radio" name="radio" />
+              <input type="radio"  name="radio" value="R" onclick="test(4,1,this.form)" />
               <span class="checkmark"></span>
             </label>
+            <div id="result4"></div>
           </form>
         </div>
+      </div>
       </div>
       <div data-cell class="cell" id="cont3"></div>
       <div data-cell class="cellOption" class="container">
+        <div class="flex-container">
         <div class="labels">
           <h2 style="color:magenta">C4 : &emsp;</h2>
           <form>
             <label class="container parallel"
               >R
-              <input type="radio" name="radio" checked="checked" />
+              <input type="radio"  name="radio" value="R" onclick="test(5,2,this.form)" />
               <span class="checkmark"></span>
             </label>
             <label class="container parallel"
               >S
-              <input type="radio" name="radio" />
+              <input type="radio"  name="radio" value="R" onclick="test(5,2,this.form)" />
               <span class="checkmark"></span>
             </label>
+            <div id="result5"></div>
           </form>
         </div>
         <div class="labels">
@@ -160,32 +197,36 @@
           <form>
             <label class="container"
               >R
-              <input type="radio" name="radio" checked="checked" />
+              <input type="radio"  name="radio" value="R" onclick="test(6,2,this.form)" />
               <span class="checkmark"></span>
             </label>
             <label class="container"
               >S
-              <input type="radio" name="radio" />
+              <input type="radio"  name="radio" value="R" onclick="test(6,2,this.form)" />
               <span class="checkmark"></span>
             </label>
+            <div id="result6"></div>
           </form>
         </div>
       </div>
+      </div>
       <div data-cell class="cell" id="cont4"></div>
       <div data-cell class="cellOption" class="container">
+      <div class="flex-container">
         <div class="labels">
           <h2 style="color:magenta">C6 : &emsp;</h2>
           <form>
             <label class="container parallel"
               >R
-              <input type="radio" name="radio" checked="checked" />
+              <input type="radio"  name="radio" value="R" onclick="test(7,2,this.form)" />
               <span class="checkmark"></span>
             </label>
             <label class="container parallel"
               >S
-              <input type="radio" name="radio" />
+              <input type="radio"  name="radio" value="R" onclick="test(7,2,this.form)" />
               <span class="checkmark"></span>
             </label>
+            <div id="result7"></div>
           </form>
         </div>
         <div class="labels">
@@ -193,32 +234,36 @@
           <form>
             <label class="container"
               >R
-              <input type="radio" name="radio" checked="checked" />
+              <input type="radio"  name="radio" value="R" onclick="test(8,2,this.form)" />
               <span class="checkmark"></span>
             </label>
             <label class="container"
               >S
-              <input type="radio" name="radio" />
+              <input type="radio"  name="radio" value="R" onclick="test(8,2,this.form)" />
               <span class="checkmark"></span>
             </label>
+            <div id="result8"></div>
           </form>
         </div>
+      </div>
       </div>
       <div data-cell class="cell" id="cont5"></div>
       <div data-cell class="cellOption" class="container">
+        <div class="flex-container">
         <div class="labels">
           <h2 style="color:magenta">C4 : &emsp;</h2>
           <form>
             <label class="container parallel"
               >R
-              <input type="radio" name="radio" checked="checked" />
+              <input type="radio"  name="radio" value="R" onclick="test(9,2,this.form)" />
               <span class="checkmark"></span>
             </label>
             <label class="container parallel"
               >S
-              <input type="radio" name="radio" />
+              <input type="radio"  name="radio" value="R" onclick="test(9,2,this.form)" />
               <span class="checkmark"></span>
             </label>
+            <div id="result9"></div>
           </form>
         </div>
         <div class="labels">
@@ -226,32 +271,36 @@
           <form>
             <label class="container"
               >R
-              <input type="radio" name="radio" checked="checked" />
+              <input type="radio"  name="radio" value="R" onclick="test(10,1,this.form)" />
               <span class="checkmark"></span>
             </label>
             <label class="container"
               >S
-              <input type="radio" name="radio" />
+              <input type="radio"  name="radio" value="R" onclick="test(10,1,this.form)" />
               <span class="checkmark"></span>
             </label>
+            <div id="result10"></div>
           </form>
         </div>
       </div>
+      </div>
       <div data-cell class="cell" id="cont6"></div>
       <div data-cell class="cellOption" class="container">
+        <div class="flex-container">
         <div class="labels">
           <h2 style="color:magenta">C4 : &emsp;</h2>
           <form>
             <label class="container parallel"
               >R
-              <input type="radio" name="radio" checked="checked" />
+              <input type="radio"  name="radio" value="R" onclick="test(11,1,this.form)" />
               <span class="checkmark"></span>
             </label>
             <label class="container parallel"
               >S
-              <input type="radio" name="radio" />
+              <input type="radio"  name="radio" value="R" onclick="test(11,1,this.form)" />
               <span class="checkmark"></span>
             </label>
+            <div id="result11"></div>
           </form>
         </div>
         <div class="labels">
@@ -259,18 +308,22 @@
           <form>
             <label class="container"
               >R
-              <input type="radio" name="radio" checked="checked" />
+              <input type="radio"  name="radio" value="R" onclick="test(12,2,this.form)" />
               <span class="checkmark"></span>
             </label>
             <label class="container"
               >S
-              <input type="radio" name="radio" />
+              <input type="radio"  name="radio" value="R" onclick="test(12,2,this.form)" />
               <span class="checkmark"></span>
             </label>
+            <div id="result12"></div>
           </form>
         </div>
       </div>
     </div>
+    </div>
+
+    
 
     <script
       src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
