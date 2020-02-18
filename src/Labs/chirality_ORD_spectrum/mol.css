@@ -114,6 +114,7 @@ body {
   position: absolute;
   opacity: 0;
   cursor: pointer;
+  display: inline;
 }
 
 /* Create a custom radio button */
@@ -175,8 +176,8 @@ body {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0.5);
-  z-index: 2;
+  background-color: rgba(0, 0, 0, .8);
+  z-index: 3;
   cursor: pointer;
 }
 
@@ -184,8 +185,21 @@ body {
   position: absolute;
   top: 50%;
   left: 50%;
-  font-size: 50px;
-  color: white;
+  font-size: 30px;
+  font-family: Courier New;
+  font-style: oblique;
+  color: silver;
   transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
 }
+
+#submitq {
+  background-color: blue;
+  border: 2px solid blue;
+  color: white;
+  padding: 6px 36px;
+  curson: pointer;
+  margin: 4px 2px;
+}
+
+
