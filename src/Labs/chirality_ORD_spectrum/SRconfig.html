@@ -65,13 +65,13 @@
       </h3>
     </div>
 
-     <div class="flexing">
+    <div class="flexingbutton">
       <button
       class="btn btn-success"
       id="new"
       onclick="window.location.href = './main.html';"
     >
-      Previous!
+      <b>Previous!</b>
     </button>
 
       <button
@@ -79,13 +79,14 @@
         id="new"
         onclick="window.location.href = './help.html';"
       >
-        Help!
+        <b>Help!</b>
       </button>
 
       <button class="btn btn-warning btn-lg" id="new" onclick="on(0)">
-        Instructions!
+        <b>Instructions!</b>
       </button>
     </div>
+
     <div id="overlay0" onclick="off(0)">
       <div id="text"><b>For each sample there are 2 asymmetric carbons coloured in magenta and orange color.<br />
         For each of the 2 carbon atoms you have to find its configuration by rotating the molecule in such a way such that the lowest priority group attached to that carbon will not be visible to you.You can only be able to see the remaining three groups than assign them priority number with highest priority as 1 after that 2 and so on...<br />
@@ -349,5 +350,28 @@
     <script src="./mol26.js"></script>
     <script src="./overlay.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <script>
+
+      $(window).scroll(function() {
+      var height = $(window).scrollTop();
+      if (height > 100) {
+        $('#back2Top').fadeIn();
+      } else {
+          $('#back2Top').fadeOut();
+      }
+    });
+    $(document).ready(function() {
+        $("#back2Top").click(function(event) {
+            event.preventDefault();
+            $("html, body").animate({ scrollTop: 0 }, "slow");
+            return false;
+        });
+
+    });
+
+    </script>
+
+    <a id="back2Top" title="Back to top" href="#">&#10148;</a>
   </body>
 </html>

@@ -80,6 +80,15 @@ body {
   display: inline-block;
   font-size: 20px;
 }
+.btnI, .btnI:focus, .btnI:hover{
+  background-color: skyblue;
+}
+.btnP, .btnP:focus, .btnP:hover{
+  background-color: lightgreen;
+}
+.btnH, .btnH:focus, .btnH:hover {
+  background-color: #ffcccb;
+}
 .btnC {
   background-color:skyblue;
 }
@@ -125,12 +134,13 @@ body {
   justify-content: center;
   align-content: center;
   border-bottom: 10px;
+  color: white;
 }
 .up {
   border-top: 10px;
 }
 .top {
-  background-color: lightblue;
+  background-color: #000080;
   padding-bottom: 20px;
 }
 /* The container */
@@ -241,6 +251,12 @@ body {
   justify-content: center;
 }
 
+.flexingbutton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .flexing1 {
   flex-direction: column;
   display: flex;
@@ -255,6 +271,7 @@ body {
 
 #new {
   position: relative;
+  align-self: flex-start;
   margin-left: 5%;
   margin-top: 10px;
 }
@@ -330,6 +347,33 @@ body {
   transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
 }
+
+#back2Top {
+    width: 150px;
+    line-height: 150px;
+    overflow: hidden;
+    z-index: 999;
+    display: none;
+    cursor: pointer;
+    -moz-transform: rotate(270deg);
+    -webkit-transform: rotate(270deg);
+    -o-transform: rotate(270deg);
+    -ms-transform: rotate(270deg);
+    transform: rotate(270deg);
+    position: fixed;
+    bottom: 50px;
+    right: 50px;
+    background-color: #DDD;
+    color: #555;
+    text-align: center;
+    font-size: 130px;
+    text-decoration: none;
+}
+#back2Top:hover {
+    background-color: #DDF;
+    color: #000;
+}
+
 
 
 
