@@ -7,9 +7,6 @@ $(function() {
   let element = $('#cont1');
   let config = { backgroundColor: 'skyblue' };
   let viewer = $3Dmol.createViewer( element, config );
-  viewer.addLabel("Carbon", {position: {x:-6 , y:3.7, z:5}, backgroundColor: 'skyblue',backgroundOpacity: 0.9,fontSize: 13});
-  viewer.addLabel("Oxygen", {position: {x:-6 , y:3, z:5}, backgroundColor: 'red',backgroundOpacity: 0.8,fontSize: 13});
-  viewer.addLabel("Hydrogen", {position: {x:-6 , y:2.3, z:5}, backgroundColor: 'silver',backgroundOpacity: 0.8,fontSize: 13});
 
   // viewer.addSphere({center: {x:-3.498 , y:-1.395, z:-1.877}, color: 'green',radius:0.4});
   viewer.addSphere({ center: {x:-3.498 , y:-1.395, z:-1.877}, radius: 0.4, color: 'magenta',

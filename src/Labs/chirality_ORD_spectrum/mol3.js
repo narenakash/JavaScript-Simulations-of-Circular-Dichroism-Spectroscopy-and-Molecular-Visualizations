@@ -37,102 +37,207 @@ $(function() {
   // 2nd Molecule
   let element1 = $('#cont3');
   let config1 = { backgroundColor: 'skyblue' };
-  let viewer1 = $3Dmol.createViewer( element1, config1 );
-  viewer1.addLabel("Carbon", {position: {x:-1, y:3.3, z:5}, backgroundColor: 'skyblue',backgroundOpacity: 0.9,fontSize: 13});
-  viewer1.addLabel("Oxygen", {position: {x:-1 , y:2.6, z:5}, backgroundColor: 'red',backgroundOpacity: 0.8,fontSize: 13});
-  viewer1.addLabel("Hydrogen", {position: {x:-1 , y:1.9, z:5}, backgroundColor: 'silver',backgroundOpacity: 0.8,fontSize: 13});
+  let viewer = $3Dmol.createViewer( element1, config1 );
 
-  viewer1.addSphere({center: c1, color: 'skyblue',radius:0.4});
-  // viewer1.addSphere({center: c2, color: 'green',radius:0.4});
-  viewer1.addSphere({ center: c2, radius: 0.4, color: 'skyblue',
+  viewer.addSphere({center: c1, color: 'skyblue',radius:0.4,mid:1.0,   clickable:true,
+  callback:function(){
+        document.getElementById("overlay2").style.display = 'block';
+        document.getElementById("result1").innerHTML = "InCorrect";
+        setTimeout(function(){ 
+          document.getElementById("result1").innerHTML = "";
+          document.getElementById("overlay2").style.display = "none";
+        }, 500);
+        document.getElementById("result1").style.color = 'white';
+        document.getElementById("overlay2").style.backgroundColor="rgba(255,0,0,0.50)";
+      viewer.render();
+  }});
+  viewer.addSphere({ center: c2, radius: 0.4, color: 'skyblue',
   mid:1.0,   clickable:true,
   callback:function(){
-      if(x1===1){
-        this.color.setHex(0x0000FF00);
-        x1=0;
-        
-      }
-      else{
-        this.color.setHex(0XF698FFFF);
-        x1=1;
-      }
-      viewer1.render();
+      this.color.setHex(0x0000FF00);
+        document.getElementById("overlay2").style.display = 'block';
+        document.getElementById("result1").innerHTML = "Correct";
+        setTimeout(function(){ 
+          document.getElementById("result1").innerHTML = "";
+          document.getElementById("overlay2").style.display = "none";
+        }, 500);
+        document.getElementById("result1").style.color = 'white';
+        document.getElementById("overlay2").style.backgroundColor="rgba(0,255,0,0.50)";
+      viewer.render();
   }});
-  // viewer1.addSphere({center: c3, color: 'green',radius:0.4});
-  viewer1.addSphere({ center: c3, radius: 0.4, color: 'skyblue',
+  viewer.addSphere({ center: c3, radius: 0.4, color: 'skyblue',
   mid:1.0,   clickable:true,
   callback:function(){
-      if(x2===1){
-        this.color.setHex(0x0000FF00);
-        x2=0;
-        
-      }
-      else{
-        this.color.setHex(0XF698FFFF);
-        x2=1;
-      }
-      viewer1.render();
+     this.color.setHex(0x0000FF00);
+        document.getElementById("overlay2").style.display = 'block';
+        document.getElementById("result1").innerHTML = "Correct";
+        setTimeout(function(){ 
+          document.getElementById("result1").innerHTML = "";
+          document.getElementById("overlay2").style.display = "none";
+        }, 500);
+        document.getElementById("result1").style.color = 'white';
+        document.getElementById("overlay2").style.backgroundColor="rgba(0,255,0,0.50)";
+      viewer.render();
   }});
-  viewer1.addSphere({center: c4, color: 'skyblue',radius:0.4});
-  viewer1.addSphere({center: c5, color: 'skyblue',radius:0.4});
-  viewer1.addSphere({center: c6, color: 'skyblue',radius:0.4});
-  viewer1.addSphere({center: c7, color: 'skyblue',radius:0.4});
-  viewer1.addSphere({center: c8, color: 'skyblue',radius:0.4});
-  viewer1.addSphere({center: c9, color: 'skyblue',radius:0.4});
+  viewer.addSphere({center: c4, color: 'skyblue',radius:0.4,mid:1.0,   clickable:true,
+  callback:function(){
+        document.getElementById("overlay2").style.display = 'block';
+        document.getElementById("result1").innerHTML = "InCorrect";
+        setTimeout(function(){ 
+          document.getElementById("result1").innerHTML = "";
+          document.getElementById("overlay2").style.display = "none";
+        }, 500);
+        document.getElementById("result1").style.color = 'white';
+        document.getElementById("overlay2").style.backgroundColor="rgba(255,0,0,0.50)";
+      viewer.render();
+  }});
+  viewer.addSphere({center: c5, color: 'skyblue',radius:0.4,mid:1.0,   clickable:true,
+  callback:function(){
+        document.getElementById("overlay2").style.display = 'block';
+        document.getElementById("result1").innerHTML = "InCorrect";
+        setTimeout(function(){ 
+          document.getElementById("result1").innerHTML = "";
+          document.getElementById("overlay2").style.display = "none";
+        }, 500);
+        document.getElementById("result1").style.color = 'white';
+        document.getElementById("overlay2").style.backgroundColor="rgba(255,0,0,0.50)";
+      viewer.render();
+  }});
+  viewer.addSphere({center: c6, color: 'skyblue',radius:0.4,mid:1.0,   clickable:true,
+  callback:function(){
+        document.getElementById("overlay2").style.display = 'block';
+        document.getElementById("result1").innerHTML = "InCorrect";
+        setTimeout(function(){ 
+          document.getElementById("result1").innerHTML = "";
+          document.getElementById("overlay2").style.display = "none";
+        }, 500);
+        document.getElementById("result1").style.color = 'white';
+        document.getElementById("overlay2").style.backgroundColor="rgba(255,0,0,0.50)";
+      viewer.render();
+  }});
+  viewer.addSphere({center: c7, color: 'skyblue',radius:0.4,mid:1.0,   clickable:true,
+  callback:function(){
+        document.getElementById("overlay2").style.display = 'block';
+        document.getElementById("result1").innerHTML = "InCorrect";
+        setTimeout(function(){ 
+          document.getElementById("result1").innerHTML = "";
+          document.getElementById("overlay2").style.display = "none";
+        }, 500);
+        document.getElementById("result1").style.color = 'white';
+        document.getElementById("overlay2").style.backgroundColor="rgba(255,0,0,0.50)";
+      viewer.render();
+  }});
+  viewer.addSphere({center: c8, color: 'skyblue',radius:0.4,mid:1.0,   clickable:true,
+  callback:function(){
+        document.getElementById("overlay2").style.display = 'block';
+        document.getElementById("result1").innerHTML = "InCorrect";
+        setTimeout(function(){ 
+          document.getElementById("result1").innerHTML = "";
+          document.getElementById("overlay2").style.display = "none";
+        }, 500);
+        document.getElementById("result1").style.color = 'white';
+        document.getElementById("overlay2").style.backgroundColor="rgba(255,0,0,0.50)";
+      viewer.render();
+  }});
+  viewer.addSphere({center: c9, color: 'skyblue',radius:0.4,mid:1.0,   clickable:true,
+  callback:function(){
+        document.getElementById("overlay2").style.display = 'block';
+        document.getElementById("result1").innerHTML = "InCorrect";
+        setTimeout(function(){ 
+          document.getElementById("result1").innerHTML = "";
+          document.getElementById("overlay2").style.display = "none";
+        }, 500);
+        document.getElementById("result1").style.color = 'white';
+        document.getElementById("overlay2").style.backgroundColor="rgba(255,0,0,0.50)";
+      viewer.render();
+  }});
   
-  viewer1.addSphere({ center: o1, radius: 0.42, color: 'red' });
-  viewer1.addSphere({ center: o2, radius: 0.42, color: 'red' });
-  viewer1.addSphere({ center: o3, radius: 0.42, color: 'red' });
+  viewer.addSphere({ center: o1, radius: 0.42, color: 'red' ,mid:1.0,   clickable:true,
+  callback:function(){
+        document.getElementById("overlay2").style.display = 'block';
+        document.getElementById("result1").innerHTML = "InCorrect";
+        setTimeout(function(){ 
+          document.getElementById("result1").innerHTML = "";
+          document.getElementById("overlay2").style.display = "none";
+        }, 500);
+        document.getElementById("result1").style.color = 'white';
+        document.getElementById("overlay2").style.backgroundColor="rgba(255,0,0,0.50)";
+      viewer.render();
+  }});
+  viewer.addSphere({ center: o2, radius: 0.42, color: 'red' ,mid:1.0,   clickable:true,
+  callback:function(){
+        document.getElementById("overlay2").style.display = 'block';
+        document.getElementById("result1").innerHTML = "InCorrect";
+        setTimeout(function(){ 
+          document.getElementById("result1").innerHTML = "";
+          document.getElementById("overlay2").style.display = "none";
+        }, 500);
+        document.getElementById("result1").style.color = 'white';
+        document.getElementById("overlay2").style.backgroundColor="rgba(255,0,0,0.50)";
+      viewer.render();
+  }});
+  viewer.addSphere({ center: o3, radius: 0.42, color: 'red' ,mid:1.0,   clickable:true,
+  callback:function(){
+        document.getElementById("overlay2").style.display = 'block';
+        document.getElementById("result1").innerHTML = "InCorrect";
+        setTimeout(function(){ 
+          document.getElementById("result1").innerHTML = "";
+          document.getElementById("overlay2").style.display = "none";
+        }, 500);
+        document.getElementById("result1").style.color = 'white';
+        document.getElementById("overlay2").style.backgroundColor="rgba(255,0,0,0.50)";
+      viewer.render();
+  }});
   
-  viewer1.addSphere({ center: h1, radius: 0.3, color: 'silver' });
-  viewer1.addSphere({ center: h2, radius: 0.3, color: 'silver' });
-  viewer1.addSphere({ center: h3, radius: 0.3, color: 'silver' });
-  viewer1.addSphere({ center: h4, radius: 0.3, color: 'silver' });
-  viewer1.addSphere({ center: h5, radius: 0.3, color: 'silver' });
-  viewer1.addSphere({ center: h6, radius: 0.3, color: 'silver' });
-  viewer1.addSphere({ center: h7, radius: 0.3, color: 'silver' });
-  viewer1.addSphere({ center: h8, radius: 0.3, color: 'silver' });
-  viewer1.addSphere({ center: h9, radius: 0.3, color: 'silver' });
-  viewer1.addSphere({ center: h01, radius: 0.3, color: 'silver' });
-  viewer1.addSphere({ center: h02, radius: 0.3, color: 'silver' });
-  viewer1.addSphere({ center: h03, radius: 0.3, color: 'silver' });
-  viewer1.addSphere({ center: h04, radius: 0.3, color: 'silver' });
-  viewer1.addSphere({ center: h05, radius: 0.3, color: 'silver' });
-  viewer1.addSphere({ center: h06, radius: 0.3, color: 'silver' });
-  viewer1.addSphere({ center: h07, radius: 0.3, color: 'silver' });
+  viewer.addSphere({ center: h1, radius: 0.3, color: 'silver' });
+  viewer.addSphere({ center: h2, radius: 0.3, color: 'silver' });
+  viewer.addSphere({ center: h3, radius: 0.3, color: 'silver' });
+  viewer.addSphere({ center: h4, radius: 0.3, color: 'silver' });
+  viewer.addSphere({ center: h5, radius: 0.3, color: 'silver' });
+  viewer.addSphere({ center: h6, radius: 0.3, color: 'silver' });
+  viewer.addSphere({ center: h7, radius: 0.3, color: 'silver' });
+  viewer.addSphere({ center: h8, radius: 0.3, color: 'silver' });
+  viewer.addSphere({ center: h9, radius: 0.3, color: 'silver' });
+  viewer.addSphere({ center: h01, radius: 0.3, color: 'silver' });
+  viewer.addSphere({ center: h02, radius: 0.3, color: 'silver' });
+  viewer.addSphere({ center: h03, radius: 0.3, color: 'silver' });
+  viewer.addSphere({ center: h04, radius: 0.3, color: 'silver' });
+  viewer.addSphere({ center: h05, radius: 0.3, color: 'silver' });
+  viewer.addSphere({ center: h06, radius: 0.3, color: 'silver' });
+  viewer.addSphere({ center: h07, radius: 0.3, color: 'silver' });
 
-  viewer1.addCylinder({ start: c1, end: c2,radius: .13,color:'white',radiusRadio:0.1,});
-  viewer1.addCylinder({ start: c1, end: c3,radius: .13,color:'white',radiusRadio:0.1,});
-  viewer1.addCylinder({ start: c1, end: h1,radius: .13,color:'white',radiusRadio:0.1,});
-  viewer1.addCylinder({ start: c1, end: h2,radius: .13,color:'white',radiusRadio:0.1,});
-  viewer1.addCylinder({ start: c2, end: c6,radius: .13,color:'white',radiusRadio:0.1,});
-  viewer1.addCylinder({ start: c2, end: o1,radius: .13,color:'white',radiusRadio:0.1,});
-  viewer1.addCylinder({ start: c2, end: o2 ,radius: .13,color:'white',radiusRadio:0.1,});
-  viewer1.addCylinder({ start: c3, end: c4,radius: .13,color:'white',radiusRadio:0.1,});
-  viewer1.addCylinder({ start: c3, end: h3,radius: .13,color:'white',radiusRadio:0.1,});
-  viewer1.addCylinder({ start: c3, end: o3,radius: .13,color:'white',radiusRadio:0.1,});
-  viewer1.addCylinder({ start: c4, end: c5,radius: .13,color:'white',radiusRadio:0.1,});
-  viewer1.addCylinder({ start: c4, end: h5,radius: .13,color:'white',radiusRadio:0.1,});
-  viewer1.addCylinder({ start: c4, end: h4,radius: .13,color:'white',radiusRadio:0.1,});
-  viewer1.addCylinder({ start: o3, end: h07,radius: .13,color:'white',radiusRadio:0.1,});
-  viewer1.addCylinder({ start: c5, end: h6,radius: .13,color:'white',radiusRadio:0.1,});
-  viewer1.addCylinder({ start: c5, end: h7,radius: .13,color:'white',radiusRadio:0.1,});
-  viewer1.addCylinder({ start: c5, end: o1,radius: .13,color:'white',radiusRadio:0.1,});
-  // viewer1.addCylinder({ start: o1, end: h8,radius: .13,color:'white',radiusRadio:0.1,});
-  viewer1.addCylinder({ start: o2, end: c9,radius: .13,color:'white',radiusRadio:0.1,});
-  viewer1.addCylinder({ start: c6, end: c7,radius: .13,color:'white',radiusRadio:0.1,});
-  viewer1.addCylinder({ start: c6, end: h9,radius: .13,color:'white',radiusRadio:0.1,});
-  viewer1.addCylinder({ start: c6, end: h8,radius: .13,color:'white',radiusRadio:0.1,});
-  viewer1.addCylinder({ start: c7, end: c8,radius: .13,color:'white',radiusRadio:0.1,});
-  viewer1.addCylinder({ start: c7, end: h01,radius: .13,color:'white',radiusRadio:0.1,});
-  viewer1.addCylinder({ start: c7, end: h02,radius: .13,color:'white',radiusRadio:0.1,});
-  viewer1.addCylinder({ start: c8, end: c9,radius: .13,color:'white',radiusRadio:0.1,});
-  viewer1.addCylinder({ start: c8, end: h04,radius: .13,color:'white',radiusRadio:0.1,});
-  viewer1.addCylinder({ start: c8, end: h03,radius: .13,color:'white',radiusRadio:0.1,});
-  viewer1.addCylinder({ start:c9, end: h06,radius: .13,color:'white',radiusRadio:0.1,});
-  viewer1.addCylinder({ start:c9, end: h05,radius: .13,color:'white',radiusRadio:0.1,});
+  viewer.addCylinder({ start: c1, end: c2,radius: .13,color:'white',radiusRadio:0.1,});
+  viewer.addCylinder({ start: c1, end: c3,radius: .13,color:'white',radiusRadio:0.1,});
+  viewer.addCylinder({ start: c1, end: h1,radius: .13,color:'white',radiusRadio:0.1,});
+  viewer.addCylinder({ start: c1, end: h2,radius: .13,color:'white',radiusRadio:0.1,});
+  viewer.addCylinder({ start: c2, end: c6,radius: .13,color:'white',radiusRadio:0.1,});
+  viewer.addCylinder({ start: c2, end: o1,radius: .13,color:'white',radiusRadio:0.1,});
+  viewer.addCylinder({ start: c2, end: o2 ,radius: .13,color:'white',radiusRadio:0.1,});
+  viewer.addCylinder({ start: c3, end: c4,radius: .13,color:'white',radiusRadio:0.1,});
+  viewer.addCylinder({ start: c3, end: h3,radius: .13,color:'white',radiusRadio:0.1,});
+  viewer.addCylinder({ start: c3, end: o3,radius: .13,color:'white',radiusRadio:0.1,});
+  viewer.addCylinder({ start: c4, end: c5,radius: .13,color:'white',radiusRadio:0.1,});
+  viewer.addCylinder({ start: c4, end: h5,radius: .13,color:'white',radiusRadio:0.1,});
+  viewer.addCylinder({ start: c4, end: h4,radius: .13,color:'white',radiusRadio:0.1,});
+  viewer.addCylinder({ start: o3, end: h07,radius: .13,color:'white',radiusRadio:0.1,});
+  viewer.addCylinder({ start: c5, end: h6,radius: .13,color:'white',radiusRadio:0.1,});
+  viewer.addCylinder({ start: c5, end: h7,radius: .13,color:'white',radiusRadio:0.1,});
+  viewer.addCylinder({ start: c5, end: o1,radius: .13,color:'white',radiusRadio:0.1,});
+  // viewer.addCylinder({ start: o1, end: h8,radius: .13,color:'white',radiusRadio:0.1,});
+  viewer.addCylinder({ start: o2, end: c9,radius: .13,color:'white',radiusRadio:0.1,});
+  viewer.addCylinder({ start: c6, end: c7,radius: .13,color:'white',radiusRadio:0.1,});
+  viewer.addCylinder({ start: c6, end: h9,radius: .13,color:'white',radiusRadio:0.1,});
+  viewer.addCylinder({ start: c6, end: h8,radius: .13,color:'white',radiusRadio:0.1,});
+  viewer.addCylinder({ start: c7, end: c8,radius: .13,color:'white',radiusRadio:0.1,});
+  viewer.addCylinder({ start: c7, end: h01,radius: .13,color:'white',radiusRadio:0.1,});
+  viewer.addCylinder({ start: c7, end: h02,radius: .13,color:'white',radiusRadio:0.1,});
+  viewer.addCylinder({ start: c8, end: c9,radius: .13,color:'white',radiusRadio:0.1,});
+  viewer.addCylinder({ start: c8, end: h04,radius: .13,color:'white',radiusRadio:0.1,});
+  viewer.addCylinder({ start: c8, end: h03,radius: .13,color:'white',radiusRadio:0.1,});
+  viewer.addCylinder({ start:c9, end: h06,radius: .13,color:'white',radiusRadio:0.1,});
+  viewer.addCylinder({ start:c9, end: h05,radius: .13,color:'white',radiusRadio:0.1,});
 
-  // viewer1.addSphere({ center: {x:0, y:0, z:0}, radius: 0.42, color: 'skyblue',
+  // viewer.addSphere({ center: {x:0, y:0, z:0}, radius: 0.42, color: 'skyblue',
   // mid:1.0,   clickable:true,
   // callback:function(){
   //     console.log(x);
@@ -142,11 +247,11 @@ $(function() {
   //     if(x>10000000000){
   //       x=0;
   //     }
-  //     viewer1.render( );
+  //     viewer.render( );
   // }});
   
-  viewer1.zoomTo();
-  viewer1.render();
-  viewer1.setBackgroundColor('black');
+  viewer.zoomTo();
+  viewer.render();
+  viewer.setBackgroundColor('black');
   
 });

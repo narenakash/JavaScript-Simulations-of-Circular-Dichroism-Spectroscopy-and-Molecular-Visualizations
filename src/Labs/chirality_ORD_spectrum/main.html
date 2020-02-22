@@ -43,6 +43,15 @@
     </button>
     </div>
 
+        <div class="atoms">
+      <div style="font-family:Courier New;font-size:30px" class="item">Carbon</div>
+      <div class="dotC" style=text-align:center" class="item"></div>
+      <div style="font-family:Courier New;font-size:30px" class="item">Oxygen</div>
+      <div class="dotO" style="text-align:center" class="item"></div>
+      <div style="font-family:Courier New;font-size:30px" class="item">Hydrogen</div>
+      <div class="dotH" style="text-align:center" class="item"></div>
+    </div>
+
     <div id="overlay0" onclick="off(0)">
       <div id="text"><b>1) For each of the molecule coloured in blue(carbon atoms) you have to find chiral/asymmetric ones(ones with all four groups attached to it are pairwise different...<br>
         2) If the directly attached atoms are same for two or more groups go to the next attached to these attached atoms until you find some difference...<br>
@@ -120,6 +129,11 @@
       integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
       crossorigin="anonymous"
     ></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+    <script src="sweetalert2/dist/sweetalert2.all.min.js"></script>
+
+<!-- Include a polyfill for ES6 Promises (optional) for IE11 -->
+<script src="https://cdn.jsdelivr.net/npm/promise-polyfill9/dist/polyfill.js"></script>
     <script src="http://3Dmol.csb.pitt.edu/build/3Dmol-min.js"></script>
     <script src="./mol1.js"></script>
     <script src="./mol2.js"></script>

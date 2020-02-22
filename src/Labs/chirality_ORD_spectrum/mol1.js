@@ -7,32 +7,29 @@ $(function() {
   let element = $('#cont1');
   let config = { backgroundColor: 'skyblue' };
   let viewer = $3Dmol.createViewer( element, config );
-  viewer.addLabel("Carbon", {position: {x:-6 , y:3.7, z:5}, backgroundColor: 'skyblue',backgroundOpacity: 0.9,fontSize: 13});
-  viewer.addLabel("Oxygen", {position: {x:-6 , y:3, z:5}, backgroundColor: 'red',backgroundOpacity: 0.8,fontSize: 13});
-  viewer.addLabel("Hydrogen", {position: {x:-6 , y:2.3, z:5}, backgroundColor: 'silver',backgroundOpacity: 0.8,fontSize: 13});
 
   viewer.addSphere({ center: {x:-3.498 , y:-1.395, z:-1.877}, radius: 0.4, color: 'skyblue',
   mid:1.0,   clickable:true,
   callback:function(){
-      if(x1===1){
         this.color.setHex(0x0000FF00);
-        x1=0;
         document.getElementById("overlay2").style.display = 'block';
-        document.getElementById("result1").innerHTML = "You got this Check for Other ones";
+        document.getElementById("result1").innerHTML = "Correct";
+        setTimeout(function(){ 
+          document.getElementById("result1").innerHTML = "";
+          document.getElementById("overlay2").style.display = "none";
+        }, 500);
         document.getElementById("result1").style.color = 'white';
         document.getElementById("overlay2").style.backgroundColor="rgba(0,255,0,0.50)";
-      }
-      else{
-        this.color.setHex(0XF698FFFF);
-        x1=1;
-      }
       viewer.render();
   }});
   viewer.addSphere({center: {x:-4.783 , y:-1.579, z:-1.029}, color: 'skyblue',radius:0.4,mid:1.0,   clickable:true,
   callback:function(){
-
         document.getElementById("overlay2").style.display = 'block';
-        document.getElementById("result1").innerHTML = "That's InCorrect Check it Again";
+        document.getElementById("result1").innerHTML = "InCorrect";
+        setTimeout(function(){ 
+          document.getElementById("result1").innerHTML = "";
+          document.getElementById("overlay2").style.display = "none";
+        }, 500);
         document.getElementById("result1").style.color = 'white';
         document.getElementById("overlay2").style.backgroundColor="rgba(255,0,0,0.50)";
       viewer.render();
@@ -41,8 +38,12 @@ $(function() {
   callback:function(){
 
       document.getElementById("overlay2").style.display = 'block';
-      document.getElementById("result1").innerHTML = "That's InCorrect Check it Again";
-      document.getElementById("result1").style.color = 'white';
+      document.getElementById("result1").innerHTML = "InCorrect";
+      setTimeout(function(){ 
+          document.getElementById("result1").innerHTML = "";
+          document.getElementById("overlay2").style.display = "none";
+        }, 500);
+        document.getElementById("result1").style.color = 'white';
       document.getElementById("overlay2").style.backgroundColor="rgba(255,0,0,0.50)";
       
       viewer.render();
@@ -50,7 +51,11 @@ $(function() {
   viewer.addSphere({center: {x:-4.893 , y:-0.478 , z:0.053}, color: 'skyblue',radius:0.4,mid:1.0,   clickable:true,
   callback:function(){
         document.getElementById("overlay2").style.display = 'block';
-        document.getElementById("result1").innerHTML = "That's InCorrect Check it Again";
+        document.getElementById("result1").innerHTML = "InCorrect";
+        setTimeout(function(){ 
+          document.getElementById("result1").innerHTML = "";
+          document.getElementById("overlay2").style.display = "none";
+        }, 500);
         document.getElementById("result1").style.color = 'white';
         document.getElementById("overlay2").style.backgroundColor="rgba(255,0,0,0.50)";
       viewer.render();
@@ -58,25 +63,26 @@ $(function() {
   viewer.addSphere({ center: {x:-2.472 , y:-0.107 ,  z:0.127}, radius: 0.4, color: 'skyblue',
   mid:1.0,   clickable:true,
   callback:function(){
-      if(x2===1){
         this.color.setHex(0x0000FF00);
-        x2=0;
         document.getElementById("overlay2").style.display = 'block';
-        document.getElementById("result1").innerHTML = "You got this Check for Other ones";
+        document.getElementById("result1").innerHTML = "Correct";
+        setTimeout(function(){ 
+          document.getElementById("result1").innerHTML = "";
+          document.getElementById("overlay2").style.display = "none";
+        }, 500);
         document.getElementById("result1").style.color = 'white';
-            document.getElementById("overlay2").style.backgroundColor="rgba(0,255,0,0.50)";
-      }
-      else{
-        this.color.setHex(0XF698FFFF);
-        x2=1;
-      }
+        document.getElementById("overlay2").style.backgroundColor="rgba(0,255,0,0.50)";
       viewer.render();
   }});
   viewer.addSphere({center: {x:-1.276 , y:-0.136 ,  z:1.134}, color: 'skyblue',radius:0.4,mid:1.0,   clickable:true,
   callback:function(){
 
         document.getElementById("overlay2").style.display = 'block';
-        document.getElementById("result1").innerHTML = "That's InCorrect Check it Again";
+        document.getElementById("result1").innerHTML = "InCorrect";
+        setTimeout(function(){ 
+          document.getElementById("result1").innerHTML = "";
+          document.getElementById("overlay2").style.display = "none";
+        }, 500);
         document.getElementById("result1").style.color = 'white';
         document.getElementById("overlay2").style.backgroundColor="rgba(255,0,0,0.50)";
      
@@ -85,7 +91,11 @@ $(function() {
   viewer.addSphere({center: {x:-1.321 , y:1.054 ,  z:2.125}, color: 'skyblue',radius:0.4,mid:1.0,   clickable:true,
   callback:function(){
         document.getElementById("overlay2").style.display = 'block';
-        document.getElementById("result1").innerHTML = "That's InCorrect Check it Again";
+        document.getElementById("result1").innerHTML = "InCorrect";
+        setTimeout(function(){ 
+          document.getElementById("result1").innerHTML = "";
+          document.getElementById("overlay2").style.display = "none";
+        }, 500);
         document.getElementById("result1").style.color = 'white';
        document.getElementById("overlay2").style.backgroundColor="rgba(255,0,0,0.50)";
       viewer.render();
@@ -94,7 +104,11 @@ $(function() {
   callback:function(){
   
         document.getElementById("overlay2").style.display = 'block';
-        document.getElementById("result1").innerHTML = "That's InCorrect Check it Again";
+        document.getElementById("result1").innerHTML = "InCorrect";
+        setTimeout(function(){ 
+          document.getElementById("result1").innerHTML = "";
+          document.getElementById("overlay2").style.display = "none";
+        }, 500);
         document.getElementById("result1").style.color = 'white';
         document.getElementById("overlay2").style.backgroundColor="rgba(255,0,0,0.50)";
       viewer.render();
@@ -103,20 +117,36 @@ $(function() {
   callback:function(){
 
         document.getElementById("overlay2").style.display = 'block';
-        document.getElementById("result1").innerHTML = "That's InCorrect Check it Again";
+        document.getElementById("result1").innerHTML = "InCorrect";
+        setTimeout(function(){ 
+          document.getElementById("result1").innerHTML = "";
+          document.getElementById("overlay2").style.display = "none";
+        }, 500);
         document.getElementById("result1").style.color = 'white';
         document.getElementById("overlay2").style.backgroundColor="rgba(255,0,0,0.50)";
       viewer.render();
   }});
   
   viewer.addSphere({ center: {x:-3.634 , y:-0.293  ,z:-2.774}, radius: 0.42, color: 'red',mid:1.0, clickable: true, callback:function(){document.getElementById("overlay2").style.display = 'block';
-        document.getElementById("result1").innerHTML = "It's oxygen forming only 2 bonds it can't be chiral";document.getElementById("result1").style.color = 'white';
+        document.getElementById("result1").innerHTML = "InCorrect";setTimeout(function(){ 
+          document.getElementById("result1").innerHTML = "";
+          document.getElementById("overlay2").style.display = "none";
+        }, 500);
+        document.getElementById("result1").style.color = 'white';
         document.getElementById("overlay2").style.backgroundColor="rgba(255,0,0,0.50)"; viewer.render();}});
   viewer.addSphere({ center: {x:-2.517 , y:1.194 , z:-0.517}, radius: 0.42, color: 'red',mid:1.0, clickable: true, callback:function(){document.getElementById("overlay2").style.display = 'block';
-        document.getElementById("result1").innerHTML = "It's oxygen forming only 2 bonds it can't be chiral";document.getElementById("result1").style.color = 'white';
+        document.getElementById("result1").innerHTML = "InCorrect";setTimeout(function(){ 
+          document.getElementById("result1").innerHTML = "";
+          document.getElementById("overlay2").style.display = "none";
+        }, 500);
+        document.getElementById("result1").style.color = 'white';
         document.getElementById("overlay2").style.backgroundColor="rgba(255,0,0,0.50)"; viewer.render();}});
   viewer.addSphere({ center: {x:-3.696 , y:-0.398 , z:0.857}, radius: 0.42, color: 'red',mid:1.0, clickable: true, callback:function(){document.getElementById("overlay2").style.display = 'block';
-        document.getElementById("result1").innerHTML = "It's oxygen forming only 2 bonds it can't be chiral";document.getElementById("result1").style.color = 'white';
+        document.getElementById("result1").innerHTML = "InCorrect";setTimeout(function(){ 
+          document.getElementById("result1").innerHTML = "";
+          document.getElementById("overlay2").style.display = "none";
+        }, 500);
+        document.getElementById("result1").style.color = 'white';
         document.getElementById("overlay2").style.backgroundColor="rgba(255,0,0,0.50)"; viewer.render();}});
   
   viewer.addSphere({ center: {x:-3.349 , y:-2.290 , z:-2.487}, radius: 0.3, color: 'silver' });
