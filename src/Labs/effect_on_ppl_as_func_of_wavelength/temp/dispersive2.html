@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="../../chirality_ORD_spectrum/mol.css" />
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Experiment 3</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+      $(document).ready(function(){
+        $("#ri").change(function(){
+          console.log($(this).val());
+        $(".image-swap1").attr("src",$(this).val());
+        });
+      });
+      $(document).ready(function(){
+        $("#ri1").change(function(){
+        $(".image-swap2").attr("src",$(this).val());
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <div class="top">
+      <h1 class="set">
+        Change in Optical Rotation Due to Change in Wavelength
+      </h1>
+    </div>
+
+        <div class="flexing">
+    <button
+      class="btn btn-success"
+      id="new"
+      onclick="window.location.href = './dispersive.html';"
+    >
+      <b>Previous!</b>
+    </button>
+      <button
+        class="btn btn-danger"
+        id="new"
+        onclick="window.location.href = './help.html';"
+      >
+        <b>Help!</b>
+      </button>
+
+      <button class="btn btn-warning btn-lg" id="new" onclick="on(0)">
+        <b>Instructions!</b>
+      </button>
+
+    </div>
+    <div id="overlay" onclick="off()">
+      <div id="text"></div>
+    </div>
+
+    <div class="slct">
+      <div class="form-group">
+        <label for="cars">Choose possible refractive indices :</label>
+        <select id="ri" class="form-control">
+          <option value='./dispersivelamdagifs/n1=1.10_n2=1.00_angle=0.052_lambda=600.gif'>wavelength=600nm</option>
+          <option value='./dispersivelamdagifs/n1=1.10_n2=1.00_angle=0.063_lambda=498.gif'>wavelength=500nm</option>
+          <option value='./dispersivelamdagifs/n1=1.10_n2=1.00_angle=0.079_lambda=400.gif'>wavelength=400nm</option>
+          <option value='./dispersivelamdagifs/n1=1.10_n2=1.00_angle=0.105_lambda=298.gif'>wavelength=300nm</option>
+          <option value='./dispersivelamdagifs/n1=1.10_n2=1.00_angle=0.157_lambda=200.gif'>wavelength=200nm</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="cars">Choose possible refractive indices :</label>
+        <select id="ri1" class="form-control">
+          <option value='./dispersivelamdagifs/n1=1.10_n2=1.00_angle=0.052_lambda=600.gif'>wavelength=600nm</option>
+          <option value='./dispersivelamdagifs/n1=1.10_n2=1.00_angle=0.063_lambda=498.gif'>wavelength=500nm</option>
+          <option value='./dispersivelamdagifs/n1=1.10_n2=1.00_angle=0.079_lambda=400.gif'>wavelength=400nm</option>
+          <option value='./dispersivelamdagifs/n1=1.10_n2=1.00_angle=0.105_lambda=298.gif'>wavelength=300nm</option>
+          <option value='./dispersivelamdagifs/n1=1.10_n2=1.00_angle=0.157_lambda=200.gif'>wavelength=200nm</option>
+        </select>
+      </div>
+      <div>
+        <img src="./dispersivelamdagifs/n1=1.10_n2=1.00_angle=0.052_lambda=600.gif" class="image-swap1">
+      </div>
+      <div>
+        <img src="./dispersivelamdagifs/n1=1.10_n2=1.00_angle=0.052_lambda=600.gif" class="image-swap2">
+      </div>
+    </div>
+    
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+    <script src="http://3Dmol.csb.pitt.edu/build/3Dmol-min.js"></script>
+    <script src="./overlay.js"></script>
+
+    
+  </body>
+</html>
