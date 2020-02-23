@@ -11,8 +11,9 @@
 
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Experiment 3</title>
+    <title>Experiment 2</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="./overlay.js"></script>
     <script>
       $(document).ready(function(){
         $("#ri").change(function(){
@@ -50,18 +51,21 @@
         <b>Help!</b>
       </button>
 
-      <button class="btn btn-warning btn-lg" id="new" onclick="on(0)">
+      <button class="btn btn-warning btn-lg" id="new" onclick="on()">
         <b>Instructions!</b>
       </button>
 
     </div>
-    <div id="overlay" onclick="off()">
-      <div id="text"></div>
+    <div id="overlay0" onclick="off()">
+      <div id="text">Here refractive indices of left and right circular polarised light are fixed and equal to 1.10 and 1.00 resp.
+        <br />
+      Now you are changing wavelength of light to two different possible values and notice the difference on how the wavelength effects polarised light.
+      <br /></div>
     </div>
 
     <div class="slct">
       <div class="form-group">
-        <label for="cars">Choose possible refractive indices :</label>
+        <label for="ri" style="font-family: Courier New; font-size:30px;color: blue"><b>Choose possible wavelengths :</b></label>
         <select id="ri" class="form-control">
           <option value='./dispersivelamdagifs/n1=1.10_n2=1.00_angle=0.052_lambda=600.gif'>wavelength=600nm</option>
           <option value='./dispersivelamdagifs/n1=1.10_n2=1.00_angle=0.063_lambda=498.gif'>wavelength=500nm</option>
@@ -71,7 +75,7 @@
         </select>
       </div>
       <div class="form-group">
-        <label for="cars">Choose possible refractive indices :</label>
+        <label for="ri" style="font-family: Courier New; font-size:30px;color: mediumseagreen"><b>Choose possible wavelengths :</b></label>
         <select id="ri1" class="form-control">
           <option value='./dispersivelamdagifs/n1=1.10_n2=1.00_angle=0.052_lambda=600.gif'>wavelength=600nm</option>
           <option value='./dispersivelamdagifs/n1=1.10_n2=1.00_angle=0.063_lambda=498.gif'>wavelength=500nm</option>
@@ -104,7 +108,7 @@
       crossorigin="anonymous"
     ></script>
     <script src="http://3Dmol.csb.pitt.edu/build/3Dmol-min.js"></script>
-    <script src="./overlay.js"></script>
+
 
     
   </body>
