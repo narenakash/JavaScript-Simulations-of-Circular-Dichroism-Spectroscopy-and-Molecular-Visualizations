@@ -12,142 +12,68 @@ $(function() {
   mid:1.0,   clickable:true,
   callback:function(){
         this.color.setHex(0x0000FF00);
-        document.getElementById("overlay2").style.display = 'block';
-        document.getElementById("result1").innerHTML = "Correct";
-        setTimeout(function(){ 
-          document.getElementById("result1").innerHTML = "";
-          document.getElementById("overlay2").style.display = "none";
-        }, 500);
-        document.getElementById("result1").style.color = 'white';
-        document.getElementById("overlay2").style.backgroundColor="rgba(0,255,0,0.50)";
+        correct();
+        // document.getElementById("overlay2").style.display = 'block';
+        // document.getElementById("result1").innerHTML = "Correct";
+        // setTimeout(function(){ 
+        //   document.getElementById("result1").innerHTML = "";
+        //   document.getElementById("overlay2").style.display = "none";
+        // }, 500);
+        // document.getElementById("result1").style.color = 'white';
+        // document.getElementById("overlay2").style.backgroundColor="rgba(0,255,0,0.50)";
       viewer.render();
   }});
   viewer.addSphere({center: {x:-4.783 , y:-1.579, z:-1.029}, color: 'skyblue',radius:0.4,mid:1.0,   clickable:true,
   callback:function(){
-        document.getElementById("overlay2").style.display = 'block';
-        document.getElementById("result1").innerHTML = "InCorrect";
-        setTimeout(function(){ 
-          document.getElementById("result1").innerHTML = "";
-          document.getElementById("overlay2").style.display = "none";
-        }, 500);
-        document.getElementById("result1").style.color = 'white';
-        document.getElementById("overlay2").style.backgroundColor="rgba(255,0,0,0.50)";
-      viewer.render();
+      incorrectc();
   }});
   viewer.addSphere({center: {x:-2.260 , y:-1.206, z:-0.963}, color: 'skyblue',radius:0.4,mid:1.0,   clickable:true,
   callback:function(){
-
-      document.getElementById("overlay2").style.display = 'block';
-      document.getElementById("result1").innerHTML = "InCorrect";
-      setTimeout(function(){ 
-          document.getElementById("result1").innerHTML = "";
-          document.getElementById("overlay2").style.display = "none";
-        }, 500);
-        document.getElementById("result1").style.color = 'white';
-      document.getElementById("overlay2").style.backgroundColor="rgba(255,0,0,0.50)";
-      
-      viewer.render();
+    incorrectc();
   }});
+
   viewer.addSphere({center: {x:-4.893 , y:-0.478 , z:0.053}, color: 'skyblue',radius:0.4,mid:1.0,   clickable:true,
   callback:function(){
-        document.getElementById("overlay2").style.display = 'block';
-        document.getElementById("result1").innerHTML = "InCorrect";
-        setTimeout(function(){ 
-          document.getElementById("result1").innerHTML = "";
-          document.getElementById("overlay2").style.display = "none";
-        }, 500);
-        document.getElementById("result1").style.color = 'white';
-        document.getElementById("overlay2").style.backgroundColor="rgba(255,0,0,0.50)";
-      viewer.render();
+    incorrectc();
   }});
+
   viewer.addSphere({ center: {x:-2.472 , y:-0.107 ,  z:0.127}, radius: 0.4, color: 'skyblue',
   mid:1.0,   clickable:true,
   callback:function(){
-        this.color.setHex(0x0000FF00);
-        document.getElementById("overlay2").style.display = 'block';
-        document.getElementById("result1").innerHTML = "Correct";
-        setTimeout(function(){ 
-          document.getElementById("result1").innerHTML = "";
-          document.getElementById("overlay2").style.display = "none";
-        }, 500);
-        document.getElementById("result1").style.color = 'white';
-        document.getElementById("overlay2").style.backgroundColor="rgba(0,255,0,0.50)";
+      this.color.setHex(0x0000FF00);
+      correct();
       viewer.render();
   }});
+
   viewer.addSphere({center: {x:-1.276 , y:-0.136 ,  z:1.134}, color: 'skyblue',radius:0.4,mid:1.0,   clickable:true,
   callback:function(){
-
-        document.getElementById("overlay2").style.display = 'block';
-        document.getElementById("result1").innerHTML = "InCorrect";
-        setTimeout(function(){ 
-          document.getElementById("result1").innerHTML = "";
-          document.getElementById("overlay2").style.display = "none";
-        }, 500);
-        document.getElementById("result1").style.color = 'white';
-        document.getElementById("overlay2").style.backgroundColor="rgba(255,0,0,0.50)";
-     
-      viewer.render();
+      incorrectc();
   }});
+
   viewer.addSphere({center: {x:-1.321 , y:1.054 ,  z:2.125}, color: 'skyblue',radius:0.4,mid:1.0,   clickable:true,
   callback:function(){
-        document.getElementById("overlay2").style.display = 'block';
-        document.getElementById("result1").innerHTML = "InCorrect";
-        setTimeout(function(){ 
-          document.getElementById("result1").innerHTML = "";
-          document.getElementById("overlay2").style.display = "none";
-        }, 500);
-        document.getElementById("result1").style.color = 'white';
-       document.getElementById("overlay2").style.backgroundColor="rgba(255,0,0,0.50)";
-      viewer.render();
+    incorrectc();
   }});
+
   viewer.addSphere({center: {x:-1.471 ,  y:2.397 ,  z:1.375}, color: 'skyblue',radius:0.4,mid:1.0,   clickable:true,
   callback:function(){
-  
-        document.getElementById("overlay2").style.display = 'block';
-        document.getElementById("result1").innerHTML = "InCorrect";
-        setTimeout(function(){ 
-          document.getElementById("result1").innerHTML = "";
-          document.getElementById("overlay2").style.display = "none";
-        }, 500);
-        document.getElementById("result1").style.color = 'white';
-        document.getElementById("overlay2").style.backgroundColor="rgba(255,0,0,0.50)";
-      viewer.render();
+    incorrectc();
   }});
+
   viewer.addSphere({center: {x:-2.649 ,  y:2.325 ,  z:0.373}, color: 'skyblue',radius:0.4,mid:1.0,   clickable:true,
   callback:function(){
-
-        document.getElementById("overlay2").style.display = 'block';
-        document.getElementById("result1").innerHTML = "InCorrect";
-        setTimeout(function(){ 
-          document.getElementById("result1").innerHTML = "";
-          document.getElementById("overlay2").style.display = "none";
-        }, 500);
-        document.getElementById("result1").style.color = 'white';
-        document.getElementById("overlay2").style.backgroundColor="rgba(255,0,0,0.50)";
-      viewer.render();
+    incorrectc();
   }});
   
-  viewer.addSphere({ center: {x:-3.634 , y:-0.293  ,z:-2.774}, radius: 0.42, color: 'red',mid:1.0, clickable: true, callback:function(){document.getElementById("overlay2").style.display = 'block';
-        document.getElementById("result1").innerHTML = "InCorrect";setTimeout(function(){ 
-          document.getElementById("result1").innerHTML = "";
-          document.getElementById("overlay2").style.display = "none";
-        }, 500);
-        document.getElementById("result1").style.color = 'white';
-        document.getElementById("overlay2").style.backgroundColor="rgba(255,0,0,0.50)"; viewer.render();}});
-  viewer.addSphere({ center: {x:-2.517 , y:1.194 , z:-0.517}, radius: 0.42, color: 'red',mid:1.0, clickable: true, callback:function(){document.getElementById("overlay2").style.display = 'block';
-        document.getElementById("result1").innerHTML = "InCorrect";setTimeout(function(){ 
-          document.getElementById("result1").innerHTML = "";
-          document.getElementById("overlay2").style.display = "none";
-        }, 500);
-        document.getElementById("result1").style.color = 'white';
-        document.getElementById("overlay2").style.backgroundColor="rgba(255,0,0,0.50)"; viewer.render();}});
-  viewer.addSphere({ center: {x:-3.696 , y:-0.398 , z:0.857}, radius: 0.42, color: 'red',mid:1.0, clickable: true, callback:function(){document.getElementById("overlay2").style.display = 'block';
-        document.getElementById("result1").innerHTML = "InCorrect";setTimeout(function(){ 
-          document.getElementById("result1").innerHTML = "";
-          document.getElementById("overlay2").style.display = "none";
-        }, 500);
-        document.getElementById("result1").style.color = 'white';
-        document.getElementById("overlay2").style.backgroundColor="rgba(255,0,0,0.50)"; viewer.render();}});
+  viewer.addSphere({ center: {x:-3.634 , y:-0.293  ,z:-2.774}, radius: 0.42, color: 'red',mid:1.0, clickable: true, callback:function(){
+    incorrecto();
+  }});
+  viewer.addSphere({ center: {x:-2.517 , y:1.194 , z:-0.517}, radius: 0.42, color: 'red',mid:1.0, clickable: true, callback:function(){
+    incorrecto();
+  }});
+  viewer.addSphere({ center: {x:-3.696 , y:-0.398 , z:0.857}, radius: 0.42, color: 'red',mid:1.0, clickable: true, callback:function(){
+    incorrecto();
+  }});
   
   viewer.addSphere({ center: {x:-3.349 , y:-2.290 , z:-2.487}, radius: 0.3, color: 'silver' });
   viewer.addSphere({ center: {x:-5.667 , y:-1.555 , z:-1.675}, radius: 0.3, color: 'silver' });

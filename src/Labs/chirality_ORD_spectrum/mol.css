@@ -389,6 +389,16 @@ body {
   margin-left: 2%;
 }
 
+.slct {
+  display: flex;
+  flex-wrap: wrap;
+  float: center;
+}
+
+.slct>div {
+  flex: 0 50%;
+}
+
 .dotC {
   height: 50px;
   width: 50px;
