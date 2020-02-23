@@ -14,16 +14,28 @@
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script src="./ans.js"></script>
     <script src="./swf2js.js"></script>
+    <script>
+    $(window).scroll(function(e){
+      var $el = $('.top');
+      var isPositionfixed = ($el.css('position')=='fixed');
+      if($(this).scrollTop()>200 && !isPositionfixed){
+        $el.css({'position':'fixed', 'top':'0px'});
+      }
+      if($(this).scrollTop() <200 && isPositionfixed){
+        $el.css({'position': 'static', 'top': '0px'});
+      }
+    });
+    </script>
     <title>Experiment 3</title>
   </head>
   <body>
     <div class="top">
-      <h1 class="set"><b>Understanding Structure of Chiral Molecules<b></h1>
-      <h3 class="set">
+      <h3 class="set"><b>Understanding Structure of Chiral Molecules<b></h3>
+      <h4 class="set">
         <b>Find out the chiral centers and colour the asymmetric carbon in six
         samples.<b>
-      </h3>
-    </div>
+      </h4>
+    
     <div class="flexing">
       <button
         class="btn btn-danger"
@@ -48,25 +60,28 @@
 
         <div class="atoms">
       <div style="font-family:Courier New;font-size:30px" class="item">Carbon</div>
-      <div class="dotC" style=text-align:center" class="item"></div>
+      <div class="dotC" style="text-align:center" class="item"></div>
       <div style="font-family:Courier New;font-size:30px" class="item">Oxygen</div>
       <div class="dotO" style="text-align:center" class="item"></div>
       <div style="font-family:Courier New;font-size:30px" class="item">Hydrogen</div>
       <div class="dotH" style="text-align:center" class="item"></div>
     </div>
+  </div>
 
     <div id="overlay0" onclick="off(0)">
       <div id="text"><b>1) For each of the molecule coloured in blue(carbon atoms) you have to find chiral/asymmetric ones(ones with all four groups attached to it are pairwise different...<br>
         2) If the directly attached atoms are same for two or more groups go to the next attached to these attached atoms until you find some difference...<br>
         3) If atleast two of the attached atoms are same for any carbon atoms than it is for sure not asymmetric...<br>
       4) If you find out some carbon atom to be chiral than click it if it changes color than you are correct otherwise you are wrong<br>
-      5) Click it again to revert the color back to blue<b></div>
+      5) Click it again to revert the color back to blue</b></div>
     </div>
 
     <div id="overlay2" onclick="off(2)">
       <div id= "result1"></div>
     </div>
 
+    <div style="height:100px;width:100%;clear:both;"></div>
+    <div style="height:100px;width:100%;clear:both;"></div>
     <div style="height:100px;width:100%;clear:both;"></div>
 
     <div class="flexing">

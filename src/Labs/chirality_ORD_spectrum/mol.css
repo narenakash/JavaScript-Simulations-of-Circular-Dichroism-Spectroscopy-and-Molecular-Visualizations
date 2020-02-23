@@ -133,15 +133,19 @@ body {
   /*font-style: oblique;*/
   justify-content: center;
   align-content: center;
-  border-bottom: 10px;
+  border-bottom: 1px;
   color: white;
 }
 .up {
   border-top: 10px;
 }
 .top {
-  background-color: #000080;
-  padding-bottom: 20px;
+  background-color: blue;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+  /*padding-bottom: 20px;*/
 }
 /* The container */
 .container {
@@ -225,12 +229,12 @@ body {
   right: 0;
   bottom: 0;
   background-color: rgba(0, 0, 0, .8);
-  z-index: 3;
+  z-index: 103;
   cursor: pointer;
 }
 
 #text {
-  position: absolute;
+  position: relative;
   top: 50%;
   left: 50%;
   font-size: 30px;
@@ -393,6 +397,8 @@ body {
   display: flex;
   flex-wrap: wrap;
   float: center;
+  align-items: center;
+  justify-content: center;
 }
 
 .slct>div {
@@ -404,7 +410,7 @@ body {
   width: 50px;
   float: right;
   border-radius: 50%;
-  background-color: skyblue;
+  background-color: lightblue;
   margin-bottom:10px;
   /*display: inline-block;*/
 }
@@ -429,4 +435,12 @@ body {
   /*display: inline-block;*/
 }
 
+.image-swap1 ,.image-swap2{
+  height: 50vh;
+  width: 40vw;
+}
+
+#ri,#ri1 {
+  width: 25vw;
+}
 
