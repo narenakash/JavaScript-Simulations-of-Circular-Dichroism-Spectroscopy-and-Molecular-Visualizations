@@ -7,6 +7,7 @@
       integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
       crossorigin="anonymous"
     />
+    <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./mol.css" />
 
     <meta charset="UTF-8" />
@@ -59,11 +60,11 @@
     </div>
 
         <div class="atoms">
-      <div style="font-family:Courier New;font-size:30px" class="item">Carbon</div>
+      <div style="font-family:'Lato';font-size:30px" class="item">Carbon &nbsp; </div>
       <div class="dotC" style="text-align:center" class="item"></div>
-      <div style="font-family:Courier New;font-size:30px" class="item">Oxygen</div>
+      <div style="font-family:'Lato' ;font-size:30px" class="item">Oxygen &nbsp;</div>
       <div class="dotO" style="text-align:center" class="item"></div>
-      <div style="font-family:Courier New;font-size:30px" class="item">Hydrogen</div>
+      <div style="font-family:'Lato' ;font-size:30px" class="item">Hydrogen &nbsp;</div>
       <div class="dotH" style="text-align:center" class="item"></div>
     </div>
   </div>
@@ -157,27 +158,7 @@
     <script src="./mol6.js"></script>
     <script src="./overlay.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script>
 
-      $(window).scroll(function() {
-      var height = $(window).scrollTop();
-      if (height > 100) {
-        $('#back2Top').fadeIn();
-      } else {
-          $('#back2Top').fadeOut();
-      }
-    });
-    $(document).ready(function() {
-        $("#back2Top").click(function(event) {
-            event.preventDefault();
-            $("html, body").animate({ scrollTop: 0 }, "slow");
-            return false;
-        });
 
-    });
-
-    </script>
-
-    <a id="back2Top" title="Back to top" href="#">&#10148;</a>
   </body>
 </html>

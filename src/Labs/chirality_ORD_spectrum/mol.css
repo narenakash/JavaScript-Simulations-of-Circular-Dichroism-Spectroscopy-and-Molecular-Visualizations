@@ -10,7 +10,7 @@ body {
   --cell-size: 300px;
 }
 .board {
-  width:100vw;
+  width: 100vw;
   height: 100vh;
   display: grid;
   justify-content: left;
@@ -60,7 +60,6 @@ body {
   margin-top: 10px;
 }
 
-
 .btn {
   border: none;
   color: white;
@@ -80,20 +79,26 @@ body {
   display: inline-block;
   font-size: 20px;
 }
-.btnI, .btnI:focus, .btnI:hover{
+.btnI,
+.btnI:focus,
+.btnI:hover {
   background-color: skyblue;
 }
-.btnP, .btnP:focus, .btnP:hover{
+.btnP,
+.btnP:focus,
+.btnP:hover {
   background-color: lightgreen;
 }
-.btnH, .btnH:focus, .btnH:hover {
+.btnH,
+.btnH:focus,
+.btnH:hover {
   background-color: #ffcccb;
 }
 .btnC {
-  background-color:skyblue;
+  background-color: skyblue;
 }
 .btnC:focus {
-  background-color:skyblue;
+  background-color: skyblue;
 }
 .btnC:hover {
   background-color: skyblue;
@@ -129,7 +134,7 @@ body {
 }
 .set {
   display: grid;
-  font-family: Courier New;
+  font-family: "Lato";
   /*font-style: oblique;*/
   justify-content: center;
   align-content: center;
@@ -140,7 +145,7 @@ body {
   border-top: 10px;
 }
 .top {
-  background-color: blue;
+  background-color: #003152;
   position: fixed;
   top: 0;
   width: 100%;
@@ -228,7 +233,7 @@ body {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0, 0, 0, .8);
+  background-color: rgba(0, 0, 0, 0.8);
   z-index: 103;
   cursor: pointer;
 }
@@ -238,8 +243,7 @@ body {
   top: 50%;
   left: 50%;
   font-size: 30px;
-  font-family: Courier New;
-  font-style: oblique;
+  font-family: "Lato";
   color: silver;
   transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
@@ -280,23 +284,24 @@ body {
   margin-top: 10px;
 }
 
-.flex-container{
-    width: 80%;
-    min-height: 300px;
-    margin: 0 auto;
-    display: -webkit-flex; /* Safari */     
-    display: flex; /* Standard syntax */
+.flex-container {
+  width: 80%;
+  min-height: 300px;
+  margin: 0 auto;
+  display: -webkit-flex; /* Safari */
+  display: flex; /* Standard syntax */
 }
 
 .flex-container .labels {
-    padding: 10px;
-    /*background: #dbdfe5;*/
-    -webkit-flex: 1; /* Safari */
-    -ms-flex: 1; /* IE 10 */
-    flex: 1; /* Standard syntax */
+  padding: 10px;
+  font-family: "Lato";
+  /*background: #dbdfe5;*/
+  -webkit-flex: 1; /* Safari */
+  -ms-flex: 1; /* IE 10 */
+  flex: 1; /* Standard syntax */
 }
 
-.flex-container .labels1{
+.flex-container .labels1 {
   padding: 10px;
 }
 
@@ -353,30 +358,30 @@ body {
 }
 
 #back2Top {
-    width: 150px;
-    line-height: 150px;
-    overflow: hidden;
-    z-index: 999;
-    display: none;
-    cursor: pointer;
-    -moz-transform: rotate(270deg);
-    -webkit-transform: rotate(270deg);
-    -o-transform: rotate(270deg);
-    -ms-transform: rotate(270deg);
-    transform: rotate(270deg);
-    position: fixed;
-    bottom: 50px;
-    border-radius: 50%;
-    right: 50px;
-    background-color: #4ee444;
-    color: #555;
-    text-align: center;
-    font-size: 130px;
-    text-decoration: none;
+  width: 150px;
+  line-height: 150px;
+  overflow: hidden;
+  z-index: 999;
+  display: none;
+  cursor: pointer;
+  -moz-transform: rotate(270deg);
+  -webkit-transform: rotate(270deg);
+  -o-transform: rotate(270deg);
+  -ms-transform: rotate(270deg);
+  transform: rotate(270deg);
+  position: fixed;
+  bottom: 50px;
+  border-radius: 50%;
+  right: 50px;
+  background-color: #4ee444;
+  color: #555;
+  text-align: center;
+  font-size: 130px;
+  text-decoration: none;
 }
 #back2Top:hover {
-    background-color: #4ee44e;
-    color: #FFF;
+  background-color: #4ee44e;
+  color: #fff;
 }
 
 .atoms {
@@ -387,6 +392,8 @@ body {
 
 .item {
   flex-grow: 1;
+  border-left: 50px solid #003152;
+  color: white;
 }
 
 .item + .item {
@@ -401,7 +408,7 @@ body {
   justify-content: center;
 }
 
-.slct>div {
+.slct > div {
   flex: 0 50%;
 }
 
@@ -411,7 +418,6 @@ body {
   float: right;
   border-radius: 50%;
   background-color: lightblue;
-  margin-bottom:10px;
   /*display: inline-block;*/
 }
 
@@ -421,7 +427,7 @@ body {
   float: right;
   border-radius: 50%;
   background-color: red;
-  margin-bottom:10px;
+  margin-bottom: 10px;
   /*display: inline-block;*/
 }
 
@@ -431,16 +437,17 @@ body {
   float: right;
   border-radius: 50%;
   background-color: silver;
-  margin-bottom:10px;
+  margin-bottom: 10px;
   /*display: inline-block;*/
 }
 
-.image-swap1 ,.image-swap2{
+.image-swap1,
+.image-swap2 {
   height: 50vh;
   width: 40vw;
 }
 
-#ri,#ri1 {
+#ri,
+#ri1 {
   width: 25vw;
 }
-
