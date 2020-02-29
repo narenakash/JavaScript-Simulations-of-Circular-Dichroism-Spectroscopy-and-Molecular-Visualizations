@@ -7,23 +7,27 @@
       integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="../../chirality_ORD_spectrum/mol.css" />
+    <link rel="stylesheet" href="./main.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Lato&display=swap"
+      rel="stylesheet"
+    />
 
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Experiment 2</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-        <script src="./overlay.js"></script>
+    <script src="./overlay.js"></script>
     <script>
-      $(document).ready(function(){
-        $("#ri").change(function(){
+      $(document).ready(function() {
+        $("#ri").change(function() {
           console.log($(this).val());
-        $(".image-swap1").attr("src",$(this).val());
+          $(".image-swap1").attr("src", $(this).val());
         });
       });
-      $(document).ready(function(){
-        $("#ri1").change(function(){
-        $(".image-swap2").attr("src",$(this).val());
+      $(document).ready(function() {
+        $("#ri1").change(function() {
+          $(".image-swap2").attr("src", $(this).val());
         });
       });
     </script>
@@ -35,14 +39,14 @@
       </h1>
     </div>
 
-        <div class="flexing">
-    <button
-      class="btn btn-success"
-      id="new"
-      onclick="window.location.href = './dispersive.html';"
-    >
-      <b>Previous!</b>
-    </button>
+    <div class="flexing">
+      <button
+        class="btn btn-success"
+        id="new"
+        onclick="window.location.href = './dispersive.html';"
+      >
+        <b>Previous!</b>
+      </button>
       <button
         class="btn btn-danger"
         id="new"
@@ -54,44 +58,90 @@
       <button class="btn btn-warning btn-lg" id="new" onclick="on()">
         <b>Instructions!</b>
       </button>
-
     </div>
     <div id="overlay0" onclick="off()">
-      <div id="text">Here refractive indices of left and right circular polarised light are fixed and equal to 1.10 and 1.00 resp.
+      <div id="text">
+        Here refractive indices of left and right circular polarised light are
+        fixed and equal to 1.10 and 1.00 resp.
         <br />
-      Now you are changing wavelength of light to two different possible values and notice the difference on how the wavelength effects polarised light.
-      <br /></div>
+        Now you are changing wavelength of light to two different possible
+        values and notice the difference on how the wavelength effects polarised
+        light.
+        <br />
+      </div>
     </div>
 
     <div class="slct">
       <div class="form-group">
-        <label for="ri" style="font-family: Courier New; font-size:30px;color: blue"><b>Choose possible wavelengths :</b></label>
+        <label for="ri" style="font-family: 'Lato'; font-size:30px;color: blue"
+          ><b>Choose possible wavelengths :</b></label
+        >
         <select id="ri" class="form-control">
-          <option value='./dispersivelamdagifs/n1=1.10_n2=1.00_angle=0.052_lambda=600.gif'>wavelength=600nm</option>
-          <option value='./dispersivelamdagifs/n1=1.10_n2=1.00_angle=0.063_lambda=498.gif'>wavelength=500nm</option>
-          <option value='./dispersivelamdagifs/n1=1.10_n2=1.00_angle=0.079_lambda=400.gif'>wavelength=400nm</option>
-          <option value='./dispersivelamdagifs/n1=1.10_n2=1.00_angle=0.105_lambda=298.gif'>wavelength=300nm</option>
-          <option value='./dispersivelamdagifs/n1=1.10_n2=1.00_angle=0.157_lambda=200.gif'>wavelength=200nm</option>
+          <option
+            value="./dispersivelamdagifs/n1=1.10_n2=1.00_angle=0.052_lambda=600.gif"
+            >wavelength=600nm</option
+          >
+          <option
+            value="./dispersivelamdagifs/n1=1.10_n2=1.00_angle=0.063_lambda=498.gif"
+            >wavelength=500nm</option
+          >
+          <option
+            value="./dispersivelamdagifs/n1=1.10_n2=1.00_angle=0.079_lambda=400.gif"
+            >wavelength=400nm</option
+          >
+          <option
+            value="./dispersivelamdagifs/n1=1.10_n2=1.00_angle=0.105_lambda=298.gif"
+            >wavelength=300nm</option
+          >
+          <option
+            value="./dispersivelamdagifs/n1=1.10_n2=1.00_angle=0.157_lambda=200.gif"
+            >wavelength=200nm</option
+          >
         </select>
       </div>
       <div class="form-group">
-        <label for="ri" style="font-family: Courier New; font-size:30px;color: mediumseagreen"><b>Choose possible wavelengths :</b></label>
+        <label
+          for="ri"
+          style="font-family: 'Lato'; font-size:30px;color: mediumseagreen"
+          ><b>Choose possible wavelengths :</b></label
+        >
         <select id="ri1" class="form-control">
-          <option value='./dispersivelamdagifs/n1=1.10_n2=1.00_angle=0.052_lambda=600.gif'>wavelength=600nm</option>
-          <option value='./dispersivelamdagifs/n1=1.10_n2=1.00_angle=0.063_lambda=498.gif'>wavelength=500nm</option>
-          <option value='./dispersivelamdagifs/n1=1.10_n2=1.00_angle=0.079_lambda=400.gif'>wavelength=400nm</option>
-          <option value='./dispersivelamdagifs/n1=1.10_n2=1.00_angle=0.105_lambda=298.gif'>wavelength=300nm</option>
-          <option value='./dispersivelamdagifs/n1=1.10_n2=1.00_angle=0.157_lambda=200.gif'>wavelength=200nm</option>
+          <option
+            value="./dispersivelamdagifs/n1=1.10_n2=1.00_angle=0.052_lambda=600.gif"
+            >wavelength=600nm</option
+          >
+          <option
+            value="./dispersivelamdagifs/n1=1.10_n2=1.00_angle=0.063_lambda=498.gif"
+            >wavelength=500nm</option
+          >
+          <option
+            value="./dispersivelamdagifs/n1=1.10_n2=1.00_angle=0.079_lambda=400.gif"
+            >wavelength=400nm</option
+          >
+          <option
+            value="./dispersivelamdagifs/n1=1.10_n2=1.00_angle=0.105_lambda=298.gif"
+            >wavelength=300nm</option
+          >
+          <option
+            value="./dispersivelamdagifs/n1=1.10_n2=1.00_angle=0.157_lambda=200.gif"
+            >wavelength=200nm</option
+          >
         </select>
       </div>
       <div>
-        <img src="./dispersivelamdagifs/n1=1.10_n2=1.00_angle=0.052_lambda=600.gif" class="image-swap1">
+        <img
+          src="./dispersivelamdagifs/n1=1.10_n2=1.00_angle=0.052_lambda=600.gif"
+          class="image-swap1"
+        />
       </div>
       <div>
-        <img src="./dispersivelamdagifs/n1=1.10_n2=1.00_angle=0.052_lambda=600.gif" class="image-swap2">
+        <img
+          src="./dispersivelamdagifs/n1=1.10_n2=1.00_angle=0.052_lambda=600.gif"
+          class="image-swap2"
+        />
       </div>
     </div>
-    
+
     <script
       src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
       integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
@@ -108,8 +158,5 @@
       crossorigin="anonymous"
     ></script>
     <script src="http://3Dmol.csb.pitt.edu/build/3Dmol-min.js"></script>
-
-
-    
   </body>
 </html>
