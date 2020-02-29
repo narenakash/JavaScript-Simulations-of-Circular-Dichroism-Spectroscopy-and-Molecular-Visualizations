@@ -36,29 +36,29 @@
       <h1 class="set">
         Change in Optical Rotation Due to Change in Difference of RI
       </h1>
+      <div class="flexing">
+        <button
+          class="btn btn-danger"
+          id="new"
+          onclick="window.location.href = './help.html';"
+        >
+          <b>Help!</b>
+        </button>
+
+        <button class="btn btn-warning btn-lg" id="new" onclick="on()">
+          <b>Instructions!</b>
+        </button>
+
+        <button
+          class="btn btn-success"
+          id="new"
+          onclick="window.location.href = './dispersive2.html';"
+        >
+          <b>Next!</b>
+        </button>
+      </div>
     </div>
 
-    <div class="flexing">
-      <button
-        class="btn btn-danger"
-        id="new"
-        onclick="window.location.href = './help.html';"
-      >
-        <b>Help!</b>
-      </button>
-
-      <button class="btn btn-warning btn-lg" id="new" onclick="on()">
-        <b>Instructions!</b>
-      </button>
-
-      <button
-        class="btn btn-success"
-        id="new"
-        onclick="window.location.href = './dispersive2.html';"
-      >
-        <b>Next!</b>
-      </button>
-    </div>
     <div id="overlay0" onclick="off()">
       <div id="text">
         Here wavelength of light is fixed and equal to 479nm.
@@ -71,7 +71,7 @@
 
     <div class="slct">
       <div class="form-group">
-        <label for="ri" style="font-family: 'Lato'; font-size:30px;color: blue"
+        <label for="ri" style="font-family: 'Lato'; font-size:30px;"
           ><b>Choose possible refractive indices :</b></label
         >
         <select id="ri" class="form-control">
@@ -98,9 +98,7 @@
         </select>
       </div>
       <div class="form-group">
-        <label
-          for="ri"
-          style="font-family: 'Lato'; font-size:30px;color: mediumseagreen"
+        <label for="ri" style="font-family: 'Lato'; font-size:30px;"
           ><b>Choose possible refractive indices :</b></label
         >
         <select id="ri1" class="form-control">
