@@ -1,6 +1,7 @@
 .all {
   font-family: "Lato";
   color: #ffffff;
+  text-decoration: none;
 }
 
 #content {
@@ -9,6 +10,8 @@
 }
 
 .boundingBox {
+  text-decoration: none;
+
   text-align: center;
   background: #003152;
   padding: 15px 2px 15px 2px;
