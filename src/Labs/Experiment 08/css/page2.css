@@ -1,9 +1,9 @@
 * {
+  font-family: "Lato";
 }
-
 #content {
   margin: auto;
-  width: 900px;
+  width: 1000px;
 }
 
 .boundingBox {
@@ -19,31 +19,27 @@
   background-color: #f5fffa;
   padding: 15px 2px 15px 2px;
   border-radius: 5px;
-
-  width: 320px;
-  height: 50px;
+  width: 600px;
+  height: 90px;
 }
 #leftSection {
   float: left;
-  width: 560px;
-  height: 610px;
+  width: 660px;
+  height: 900px;
 }
 #rightSection {
+  margin-top: 0;
   float: left;
   background: #f5fffa;
   background-color: #f5fffa;
   margin-left: 20px;
-  width: 300px;
-  height: 490px;
+  width: 320px;
+  height: 600px;
 }
 .start {
   float: left;
-  margin-top: 20px;
+  margin-top: 170px;
   margin-left: 20px;
   width: 145px;
   color: green;
-}
-.start a {
-  color: green;
-  text-decoration: none;
 }
