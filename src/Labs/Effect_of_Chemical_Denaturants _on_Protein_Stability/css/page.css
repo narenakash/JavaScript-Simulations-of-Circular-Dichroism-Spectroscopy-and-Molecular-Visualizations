@@ -1,0 +1,80 @@
+.all{
+	font-family: "Lato";
+	color:#ffffff;	
+}
+#flashContent {  
+	text-align:center;
+}
+#start{
+	clear:both;
+	float:right;
+	width:150px;
+	color: green;
+}
+#start a{
+	color:green;
+    text-decoration: none;
+}	
+#content{
+	margin : auto;
+	width: 900px;
+}	
+.boundingBox{	
+	text-align:center;
+	color: #ffffff;
+	background:#003152;
+	padding: 15px 2px 15px 2px;
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	/*-moz-box-shadow: 10px 10px 5px #888;
+	-webkit-box-shadow: 10px 10px 5px #888;
+	box-shadow: 10px 10px 5px #888;	*/
+}	
+.top {
+	background-color: #003152;
+	position: fixed;
+	top: 0;
+  margin-left: -495px;
+  width: 110%;
+	z-index: 100;
+	text-align: center;
+	color: #fff;
+	/*padding-bottom: 20px;*/
+  }
+
+.b1 {
+  background-color: #28A745;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+  border-radius: 5px;
+}
+
+.b2 {
+  background-color: #DC3545;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+  border-radius: 5px;
+}
+
+.b3 {
+  background-color: #FFC107;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+  border-radius: 5px;
+}		
