@@ -9,7 +9,9 @@
   />
   <link rel="stylesheet" href="./main.css">
   <link rel="stylesheet" href="./css/page2.css">
-  
+  <link rel="stylesheet" href="./css/images.css">
+
+
   <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./main.css" />
   
@@ -56,7 +58,11 @@
       4) If you find out some carbon atom to be chiral than click it if it changes color than you are correct otherwise you are wrong<br>
       5) Click it again to revert the color back to blue</b></div>
     </div>
-
+    <div id="myModal" class="modal">
+      <span class="close">&times;</span>
+      <img class="modal-content" id="img01">
+      <div id="caption"></div>
+    </div>
     <div id="overlay2" onclick="off(2)">
       <div id= "result1"></div>
     </div>
@@ -75,7 +81,7 @@
 	</tr>
 	<tr>
 		<td>
-			<img width="250" height="250" src="./mols/298K" border="5">	
+			<img id="myImg" width="250" height="250" src="./mols/298K" border="5">	
 		</td>
 		<td>
 			<img width="250" height="250" src="./mols/358K" border="5">	
@@ -131,6 +137,8 @@ crossorigin="anonymous"
 <script src="./mol1.js"></script>
 
 <script src="./overlay.js"></script>
+<script src="./scripts/images.js"></script>
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
 </body>
