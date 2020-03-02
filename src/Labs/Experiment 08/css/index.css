@@ -1,72 +1,49 @@
-*{
-    font-family: Verdana, calibri;
-    background-color: #ADD8E6;
+* {
 }
 
-#content{
-	margin : auto;
-	width: 900px;
+#content {
+  margin: auto;
+  width: 1200px;
 }
 
-.boundingBox{	
-	text-align:center;
-	background:#F5FFFA;
-	padding: 15px 2px 15px 2px;
-	border-radius: 5px;
-	-moz-border-radius: 5px;
-	-webkit-border-radius: 5px;
-	-moz-box-shadow: 10px 10px 5px #888;
-	-webkit-box-shadow: 10px 10px 5px #888;
-	box-shadow: 10px 10px 5px #888;
+.boundingBox {
+  margin-top: 4rem;
+  text-align: center;
+  padding: 15px 2px 15px 2px;
+  border-radius: 5px;
 }
-.boundingBoxLeft{	
-	text-align:center;
-	background:#F5FFFA;
-	padding: 15px 2px 15px 2px;
-	border-radius: 5px;
-	-moz-border-radius: 5px;
-	-webkit-border-radius: 5px;
-	-moz-box-shadow: 10px 10px 5px #888;
-	-webkit-box-shadow: 10px 10px 5px #888;
-	box-shadow: 10px 10px 5px #888;
-
-	width:150px;
-	height:40px;
+.boundingBoxLeft {
+  text-align: center;
+  background: #f5fffa;
+  padding: 15px 2px 15px 2px;
+  border-radius: 5px;
 }
-.boundingBoxRight{	
-	text-align:center;
-	background:#F0FFFF;
-	padding: 15px 2px 15px 2px;
-	border-radius: 5px;
-	-moz-border-radius: 5px;
-	-webkit-border-radius: 5px;
-	-moz-box-shadow: 10px 10px 5px #888;
-	-webkit-box-shadow: 10px 10px 5px #888;
-	box-shadow: 10px 10px 5px #888;
-	
-	width:680px;
-	height:40px;
+.boundingBoxRight {
+  text-align: center;
+  background: #f0ffff;
+  padding: 15px 2px 15px 2px;
+  border-radius: 5px;
 }
-#leftSection{
-	float:left;
-	width:200px;
+#leftSection {
+  float: left;
+  width: 200px;
 }
-#leftSection a{
-	text-decoration: none;	
-	color: #000000;
+#leftSection a {
+  text-decoration: none;
+  color: #000000;
 }
-#rightSection{
-	float:left;
-	margin-left: 20px;
-	width:650px;
+#rightSection {
+  float: left;
+  margin-left: 20px;
+  width: 940px;
 }
-#start{
-	clear:both;
-	float:right;
-	width:150px;
-	color: green;
+#start {
+  clear: both;
+  float: right;
+  width: 150px;
+  color: green;
 }
-#start a{
-	color:green;
-	text-decoration: none;
+#start a {
+  color: green;
+  text-decoration: none;
 }

@@ -68,7 +68,6 @@ body {
   text-decoration: none;
   display: inline-block;
   font-size: 20px;
-  margin-bottom: 30px;
 }
 .btn1 {
   background-color: blue;
@@ -151,7 +150,7 @@ body {
   top: 0;
   width: 100%;
   z-index: 100;
-  border-bottom: 10px hidden;
+  border-bottom: 50px;
   /*padding-bottom: 20px;*/
 }
 /* The container */
@@ -161,7 +160,8 @@ body {
   padding-left: 35px;
   margin-bottom: 12px;
   cursor: pointer;
-  font-size: 35px;
+  font-size: 15px;
+  font-family: "Lato";
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -284,8 +284,7 @@ body {
   position: relative;
   align-self: flex-start;
   margin-left: 5%;
-  margin-top: 20px;
-  margin-bottom: 5px;
+  margin-top: 10px;
 }
 
 .flex-container {
@@ -360,6 +359,33 @@ body {
   -ms-transform: translate(-50%, -50%);
 }
 
+#back2Top {
+  width: 150px;
+  line-height: 150px;
+  overflow: hidden;
+  z-index: 999;
+  display: none;
+  cursor: pointer;
+  -moz-transform: rotate(270deg);
+  -webkit-transform: rotate(270deg);
+  -o-transform: rotate(270deg);
+  -ms-transform: rotate(270deg);
+  transform: rotate(270deg);
+  position: fixed;
+  bottom: 50px;
+  border-radius: 50%;
+  right: 50px;
+  background-color: #4ee444;
+  color: #555;
+  text-align: center;
+  font-size: 130px;
+  text-decoration: none;
+}
+#back2Top:hover {
+  background-color: #4ee44e;
+  color: #fff;
+}
+
 .atoms {
   display: flex;
   flex-wrap: wrap;
@@ -375,7 +401,6 @@ body {
 }
 
 .slct {
-  border-top: 150px solid #eeeeee;
   display: flex;
   flex-wrap: wrap;
   float: center;
@@ -417,12 +442,31 @@ body {
   /*display: inline-block;*/
 }
 
-.image-swap1,
-.image-swap2 {
+.image-swap1 {
   height: 50vh;
-  width: 40vw;
+  width: 45vw;
 }
 
-#ri {
-  width: 80%;
+.image-swap2 {
+  height: 25vh;
+  width: 25vw;
+}
+
+#ri,
+#ri1,
+#method {
+  width: 25vw;
+}
+
+table,
+th,
+td {
+  border: 3px solid black;
+  border-collapse: collapse;
+  font-size: 20px;
+  font-family: "Lato";
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
 }
