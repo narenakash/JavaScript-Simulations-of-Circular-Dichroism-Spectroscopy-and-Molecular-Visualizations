@@ -51,6 +51,8 @@
             $("#quiz").css("margin-top","3rem");
             $(".image-swap2").css("display","none");
             $("#quiz").css("margin-left","-55rem");
+          $("#quiz").show();
+
           }
           else if(x==="k2d"){
             var values=[[0.02,0.51,0.47],[0.60,0.07,0.33],[0.84,0.00,0.16],[0.40,0.16,0.44]]
@@ -67,6 +69,8 @@
             $("#quiz").css("margin-left","-55rem");
             $(".image-swap2").css("display","none");
             $("#Contin").css("display","none");
+          $("#quiz").show();
+
           }
           else if(x==="contin"){
             var values=[[[0.05,0.53,0.43,0.944],[0.0075,0.021,0.018]],[[0.45,0.31,0.24,0.987],[0.034,0.041,0.061]],[[0.91,0,0.09,1.016],[0.0018,0.000007,0.034]],[[0.38,0.19,0.43,0.986],[0.012,0.024,0.025]]];
@@ -92,8 +96,9 @@
             $("#quiz").css("margin-top","3rem");
             $(".image-swap2").css("display","none");
             $("#quiz").css("margin-left","-55rem");
-          }
           $("#quiz").show();
+
+          }
         }
         function test(x){
           var x1=document.getElementById("ri").value;
@@ -169,7 +174,7 @@
   </div>
     <div class="slct" style="margin-top: 14rem;text-align: left;margin-left: 5rem">
       <div class="form-group" style="margin-top:-5rem">
-       <label for="ri" style="font-family: "Lato"; font-size:30px"><b>Choose sample: </b></label>
+       <label for="ri" style="font-family: 'Lato'; font-size:30px"><b>Choose sample: </b></label>
        <select id="ri" class="form-control" onchange="jsfunc(this.value)">
           <option value='./exp7/sample1.png'>Sample 1</option>
           <option value='./exp7/sample2.png'>Sample 2</option>
@@ -226,8 +231,8 @@
         <img src="" class="image-swap2">
     </div>
 
-      <div class="form-group" id="met" style="margin-top:-18rem;margin-left:-57rem">
-       <label for="method" style="font-family: "Lato"; font-size:20px"><b>Choose a Deconvolution Method: </b></label>
+      <div class="form-group" id="met" style="margin-top:-18rem;margin-left:-62rem">
+       <label for="method" style="font-family: 'Lato'; font-size:20px"><b>Choose a Deconvolution Method: </b></label>
        <select id="method" class="form-control" onclick="decon(this.value)">
           <option value="none">None</option>
           <option value='k2d'>K2D</option>
@@ -237,7 +242,7 @@
       </div>
     </div>
     <div id="quiz" style="margin-top:-5rem;margin-left:-45rem">
-          <p style="font-family:"Lato";">
+          <p style="font-family:'Lato';">
             <h4>Under which category would you classify this protein ?</h4></p>
           <form>
             <label class="container parallel"
