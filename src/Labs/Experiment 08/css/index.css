@@ -7,6 +7,8 @@
 }
 
 .boundingBox {
+  background: #003152;
+
   margin-top: 4rem;
   text-align: center;
   padding: 15px 2px 15px 2px;
@@ -14,13 +16,12 @@
 }
 .boundingBoxLeft {
   text-align: center;
-  background: #f5fffa;
   padding: 15px 2px 15px 2px;
   border-radius: 5px;
 }
 .boundingBoxRight {
   text-align: center;
-  background: #f0ffff;
+  background: #003152;
   padding: 15px 2px 15px 2px;
   border-radius: 5px;
 }
@@ -28,10 +29,7 @@
   float: left;
   width: 200px;
 }
-#leftSection a {
-  text-decoration: none;
-  color: #000000;
-}
+
 #rightSection {
   float: left;
   margin-left: 20px;

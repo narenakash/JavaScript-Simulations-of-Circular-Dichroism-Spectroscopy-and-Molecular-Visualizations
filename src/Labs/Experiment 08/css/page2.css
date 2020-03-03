@@ -8,19 +8,20 @@
 
 .boundingBox {
   text-align: center;
-  background: #f5fffa;
-  background-color: #f5fffa;
+  background: #003152;
+  background-color: #003152;
   padding: 15px 2px 15px 2px;
   border-radius: 5px;
 }
 .boundingBoxLeft {
+  font-size: 18px;
   text-align: center;
-  background: #f5fffa;
-  background-color: #f5fffa;
+  background: #003152;
+  background-color: #003152;
   padding: 15px 2px 15px 2px;
   border-radius: 5px;
   width: 600px;
-  height: 90px;
+  height: px;
 }
 #leftSection {
   float: left;
@@ -30,8 +31,8 @@
 #rightSection {
   margin-top: 0;
   float: left;
-  background: #f5fffa;
-  background-color: #f5fffa;
+  background: #003152;
+  background-color: #003152;
   margin-left: 20px;
   width: 320px;
   height: 600px;
@@ -42,4 +43,9 @@
   margin-left: 20px;
   width: 145px;
   color: green;
+}
+#cont1 {
+  background-image: url("./../images/298.gif");
+  height: 300px;
+  width: 300px;
 }
