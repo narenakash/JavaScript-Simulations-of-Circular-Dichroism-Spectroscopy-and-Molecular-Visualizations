@@ -77,7 +77,7 @@
         <b>Help!</b>
       </button>
 
-      <button class="btn btn-warning btn-lg" id="new" onclick="on(0)">
+      <button class="btn btn-warning btn-lg" id="new" onclick="on(1)">
         <b>Instructions!</b>
       </button>
 
@@ -93,15 +93,17 @@
     <div style="height:30px;width:100%;clear:both;"></div>
 
 
-    <div id="overlay0" onclick="off(0)">
-      <div id="text"><b>For each sample there are 2 asymmetric carbons coloured in magenta and orange color.<br />
-        For each of the 2 carbon atoms you have to find its configuration by rotating the molecule in such a way such that the lowest priority group attached to that carbon will not be visible to you.You can only be able to see the remaining three groups than assign them priority number with highest priority as 1 after that 2 and so on...<br />
-        Make an arc from 1->2->3 <br />
-      If that arc rotation sense is clockwise than configuration of that atom is R else S<br />
-    Select the option (R or S) whatever you get</b></div>
+    <div id="overlay1" onclick="off(1)">
+      <div id="text"><b>We are given four samples which are unknown to us right now, what we have to do is by using some deconvolution method and also using their experimental details we have to figure out the sample.
+        <br>
+        <br>
+      1) In this page, you can observe experimental details and variation of CD spectra with the wavelength for all the four samples.
+      <br />
+      <br />
+      2) Also you can observe how this samle spectrum differs from baseline spectrum which can be toggled using button present below the graph.</b></div>
     </div>
   </div>
-     <div class="slct" style="margin-top: 9rem;text-align: left;margin-left: 5rem">
+     <div class="slct" style="margin-top: 12rem;text-align: left;margin-left: 5rem">
       <div class="form-group" style="margin-top:-28rem">
        <label for="ri" style="font-family: 'Lato'; font-size:30px"><b>Choose samples: </b></label>
        <select id="ri" class="form-control" onchange="jsfunc(this.value)">
@@ -114,9 +116,9 @@
       <div style="margin-top:13rem">
         <img src="./exp7/sample1.png" class="image-swap1">
       </div>
-      <input type="button" id="testbtn" value="Remove baseline" class="btn btn-primary" style="margin-top:1.5rem; margin-left:15rem" onclick="change(this.value)">
+      <input type="button" id="testbtn" value="Remove baseline" class="btn btn-primary" style="margin-top:1.5rem; margin-left:19rem" onclick="change(this.value)">
     </div>
-    <div style="margin-top:-35rem;margin-left:5rem">
+    <div style="margin-top:-30rem;margin-left:5rem">
       <p style="font-family:'Lato'">
         <h4>Sample and Experimental Details:</h4> </p>
       <table>
