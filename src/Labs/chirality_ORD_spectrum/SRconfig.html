@@ -55,6 +55,7 @@
 
   <body>
     <div class="top">
+    	<div class="topitem">
       <h3 class="set"><b>Assigning R & S Configuration</b></h3>
       <h4 class="set">
         <b>The Asymmetric carbon atoms are coloured in Magenta and Orange. Determine
@@ -83,26 +84,35 @@
         <b>Instructions!</b>
       </button>
     </div>
-    
-    <div class="atoms">
-      <div style="font-family:'Lato';font-size:30px ; color:white" class="item">Carbon &nbsp;</div>
-      <div class="dotC" style="text-align:center;color:white" class="item"></div>
-      <div style="font-family:'Lato';font-size:30px;color:white" class="item">Oxygen &nbsp;</div>
-      <div class="dotO" style="text-align:center" class="item"></div>
-      <div style="font-family:'Lato';font-size:30px; color:white" class="item">Hydrogen &nbsp;</div>
-      <div class="dotH" style="text-align:center" class="item"></div>
-    </div> </div>
+</div>
+  <div class="topitem">  
+ <div class="atoms">
+   <div class="item">
+      <div style="font-family:'Lato';font-size:30px ; color:white">Carbon &nbsp;</div>
+      <div class="dotC" style="text-align:center;color:white"></div>
+  </div>
+    	<div class="item">
+      <div style="font-family:'Lato';font-size:30px;color:white">Oxygen &nbsp;</div>
+      <div class="dotO" style="text-align:center"></div>
+  </div>
+    	<div class="item">
+      <div style="font-family:'Lato';font-size:30px; color:white">Hydrogen &nbsp;</div>
+      <div class="dotH" style="text-align:center"></div>
+  </div>
+    </div>
+    </div>
+</div>
 
   <div style="height:100px;width:100%;clear:both;"></div>
     <div style="height:100px;width:100%;clear:both;"></div>
     <div style="height:100px;width:100%;clear:both;"></div>
 
     <div id="overlay0" onclick="off(0)">
-      <div id="text"><b>For each sample there are 2 asymmetric carbons coloured in magenta and orange color.<br />
-        For each of the 2 carbon atoms you have to find its configuration by rotating the molecule in such a way such that the lowest priority group attached to that carbon will not be visible to you.You can only be able to see the remaining three groups than assign them priority number with highest priority as 1 after that 2 and so on...<br />
-        Make an arc from 1->2->3 <br />
-      If that arc rotation sense is clockwise than configuration of that atom is R else S<br />
-    Select the option (R or S) whatever you get</b></div>
+      <div id="text"><b>1) For each sample there are 2 asymmetric carbons coloured in magenta and orange color.<br /><br />
+        2) For each of the 2 carbon atoms you have to find its configuration by rotating the molecule in such a way such that the lowest priority group attached to that carbon will not be visible to you.You can only be able to see the remaining three groups than assign them priority number with highest priority as 1 after that 2 and so on...<br /><br />
+        3) Make an arc from 1->2->3 <br /><br />
+      4) If that arc rotation sense is clockwise than configuration of that atom is R else S<br /><br />
+    5) Select the option (R or S) whatever you get</b></div>
     </div>
     <div id="overlay1" onclick="off(1)">
       <div id="result"></div>

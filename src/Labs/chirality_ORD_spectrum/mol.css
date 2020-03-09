@@ -28,7 +28,7 @@ body {
   grid-template-columns: repeat(1, auto);
 }
 .boardSR {
-  width: 120vw;
+  width: 100vw;
   height: 120vh;
   display: grid;
   justify-content: left;
@@ -37,16 +37,16 @@ body {
   grid-template-columns: repeat(4, auto);
 }
 .cell {
-  width: 400px;
-  height: 400px;
+  width: 18vw;
+  height: 35vh;
   background-color: black;
-  border: 10px solid white;
+  border: .1vw solid white;
 }
 .cellOption {
-  border-top: 10px solid white;
-  width: 400px;
-  height: 400px;
-  border-left: 30px solid white;
+  border-top: .1vh solid white;
+  width: 20vw;
+  height: 35vh;
+  border-left: .1vw solid white;
 }
 .cellhelp {
   width: 1500px;
@@ -145,12 +145,19 @@ body {
   border-top: 10px;
 }
 .top {
+  display: flex;
+  flex-flow: row nowrap;
   background-color: #003152;
   position: fixed;
   top: 0;
   width: 100%;
   z-index: 100;
   /*padding-bottom: 20px;*/
+}
+
+.topitem{
+	flex-grow: 1;
+	margin-right: 1vw;
 }
 /* The container */
 .container {
@@ -227,24 +234,26 @@ body {
 #overlay0 {
   position: fixed;
   display: none;
-  width: 100%;
+  overflow: auto;
+  width: 27%;
   height: 100%;
-  top: 0;
-  left: 0;
+  top: 23vh;
+  /*left: 0;*/
   right: 0;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0.8);
-  z-index: 103;
+  background-color: rgba(0,0,0,0.1);
+  z-index: 93;
   cursor: pointer;
 }
 
 #text {
   position: relative;
-  top: 50%;
+  top: 40%;
   left: 50%;
-  font-size: 30px;
+  font-size: 22px;
+  padding: 10px;
   font-family: "Lato";
-  color: silver;
+  color: black;
   transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
 }
@@ -273,8 +282,8 @@ body {
 }
 
 .flexing cont {
-  width: 100px;
-  height: 100px;
+  width: 10vw;
+  height: 10vh;
 }
 
 #new {
@@ -386,18 +395,23 @@ body {
 
 .atoms {
   display: flex;
-  flex-wrap: wrap;
-  float: left;
+  float: right;
+  top: 0;
+  flex-direction: column;
+  /*border : solid lightgreen 2px;*/
+  /*background-color: white;*/
 }
 
 .item {
+  display: flex;
+  flex-flow: row nowrap;
   flex-grow: 1;
-  border-left: 50px solid #003152;
+  border-left: .1vw solid #003152;
   color: white;
 }
 
 .item + .item {
-  margin-left: 2%;
+  margin-top: 5%;
 }
 
 .slct {
@@ -418,6 +432,15 @@ body {
   float: right;
   border-radius: 50%;
   background-color: lightblue;
+  /*display: inline-block;*/
+}
+
+.dotCC {
+  height: 50px;
+  width: 50px;
+  float: right;
+  border-radius: 50%;
+  background-color: mediumseagreen;
   /*display: inline-block;*/
 }
 
