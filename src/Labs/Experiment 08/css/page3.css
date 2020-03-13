@@ -1,5 +1,6 @@
 * {
   font-family: "Lato";
+  color: #f4f4f4;
 }
 
 #content {
@@ -9,13 +10,12 @@
 
 .boundingBox {
   text-align: center;
-  background: #f5fffa;
   padding: 15px 2px 15px 2px;
   border-radius: 5px;
 }
 .boundingBoxTop {
   text-align: center;
-  background: #f5fffa;
+  background: #003152;
   padding: 5px 2px 5px 2px;
   border-radius: 5px;
 
@@ -24,7 +24,7 @@
 }
 .boundingBoxBottom {
   text-align: center;
-  background: #f5fffa;
+  background: #003152;
   padding: 5px 2px 5px 2px;
   border-radius: 5px;
 
@@ -33,7 +33,7 @@
 }
 .boundingBoxBottom1 {
   text-align: center;
-  background: #f5fffa;
+  background: #003152;
   padding: 5px 2px 5px 2px;
   border-radius: 5px;
 
@@ -48,15 +48,4 @@
   float: left;
   margin-left: 95px;
   width: 400px;
-}
-#start {
-  clear: left;
-  float: right;
-  margin-left: 20px;
-  width: 150px;
-  color: green;
-}
-#start a {
-  color: green;
-  text-decoration: none;
 }

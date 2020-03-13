@@ -8,12 +8,18 @@
       href="../../libraries/bootstrap-3.3.7-dist/css/bootstrap.min.css"
     />
     <link rel="stylesheet" type="text/css" href="mfs_expt2.css" />
+    <link rel="stylesheet" type="text/css" href="./pure.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
     <script src="../../libraries/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
     <script src="../../libraries/jQueryRotate.js"></script>
     <script type="text/javascript" src="mfs_expt2.js"></script>
     <script type="text/javascript" src="mfs2_animations.js"></script>
-    <title>Florescence Principle</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Lato&display=swap"
+      rel="stylesheet"
+    />
+
+    <title class="">Measurement of CD Spectra</title>
   </head>
 
   <body>
@@ -22,9 +28,13 @@
       <!-- First row consists of title of the experiment and the reset button -->
       <div class="row">
         <div class="col-sm-12">
-          <h3>Principle of Absorption, Florescence and Phosphorescence</h3>
+          <h3 class="  btn-info">
+            Measurement of CD Spectra at Different Temperatures
+          </h3>
           <br />
-          <button id="reset_btn">Reset Experiment</button>
+          <button id="reset_btn" class="btn btn-danger">
+            Reset Experiment
+          </button>
         </div>
       </div>
       <br />
@@ -34,10 +44,10 @@
         <div class="col-sm-6" id="data_buttons">
           <!-- Manual image button displays the set of instructions to be followed to perform experiment
         On clicking this button a box modal appears over the page n displays the instruction -->
-          <img
-            id="manual_button"
-            src="../../common_images/manual_button.png"
-          /><br /><br />
+
+          <button class="btn btn-primary" id="manual_button">Manual</button>
+
+          <br /><br />
           <div id="manual" style="z-index:1200" class="modal">
             <!-- Modal content -->
             <div class="modal-content">
