@@ -69,15 +69,49 @@
     Animation of Protein Defolding with Temperature
   </h2>
   <br />
+  <script>
+    var vid = document.getElementById("1");
+
+function playVid() {
+    vid.play();
+}
+
+function pauseVid() {
+    vid.pause();
+}
+      document.getElementById("2").controls=true;
+      document.getElementById("3").controls=true;
+      document.getElementById("4").controls=true;
+    
+    </script>
   <div id="leftSection">
     <div class="board">
-      <div data-cell class="cell" class="cont" id="cont1"></div>
-      <div data-cell class="cell" class="cont" id="cont2"></div>
-      <div data-cell class="cell" class="cont" id="cont3"></div>
-      <div data-cell class="cell" class="cont" id="cont4"></div>
+      <div data-cell class="cell"  id="cont1">
+        <video id='1'  width="280" height="290" autoplay="autoplay" >
+          <source src="./lab/experiment/298K.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div data-cell class="cell"  id="cont2" >
+        <video id='2'  width="280" height="290"  autoplay="autoplay" >
+          <source src="./lab/experiment/358K.mp4" type="video/mp4">
+        </video>
+      </div>
+    
+      <div data-cell class="cell"  id="cont3" >
+        <video id='3'  width="280" height="290"  autoplay="autoplay" >
+          <source src="./lab/experiment/388Klong.mp4" type="video/mp4">
+        </video>
+      </div>
+    
+      <div data-cell class="cell " id="cont4">
+        <video id='4'  width="280" height="290"  autoplay="autoplay"  >
+          <source src="./lab/experiment/418Klong.mp4" type="video/mp4">
+        </video>
+      </div>
     </div>
 
   </div>
+
  
   <div id="rightSection" class="boundingBoxLeft">
     <h3 >OBSERVATION</h3>

@@ -3,7 +3,7 @@
 }
 #content {
   margin: auto;
-  width: 1000px;
+  width: 1100px;
 }
 
 .boundingBox {
@@ -20,12 +20,12 @@
   padding: 15px 2px 15px 2px;
   border-radius: 5px;
   width: 600px;
-  height: px;
+  height: 500px;
 }
 #leftSection {
   float: left;
-  width: 660px;
-  height: 900px;
+  width: 700px;
+  height: 1000px;
 }
 #rightSection {
   margin-top: 0;
@@ -33,18 +33,6 @@
   background: #003152;
   background-color: #003152;
   margin-left: 20px;
-  width: 320px;
+  width: 350px;
   height: 600px;
-}
-.start {
-  float: left;
-  margin-top: 170px;
-  margin-left: 20px;
-  width: 145px;
-  color: green;
-}
-#cont1 {
-  background-image: url("./../images/298.gif");
-  height: 300px;
-  width: 300px;
 }
