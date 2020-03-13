@@ -31,10 +31,20 @@
           <h3 class="  btn-info">
             Measurement of CD Spectra at Different Temperatures
           </h3>
-          <br />
-          <button id="reset_btn" class="btn btn-danger">
-            Reset Experiment
-          </button>
+          <div class="cc">
+            <button id="reset_btn" class="btn btn-danger ">
+              Reset
+            </button>
+            <input
+              id="skip_btn"
+              class="btn btn-info"
+              type="button"
+              onclick="window.location.href = './../../../page5.html' "
+              value="Skip"
+            />
+
+            <button class="btn btn-primary" id="manual_button">Manual</button>
+          </div>
         </div>
       </div>
       <br />
@@ -44,8 +54,8 @@
         <div class="col-sm-6" id="data_buttons">
           <!-- Manual image button displays the set of instructions to be followed to perform experiment
         On clicking this button a box modal appears over the page n displays the instruction -->
-
-          <button class="btn btn-primary" id="manual_button">Manual</button>
+          <br />
+          <br />
 
           <br /><br />
           <div id="manual" style="z-index:1200" class="modal">

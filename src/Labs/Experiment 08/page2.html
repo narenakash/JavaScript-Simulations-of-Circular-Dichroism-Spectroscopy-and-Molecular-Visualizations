@@ -70,7 +70,7 @@
   </h2>
   <br />
   <script>
-    var vid = document.getElementById("1");
+var vid = document.getElementById("1");
 
 function playVid() {
     vid.play();
@@ -79,15 +79,13 @@ function playVid() {
 function pauseVid() {
     vid.pause();
 }
-      document.getElementById("2").controls=true;
-      document.getElementById("3").controls=true;
-      document.getElementById("4").controls=true;
+
     
     </script>
   <div id="leftSection">
     <div class="board">
-      <div data-cell class="cell"  id="cont1">
-        <video id='1'  width="280" height="290" autoplay="autoplay" >
+      <div data-cell class="cell"  id="cont1" onclick="pauseVid()">
+        <video id="1"  width="280" height="290" autoplay="autoplay" >
           <source src="./lab/experiment/298K.mp4" type="video/mp4">
         </video>
       </div>

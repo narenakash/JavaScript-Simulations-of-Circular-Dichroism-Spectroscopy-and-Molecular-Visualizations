@@ -1,4 +1,4 @@
-. {
+* {
   font-family: "Lato";
 }
 
@@ -20,7 +20,13 @@ h3 {
   height: 3em;
   font-size: 2em;
 }
-
+#skip_btn {
+  left: 790px;
+  position: absolute;
+  cursor: pointer;
+  height: 3em;
+  font-size: 1.3em;
+}
 #reset_btn {
   margin: auto;
   display: block;
@@ -92,6 +98,9 @@ h3 {
   color: white;
   text-decoration: none;
   cursor: pointer;
+}
+.cc {
+  display: flex;
 }
 
 .modal-header {
