@@ -2,6 +2,9 @@
 *::before {
   box-sizing: border-box;
 }
+* {
+  font-family: "Lato";
+}
 body {
   margin: 0;
   background-color: #f4f4f4;

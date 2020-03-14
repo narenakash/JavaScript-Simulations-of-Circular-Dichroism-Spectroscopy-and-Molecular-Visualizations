@@ -1,0 +1,428 @@
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Lato&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <style></style>
+    <!--[if lte IE 8
+      ]><script
+        language="javascript"
+        type="text/javascript"
+        src="flot/excanvas.min.js"
+      ></script
+    ><![endif]-->
+    <script
+      language="javascript"
+      type="text/javascript"
+      src="flot/jquery.js"
+    ></script>
+    <script
+      language="javascript"
+      type="text/javascript"
+      src="flot/jquery.flot.js"
+    ></script>
+    <script
+      language="javascript"
+      type="text/javascript"
+      src="scripts/E8dataJSON.js"
+    ></script>
+    <script type="text/javascript">
+      var curr;
+      var analysisData = new Array(20);
+      var helicityFlag = new Array(20);
+      var start, end, gap;
+      $(document).ready(function() {
+        start = parseInt(document.getElementById("start").value);
+        end = parseInt(document.getElementById("end").value);
+        gap = parseInt(document.getElementById("gap").value);
+        curr = start;
+        plotStartTemp(start + "C");
+      });
+      function changeStartTemp(temp) {
+        if (temp != "all") {
+          curr = parseInt(temp);
+          plotStartTemp(temp + "C");
+        } else {
+          plotStartTemp(temp);
+        }
+      }
+
+      var start = 0;
+      var end = 100;
+      var gap = 5;
+      function plotStartTemp(temp) {
+        $(function() {
+          if (temp == "all") {
+            var d = [];
+            for (var i = start; i <= end; i += gap) {
+              d[i] = [];
+              for (var j = 190; j <= 260; j++) {
+                temp1 = i + "C";
+                d[i].push([j, dataJSON[260 - j][temp1]]);
+              }
+            }
+            var dataLabels = [];
+            for (var i = start; i <= end; i += gap) {
+              dataLabels.push({
+                label: "<span style='font-size:10px;'> " + i + " C </span>",
+                data: d[i]
+              });
+            }
+            $.plot($("#placeholder"), dataLabels, {
+              grid: { hoverable: true, clickable: false },
+              yaxis: { min: -20000, max: 30000 }
+            });
+          } else {
+            var d1 = [];
+            for (var i = 190; i <= 260; i += 1) {
+              d1.push([i, dataJSON[260 - i][temp]]);
+            }
+            var plot = $.plot(
+              $("#placeholder"),
+              [
+                {
+                  label:
+                    "MRE Vs &lambda;(in nm)<br> At Temperature: <span style='font-size:20px;'> " +
+                    temp +
+                    " </span>",
+                  data: d1,
+                  color: "red"
+                }
+              ],
+              {
+                grid: { hoverable: true, clickable: true },
+                yaxis: { min: -20000, max: 30000 }
+              }
+            );
+            document.getElementById(curr * 100).innerHTML = dataJSON2[curr][2];
+            helicityFlag[(curr - start) / gap] = true;
+          }
+
+          var previousPoint = null;
+          $("#placeholder").bind("plothover", function(event, pos, item) {
+            $("#x").text(pos.x.toFixed(2));
+            $("#y").text(pos.y.toFixed(2));
+          });
+
+          $("#placeholder").bind("plotclick", function(event, pos, item) {
+            if (item) {
+              $("#clickdata").text(
+                "You clicked point ( " +
+                  pos.x.toFixed(2) +
+                  " , " +
+                  pos.y.toFixed(2) +
+                  " )."
+              );
+              document.getElementById(
+                "temp" + curr + "C"
+              ).innerHTML = pos.y.toFixed(2);
+              analysisData[(curr - start) / gap] = [curr, pos.y.toFixed(2)];
+              plot.unhighlight();
+              plot.highlight(item.series, item.datapoint);
+            }
+          });
+        });
+      }
+      function nextGraph() {
+        if (curr + gap > end) {
+          return;
+        }
+        curr += gap;
+        var next = curr + "C";
+        plotStartTemp(next);
+        document.getElementById("tempDropDown").options[
+          (curr - start) / gap
+        ].selected = true;
+      }
+      function prevGraph() {
+        if (curr - gap < start) {
+          return;
+        }
+        curr -= gap;
+        var prev = curr + "C";
+        plotStartTemp(prev);
+        document.getElementById("tempDropDown").options[
+          (curr - start) / gap
+        ].selected = true;
+      }
+
+      function genAnalysis(flag) {
+        var st = 1;
+        var st2 = 1;
+        for (var i = 0; i <= (end - start) / gap; i++) {
+          if (!analysisData[i]) {
+            st = 0;
+          }
+          if (!helicityFlag[i]) {
+            st2 = 0;
+          }
+        }
+        if (st2 == 0) {
+          return;
+        }
+        if (st == 0 && flag == 0) {
+          alert("Fill all the ?'s");
+          return;
+        }
+        d1 = [];
+        d2 = [];
+        d3 = [];
+        for (var i = start; i <= end; i += gap) {
+          d1.push([i, dataJSON2[i][0]]);
+          d2.push([i, dataJSON2[i][1]]);
+          d3.push([i, dataJSON2[i][2]]);
+        }
+        if (flag == 0) {
+          var plot = $.plot(
+            $("#placeholder"),
+            [
+              {
+                label: "Temperature Vs MRE values at 222 nm selected by you",
+                data: analysisData,
+                points: { show: true },
+                lines: { show: false },
+                color: "red"
+              },
+              {
+                label: "Temperature Vs MRE values at 222 nm acctually recorded",
+                data: d1,
+                points: { show: true },
+                lines: { show: false },
+                color: "green"
+              }
+            ],
+            {
+              grid: { hoverable: true, clickable: true },
+              yaxis: { min: -17000, max: -9000 }
+            }
+          );
+        } else {
+          var plot = $.plot(
+            $("#placeholder"),
+            [
+              {
+                label: "Temperature Vs %Helicity",
+                data: d3,
+                points: { show: true },
+                lines: { show: false },
+                color: "red"
+              }
+            ],
+            {
+              grid: { hoverable: true, clickable: true },
+              yaxis: { min: 20, max: 55 }
+            }
+          );
+        }
+        document.getElementById("graph1_Lower").style.display = "none";
+        document.getElementById("graph2_Lower").style.display = "";
+      }
+
+      function removeAnalysis() {
+        plotStartTemp(curr + "C");
+        document.getElementById("graph2_Lower").style.display = "none";
+        document.getElementById("graph1_Lower").style.display = "";
+      }
+    </script>
+    <style type="text/css">
+          * {
+            font-family: "Lato";
+          }
+
+          #content {
+            margin: auto;
+            width: 1150px;
+            font-size: 15px;
+            margin-top: 20px;
+          }
+          .boundingBox {
+            text-align: center;
+            padding: 5px 5px 5px 5px;
+          }
+          .boundingBox1 {
+      border: none;
+      color: white;
+      padding: 15px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 20px;
+       }
+          
+    </style>
+  </head>
+  <body>
+    <div id="content">
+      <div style="float:left; width:700px; text-align:left;">
+        <h1 class="boundingBox1 btn-info" style=" color: #f4f4f4; width:700px">
+          Data Analysis And Calculation
+		</h1>
+		
+		<br />
+		<br />
+        <div id="placeholder" style="width:700px;height:400px;"></div>
+        <div style="margin-left: 50px;" id="graph1_Lower">
+          <h3 class="boundingBox1  btn-info" style="width:170px; color:#f4f4f4">
+            CONTROLS
+		  </h3>
+		  <br>
+          <input
+            type="button"
+            value="Previous"
+            onclick="prevGraph()"
+            class="boundingBox1 btn btn-success"
+          />&nbsp;&nbsp;
+          <input
+            type="button"
+            value="Next"
+            onclick="nextGraph()"
+            class="boundingBox1 btn btn-success"
+          />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; See Spectrum At
+          Temperature:
+          <select
+            name="temperature"
+            onchange="changeStartTemp(this.options[this.selectedIndex].value)"
+            id="tempDropDown"
+            class="boundingBox"
+          >
+            <script>
+              for (var i = 5; i <= 100; i += 5) {
+                document.write(
+                  "<option value='" + i + "'>" + i + " C</option>"
+                );
+              }
+            </script>
+
+            <option value="all">See All</option>
+          </select>
+          <p id="hoverdata">
+            Mouse Hover Position: (<span id="x">0</span>,
+            <span id="y">0</span>).<br />
+            <span id="clickdata"></span>
+          </p>
+
+          <h3 class="boundingBox1  btn-info" style=" color: #f4f4f4 ;">INSTRUCTIONS</h3>
+          <ul style="font-size: large;">
+            <li>
+              Click on the graph at 222nm to fill up the Observation Table
+            </li>
+            <li>Click on Next to see the graph at next higher temperature</li>
+            <li>
+              Click on the Previous to see the graph at previous lower
+              temperature
+            </li>
+            <li>
+              Click on Analysis to see the change of parameter with temperature
+            </li>
+          </ul>
+		</div>
+		<button
+		class="boundingBox1 btn btn-dark"
+		onclick='window.location="./../../quiz exp 8/game.html"'
+		style="margin-left: 50px;"
+	  >
+		Go To Analysis
+	  </button>
+        <div style="margin-left: 50px;display:none;" id="graph2_Lower">
+          <center>
+            <input
+              type="button"
+              value="GO BACK"
+              onclick="removeAnalysis();"
+              class="boundingBox1 btn btn-success"
+            />
+          </center>
+        </div>
+      </div>
+
+      <div style="float:left; width:400px; margin-left:50px; font-size:16px;">
+        <h2 class="boundingBox1 btn-info" style=" color: #f4f4f4; width:400px">Observations</h2>
+        <ul style="font-size:18px">
+          <li>
+            User has to fill up second column by clicking at &lambda;=222nm
+            value on the graph.
+          </li>
+          <li>
+            Information about the secondary structure is obtained after
+            deconvolution of CD spectra.
+          </li>
+        </ul>
+
+        <table  class="table"   "width="100%" border="1" style="font-size:18px;">
+          <tr>
+            <th width="33%">Temperature</th>
+            <th width="34%">MRE Values at 222 nm</th>
+            <th width="33%">% Helicity</th>
+          </tr>
+
+          <script>
+            for (var i = 5; i <= 100; i += 5) {
+              document.write(
+                "  <tr> <td <option value=" +
+                  i +
+                  "C" +
+                  ">" +
+                  i +
+                  " C</option> </td>"
+              );
+              document.write("  <td align='center' id=temp" + i + "C>?</td>");
+              document.write(
+                "  <td align='center' id=" + i * 100 + "></td></tr>"
+              );
+            }
+          </script>
+          <tr border="1" align="center">
+            <td></td>
+            <td>
+              <input
+                type="button"
+                value="Plot"
+                onclick="genAnalysis(0)"
+                class="boundingBox1 btn btn-success"
+              />
+            </td>
+            <td>
+              <input
+                type="button"
+                value="Plot"
+                onclick="genAnalysis(1)"
+                class="boundingBox1 btn btn-success"
+              />
+            </td>
+          </tr>
+        </table>
+
+        <center>
+          <br /><br />
+          <tr>
+            <center>
+          
+            </center>
+          </tr>
+        </center>
+      </div>
+      <input type="hidden" value="5" id="start" />
+      <input type="hidden" value="100" id="end" />
+      <input type="hidden" value="5" id="gap" />
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
