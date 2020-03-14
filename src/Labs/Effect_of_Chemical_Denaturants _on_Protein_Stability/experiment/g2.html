@@ -1,13 +1,18 @@
 <html>
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <!--[if lte IE 8
-      ]><script
-        language="javascript"
-        type="text/javascript"
-        src="flot/excanvas.min.js"
-      ></script
-    ><![endif]-->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+
+    <link
+      href="https://fonts.googleapis.com/css?family=Lato&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./main.css" />
     <script
       language="javascript"
       type="text/javascript"
@@ -237,48 +242,65 @@
     </script>
     <style type="text/css">
       * {
-        font-family: Verdana, calibri;
+        font-family: "Lato";
       }
 
       #content {
         margin: auto;
         width: 1200px;
-        font-size: 13px;
+        font-size: 18px;
       }
       .boundingBox {
         text-align: center;
-        background: #cccfff;
         padding: 5px 5px 5px 5px;
         border-radius: 5px;
-        -moz-border-radius: 5px;
-        -webkit-border-radius: 5px;
-        -moz-box-shadow: 5px 5px 5px #888;
-        -webkit-box-shadow: 5px 5px 5px #888;
-        box-shadow: 5px 5px 5px #888;
+      }
+      .boundingBox1 {
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 22px;
       }
     </style>
   </head>
   <body>
     <div id="content">
       <div style="float:left; width:600px; text-align:left;">
-        <h1 class="boundingBox">Data Analysis And Calculation</h1>
+        <h1 class="boundingBox1 btn-info" style="width:600px">
+          Data Analysis And Calculation
+        </h1>
         <br />
         <div id="placeholder" style="width:600px;height:400px;"></div>
         <div style="margin-left: 50px;" id="graph1_Lower">
-          <h3 class="boundingBox" style="width:110px;">CONTROLS</h3>
+          <h3 class="boundingBox1  btn-info" style="width:210px;">
+            CONTROLS
+          </h3>
+          <br />
           <input
             type="button"
             value="Previous"
+            class="boundingBox1 btn btn-success"
             onclick="prevGraph()"
-            class="boundingBox"
           />&nbsp;&nbsp;
           <input
             type="button"
             value="Next"
+            class="boundingBox1 btn btn-success"
             onclick="nextGraph()"
-            class="boundingBox"
-          />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; See Spectrum At
-          Concentration:
+          />&nbsp;&nbsp;
+          <input
+            type="button"
+            value="Analysis"
+            class="boundingBox1 btn btn-dark"
+            onclick="window.location.href = './../quiz exp 9/game.html' "
+          />
+          <br />
+          <br />
+
+          See Spectrum At Concentration:
           <select
             name="temperature"
             onchange="changeStartTemp(this.options[this.selectedIndex].value)"
@@ -294,7 +316,7 @@
             </script>
             <option value="all">See All</option>
           </select>
-          <p id="hoverdata" style="font-size:11px;">
+          <p id="hoverdata" style="font-size:16px;">
             Mouse Hover Position: (<span id="x">0</span>,
             <span id="y">0</span>). <span id="clickdata"></span>
           </p>
@@ -305,15 +327,17 @@
               type="button"
               value="GO BACK"
               onclick="removeAnalysis();"
-              class="boundingBox"
+              class="boundingBox1 btn btn-success"
             />
           </center>
         </div>
       </div>
 
-      <div style="float:left; width:550px; margin-left:50px; font-size:16px;">
-        <h2 class="boundingBox">Observations</h2>
-        <ul style="font-size:12px">
+      <div style="float:left; width:550px; margin-left:50px; font-size:18px;">
+        <h2 class="boundingBox1 btn-info" style="width: 690px;">
+          Observations
+        </h2>
+        <ul style="font-size:18px">
           <li>
             User has to fill up second column by clicking at &lambda;=222nm
             value on the graph.
@@ -324,7 +348,7 @@
           </li>
         </ul>
 
-        <table class="table" width="100%" border="1" style="font-size:12px;">
+        <table class="table" width="100%" border="1" style="font-size:18px;">
           <tr>
             <th width="16%">Concentration</th>
             <th width="14%">MRE Value at 222 nm</th>
@@ -353,7 +377,7 @@
                 type="button"
                 value="Plot"
                 onclick="genAnalysis('none')"
-                class="boundingBox"
+                class=" btn btn-success"
               />
             </td>
             <td>
@@ -361,7 +385,7 @@
                 type="button"
                 value="Plot"
                 onclick="genAnalysis(0)"
-                class="boundingBox"
+                class=" btn btn-success"
               />
             </td>
             <td>
@@ -369,7 +393,7 @@
                 type="button"
                 value="Plot"
                 onclick="genAnalysis(1)"
-                class="boundingBox"
+                class=" btn btn-success"
               />
             </td>
             <td>
@@ -377,7 +401,7 @@
                 type="button"
                 value="Plot"
                 onclick="genAnalysis(2)"
-                class="boundingBox"
+                class=" btn btn-success"
               />
             </td>
             <td>
@@ -385,7 +409,7 @@
                 type="button"
                 value="Plot"
                 onclick="genAnalysis(3)"
-                class="boundingBox"
+                class=" btn btn-success"
               />
             </td>
             <td>
@@ -393,7 +417,7 @@
                 type="button"
                 value="Plot"
                 onclick="genAnalysis(4)"
-                class="boundingBox"
+                class="s btn btn-success"
               />
             </td>
           </tr>
@@ -401,8 +425,8 @@
 
         <center></center>
         <br /><br />
-        <h3 class="boundingBox" style="width:100%;">INSTRUCTIONS</h3>
-        <ul style="font-size:13px;">
+        <h3 class="boundingBox1 btn-info" style="width:100%;">INSTRUCTIONS</h3>
+        <ul style="font-size:18px;">
           <li>Click on the graph at 222nm to fill up the Observation Table.</li>
           <li>Click on Next to see the graph at next higher concentration.</li>
           <li>
@@ -418,15 +442,13 @@
       <input type="hidden" value="8" id="end" />
       <input type="hidden" value="2" id="gap" />
       <br /><br /><br />
-      <center>
-        <button
-          class="boundingBox"
-          onclick='window.location="./../quiz exp 9/index.html";'
-        >
-          Go To Analysis
-        </button>
-      </center>
+      <center></center>
     </div>
     <!-- #content -->
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
   </body>
 </html>
