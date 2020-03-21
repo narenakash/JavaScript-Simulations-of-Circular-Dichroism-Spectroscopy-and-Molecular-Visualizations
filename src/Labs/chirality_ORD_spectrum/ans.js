@@ -46,3 +46,21 @@ function incorrecto(){
 		timer: 800,
 	});
 }
+
+function corr(){
+	swal({
+		title : "Good Job",
+		icon: "success",
+		butttons: false,
+		timer: 800,
+	});
+}
+
+function incorr(){
+		swal({
+		title : "Try Again!!!",
+		icon: "error",
+		butttons: false,
+		timer: 800,
+	});
+}
