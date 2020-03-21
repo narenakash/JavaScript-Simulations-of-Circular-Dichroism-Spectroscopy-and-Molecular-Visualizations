@@ -317,13 +317,15 @@ body {
 #overlay1 {
   position: fixed;
   display: none;
-  width: 15%;
-  height: 35%;
-  top: 40%;
-  left: 45%;
-  border-radius: 100%;
-  /*background-color: rgba(0, 0, 0, .8);*/
-  z-index: 3;
+  overflow: auto;
+  width: 27%;
+  height: 100%;
+  top: 23vh;
+  /*left: 0;*/
+  right: 10vw;
+  bottom: 0;
+  background-color: rgba(0,0,0,0.1);
+  z-index: 93;
   cursor: pointer;
 }
 
@@ -474,3 +476,47 @@ body {
 #ri1 {
   width: 25vw;
 }
+
+#smp {
+  width:15vw;
+}
+
+.grid-container {
+  margin-top: 30vh;
+  margin-left: 15vw;
+  display: inline-grid;
+  grid-gap: 4vw 10vh;
+}
+
+.item1{
+  grid-column-start: 1;
+  grid-column-end: 3;
+  grid-row-start: 1;
+  grid-row-end:2;
+}
+
+.item2{
+  grid-column-start:1;
+  grid-column-end: 2;
+  grid-row-start: 2;
+  grid-row-end: 3;
+}
+
+.item3{
+  grid-column-start:2;
+  grid-column-end: 3;
+  grid-row-start: 2;
+  grid-row-end: 3;
+}
+
+.item4{
+  grid-column-start:1;
+  grid-column-end: 4;
+  grid-row-start: 3;
+  grid-row-end: 4;
+}
+
+#img2{
+  display: none;
+}
+
