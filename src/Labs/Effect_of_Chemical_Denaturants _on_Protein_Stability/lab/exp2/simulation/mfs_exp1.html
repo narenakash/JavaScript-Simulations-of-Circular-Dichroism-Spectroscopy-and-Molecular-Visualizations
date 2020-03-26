@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="../../libraries/bootstrap-3.3.7-dist/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" type="text/css" href="mfs_expt2.css" />
+    <link rel="stylesheet" type="text/css" href="./pure.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+    <script src="../../libraries/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+    <script src="../../libraries/jQueryRotate.js"></script>
+    <script type="text/javascript" src="mfs_expt2.js"></script>
+    <script type="text/javascript" src="mfs2_animations.js"></script>
+    <link
+      href="https://fonts.googleapis.com/css?family=Lato&display=swap"
+      rel="stylesheet"
+    />
+
+    <title class="">Measurement of CD Spectra</title>
+  </head>
+
+  <body>
+    <!-- Body is divided into three rows -->
+    <div class="container">
+      <!-- First row consists of title of the experiment and the reset button -->
+      <div class="row">
+        <div class="col-sm-12">
+          <h3 class="  btn-info">
+            Measurement of CD Spectra at Different Temperatures
+          </h3>
+          <div class="cc">
+            <button id="reset_btn" class="btn btn-danger ">
+              Reset
+            </button>
+            <input
+              id="skip_btn"
+              class="btn btn-info"
+              type="button"
+              onclick="window.location.href = './../../../experiment/g2.html' "
+              value="Skip"
+            />
+
+            <button class="btn btn-primary" id="manual_button">Manual</button>
+          </div>
+        </div>
+      </div>
+      <br />
+
+      <!-- Second row consists of two columns with one column containing buttons ie manual and data and the other containing shelf with apparatus -->
+      <div class="row">
+        <div class="col-sm-6" id="data_buttons">
+          <!-- Manual image button displays the set of instructions to be followed to perform experiment
+        On clicking this button a box modal appears over the page n displays the instruction -->
+          <br />
+          <br />
+
+          <br /><br />
+          <div id="manual" style="z-index:1200" class="modal">
+            <!-- Modal content -->
+            <div class="modal-content">
+              <div class="modal-header">
+                <span class="close">&times</span>
+                <h2>Manual</h2>
+              </div>
+
+              <div class="modal-body" style="text-align:left;">
+                <ol>
+                  <li>
+                    Click on SOLUTION to bring it to the experiment table.
+                  </li>
+                  <li>Click on the PIPPETTE to bring it to the table</li>
+                  <li>
+                    Click on the pipette again to transfer the solution into the
+                    cuvette.
+                  </li>
+                  <li>
+                    Click on the CUVETTE to bring it to the experiment table
+                  </li>
+                  <li>
+                    Click on the lid of sample chamber of the Spectrometer to
+                    open it for placing the sample in the instrument.
+                  </li>
+                  <li>
+                    Click on the cuvette to place it in the sample holder of the
+                    chamber.
+                  </li>
+                  <li>
+                    Close the lid of the sample chamber by clicking on the lid.
+                  </li>
+                  <li>
+                    To run the Excitation Spectral Scan, open the measurement
+                    set-up screen by clicking on the fluorescence measurement
+                    icon on the computer monitor.
+                  </li>
+                  <li>Select the Excitation Scan Mode on the screen.</li>
+                  <li>
+                    On the screen, enter the Emission wavelength: 515 nm,
+                    Excitation Start Wavelength: 300 nm and Excitation End
+                    wavelength: 600 nm. One chooses the Excitation Slit(nm) and
+                    Emission Slit(nm) values (here 2.5 nm/2.5 nm) and the scan
+                    speed value (here “medium” ) also.
+                  </li>
+                  <li>
+                    Click on the 'OK' button on the set-up screen to start the
+                    wavelength scan for excitation spectrum.
+                  </li>
+                  <li>
+                    Click on 'Close' button when spectral scan is complete. In
+                    real operation, the scan data are stored in the computer.
+                    The instrument stores data and therefore asks for the Sample
+                    File name. One enters a file name to save the data.
+                  </li>
+                  <li>
+                    To run the Emission Spectral Scan of the sample, open the
+                    instrument set-up screen by clicking on the fluorescence
+                    measurement icon on the computer monitor.
+                  </li>
+                  <li>Select the Emission Scan Mode on the screen.</li>
+                  <li>
+                    On the screen, enter the Excitation wavelength: 425 nm,
+                    Emission Start Wavelength: 435 nm and Emission End
+                    wavelength: 700 nm. Emission Start Wavelength value should
+                    be larger than the excitation wavelength. Often the the
+                    maximum absorbance wavelength is chosen as the excitation
+                    wavelength. The Emission End Wavelength value depends on the
+                    sample, instrument, etc. One chooses the Excitation Slit(nm)
+                    and Emission Slit(nm) values (here 2.5 nm/2.5 nm) and the
+                    scan speed value (here “medium” ) also.
+                  </li>
+                  <li>
+                    Click on the 'OK' button on the set-up screen to run the
+                    wavelength scan for emission spectrum. One has to be sure
+                    that the solvent blank does not fluoresce in the wavelength
+                    range of interest.
+                  </li>
+                  <li>
+                    Click on 'Close' button when spectral scan is complete. In
+                    real operation, the scan data are stored in the computer.
+                    The instrument stores data and therefore asks for the Sample
+                    File name. One enters a file name to save the data.
+                  </li>
+                  <li>
+                    To take the cuvette out of the sample chamber, first click
+                    on the sample chamber lid to open it and then on the
+                    cuvette.
+                  </li>
+                  <li>
+                    Close the lid of the sample chamber by clicking on the lid.
+                  </li>
+                  <li>Click on Reset button to start over the measurements.</li>
+                  <li>Collect all data by clicking on the Data tab.</li>
+                  <li>
+                    Find out the maximum excitation and emission wavelengths and
+                    intensities.
+                  </li>
+                </ol>
+              </div>
+            </div>
+          </div>
+          <!-- Data image button displays the graphs obtained on plotting absorbance against wavelength for different sample path lengths
+            On clicking this button a new page displaying the graphs for three different path length is opened  -->
+          <img id="data_button" src="../../common_images/data_button.png" />
+        </div>
+
+        <div class="col-sm-6" id="apparatus">
+          <img id="shelf" src="../../common_images/shelf1.png" />
+          <img id="round-bottom-flask" src="images/round-bottom-flask.png" />
+          <img id="pipette" src="../../common_images/pipette.png" />
+          <img id="cuvette" src="../../common_images/cuvette.png" />
+        </div>
+      </div>
+      <br /><br /><br />
+
+      <!-- Third row consists of table with various devices on it  -->
+      <div class="row">
+        <div class="col-sm-12" id="table">
+          <img
+            id="table_with_spec"
+            src="../../common_images/spec_fluormeter.png"
+          />
+          <!-- button to scan the sample on the computer-->
+          <img
+            id="comp_trans_button"
+            src="../../common_images/vertical_button.png"
+          />
+          <!-- buttons to open and close the spectrophotometer lid -->
+          <img
+            id="spectrolid_trans_button"
+            src="../../common_images/vertical_button.png"
+          />
+          <img
+            id="spectrolid_trans_button1"
+            src="../../common_images/vertical_button.png"
+          />
+          <!-- text that shows the instructions to be followed next -->
+          <div id="demo"></div>
+          <!-- button to switch on and switch off the spectrophotometer -->
+          <img
+            id="power_trans_button"
+            src="../../common_images/vertical_button.png"
+          />
+        </div>
+      </div>
+
+      <!-- Florescence graph validation -->
+      <img id="clockScreen" src="../../common_images/clock.png" />
+      <!-- Image of the hand of the clock -->
+      <img id="clockHand" src="../../common_images/hand.png" />
+      <!-- Image of the greyed background displayed as a background while scanning the sample -->
+      <img id="scan" src="../../common_images/transparent.png" />
+      <!-- This image is used to enter the input values to display the graph1/graph2-->
+      <img id="mfs_form1" src="../../common_images/mfs_form1.png" />
+      <img id="mfs_form2" src="../../common_images/mfs_form2.png" />
+      <!--Displays the graph by clicking on ok button -->
+      <img
+        id="ok_btn"
+        class="data_validation"
+        src="../../common_images/vertical_button.png"
+      />
+      <!-- dropdown box to select the graphs to display -->
+      <select id="select" class="data_validation">
+        <option id="Excitation" value="Excitation">Excitation</option>
+        <option id="Emission" value="Emission">Emission</option>
+      </select>
+      <!--graph input values -->
+      <input
+        id="input1"
+        class="data_validation"
+        type="text"
+        autocomplete="off"
+      />
+      <input
+        id="input2"
+        class="data_validation"
+        type="text"
+        autocomplete="off"
+      />
+      <input
+        id="input3"
+        class="data_validation"
+        type="text"
+        autocomplete="off"
+      />
+      <!-- To display the videos on entering the correct input values -->
+      <video id="video1" class="videos">
+        <source src="videos/graph1.mp4" type="video/mp4" />
+      </video>
+      <video id="video2" class="videos">
+        <source src="videos/graph2.mp4" type="video/mp4" />
+      </video>
+      <!-- To close the graphs video -->
+      <img id="disposegraph" src="../../common_images/vertical_button.png" />
+    </div>
+  </body>
+</html>
