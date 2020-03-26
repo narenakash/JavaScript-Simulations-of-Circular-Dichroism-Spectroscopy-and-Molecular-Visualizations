@@ -43,9 +43,9 @@
       var helicityFlag = new Array(20);
       var start, end, gap;
       $(document).ready(function() {
-        start = parseInt(document.getElementById("start").value);
-        end = parseInt(document.getElementById("end").value);
-        gap = parseInt(document.getElementById("gap").value);
+        start = parseInt(document.getElementById("one").value);
+        end = parseInt(document.getElementById("two").value);
+        gap = parseInt(document.getElementById("three").value);
         curr = start;
         plotStartTemp(start + "C");
       });
@@ -57,21 +57,20 @@
           plotStartTemp(temp);
         }
       }
+var count=0
+if (count=0){
 
-      var start = 0;
-      var end = 100;
-      var gap = 5;
-function SubmitFunction(){
- nattural= document.getElementById("testingid").value;
- if (nattural){
-  console.log(nattural)
-
- }
- else{
-   console.log("It is Null")
- }
 }
-
+var start = 5;
+var end = 100;
+var gap = 5;
+function SubmitFunction(){
+  count=count+1;
+  start = parseInt(document.getElementById("one").value);
+  end = parseInt(document.getElementById("two").value);
+  gap = parseInt(document.getElementById("three").value);
+   
+}
 
       function getOptions(opt){
         var options = "";
@@ -323,7 +322,7 @@ function SubmitFunction(){
             class="boundingBox"
           >
             <script>
-              for (var i = 5; i <= 100; i += 5) {
+              for (var i = start; i <=end ; i += gap) {
                 document.write(
                   "<option value='" + i + "'>" + i + " C</option>"
                 );
@@ -333,7 +332,6 @@ function SubmitFunction(){
             <option value="all">See All</option>
           </select>
 
-          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Parameters</button>
 
 
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -349,7 +347,7 @@ function SubmitFunction(){
         <form>
           <div class="form-group">
             <label for="recipient-name" class="col-form-label">Starting Temperature:</label>
-            <select name="start" class="form-control" id="testingid" onchange="getOptions(this.options[this.selectedIndex].value)">
+            <select name="start" class="form-control" id="one" onchange="getOptions(this.options[this.selectedIndex].value)">
               <script type="text/javascript">
                 for(var i = 5 ; i <= 100 ; i+=5){
                   document.write("<option value='"+i+"'>"+i+" C</option>");
@@ -361,7 +359,7 @@ function SubmitFunction(){
           </div>
           <div class="form-group">
             <label for="recipient-name" class="col-form-label">Select Final Temperature	:</label>
-            <select name="end" class="form-control"  id="end">
+            <select name="end" class="form-control"  id="two">
               <script type="text/javascript">
                  for(var i = 5 ; i <= 100 ; i+=5){
                 if(i == 100){	
@@ -379,7 +377,7 @@ function SubmitFunction(){
           </div>
           <div class="form-group">
             <label for="recipient-name" class="col-form-label">Select the Step Size	:</label>
-            <select name="gap" class="form-control" id="gap">
+            <select name="gap" class="form-control" id="three">
               <script type="text/javascript">
                 for(var i = 5 ; i < 25 ; i+=5){
                   document.write("<option value='"+i+"'>"+i+" C</option>");
@@ -395,7 +393,7 @@ function SubmitFunction(){
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary" onclick="SubmitFunction()">Set</button>
+        <button type="button" class="btn btn-primary" onclick="SubmitFunction()" data-dismiss="modal">Set</button>
       </div>
     </div>
   </div>
@@ -428,7 +426,10 @@ function SubmitFunction(){
 		style="margin-left: 50px;"
 	  >
 		Go To Analysis
-	  </button>
+    </button>
+    &nbsp;&nbsp;
+    <button type="button" class="boundingBox1 btn btn-dark" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Parameters</button>
+
         <div style="margin-left: 50px;display:none;" id="graph2_Lower">
           <center>
             <input
@@ -462,7 +463,7 @@ function SubmitFunction(){
           </tr>
 
           <script>
-            for (var i = 5; i <= 100; i += 5) {
+            for (var i = start; i <= end; i += gap) {
               document.write(
                 "  <tr> <td <option value=" +
                   i +
@@ -502,7 +503,7 @@ function SubmitFunction(){
           <br /><br />
           <tr>
             <center>
-          
+
             </center>
           </tr>
         </center>
