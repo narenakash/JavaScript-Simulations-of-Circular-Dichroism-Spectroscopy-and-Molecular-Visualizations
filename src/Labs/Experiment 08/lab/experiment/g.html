@@ -11,6 +11,9 @@
       integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
       crossorigin="anonymous"
     />
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
     <style></style>
     <!--[if lte IE 8
       ]><script
@@ -58,6 +61,32 @@
       var start = 0;
       var end = 100;
       var gap = 5;
+function SubmitFunction(){
+ nattural= document.getElementById("testingid").value;
+ if (nattural){
+  console.log(nattural)
+
+ }
+ else{
+   console.log("It is Null")
+ }
+}
+
+
+      function getOptions(opt){
+        var options = "";
+        for(var i = parseInt(opt) ; i <= 100 ; i += 5){
+          if(i == 100){	
+            options =  options + "<option value='"+i+"' selected='true'>"+i+" C</option>\n";
+          }
+          else{
+            options =  options + "<option value='"+i+"'>"+i+" C</option>\n";
+          }
+        }
+        document.getElementById("end").innerHTML = options;
+      }
+
+
       function plotStartTemp(temp) {
         $(function() {
           if (temp == "all") {
@@ -303,6 +332,75 @@
 
             <option value="all">See All</option>
           </select>
+
+          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Parameters</button>
+
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Selecting Parameters</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-group">
+            <label for="recipient-name" class="col-form-label">Starting Temperature:</label>
+            <select name="start" class="form-control" id="testingid" onchange="getOptions(this.options[this.selectedIndex].value)">
+              <script type="text/javascript">
+                for(var i = 5 ; i <= 100 ; i+=5){
+                  document.write("<option value='"+i+"'>"+i+" C</option>");
+                }
+              </script>
+              </select>
+
+
+          </div>
+          <div class="form-group">
+            <label for="recipient-name" class="col-form-label">Select Final Temperature	:</label>
+            <select name="end" class="form-control"  id="end">
+              <script type="text/javascript">
+                 for(var i = 5 ; i <= 100 ; i+=5){
+                if(i == 100){	
+                      document.write("<option value='"+i+"' selected='true'>"+i+" C</option>");
+                }
+                else{
+                    document.write("<option value='"+i+"'>"+i+" C</option>");
+                }
+                 }
+              </script>
+              </select>
+
+
+
+          </div>
+          <div class="form-group">
+            <label for="recipient-name" class="col-form-label">Select the Step Size	:</label>
+            <select name="gap" class="form-control" id="gap">
+              <script type="text/javascript">
+                for(var i = 5 ; i < 25 ; i+=5){
+                  document.write("<option value='"+i+"'>"+i+" C</option>");
+                }
+              </script>
+              </select>
+
+
+
+
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" onclick="SubmitFunction()">Set</button>
+      </div>
+    </div>
+  </div>
+</div>
+
           <p id="hoverdata">
             Mouse Hover Position: (<span id="x">0</span>,
             <span id="y">0</span>).<br />
