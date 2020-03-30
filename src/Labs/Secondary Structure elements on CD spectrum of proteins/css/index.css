@@ -1,0 +1,43 @@
+* {
+}
+
+#content {
+  margin: auto;
+  width: 1200px;
+}
+
+.boundingBox {
+  margin-top: 4rem;
+  text-align: center;
+  padding: 15px 2px 15px 2px;
+  border-radius: 5px;
+}
+.boundingBoxLeft {
+  text-align: center;
+  padding: 15px 2px 15px 2px;
+  border-radius: 5px;
+}
+.boundingBoxRight {
+  text-align: center;
+  background: #003152;
+  padding: 15px 2px 15px 2px;
+  border-radius: 5px;
+}
+#leftSection {
+  float: left;
+  width: 200px;
+}
+
+#rightSection {
+  float: left;
+  margin-left: 20px;
+  width: 940px;
+}
+#start {
+  clear: both;
+  float: right;
+  width: 150px;
+}
+#start a {
+  text-decoration: none;
+}
