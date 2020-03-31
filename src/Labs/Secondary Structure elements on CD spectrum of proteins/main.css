@@ -4,7 +4,6 @@
 }
 body {
   margin: 0;
-  background-color: #f4f4f4;
   color: #fff;
 }
 :root {
@@ -468,4 +467,21 @@ td {
   padding-bottom: 0.5em;
   padding-left: 0.5em;
   padding-right: 0.5em;
+}
+li,
+ul {
+  text-decoration: none;
+}
+#overlay {
+  position: fixed; /* Sit on top of the page content */
+  display: none; /* Hidden by default */
+  width: 50%; /* Full width (cover the whole page) */
+  height: 50%; /* Full height (cover the whole page) */
+  top: 30em;
+  left: 22em;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5); /* Black background with opacity */
+  z-index: 8; /* Specify a stack order in case you're using a different order for other elements */
+  cursor: pointer; /* Add a pointer on hover */
 }

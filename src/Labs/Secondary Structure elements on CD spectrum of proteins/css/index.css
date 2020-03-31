@@ -41,3 +41,24 @@
 #start a {
   text-decoration: none;
 }
+#n2 {
+  margin-left: 30px;
+  position: absolute;
+  z-index: 2;
+}
+.row {
+  margin-top: 20px;
+}
+#computer {
+  margin-top: 20px;
+  height: 300px;
+  width: 400px;
+}
+#menu1 {
+  margin-left: 20px;
+  margin-top: 10px;
+}
+h5:hover {
+  cursor: pointer;
+  color: #003152;
+}
