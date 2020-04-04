@@ -33,6 +33,28 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
   <script>
+   // localStorage.setItem('Selection', 0);
+
+function selection(num){
+  //console.log(num)
+
+  // Set the high score to the users' current points
+  // Store the high score
+  localStorage.setItem('Selection', num);
+  num=localStorage.getItem('Selection')
+  num = parseInt(num);
+
+  swal({
+    title: "You Selected  Sample "+ num ,
+    text: "Click to Continue the Experiment!",
+    icon: "success",
+    button: "Continue",
+  })
+
+}
+  // Set the high score to the users' current points
+
+
 
    function on11() {
     document.getElementById("overlay").style.display = "block";
