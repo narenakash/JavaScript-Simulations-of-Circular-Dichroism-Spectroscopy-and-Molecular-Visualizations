@@ -20,7 +20,7 @@ let questions = [
   }
 ];
 
-//CONSTANTS
+//CONSTANTS11
 const CORRECT_BONUS = 10;
 const MAX_QUESTIONS = 1;
 

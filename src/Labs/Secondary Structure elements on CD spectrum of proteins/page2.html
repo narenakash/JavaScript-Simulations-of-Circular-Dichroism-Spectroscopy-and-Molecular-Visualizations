@@ -60,7 +60,10 @@ function selection(num){
 }
 
 function chckfinal(){
-  showanimaation()
+  var backvalue=localStorage.getItem('visit')
+  backvalue=parseInt(backvalue)
+  if(backvalue==1){
+    showanimaation()
 
    on11()
   setTimeout(function(){
@@ -76,12 +79,17 @@ function chckfinal(){
   })
 },6000)
 setTimeout(function(){
-  swal("Anlysis of the Sample")
+  swal(     { title: "Analysis of Graphs!",
+  text: "Click to Continue the Experiment!",
+  icon: "success",}    )
 .then((value) => {
   window.location.href = './quiz exp 8/game.html';
 });
 }
 ,6000)
+localStorage.setItem('visit',0)
+  }
+  
 
 }
 
@@ -94,7 +102,8 @@ setTimeout(function(){
     document.getElementById("overlay").style.display = "none";
   }
     function chck(){
-        console.log(1)
+        //console.log(1)
+        document.getElementById("img-gif").style.display = "none";
         on11()
         setTimeout(function(){
             off11()
@@ -108,13 +117,17 @@ setTimeout(function(){
           button: "Continue",
         })
       },3000)
+      setTimeout( function(){
+        document.getElementById("img-gif").style.display = "block";
+
+      },3000)
     }
 
     </script>
 
 </head>
 
-<body>
+<body onload="chckfinal()">
     <div class="top">
       <h3 class="set"><b>Secondary Structure elements<b></h3>
       <h4 class="set">
@@ -133,7 +146,7 @@ setTimeout(function(){
 	    <button
         class="btn btn-danger"
         id="new"
-        onclick="chckfinal()"      >
+        onclick="chck()"      >
        N2 purge 
       </button>
       <button
