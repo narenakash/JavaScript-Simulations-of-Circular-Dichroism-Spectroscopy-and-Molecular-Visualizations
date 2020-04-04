@@ -33,9 +33,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
   <script>
-    $(document).ready(function(){
-      $(".dropdown-toggle").dropdown();
-   });
+
    function on11() {
     document.getElementById("overlay").style.display = "block";
   }
@@ -46,11 +44,18 @@
     function chck(){
         console.log(1)
         on11()
-        setInterval(function(){
+        setTimeout(function(){
             off11()
-        } ,1000)
-      
-      
+        } ,3000)
+    
+        setTimeout( function(){
+        swal({
+          title: "Nitrogen Purge Completed!",
+          text: "Click to Continue the Experiment!",
+          icon: "success",
+          button: "Continue",
+        })
+      },3000)
     }
 
     </script>
@@ -63,41 +68,10 @@
       <h4 class="set">
         To Study the effect of Secondary Structure elements on CD spectrum of proteins.      </h4>
     
-    <div class="flexing">
-      <button
-        class="btn btn-danger"
-        id="new"
-        onclick="window.location.href = './help.html';"
-      >
-        <b>Help!</b>
-      </button>
-
-      <button class="btn btn-warning btn-lg" id="new" onclick="on(0)">
-        <b>Instructions!</b>
-      </button>
-
-      <button
-      class="btn btn-success"
-      id="new"
-      onclick="window.location.href = './page2.html';"
-    >
-      <b>Next!</b>
-    </button>
+ 
+    <div id="overlay">
+      <img  id="img-six" src="./shapes/93.png">
     </div>
-
-
-    <div id="overlay0" onclick="off(0)">
-      <div id="text"><b>1) For each of the molecule coloured in blue(carbon atoms) you have to find chiral/asymmetric ones(ones with all four groups attached to it are pairwise different...<br>
-        2) If the directly attached atoms are same for two or more groups go to the next attached to these attached atoms until you find some difference...<br>
-        3) If atleast two of the attached atoms are same for any carbon atoms than it is for sure not asymmetric...<br>
-      4) If you find out some carbon atom to be chiral than click it if it changes color than you are correct otherwise you are wrong<br>
-      5) Click it again to revert the color back to blue</b></div>
-    </div>
-
-    <div id="overlay2" onclick="off(2)">
-      <div id= "result1"></div>
-    </div>
-    <div id="overlay"></div>
 </div>
 <div style="width: 100%;height:10%;background-color:#003152;margin-top:9rem"></div>
     <div class="flexing">
@@ -106,14 +80,13 @@
 	    <button
         class="btn btn-danger"
         id="new"
-        onclick="window.location.href = './help.html';"
-      >
+        onclick="chck()"      >
        N2 purge 
       </button>
       <button
       class="btn btn-info"
       id="new"
-      onclick="chck()"
+      onclick="window.location.href = './lab/exp2/simulation/mfs_exp2b.html';"
     >
    Measure CD 
     </button>	  

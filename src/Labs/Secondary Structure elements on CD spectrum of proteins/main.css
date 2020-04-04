@@ -475,13 +475,13 @@ ul {
 #overlay {
   position: fixed; /* Sit on top of the page content */
   display: none; /* Hidden by default */
-  width: 50%; /* Full width (cover the whole page) */
-  height: 50%; /* Full height (cover the whole page) */
-  top: 30em;
-  left: 22em;
+  width: 60%; /* Full width (cover the whole page) */
+  height: 40%; /* Full height (cover the whole page) */
+  top: 10em;
+  left: 18em;
   right: 0;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0.5); /* Black background with opacity */
+  /* Black background with opacity */
   z-index: 8; /* Specify a stack order in case you're using a different order for other elements */
   cursor: pointer; /* Add a pointer on hover */
 }
