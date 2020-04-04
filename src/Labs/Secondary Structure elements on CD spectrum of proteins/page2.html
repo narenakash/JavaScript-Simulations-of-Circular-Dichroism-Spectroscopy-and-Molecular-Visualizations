@@ -53,7 +53,37 @@ function selection(num){
 
 }
   // Set the high score to the users' current points
+  function   showanimaation()
+{
+  document.getElementById("img-six").style.display = "none";
 
+}
+
+function chckfinal(){
+  showanimaation()
+
+   on11()
+  setTimeout(function(){
+      off11()
+  } ,6000)
+
+  setTimeout( function(){
+  swal({
+    title: "Processing Done",
+    text: "Click to Continue the Experiment!",
+    icon: "success",
+    button: "Continue",
+  })
+},6000)
+setTimeout(function(){
+  swal("Anlysis of the Sample")
+.then((value) => {
+  window.location.href = './quiz exp 8/game.html';
+});
+}
+,6000)
+
+}
 
 
    function on11() {
@@ -93,6 +123,7 @@ function selection(num){
  
     <div id="overlay">
       <img  id="img-six" src="./shapes/93.png">
+      <img id="img-gif" src="./shapes/frames.gif">
     </div>
 </div>
 <div style="width: 100%;height:10%;background-color:#003152;margin-top:9rem"></div>
@@ -102,7 +133,7 @@ function selection(num){
 	    <button
         class="btn btn-danger"
         id="new"
-        onclick="chck()"      >
+        onclick="chckfinal()"      >
        N2 purge 
       </button>
       <button

@@ -62,7 +62,14 @@ h5:hover {
   cursor: pointer;
   color: #003152;
 }
-#img-six {
+#img-six,
+#img-gif {
   width: 1350px;
   height: 600px;
+}
+#1,
+#2,
+#3 {
+  display: flex;
+  position: absolute;
 }
