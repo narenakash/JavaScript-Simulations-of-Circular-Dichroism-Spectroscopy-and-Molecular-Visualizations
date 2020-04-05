@@ -9,14 +9,14 @@ let score = 0;
 let questionCounter = 0;
 let availableQuesions = [];
 
-let questions = [
+var questions = [
   {
-    question: "In the animation protein at which temperature starts unfolding the first?",
-    choice1: "298K",
-    choice2: "358K",
-    choice3: "388K",
-    choice4: "418K",
-    answer: 4
+    question: "Identify the Secondary structure element from the spectrum obtained ?",
+    choice1: "Helix",
+    choice2: "Sheet",
+    choice3: "Coil",
+    choice4: "None of the Above",
+    answer: 0
   }
 ];
 
@@ -30,7 +30,17 @@ startGame = () => {
   availableQuesions = [...questions];
   getNewQuestion();
 };
-
+const setquestion = (num) => {
+  if (num == 1) {
+    questions[0].answer = "2"
+  }
+  else if (num == 2) {
+    questions[0].answer = "1"
+  }
+  else if (num == 3) {
+    questions[0].answer = "3"
+  }
+}
 getNewQuestion = () => {
   if (availableQuesions.length === 0 || questionCounter >= MAX_QUESTIONS) {
     localStorage.setItem("mostRecentScore", score);
@@ -83,5 +93,7 @@ incrementScore = num => {
   score += num;
   scoreText.innerText = score;
 };
-
+var majv = localStorage.getItem("Selection")
+majv = parseInt(majv)
+setquestion(majv)
 startGame();

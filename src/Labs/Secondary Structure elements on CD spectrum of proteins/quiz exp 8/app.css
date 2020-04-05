@@ -1,5 +1,4 @@
 :root {
-  background-color: #ecf5ff;
   font-size: 62.5%;
 }
 
@@ -20,7 +19,6 @@ h4 {
 
 h1 {
   font-size: 5.4rem;
-  color: #56a5eb;
   margin-bottom: 5rem;
 }
 
@@ -125,14 +123,40 @@ input {
 input::placeholder {
   color: #aaa;
 }
-.numbv {
+.numbv,
+img-final {
   height: 400px;
   width: 500px;
   margin-bottom: 50px;
 }
 #a,
 #b,
-#c {
+#c,
+#a1,
+#a2,
+#a3 {
   position: absolute;
   display: block;
+}
+.img-final {
+  margin: 10em;
+}
+.btn {
+  margin-top: 10em;
+  margin-left: 2em;
+}
+#b1,
+#b2 {
+  display: grid;
+}
+.i {
+  display: flex;
+}
+h1 {
+  position: relative;
+  color: #333;
+}
+.newclass {
+  margin-left: 50px;
+  margin-top: 30%;
 }

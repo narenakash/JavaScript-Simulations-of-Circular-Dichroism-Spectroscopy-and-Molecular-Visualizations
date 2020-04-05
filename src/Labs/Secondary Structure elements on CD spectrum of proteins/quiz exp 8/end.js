@@ -7,8 +7,40 @@ const highScores = JSON.parse(localStorage.getItem("highScores")) || [];
 
 const MAX_HIGH_SCORES = 5;
 
-finalScore.innerText = mostRecentScore;
+finalScore.innerText = "Congratulations!! Correct Answer!!";
+console.log(mostRecentScore)
+const selectfunction = (num) => {
+  if (num == 1) {
+    document.getElementById("a2").style.display = "none";
+    document.getElementById("a3").style.display = "none";
+    document.querySelector(".i").style.display = "none";
 
+  } else if (num == 2) {
+    document.getElementById("a1").style.display = "none";
+    document.getElementById("a3").style.display = "none";
+    document.querySelector(".i").style.display = "none";
+
+  } else if (num == 3) {
+    document.getElementById("a1").style.display = "none";
+    document.getElementById("a2").style.display = "none";
+    document.querySelector(".i").style.display = "none";
+
+  }
+};
+var numberget = localStorage.getItem("Selection");
+numberget = parseInt(numberget);
+if (parseInt(mostRecentScore)) {
+  selectfunction(numberget);
+
+}
+else {
+  finalScore.innerText = "Sorry!! Your Answer is Incorrect.. Try Again";
+
+  document.getElementById("a1").style.display = "none";
+  document.getElementById("a2").style.display = "none";
+  document.getElementById("a3").style.display = "none";
+
+}
 username.addEventListener("keyup", () => {
   saveScoreBtn.disabled = !username.value;
 });
