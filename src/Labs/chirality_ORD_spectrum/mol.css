@@ -429,8 +429,8 @@ body {
 }
 
 .dotC {
-  height: 50px;
-  width: 50px;
+  height: 25px;
+  width: 25px;
   float: right;
   border-radius: 50%;
   background-color: lightblue;
@@ -438,8 +438,8 @@ body {
 }
 
 .dotCC {
-  height: 50px;
-  width: 50px;
+  height: 25px;
+  width: 25px;
   float: right;
   border-radius: 50%;
   background-color: mediumseagreen;
@@ -447,8 +447,8 @@ body {
 }
 
 .dotO {
-  height: 50px;
-  width: 50px;
+  height: 25px;
+  width: 25px;
   float: right;
   border-radius: 50%;
   background-color: red;
@@ -457,11 +457,31 @@ body {
 }
 
 .dotH {
-  height: 50px;
-  width: 50px;
+  height: 25px;
+  width: 25px;
   float: right;
   border-radius: 50%;
   background-color: silver;
+  margin-bottom: 10px;
+  /*display: inline-block;*/
+}
+
+.dotCC1 {
+  height: 25px;
+  width: 25px;
+  float: right;
+  border-radius: 50%;
+  background-color: magenta;
+  margin-bottom: 10px;
+  /*display: inline-block;*/
+}
+
+.dotCC2 {
+  height: 25px;
+  width: 25px;
+  float: right;
+  border-radius: 50%;
+  background-color: orange;
   margin-bottom: 10px;
   /*display: inline-block;*/
 }

@@ -12,34 +12,73 @@
 			document.getElementById("testbtn").value="Measure ORD";
 			document.getElementById("testbtn").style.display="none";
 		}
-		else if(x==="Sample"){
+		else if(x==="Sampleo"){
 			document.getElementById("testbtn").value="Measure ORD";
 			document.getElementById("testbtn").style.display="block";
-			$("#img2").attr("src","./diagram.png");
+			$("#img2").attr("src","./diagramord.png");
 			document.getElementById("img2").style.display="block";
 		}
 		else if(x==="Measure ORD"){
-			document.getElementById("testbtn").value="Go to Analysis";
+			document.getElementById("testbtn").value="Switch to CD mode";
 			var y = document.getElementById("smp").value;
 			console.log(y);
 			if(y!=0){
-				var s="./graph";
-				s+=y;
-				s+=".png";
+        var s="Mayank";
+        if(y==1){
+          s="./images/graph2.jpg";
+        }
+        else{
+          s="./images/graph4.jpg";
+        }
 				console.log(s);
 				$("#img2").attr("src",s);
 				$("#img2").height("30vh");
 				$("#img2").width("35vw");
 			}
 		}
+    else if(x==="Switch to CD mode"){
+      $(".img1").attr("src","./setup_cd.jpg");
+      document.getElementById("smp").value="0";
+      document.getElementById("testbtn").value="Measure CD";
+      document.getElementById("testbtn").style.display="none";
+    }
+    else if(x==="Samplec"){
+      document.getElementById("testbtn").value="Measure CD";
+      document.getElementById("testbtn").style.display="block";
+      $("#img2").attr("src","./diagramcd.png");
+      document.getElementById("img2").style.display="block";
+    }
+    else if(x==="Measure CD"){
+      document.getElementById("testbtn").value="Go To Analysis";
+      var y = document.getElementById("smp").value;
+      console.log(y);
+      if(y!=0){
+        var s="Mayank";
+        if(y==1){
+          s="./images/graph1.jpg";
+        }
+        else{
+          s="./images/graph3.jpg";
+        }
+        console.log(s);
+        $("#img2").attr("src",s);
+        $("#img2").height("30vh");
+        $("#img2").width("35vw");
+      }
+    }
 		else{
 			console.log(x);
-			window.location.href = './index.html';
+			window.location.href = './q1.html';
 		}
 	}
 	function jsfunc(x){
 		if(x!=="0"){
-			change("Sample");
+			if(document.getElementById("testbtn").value=="Measure ORD"){
+        change("Sampleo");
+      }
+      else{
+        change("Samplec");
+      }
 		}
 	}
 	</script>
@@ -109,10 +148,6 @@
           <option value='0'></option>
           <option value='1'>Sample 1</option>
           <option value='2'>Sample 2</option>
-          <option value='3'>Sample 3</option>
-          <option value='4'>Sample 4</option>
-          <option value='5'>Sample 5</option>
-          <option value='6'>Sample 6</option>
         </select>
       </div>
 	</div>
@@ -120,7 +155,7 @@
 		<input type="button" id="testbtn" value="Switch to ORD mode" class="btn btn-primary" onclick="change(this.value)">
 	</div>
 	<div class="item4">
-		<img src="./diagram.png" id="img2">
+		<img src="" id="img2">
 	</div>
 </div>
 
