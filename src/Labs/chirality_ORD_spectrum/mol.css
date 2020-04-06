@@ -293,6 +293,13 @@ body {
   margin-top: 10px;
 }
 
+#newf {
+  position: relative;
+  align-self: flex-start;
+  margin-left: 5%;
+  margin-top: 100px;
+}
+
 .flex-container {
   width: 80%;
   min-height: 300px;
