@@ -56,6 +56,7 @@
   <body>
     <div class="top">
     	<div class="topitem">
+  <div style="height:15%;width:100%;clear:both;"></div>
       <h3 class="set"><b>Assigning R & S Configuration</b></h3>
       <h4 class="set">
         <b>The Asymmetric carbon atoms are coloured in Magenta and Orange. Determine
@@ -102,13 +103,17 @@
       <div style="font-family:'Lato';font-size:20px; color:white">Hydrogen &nbsp;</div>
       <div class="dotH" style="text-align:center"></div>
   </div>
-  <div class="item">
+   <div class="item">
       <div style="font-family:'Lato';font-size:20px ; color:white">1st Chiral Carbon &nbsp;</div>
       <div class="dotCC1" style="text-align:center;color:white"></div>
   </div>
-  <div class="item">
+   <div class="item">
       <div style="font-family:'Lato';font-size:20px ; color:white">2nd Chiral Carbon &nbsp;</div>
-      <div class="dotCC2" style="text-align:center;color:orange"></div>
+      <div class="dotCC2" style="text-align:center;color:white"></div>
+  </div>
+    <div class="item">
+      <div style="font-family:'Lato';font-size:20px ; color:white">Sulphur &nbsp;</div>
+      <div class="dotS" style="text-align:center;color:white"></div>
   </div>
     </div>
     </div>
@@ -134,7 +139,7 @@
       <div data-cell class="cellOption" class="container">
       <div class="flex-container">
         <div class="labels">
-          <h2 style="color:magenta">C4 : &emsp;</h2>
+          <h2 style="color:magenta">C1 : &emsp;</h2>
           <form>
             <label class="container parallel"
               >R
@@ -150,16 +155,16 @@
           </form>
         </div>
         <div class="labels1">
-          <h2 style="color:orange">C6 : &emsp;</h2>
+          <h2 style="color:orange">C4 : &emsp;</h2>
           <form class="form-horizontal">
             <label class="container parallel"
               >R
-              <input type="radio"  name="radio" value="R" onclick="test(2,2,this.form)" style="display=inline" />
+              <input type="radio"  name="radio" value="R" onclick="test(2,1,this.form)" style="display=inline" />
               <span class="checkmark"></span>
             </label>
             <label class="container parallel"
               >S
-              <input type="radio"  name="radio" value="R" onclick="test(2,2,this.form)" />
+              <input type="radio"  name="radio" value="R" onclick="test(2,1,this.form)" />
               <span class="checkmark"></span>
             </label>  
             <div id="result2"></div>
@@ -172,31 +177,31 @@
       <div data-cell class="cellOption" class="container">
       <div class="flex-container">
         <div class="labels">
-          <h2 style="color: orange">C6 : &emsp;</h2>
+          <h2 style="color: orange">C1 : &emsp;</h2>
           <form>
             <label class="container parallel"
               >R
-              <input type="radio"  name="radio" value="R" onclick="test(3,1,this.form)" />
+              <input type="radio"  name="radio" value="R" onclick="test(3,2,this.form)" />
               <span class="checkmark"></span>
             </label>
             <label class="container parallel"
               >S
-              <input type="radio"  name="radio" value="R" onclick="test(3,1,this.form)" />
+              <input type="radio"  name="radio" value="R" onclick="test(3,2,this.form)" />
               <span class="checkmark"></span>
             </label>
             <div id="result3"></div>
           </form>
         </div>
         <div class="labels">
-          <h2 style="color:magenta">C9 : &emsp;</h2>          <form>
+          <h2 style="color:magenta">C4 : &emsp;</h2>          <form>
             <label class="container"
               >R
-              <input type="radio"  name="radio" value="R" onclick="test(4,1,this.form)" />
+              <input type="radio"  name="radio" value="R" onclick="test(4,2,this.form)" />
               <span class="checkmark"></span>
             </label>
             <label class="container"
               >S
-              <input type="radio"  name="radio" value="R" onclick="test(4,1,this.form)" />
+              <input type="radio"  name="radio" value="R" onclick="test(4,2,this.form)" />
               <span class="checkmark"></span>
             </label>
             <div id="result4"></div>
@@ -204,155 +209,7 @@
         </div>
       </div>
       </div>
-      <div data-cell class="cell" id="cont3"></div>
-      <div data-cell class="cellOption" class="container">
-        <div class="flex-container">
-        <div class="labels">
-          <h2 style="color:magenta">C4 : &emsp;</h2>
-          <form>
-            <label class="container parallel"
-              >R
-              <input type="radio"  name="radio" value="R" onclick="test(5,2,this.form)" />
-              <span class="checkmark"></span>
-            </label>
-            <label class="container parallel"
-              >S
-              <input type="radio"  name="radio" value="R" onclick="test(5,2,this.form)" />
-              <span class="checkmark"></span>
-            </label>
-            <div id="result5"></div>
-          </form>
-        </div>
-        <div class="labels">
-          <h2 style="color:orange">C6 : &emsp;</h2>
-          <form>
-            <label class="container"
-              >R
-              <input type="radio"  name="radio" value="R" onclick="test(6,2,this.form)" />
-              <span class="checkmark"></span>
-            </label>
-            <label class="container"
-              >S
-              <input type="radio"  name="radio" value="R" onclick="test(6,2,this.form)" />
-              <span class="checkmark"></span>
-            </label>
-            <div id="result6"></div>
-          </form>
-        </div>
-      </div>
-      </div>
-      <div data-cell class="cell" id="cont4"></div>
-      <div data-cell class="cellOption" class="container">
-      <div class="flex-container">
-        <div class="labels">
-          <h2 style="color:magenta">C6 : &emsp;</h2>
-          <form>
-            <label class="container parallel"
-              >R
-              <input type="radio"  name="radio" value="R" onclick="test(7,2,this.form)" />
-              <span class="checkmark"></span>
-            </label>
-            <label class="container parallel"
-              >S
-              <input type="radio"  name="radio" value="R" onclick="test(7,2,this.form)" />
-              <span class="checkmark"></span>
-            </label>
-            <div id="result7"></div>
-          </form>
-        </div>
-        <div class="labels">
-          <h2 style="color:orange">C9 : &emsp;</h2>
-          <form>
-            <label class="container"
-              >R
-              <input type="radio"  name="radio" value="R" onclick="test(8,2,this.form)" />
-              <span class="checkmark"></span>
-            </label>
-            <label class="container"
-              >S
-              <input type="radio"  name="radio" value="R" onclick="test(8,2,this.form)" />
-              <span class="checkmark"></span>
-            </label>
-            <div id="result8"></div>
-          </form>
-        </div>
-      </div>
-      </div>
-      <div data-cell class="cell" id="cont5"></div>
-      <div data-cell class="cellOption" class="container">
-        <div class="flex-container">
-        <div class="labels">
-          <h2 style="color:magenta">C4 : &emsp;</h2>
-          <form>
-            <label class="container parallel"
-              >R
-              <input type="radio"  name="radio" value="R" onclick="test(9,2,this.form)" />
-              <span class="checkmark"></span>
-            </label>
-            <label class="container parallel"
-              >S
-              <input type="radio"  name="radio" value="R" onclick="test(9,2,this.form)" />
-              <span class="checkmark"></span>
-            </label>
-            <div id="result9"></div>
-          </form>
-        </div>
-        <div class="labels">
-          <h2 style="color:orange">C6 : &emsp;</h2>
-          <form>
-            <label class="container"
-              >R
-              <input type="radio"  name="radio" value="R" onclick="test(10,1,this.form)" />
-              <span class="checkmark"></span>
-            </label>
-            <label class="container"
-              >S
-              <input type="radio"  name="radio" value="R" onclick="test(10,1,this.form)" />
-              <span class="checkmark"></span>
-            </label>
-            <div id="result10"></div>
-          </form>
-        </div>
-      </div>
-      </div>
-      <div data-cell class="cell" id="cont6"></div>
-      <div data-cell class="cellOption" class="container">
-        <div class="flex-container">
-        <div class="labels">
-          <h2 style="color:magenta">C4 : &emsp;</h2>
-          <form>
-            <label class="container parallel"
-              >R
-              <input type="radio"  name="radio" value="R" onclick="test(11,1,this.form)" />
-              <span class="checkmark"></span>
-            </label>
-            <label class="container parallel"
-              >S
-              <input type="radio"  name="radio" value="R" onclick="test(11,1,this.form)" />
-              <span class="checkmark"></span>
-            </label>
-            <div id="result11"></div>
-          </form>
-        </div>
-        <div class="labels">
-          <h2 style="color:orange">C6 : &emsp;</h2>
-          <form>
-            <label class="container"
-              >R
-              <input type="radio"  name="radio" value="R" onclick="test(12,2,this.form)" />
-              <span class="checkmark"></span>
-            </label>
-            <label class="container"
-              >S
-              <input type="radio"  name="radio" value="R" onclick="test(12,2,this.form)" />
-              <span class="checkmark"></span>
-            </label>
-            <div id="result12"></div>
-          </form>
-        </div>
-      </div>
-    </div>
-    </div>
+      
 
     
 
@@ -374,10 +231,6 @@
     <script src="http://3Dmol.csb.pitt.edu/build/3Dmol-min.js"></script>
     <script src="./mol21.js"></script>
     <script src="./mol22.js"></script>
-    <script src="./mol23.js"></script>
-    <script src="./mol24.js"></script>
-    <script src="./mol25.js"></script>
-    <script src="./mol26.js"></script>
     <script src="./overlay.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
