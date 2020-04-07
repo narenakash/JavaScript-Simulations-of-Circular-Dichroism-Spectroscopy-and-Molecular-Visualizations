@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="../../libraries/bootstrap-3.3.7-dist/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" type="text/css" href="mfs_expt2.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+    <script src="../../libraries/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+    <script src="../../libraries/jQueryRotate.js"></script>
+    <script type="text/javascript" src="mfs_expt2.js"></script>
+    <script type="text/javascript" src="mfs2_animations.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+    <script>
+      function skipfornow() {
+        localStorage.setItem("visit", 1);
+        swal({
+          title: "Skipped Doing For Now!",
+          text: "Click to Continue the Experiment!",
+          icon: "success",
+        }).then((value) => {
+          window.location.href = "./../../../page2.html";
+        });
+      }
+    </script>
+    <link
+      href="https://fonts.googleapis.com/css?family=Lato&display=swap"
+      rel="stylesheet"
+    />
+
+    <title class="">Measurement of CD Spectra</title>
+  </head>
+
+  <body>
+    <!-- Body is divided into three rows -->
+    <div class="container">
+      <!-- First row consists of title of the experiment and the reset button -->
+      <div class="row">
+        <div class="col-sm-12">
+          <h3 class="btn-info">
+            Measurement of CD Spectra at Different Temperatures
+          </h3>
+          <div class="cc">
+            <button id="reset_btn" class="btn btn-danger">
+              Reset
+            </button>
+            <input
+              id="skip_btn"
+              class="btn btn-info"
+              type="button"
+              onclick="skipfornow()"
+              value="Skip"
+            />
+
+            <button
+              class="btn btn-primary"
+              id="manual_button1"
+              onclick="window.location.href = './../../../page2.html';"
+            >
+              Go back
+            </button>
+          </div>
+        </div>
+      </div>
+      <br />
+
+      <!-- Second row consists of two columns with one column containing buttons ie manual and data and the other containing shelf with apparatus -->
+      <div class="row">
+        <div class="col-sm-6" id="apparatus">
+          <img id="shelf" src="../../common_images/shelf1.png" />
+          <img id="round-bottom-flask" src="images/round-bottom-flask.png" />
+          <img id="pipette" src="../../common_images/pipette.png" />
+          <img id="cuvette" src="../../common_images/cuvette.png" />
+        </div>
+      </div>
+      <br /><br /><br />
+
+      <!-- Third row consists of table with various devices on it  -->
+      <div class="row">
+        <div class="col-sm-12" id="table">
+          <img
+            id="table_with_spec"
+            src="../../common_images/spec_fluormeter.png"
+          />
+          <!-- button to scan the sample on the computer-->
+          <img
+            id="comp_trans_button"
+            src="../../common_images/vertical_button.png"
+          />
+          <!-- buttons to open and close the spectrophotometer lid -->
+          <img
+            id="spectrolid_trans_button"
+            src="../../common_images/vertical_button.png"
+          />
+          <img
+            id="spectrolid_trans_button1"
+            src="../../common_images/vertical_button.png"
+          />
+          <!-- text that shows the instructions to be followed next -->
+          <div id="demo"></div>
+          <!-- button to switch on and switch off the spectrophotometer -->
+          <img
+            id="power_trans_button"
+            src="../../common_images/vertical_button.png"
+          />
+        </div>
+      </div>
+
+      <!-- Florescence graph validation -->
+      <img id="clockScreen" src="../../common_images/clock.png" />
+      <!-- Image of the hand of the clock -->
+      <img id="clockHand" src="../../common_images/hand.png" />
+      <!-- Image of the greyed background displayed as a background while scanning the sample -->
+      <img id="scan" src="../../common_images/transparent.png" />
+      <!-- This image is used to enter the input values to display the graph1/graph2-->
+      <img id="mfs_form1" src="../../common_images/mfs_form1.png" />
+      <img id="mfs_form2" src="../../common_images/mfs_form2.png" />
+      <!--Displays the graph by clicking on ok button -->
+      <img
+        id="ok_btn"
+        class="data_validation"
+        src="../../common_images/vertical_button.png"
+      />
+      <!-- dropdown box to select the graphs to display -->
+      <select id="select" class="data_validation">
+        <option id="Excitation" value="Excitation">Excitation</option>
+        <option id="Emission" value="Emission">Emission</option>
+      </select>
+      <!--graph input values -->
+      <input
+        id="input1"
+        class="data_validation"
+        type="text"
+        autocomplete="off"
+      />
+      <input
+        id="input2"
+        class="data_validation"
+        type="text"
+        autocomplete="off"
+      />
+      <input
+        id="input3"
+        class="data_validation"
+        type="text"
+        autocomplete="off"
+      />
+      <!-- To display the videos on entering the correct input values -->
+      <video id="video1" class="videos">
+        <source src="videos/graph1.mp4" type="video/mp4" />
+      </video>
+      <video id="video2" class="videos">
+        <source src="videos/graph2.mp4" type="video/mp4" />
+      </video>
+      <!-- To close the graphs video -->
+      <img id="disposegraph" src="../../common_images/vertical_button.png" />
+    </div>
+  </body>
+</html>
