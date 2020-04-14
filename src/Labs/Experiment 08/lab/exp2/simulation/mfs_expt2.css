@@ -298,9 +298,10 @@ h3 {
 }
 #select {
   position: absolute;
-  top: 24%;
-  left: 30%;
-  width: 15%;
+  top: 24.5%;
+  left: 30.5%;
+  width: 14.7%;
+  height: 4%;
   z-index: 12;
   visibility: hidden;
 }

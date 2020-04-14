@@ -225,7 +225,9 @@ function scan(){
 //This method is used to select the specific graph from the dropdown menu.
 function selectGraph() {
         dropdown = document.getElementById("select");
+        console.log(dropdown.value,step_no);
         dropdown.onchange = function(event){
+        console.log(dropdown.value,step_no);
            if(dropdown.value=="Emission" && step_no==11){
              $("#select").html("<option value='Excitation'>Excitation</option><option value='Emission'>Emission</option>");
              alert("Select Excitation scan mode");
