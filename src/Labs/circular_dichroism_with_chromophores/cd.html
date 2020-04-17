@@ -3,23 +3,23 @@
 <head>
 	<meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<title>ORD</title>
+	<title>CD</title>
 	<script>
 	function change(x){
-		if(x==="Switch to ORD mode"){
-			$(".img1").attr("src","./setup_ord.jpg");
+		if(x==="Switch to CD mode"){
+			$(".img1").attr("src","./setup_cd.jpg");
 			document.getElementById("smp").value="0";
-			document.getElementById("testbtn").value="Measure ORD";
+			document.getElementById("testbtn").value="Measure CD";
 			document.getElementById("testbtn").style.display="none";
 		}
 		else if(x==="Sample"){
-			document.getElementById("testbtn").value="Measure ORD";
+			document.getElementById("testbtn").value="Measure CD";
 			document.getElementById("testbtn").style.display="block";
-			$("#img2").attr("src","./diagramord.png");
+			$("#img2").attr("src","./diagramcd.png");
 			document.getElementById("img2").style.display="block";
 		}
-		else if(x==="Measure ORD"){
-			document.getElementById("testbtn").value="Analysing CD Spectra";
+		else if(x==="Measure CD"){
+			document.getElementById("testbtn").value="Go to Analysis";
 			var y = document.getElementById("smp").value;
 			console.log(y);
 			if(y!=0){
@@ -34,7 +34,7 @@
 		}
 		else{
 			console.log(x);
-			window.location.href = './cd.html';
+			window.location.href = './q1.html';
 		}
 	}
 	function jsfunc(x){
@@ -90,11 +90,11 @@
 
 <div id="overlay1" onclick="off(1)">
       <div id="text"><b>
-        1) Click on the "Swicth to ORD Mode" to enable the spectrometer to operate in ORD mode.<br/><br />
+        1) Click on the "Swicth to CD Mode" to enable the spectrometer to operate in CD mode.<br/><br />
         2) Select any sample by clicking on the corresponding button.<br /><br />
-      3) Click on the "Measure ORD" button to measure the ORD spectra of the selected sample.<br /><br />
-    4) Click on any other sample to measure the ORD spectra of that sample<br /><br />
-  5) Once you are done with the experiment click on "Analysing CD Spectra" to analysis page.
+      3) Click on the "Measure CD" button to measure the CD spectra of the selected sample.<br /><br />
+    4) Click on any other sample to measure the CD spectra of that sample<br /><br />
+  5) Once you are done with the experiment click on "Go To Analysis" to analysis page.
 </b></div>
     </div>
 
@@ -107,13 +107,13 @@
        <label for="ri" style="font-family: 'Lato'; font-size:30px"><b>Choose sample: </b></label>
        <select id="smp" class="form-control" onchange="jsfunc(this.value)">
           <option value='0'></option>
-          <option value='1'>Sample 1</option>
-          <option value='3'>Sample 2</option>
+          <option value='2'>Sample 1</option>
+          <option value='4'>Sample 2</option>
         </select>
       </div>
 	</div>
 	<div class="item3">
-		<input type="button" id="testbtn" value="Switch to ORD mode" class="btn btn-primary" onclick="change(this.value)">
+		<input type="button" id="testbtn" value="Switch to CD mode" class="btn btn-primary" onclick="change(this.value)">
 	</div>
 	<div class="item4">
 		<img src="./diagram.png" id="img2">
