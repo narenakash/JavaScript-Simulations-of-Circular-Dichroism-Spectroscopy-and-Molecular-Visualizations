@@ -14,11 +14,6 @@
       integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
       crossorigin="anonymous"
     />
-    <script
-    src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
-    crossorigin="anonymous"
-  ></script>
 
     <link
       href="https://fonts.googleapis.com/css?family=Lato&display=swap"
@@ -39,20 +34,18 @@
       type="text/javascript"
       src="scripts/E9dataJSON.js"
     ></script>
-    <!-- <script
-      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
-      crossorigin="anonymous"
-    ></script> -->
     <script type="text/javascript">
       var chemical;
-
-      $(document).ready(function () {
+      flag["sds"] = 1;
+      flag["urea"] = 1;
+      flag["guhcl"] = 1;
+      flag["tfa"] = 1;
+      $(document).ready(function() {
         chemical = document.getElementById("chemical").value;
         plotChemical(chemical);
       });
       function plotChemical(chemical) {
-        $(function () {
+        $(function() {
           if (chemical == "all") {
             var d = [];
             for (var i = 0; i <= 4; i++) {
@@ -70,12 +63,12 @@
                   "  </span>",
                 data: d[i],
                 points: { show: true },
-                lines: { show: true },
+                lines: { show: true }
               });
             }
             $.plot($("#placeholder"), dataLabels, {
               grid: { hoverable: true, clickable: false },
-              yaxis: { min: -17500, max: 3000 },
+              yaxis: { min: -17500, max: 3000 }
             });
           } else {
             var d1 = [];
@@ -90,12 +83,12 @@
                   data: d1,
                   points: { show: true },
                   lines: { show: true },
-                  color: "red",
-                },
+                  color: "red"
+                }
               ],
               {
                 grid: { hoverable: true, clickable: true },
-                yaxis: { min: -17500, max: 3000 },
+                yaxis: { min: -17500, max: 3000 }
               }
             );
             document.getElementById(chemical).innerHTML =
@@ -131,12 +124,12 @@
           }
 
           var previousPoint = null;
-          $("#placeholder").bind("plothover", function (event, pos, item) {
+          $("#placeholder").bind("plothover", function(event, pos, item) {
             $("#x").text(pos.x.toFixed(2));
             $("#y").text(pos.y.toFixed(2));
           });
 
-          $("#placeholder").bind("plotclick", function (event, pos, item) {
+          $("#placeholder").bind("plotclick", function(event, pos, item) {
             if (item) {
               $("#clickdata").text(
                 "You clicked point ( " +
@@ -159,7 +152,6 @@
     <style type="text/css">
       * {
         font-family: "Lato";
-        font-size: 18px;
       }
 
       #content {
@@ -168,7 +160,6 @@
         font-size: 13px;
       }
       .boundingBox {
-        margin-top: 20px;
         text-align: center;
         background: #cccfff;
         padding: 5px 5px 5px 5px;
@@ -178,20 +169,6 @@
         font-size: 13px;
       }
       .boundingBox1 {
-        margin-top: 20px;
-
-        border: none;
-        color: white;
-        padding: 15px 32px;
-        text-align: center;
-        text-decoration: none;
-        display: inline-block;
-        font-size: 22px;
-      }
-      .boundingBox2 {
-        margin-top: 20px;
-
-        width: 700px;
         border: none;
         color: white;
         padding: 15px 32px;
@@ -204,19 +181,18 @@
   </head>
   <body>
     <div id="content">
-      <div style="float: left; width: 900px; text-align: left;">
-        <h1 class="boundingBox2 btn-info">CD Spectrum of Rhodospin</h1>
+      <div style="float:left; width:800px; text-align:left;">
+        <h1 class="boundingBox1 btn-info">CD Spectrum of Rhodospin</h1>
         <br />
-        <div id="placeholder" style="width: 600px; height: 400px;"></div>
+        <div id="placeholder" style="width:600px;height:400px;"></div>
         <div style="margin-left: 50px;" id="graph1_Lower">
-          <h3 class="boundingBox1 btn-info" style="width: 400px;">
+          <h3 class="boundingBox1 btn-info" style="width:200px;">
             Select Chemical
           </h3>
           <table cellspacing="10">
             <tr>
               <td>
                 <input
-                  id="11"
                   type="radio"
                   name="select_chemical"
                   value="sds"
@@ -226,7 +202,6 @@
 
               <td>
                 <input
-                  id="12"
                   type="radio"
                   name="select_chemical"
                   value="guhcl"
@@ -236,7 +211,6 @@
 
               <td>
                 <input
-                  id="13"
                   type="radio"
                   name="select_chemical"
                   value="none"
@@ -247,7 +221,6 @@
             <tr>
               <td>
                 <input
-                  id="14"
                   type="radio"
                   name="select_chemical"
                   value="urea"
@@ -257,7 +230,6 @@
 
               <td>
                 <input
-                  id="15"
                   type="radio"
                   name="select_chemical"
                   value="tfa"
@@ -267,7 +239,6 @@
 
               <td>
                 <input
-                  id="16"
                   type="radio"
                   name="select_chemical"
                   value="all"
@@ -277,19 +248,17 @@
             </tr>
           </table>
 
-          <p id="hoverdata" style="font-size: 11px;">
+          <p id="hoverdata" style="font-size:11px;">
             Mouse Hover Position: (<span id="x">0</span>,
             <span id="y">0</span>). <span id="clickdata"></span>
           </p>
         </div>
       </div>
 
-      <div
-        style="float: left; width: 500px; margin-left: 50px; font-size: 16px;"
-      >
-        <h2 class="boundingBox1 btn-info" style="width: 500px;">Observations</h2>
+      <div style="float:left; width:500px; margin-left:50px; font-size:16px;">
+        <h2 class="boundingBox1 btn-info">Observations</h2>
         <br />
-        <table width="100%" border="1" cellpadding="5" style="font-size: 12px;">
+        <table width="100%" border="1" cellpadding="5" style="font-size:12px;">
           <tr>
             <th width="20%">Chemical</th>
             <th width="20%">Helix</th>
@@ -334,21 +303,19 @@
           </tr>
         </table>
 
-        <span style="font-size: 11px;">* - Cannot be determined.</span><br />
+        <span style="font-size:11px;">* - Cannot be determined.</span><br />
         <center>
-
           <button
-          class="btn btn-dark boundingBox1"
-          onclick='window.location="../quiz exp 9/game.html";'
-        >
-          Go To Analysis
-        </button>
-
+            class="boundingBox1 btn btn-success"
+            onclick='window.location="../experiment/g2.html";'
+          >
+            Effect Of Concentration
+          </button>
         </center>
 
         <br />
-        <h3 class="boundingBox1 btn-info" style="width: 100%;">INSTRUCTIONS</h3>
-        <ul style="font-size: 13px;">
+        <h3 class="boundingBox1 btn-info" style="width:100%;">INSTRUCTIONS</h3>
+        <ul style="font-size:13px;">
           <li>Select any chemical to see the corresponding CD spectra.</li>
           <li>
             Information about the secondary structure of the protein with that
@@ -364,7 +331,19 @@
       </div>
       <input type="hidden" value="<?php echo $chemical; ?>" id="chemical" />
       <br /><br />
-
- 
+      <center>
+        <button
+          class=" btn btn-dark boundingBox1"
+          onclick='window.location="../quiz exp 9/game.html";'
+        >
+          Go To Analysis
+        </button>
+      </center>
+    </div>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
   </body>
 </html>
