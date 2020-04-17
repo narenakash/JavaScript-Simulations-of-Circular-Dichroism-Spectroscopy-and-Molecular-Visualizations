@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<link
+	rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+	integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+	crossorigin="anonymous"
+  />
+  <link rel="stylesheet" href="./css/page2.css">
+  
+  <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./main.css" />
+  
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <script src="./swf2js.js"></script>
+</head>
+<body>
+    <div class="top">
+      <h3 class="set">Animation of Protein Defolding with Temperature
+      </h3>
+      <h4 class="set">
+        Familiarize with Protein Defolding at various temperatures.
+      </h4>
+    
+    <div class="flexing">
+      <button
+        class="btn btn-danger"
+        id="new"
+        onclick="window.location.href = './index.html';"
+      >
+      Back!</b>
+      </button>
+
+      <button class="btn btn-warning btn-lg" id="new" onclick="on(0)">
+        Instructions!</b>
+      </button>
+
+      <button
+      class="btn btn-success"
+      id="new"
+      onclick="window.location.href = './page3.html';"
+    >
+      Next!</b>
+    </button>
+    </div>
+
+
+    <div id="overlay0" onclick="off(0)">
+      <div id="text">1) For each of the molecule coloured in blue(carbon atoms) you have to find chiral/asymmetric ones(ones with all four groups attached to it are pairwise different...<br>
+        2) If the directly attached atoms are same for two or more groups go to the next attached to these attached atoms until you find some difference...<br>
+        3) If atleast two of the attached atoms are same for any carbon atoms than it is for sure not asymmetric...<br>
+      4) If you find out some carbon atom to be chiral than click it if it changes color than you are correct otherwise you are wrong<br>
+      5) Click it again to revert the color back to blue</b></div>
+    </div>
+
+    <div id="overlay2" onclick="off(2)">
+      <div id= "result1"></div>
+    </div>
+</div>
+<div  style="width: 100%;height:10%;background-color:#003152;margin-top:9rem"> </div>
+
+<div id="content">
+ 
+  <br />
+  <h2 class="boundingBox  btn-info">
+    Animation of Protein Defolding with Temperature
+  </h2>
+  <br />
+  <script>
+var vid = document.getElementById("1");
+
+function playVid() {
+    vid.play();
+}
+
+function pauseVid() {
+    vid.pause();
+}
+
+    
+    </script>
+  <div id="leftSection">
+    <div class="board">
+      <div data-cell class="cell"  id="cont1" onclick="pauseVid()">
+        <video id="1"  width="280" height="290" autoplay="autoplay" >
+          <source src="./lab/experiment/298K.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div data-cell class="cell"  id="cont2" >
+        <video id='2'  width="280" height="290"  autoplay="autoplay" >
+          <source src="./lab/experiment/358K.mp4" type="video/mp4">
+        </video>
+      </div>
+    
+      <div data-cell class="cell"  id="cont3" >
+        <video id='3'  width="280" height="290"  autoplay="autoplay" >
+          <source src="./lab/experiment/388Klong.mp4" type="video/mp4">
+        </video>
+      </div>
+    
+      <div data-cell class="cell " id="cont4">
+        <video id='4'  width="280" height="290"  autoplay="autoplay"  >
+          <source src="./lab/experiment/418Klong.mp4" type="video/mp4">
+        </video>
+      </div>
+    </div>
+
+  </div>
+
+ 
+  <div id="rightSection" class="boundingBoxLeft">
+    <h3 >OBSERVATION</h3>
+    <p
+      style=" text-align: left; padding-left: 0.5cm; padding-bottom: 0.5cm;"
+    >
+      This is a modelled protein which has two helices. Each video shows MD
+      simulation of the protein at different temperatures (298K,358K,418K
+      and 388K in clockwise orientation from top left).
+    </p>
+    <p
+      style=" text-align: left; padding-left: 0.5cm;padding-bottom: 0.5cm;"
+    >
+      At all of the four temperatures the protein gradually unfolds in the
+      course of the simulation. But it takes different times to unfold at
+      different temperature
+    </p>
+    <p
+      style=" text-align: left; padding-left: 0.5cm; padding-bottom: 0.5cm;"
+    >
+      At high temperature it starts unfolding fast. At lower temperatures it
+      take more simulation time to get unfolded
+    </p>
+    <p
+      style=" text-align: left; padding-left: 0.5cm;padding-bottom: 0.5cm;"
+    >
+      Once it reaches the unfolded state it remains there.
+    </p>
+  </div>
+
+</div>
+
+
+
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="./mol1.js"></script>
+
+    <script src="./overlay.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+
+  </body>
+</html>
