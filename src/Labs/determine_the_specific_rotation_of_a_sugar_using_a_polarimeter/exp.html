@@ -16,6 +16,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./main.css">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
   </head>
 
@@ -92,16 +93,35 @@
           </map>
           <img id="prac" usemap="#exp"   href="./images/1363.jpg"  /> -->
           <map name="tri">
-            	<area id="coor3" shape="rect" coords="481,78,578,229"/>
-            	<area id="coor4" shape="rect" coords="94,71,185,232"/>
+            	<!-- <area id="coor3" shape="rect" coords="481,78,578,229"/>
+              <area id="coor4" shape="rect" coords="94,71,185,232"/> -->
+              <area id="coord1" shape="circle" coords="100,140,30"/>
+              <area id="coord2" shape="circle" coords="185,140,30"/>
+              <area id="coord3" shape="circle" coords="485,140,30"/>
+              <area id="coord4" shape="circle" coords="570,140,30"/>
+              <area id="coord5" shape="circle" coords="143,220,30"/>
+              <area id="coord6" shape="circle" coords="528,220,30"/>
+
           </map>
           <img id="sols" usemap="#tri"/>
           <img id="zoomsol"/>
           <img id="beaker"/>
           <div id="demo"></div>
+          <div class="buttons">
+<h3 id="next3"></h3>
+          </div>
           <!-- <input id="text">
           <div id="demo1"> -->
-          
+            <div class="div-pos" style="position: fixed;"id="next1">
+              <svg width=600 height=1000>
+
+           <rect width=170 height=20 fill=red  onclick="window.location.href='./1.html'" id="next2"></rect>
+
+
+
+
+
+              </svg>
 
 
         </div> 

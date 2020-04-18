@@ -134,3 +134,16 @@ height:75%;*/
   width: 100px;
   position: absolute;
 }
+#next1 {
+  transform: translate(180px, 550px);
+}
+#next2 {
+  transform: translate(70px, 20px);
+  transform: rotate(14deg);
+}
+#next3 {
+  color: white;
+  /* visibility: hidden; */
+  position: fixed;
+  transform: translate(700px, 300px);
+}
