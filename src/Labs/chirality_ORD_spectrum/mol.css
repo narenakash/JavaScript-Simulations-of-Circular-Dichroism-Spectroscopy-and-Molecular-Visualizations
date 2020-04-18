@@ -147,6 +147,9 @@ body {
 .top {
   background-color: #003152;
   position: fixed;
+  display: flex;
+  flex-flow: row nowrap;
+  z-index: 100;
   top: 0;
   width: 100%;
   /*padding-bottom: 20px;*/
@@ -370,33 +373,6 @@ body {
   color: silver;
   transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
-}
-
-#back2Top {
-  width: 150px;
-  line-height: 150px;
-  overflow: hidden;
-  z-index: 999;
-  display: none;
-  cursor: pointer;
-  -moz-transform: rotate(270deg);
-  -webkit-transform: rotate(270deg);
-  -o-transform: rotate(270deg);
-  -ms-transform: rotate(270deg);
-  transform: rotate(270deg);
-  position: fixed;
-  bottom: 50px;
-  border-radius: 50%;
-  right: 50px;
-  background-color: #4ee444;
-  color: #555;
-  text-align: center;
-  font-size: 130px;
-  text-decoration: none;
-}
-#back2Top:hover {
-  background-color: #4ee44e;
-  color: #fff;
 }
 
 .atoms {
