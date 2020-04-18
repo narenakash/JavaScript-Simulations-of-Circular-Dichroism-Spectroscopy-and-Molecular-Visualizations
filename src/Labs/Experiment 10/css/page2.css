@@ -1,0 +1,38 @@
+* {
+  font-family: "Lato";
+}
+#content {
+  margin: auto;
+  width: 1100px;
+}
+
+.boundingBox {
+  text-align: center;
+
+  padding: 15px 2px 15px 2px;
+  border-radius: 5px;
+}
+.boundingBoxLeft {
+  font-size: 18px;
+  text-align: center;
+  background: #003152;
+  background-color: #003152;
+  padding: 15px 2px 15px 2px;
+  border-radius: 5px;
+  width: 600px;
+  height: 500px;
+}
+#leftSection {
+  float: left;
+  width: 700px;
+  height: 1000px;
+}
+#rightSection {
+  margin-top: 0;
+  float: left;
+  background: #003152;
+  background-color: #003152;
+  margin-left: 20px;
+  width: 350px;
+  height: 600px;
+}
