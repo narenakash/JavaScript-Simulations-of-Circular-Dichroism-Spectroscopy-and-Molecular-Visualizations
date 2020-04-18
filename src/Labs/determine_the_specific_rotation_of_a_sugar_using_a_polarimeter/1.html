@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+
+    <title>Document</title>
+    <style>
+      #a,
+      #b,
+      #c {
+        position: fixed;
+      }
+      #b {
+        top: 655px;
+        left: 465px;
+      }
+      #c {
+        color: #efefef;
+        left: 940px;
+        top: 395px;
+      }
+      .btn {
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 20px;
+        margin-left: 10px;
+      }
+      #new {
+        position: relative;
+        align-self: flex-start;
+        margin-left: 5%;
+        margin-top: 10px;
+      }
+      .div-position {
+        position: fixed;
+        top: 550px;
+        left: 820px;
+        width: 500px;
+        color: #fff;
+      }
+      .opt {
+        font-size: 18px;
+        margin-left: 40px;
+        margin-top: 20px;
+      }
+      .div-svg {
+        position: fixed;
+        top: 63px;
+        left: 468px;
+      }
+      svg {
+        transform: rotate(-90deg);
+      }
+      #kill {
+        opacity: 0%;
+      }
+    </style>
+  </head>
+  <body>
+    <map name="test" id="test">
+      <area shape="rect" coords="830,450,1100,550" href="google.com" />
+    </map>
+    <img src="./images/1 .jpg" id="a" usemap="#test" />
+    <h1 id="c"></h1>
+
+    <img src="./images/2.jpg" id="b" />
+    <div class="div-position">
+      <div class="" id="new">
+        <button class="btn btn-success" onclick="stepup()">Plus</button>
+        <button class="btn btn-danger" onclick="stepdown()">Minus</button>
+      </div>
+      <div class="opt">
+        <input type="radio" name="gender" value="1" />1 Deg
+        <input type="radio" name="gender" value="5" />5 Deg
+        <input type="radio" name="gender" value="10" />10 Deg
+      </div>
+    </div>
+    <div class="div-svg">
+      <svg width="500px" height="500px">
+        <path d="M0,50 a1,1 0 0,0 100,0" fill="white" id="kill" />
+      </svg>
+    </div>
+
+    <script>
+      var ones = 0,
+        fives = 0,
+        tens = 0;
+      var degrees = 0;
+      var arra = [1, 5, 10];
+      var num = 0,
+        getter;
+      getter = document.getElementsByName("gender");
+      function stepup() {
+        for (i = 0; i < 2; i++) {
+          if (getter[i].checked) {
+            num = arra[i];
+          }
+        }
+        var bb = document.getElementById("b");
+        if (num == 1) {
+          ones++;
+          degrees += 1;
+          degrees = degrees % 360;
+          opa();
+          var aa = document.getElementById("c");
+          aa.innerHTML = degrees;
+
+          bb.style.transform = "rotate(" + ones + "deg)";
+        } else if (num == 5) {
+          fives = fives + 5;
+          degrees += 5;
+          degrees = degrees % 360;
+          opa();
+
+          var aa = document.getElementById("c");
+          aa.innerHTML = degrees;
+
+          bb.style.transform = "rotate(" + fives + "deg)";
+        } else if (num == 10) {
+          tens = tens + 10;
+          degrees += 10;
+          degrees = degrees % 360;
+          opa();
+
+          var aa = document.getElementById("c");
+          aa.innerHTML = degrees;
+
+          bb.style.transform = "rotate(" + tens + "deg)";
+        }
+      }
+      function stepdown() {
+        for (i = 0; i < 2; i++) {
+          if (getter[i].checked) {
+            num = arra[i];
+          }
+        }
+        var bb = document.getElementById("b");
+        if (num == 1) {
+          ones--;
+          degrees -= 1;
+          degrees = degrees % 360;
+          opa();
+          var aa = document.getElementById("c");
+          aa.innerHTML = degrees;
+
+          bb.style.transform = "rotate(" + ones + "deg)";
+        } else if (num == 5) {
+          fives = fives - 5;
+          degrees -= 5;
+          degrees = degrees % 360;
+          opa();
+          var aa = document.getElementById("c");
+          aa.innerHTML = degrees;
+
+          bb.style.transform = "rotate(" + fives + "deg)";
+        } else if (num == 10) {
+          tens = tens - 10;
+          degrees -= 10;
+          degrees = degrees % 360;
+          opa();
+          var aa = document.getElementById("c");
+          aa.innerHTML = degrees;
+
+          bb.style.transform = "rotate(" + tens + "deg)";
+        }
+      }
+      function opa() {
+        if (degrees != 0) {
+          var opacityvalue = degrees % 90;
+          var perOpac = parseFloat(opacityvalue / 90);
+          var valdiv = document.getElementById("kill");
+          valdiv.style.opacity = perOpac;
+        }
+      }
+    </script>
+  </body>
+</html>
