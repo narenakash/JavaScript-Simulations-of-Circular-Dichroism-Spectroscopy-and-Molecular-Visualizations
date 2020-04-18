@@ -4,31 +4,58 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link
       rel="stylesheet"
-      href="../../libraries/bootstrap-3.3.7-dist/css/bootstrap.min.css"
+      href="./libraries/bootstrap-3.3.7-dist/css/bootstrap.min.css"
     />
-    <link rel="stylesheet" type="text/css" href="mfs_expt2.css" />
     <link rel="stylesheet" type="text/css" href="./exp.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
-    <script src="../../libraries/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
-    <script src="../../libraries/jQueryRotate.js"></script>
+    <script src="./libraries/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+    <script src="./libraries/jQueryRotate.js"></script>
     <!-- <script type="text/javascript" src="mfs_expt2.js"></script> -->
     <link
       href="https://fonts.googleapis.com/css?family=Lato&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="./main.css">
 
-    <title class="">Experiment-1</title>
   </head>
 
   <body>
-    <!-- Body is divided into three rows -->
-    <div class="container">
+    <div class="top">
+      <div class="topitem">
+    <div style="height:10%;width:100%;clear:both;"></div>
+  
+        <h3 class="set"><b>Optical Rotation of Sugars<b></h3>
+        <h4 class="set">
+          <b>To Determine the Specific Rotation of Sugars<b>
+        </h4>
+      
+      <div class="flexing">
+        <button
+          class="btn btn-danger"
+          id="new"
+          onclick="window.location.href = './help.html';"
+        >
+          <b>Help!</b>
+        </button>
+  
+        <button class="btn btn-warning btn-lg" id="new" onclick="on(0)">
+          <b>Instructions!</b>
+        </button>
+  
+        <button
+        class="btn btn-success"
+        id="new"
+        onclick="window.location.href = './SRconfig.html';"
+      >
+        <b>Next!</b>
+      </button>
+      </div>
+    </div>
+    </div>
       <!-- First row consists of title of the experiment and the reset button -->
-      <div class="row">
+      <div class="row" style="margin-top: 150px;">
         <div class="col-sm-12">
-          <h3 class="  btn-info">
-            To determine the specific rotation of a sugar using a polarimeter.
-          </h3>
+
           <img
             id="know"
             src="images/know.png"
@@ -73,3 +100,18 @@
         </div> 
 
     <script type="text/javascript" src="exp.js"></script>
+<script
+src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+crossorigin="anonymous"
+></script>
+<script
+src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+crossorigin="anonymous"
+></script>
+<script
+src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+crossorigin="anonymous"
+></script>
