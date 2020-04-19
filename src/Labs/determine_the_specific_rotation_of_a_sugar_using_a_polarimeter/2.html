@@ -30,7 +30,10 @@
     <style>
       #a,
       #b,
-      #c {
+      #c,
+      #c3,
+      #c2,
+      #c4 {
         position: fixed;
       }
       #b {
@@ -41,6 +44,21 @@
         color: #efefef;
         left: 840px;
         top: 395px;
+      }
+      #c2 {
+        color: #efefef;
+        left: 840px;
+        top: 300px;
+      }
+      #c3 {
+        color: #efefef;
+        left: 840px;
+        top: 200px;
+      }
+      #c4 {
+        color: #efefef;
+        left: 840px;
+        top: 130px;
       }
       .btn {
         border: none;
@@ -95,7 +113,10 @@
         <area shape="rect" coords="830,450,1100,550" href="google.com" />
       </map>
       <img src="./images/1 .jpg" id="a" usemap="#test" />
-      <h1 id="c"></h1>
+      <h3 id="c"></h3>
+      <h3 id="c2"></h3>
+      <h3 id="c3"></h3>
+      <h3 id="c4"></h3>
 
       <img src="./images/2.jpg" id="b" />
       <div class="div-position">
@@ -117,6 +138,10 @@
     </div>
 
     <script>
+      var varb1 = localStorage.getItem("conc");
+      var varb2 = localStorage.getItem("samplenum");
+      var varb3 = localStorage.getItem("cell");
+
       var ones = 0,
         fives = 0,
         tens = 0;
@@ -225,6 +250,11 @@
         }
         degrees = d2;
       }
+      var temp1 = localStorage.getItem("conc");
+      var temp2 = localStorage.getItem("samplenum");
+      document.getElementById("c2").innerHTML = "Concentration: " + temp1;
+      document.getElementById("c3").innerHTML = " Sample Number: " + temp2;
+      document.getElementById("c4").innerHTML = " Cell Size: " + varb3;
     </script>
   </body>
 </html>

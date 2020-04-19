@@ -110,6 +110,7 @@ height:75%;*/
   left: 20px;
   top: 125px;
   position: relative;
+  font-size: 18px;
 }
 #text {
   margin-left: 750px;
@@ -135,15 +136,19 @@ height:75%;*/
   position: absolute;
 }
 #next1 {
-  transform: translate(180px, 550px);
+  transform: translate(200px, 545px);
 }
 #next2 {
-  transform: translate(70px, 20px);
-  transform: rotate(14deg);
+  transform: rotate(11deg);
+  opacity: 0%;
+  cursor: pointer;
 }
 #next3 {
   color: white;
-  /* visibility: hidden; */
+  visibility: hidden;
   position: fixed;
   transform: translate(700px, 300px);
+}
+#next4 {
+  visibility: hidden;
 }

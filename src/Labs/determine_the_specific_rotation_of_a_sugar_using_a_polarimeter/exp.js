@@ -12,7 +12,6 @@ cursorPointers("cap")
 cursorPointers("click")
 cursorPointers("click1")
 
-
 function firstClick(id1) {
 	document.getElementById(id1).addEventListener('click', function () {
 		document.getElementById("know").style.visibility = "hidden";
@@ -69,12 +68,12 @@ zoomImg("coor2", "light", "images/light.png");
 zoomImg("coor2", "cap", "images/cap.svg")
 zoomImg("cap", "final", "images/final.png")
 zoomImg("cap", "click", "images/click.png")
-zoomImg("click", "last", "images/last.png")
-zoomImg("click", "click1", "images/click1.jpg")
+// szoomImg("click", "last", "images/last.png")
+// zoomImg("click", "click1", "images/click1.jpg")
 zoomImg("proceed", "sols", "images/sols.png")
 // zoomImg("coor3", "zoomsol", "images/zoomsol.png")
 // zoomImg("coor4", "zoomsol", "images/zoomsol.png")
-zoomImg("zoomsol", "beaker", "images/beaker.png")
+//zoomImg("zoomsol", "beaker", "images/beaker.png")
 zoomImg("coord1", "zoomsol", "images/zoomsol.png")
 zoomImg("coord2", "zoomsol", "images/zoomsol.png")
 zoomImg("coord3", "zoomsol", "images/zoomsol.png")
@@ -106,11 +105,10 @@ document.getElementById("cap").onclick = function () {
 	document.getElementById("cap").style.visibility = "hidden"
 	document.getElementById("light").style.visibility = "hidden"
 }
-document.getElementById("click").onclick = function () {
-	document.getElementById("final").style.visibility = "hidden"
-	document.getElementById("click").style.visibility = "hidden"
-	window.location.href('./1.html');
-}
+// document.getElementById("click").onclick = function () {
+// 	// document.getElementById("final").style.visibility = "hidden"
+// 	// document.getElementById("click").style.visibility = "hidden"
+// }
 function clickSols(id1) {
 	document.getElementById(id1).addEventListener('click', function () {
 		document.getElementById("sols").style.visibility = "hidden";
@@ -125,14 +123,20 @@ clickSols("coord6")
 var first, second;
 function showdata(id1, num) {
 	document.getElementById(id1).addEventListener('click', function () {
-		document.getElementById("demo").innerHTML = num
+		document.getElementById("demo").innerHTML = "Unknow Sample No " + num + " Selected!"
 		swal("Please Enter Concentration:", {
 			content: "input",
 		})
 			.then((value) => {
-				document.getElementById('next3').innerHTML = value
+				document.getElementById('next3').innerHTML = "Concentration:  " + value + " ml";
+				localStorage.setItem("conc", value)
+				localStorage.setItem("samplenum", num)
+
 			});
-		//document.getElementById('next3').visibility = "visible";
+		document.getElementById('next3').style.visibility = "visible";
+		document.getElementById('next5').style.visibility = "visible";
+
+
 		//console.log(first)
 
 
@@ -148,6 +152,15 @@ showdata("coord3", 4)
 showdata("coord2", 2)
 showdata("coord1", 1)
 // document.getElementById("demo1").innerHTML="Max Sugar conc. allowed or this sugar(g/100ml)=108."
-document.getElementById("zoomsol").onclick = function () {
+document.getElementById("next5").onclick = function () {
+	document.getElementById('beaker').src = "./images/beaker.png"
 	document.getElementById("zoomsol").style.visibility = "hidden"
+	document.getElementById('next4').style.visibility = "visible";
+	swal("Please Enter Cell Size:(8ml/10ml)", {
+		content: "input",
+	})
+		.then((value) => {
+			localStorage.setItem("cell", value)
+
+		});
 }
