@@ -216,7 +216,7 @@ function scan() {
             button: "Continue"
         })
             .then((value) => {
-                window.location = "./../../../experiment/g2.html";
+                window.location = "./../../../experiment/graph.html";
             });
     }
     else if (step_no == 13) {
@@ -227,7 +227,7 @@ function scan() {
             button: "Continue"
         })
             .then((value) => {
-                window.location = "./../../../experiment/g2.html";
+                window.location = "./../../../experiment/graph.html";
             });
     }
     cursorPointers('comp_trans_button', 'ok_btn');
