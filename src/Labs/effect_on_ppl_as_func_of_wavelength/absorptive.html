@@ -33,14 +33,14 @@
   </head>
   <body>
     <div class="top">
-      <h1 class="set">
-        Change in Optical Rotation Due to Change in Difference of RI
-      </h1>
+      <h2 class="set">
+      	Change in Optical Rotation Due to Change in Extinction Coefficient.
+      </h2>
       <div class="flexing">
         <button
           class="btn btn-danger"
           id="new"
-          onclick="window.location.href = './help.html';"
+          onclick="window.location.href = './helpa.html';"
         >
           <b>Help!</b>
         </button>
@@ -52,7 +52,7 @@
         <button
           class="btn btn-success"
           id="new"
-          onclick="window.location.href = './dispersive2.html';"
+          onclick="window.location.href = './absorptive2.html';"
         >
           <b>Next!</b>
         </button>
@@ -61,85 +61,65 @@
 
     <div id="overlay0" onclick="off()">
       <div id="text"><b>
-        Here wavelength of light is fixed and equal to 479nm.
+        Here wavelength of light is fixed and equal to 400nm.
         <br />
-        <br>
-        Here you are changing refractive indices of left and right circular
-        polarised light and see which of the left and right circular polarised
-        light dominated<br />
-        <br>
+        <br />
+        Now you are changing extinction coefficient for left and circularly
+        polarised light and see the difference in polarisation for 2 different
+        cases.
+        <br />
+        <br />
+        For more information related to extinction coefficient and polarised
+        ligh refer <b>Help</b>
+        <br />
       </b>
       </div>
     </div>
 
     <div class="slct">
       <div class="form-group">
-        <label
-          for="ri"
-          style="font-family: 'Lato'; font-size:30px; margin-left:0rem;"
-          ><b>Choose possible refractive indices :</b></label
+        <label for="ri" style="font-family: 'Lato'; font-size:30px;width:60%"
+          ><b
+            >Choose extinction coefficient of Left and Right Circular Polarised
+            Light
+          </b></label
         >
         <select id="ri" class="form-control">
-          <option
-            value="./dispersivegifs/n1=1.0_n2=1.0_angle=0.000_lambda=479.gif"
-            >n1=1,n2=1</option
+          <option value="./absorptivegifs/del=0.0.gif">e1=0.00,e2=0.00</option>
+          <option value="./absorptivegifs/del=0.15.gif">e1=0.00,e2=0.15</option>
+          <option value="./absorptivegifs/del=0.30.gif">e1=0.00,e2=0.30</option>
+          <option value="./absorptivegifs/del=(-).15.gif"
+            >e1=0.15,e2=0.00</option
           >
-          <option
-            value="./dispersivegifs/n1=1.0_n2=1.10_angle=(-)0.065_lambda=479.gif"
-            >n1=1,n2=1.1</option
-          >
-          <option
-            value="./dispersivegifs/n1=1.0_n2=1.20_angle=(-)0.131_lambda=479.gif"
-            >n1=1,n2=1.2</option
-          >
-          <option
-            value="./dispersivegifs/n1=1.10_n2=1.00_angle=0.065_lambda=479.gif"
-            >n1=1.1,n2=1</option
-          >
-          <option
-            value="./dispersivegifs/n1=1.20_n2=1.00_angle=0.131_lambda=479.gif"
-            >n1=1.2,n2=1</option
+          <option value="./absorptivegifs/del=(-).30.gif"
+            >e1=0.30,e2=0.00</option
           >
         </select>
       </div>
       <div class="form-group">
-        <label for="ri" style="font-family: 'Lato'; font-size:30px;"
-          ><b>Choose possible refractive indices :</b></label
+        <label for="ri" style="font-family: 'Lato'; font-size:30px;width:60%;"
+          ><b
+            >Choose extinction coefficient of Left and Right Circular Polarised
+            Light</b
+          ></label
         >
         <select id="ri1" class="form-control">
-          <option
-            value="./dispersivegifs/n1=1.0_n2=1.0_angle=0.000_lambda=479.gif"
-            >n1=1,n2=1</option
+          <option value="./absorptivegifs/del=0.0.gif">e1=0.00,e2=0.00</option>
+          <option value="./absorptivegifs/del=0.15.gif">e1=0.00,e2=0.15</option>
+          <option value="./absorptivegifs/del=0.30.gif">e1=0.00,e2=0.30</option>
+          <option value="./absorptivegifs/del=(-).15.gif"
+            >e1=0.15,e2=0.00</option
           >
-          <option
-            value="./dispersivegifs/n1=1.0_n2=1.10_angle=(-)0.065_lambda=479.gif"
-            >n1=1,n2=1.1</option
-          >
-          <option
-            value="./dispersivegifs/n1=1.0_n2=1.20_angle=(-)0.131_lambda=479.gif"
-            >n1=1,n2=1.2</option
-          >
-          <option
-            value="./dispersivegifs/n1=1.10_n2=1.00_angle=0.065_lambda=479.gif"
-            >n1=1.1,n2=1</option
-          >
-          <option
-            value="./dispersivegifs/n1=1.20_n2=1.00_angle=0.131_lambda=479.gif"
-            >n1=1.2,n2=1</option
+          <option value="./absorptivegifs/del=(-).30.gif"
+            >e1=0.30,e2=0.00</option
           >
         </select>
       </div>
       <div>
-        <img
-          src="./dispersivegifs/n1=1.0_n2=1.0_angle=0.000_lambda=479.gif"
-          class="image-swap1"
-        />
+        <img src="./absorptivegifs/del=0.0.gif" class="image-swap1" />
       </div>
       <div>
-        <img
-          src="./dispersivegifs/n1=1.0_n2=1.0_angle=0.000_lambda=479.gif"
-          class="image-swap2"
-        />
+        <img src="./absorptivegifs/del=0.0.gif" class="image-swap2" />
       </div>
     </div>
 

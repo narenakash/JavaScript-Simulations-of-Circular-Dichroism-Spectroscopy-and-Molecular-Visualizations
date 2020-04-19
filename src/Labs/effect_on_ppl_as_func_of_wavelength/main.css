@@ -119,15 +119,7 @@ body {
 .btn1:focus {
   background-color: lightgreen;
 }
-#cont1,
-#cont2,
-#cont3,
-#cont4,
-#cont5,
-#cont6 {
-  position: relative;
-  /*width: 400px;*/
-}
+
 #name {
   /*position: relative;*/
   width: 30%;
@@ -389,35 +381,6 @@ body {
   flex: 0 40%;
 }
 
-.dotC {
-  height: 50px;
-  width: 50px;
-  float: right;
-  border-radius: 50%;
-  background-color: lightblue;
-  margin-bottom: 10px;
-  /*display: inline-block;*/
-}
-
-.dotO {
-  height: 50px;
-  width: 50px;
-  float: right;
-  border-radius: 50%;
-  background-color: red;
-  margin-bottom: 10px;
-  /*display: inline-block;*/
-}
-
-.dotH {
-  height: 50px;
-  width: 50px;
-  float: right;
-  border-radius: 50%;
-  background-color: silver;
-  margin-bottom: 10px;
-  /*display: inline-block;*/
-}
 
 .image-swap1,
 .image-swap2 {
