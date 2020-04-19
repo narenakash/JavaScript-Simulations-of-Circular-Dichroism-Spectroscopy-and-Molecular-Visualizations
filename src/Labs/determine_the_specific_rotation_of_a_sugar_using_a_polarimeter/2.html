@@ -138,10 +138,6 @@
     </div>
 
     <script>
-      var varb1 = localStorage.getItem("conc");
-      var varb2 = localStorage.getItem("samplenum");
-      var varb3 = localStorage.getItem("cell");
-
       var ones = 0,
         fives = 0,
         tens = 0;
@@ -224,25 +220,36 @@
           bb.style.transform = "rotate(" + tens + "deg)";
         }
       }
+      var varb1 = localStorage.getItem("conc");
+      var varb2 = localStorage.getItem("samplenum");
+      var varb3 = localStorage.getItem("cell");
+      varb1 = parseInt(varb1);
+      varb2 = parseInt(varb2);
+      varb3 = parseInt(varb3);
+      var rotationar = [-92, 52.7, 80.2, -105, 66.8, 140.7];
+      var specific = rotationar[varb2 - 1];
+      var angleR = specific * (varb3 / 10) * (varb1 / 100);
+
       function opa() {
+        console.log(angleR);
         var d2 = degrees;
         degrees = Math.abs(degrees);
-        if (degrees != 0 && degrees < 90) {
+        if (degrees != 0 + angleR && degrees < 90 + angleR) {
           var opacityvalue = (degrees - 1) % 90;
           var perOpac = parseFloat(opacityvalue / 90);
           var valdiv = document.getElementById("kill");
           valdiv.style.opacity = Math.abs(perOpac);
-        } else if (degrees >= 90 && degrees < 180) {
+        } else if (degrees >= 90 + angleR && degrees < 180 + angleR) {
           var opacityvalue = degrees % 90;
           var perOpac = parseFloat(opacityvalue / 90);
           var valdiv = document.getElementById("kill");
           valdiv.style.opacity = 1 - Math.abs(perOpac);
-        } else if (degrees >= 180 && degrees < 270) {
+        } else if (degrees >= 180 + angleR && degrees < 270 + angleR) {
           var opacityvalue = degrees % 90;
           var perOpac = parseFloat(opacityvalue / 90);
           var valdiv = document.getElementById("kill");
           valdiv.style.opacity = Math.abs(perOpac);
-        } else if (degrees >= 270 && degrees < 360) {
+        } else if (degrees >= 270 + angleR && degrees < 360) {
           var opacityvalue = degrees % 90;
           var perOpac = parseFloat(opacityvalue / 90);
           var valdiv = document.getElementById("kill");
