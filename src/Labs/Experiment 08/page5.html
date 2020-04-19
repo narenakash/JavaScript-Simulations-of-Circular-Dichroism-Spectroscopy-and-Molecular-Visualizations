@@ -10,6 +10,15 @@
   />
   <link rel="stylesheet" href="./css/page5.css">
   <script type="text/javascript">
+	function submitForm(){
+		var atom1=document.getElementById('start').value
+		localStorage.setItem('atom1',atom1)
+		var atom2=document.getElementById('gap').value
+		localStorage.setItem('atom2',atom2)
+		var atom3=document.getElementById('end').value
+		localStorage.setItem('atom3',atom3)
+		window.location="./lab/experiment/g.html"
+	}
   function getOptions(opt){
 	  var options = "";
 	  for(var i = parseInt(opt) ; i <= 100 ; i += 5){
@@ -28,8 +37,7 @@
   
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-  <script src="./swf2js.js"></script>
+
 </head>
 <body>
     <div class="top">
@@ -110,7 +118,7 @@
 
 		<tr>
 		<td class="tableHead"><strong>Select the Step Size</strong></td>
-		<td><select name="gap" class="boundingBox">
+		<td><select name="gap" id="gap" class="boundingBox">
 		<script type="text/javascript">
 		for(var i = 5 ; i < 25 ; i+=5){
 			document.write("<option value='"+i+"'>"+i+" C</option>");
@@ -119,7 +127,7 @@
 		</select></td></tr>	
 	</table> <br>
 		
-		<button type="submit" id="go" class="btn btn-danger" onclick="submitForm()"> Submit</button>
+		<button  id="go" class="btn btn-danger" onclick="submitForm()"> Submit</button>
 
 	</div>
 
@@ -142,7 +150,6 @@ crossorigin="anonymous"
 
 <script src="./mol1.js"></script>
 
-<script src="./overlay.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
 </body>
