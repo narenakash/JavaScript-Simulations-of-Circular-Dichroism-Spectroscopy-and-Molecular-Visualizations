@@ -4,20 +4,20 @@
 }
 body {
   margin: 0;
-  color: #fff;
+  background-color: #f4f4f4;
 }
 :root {
   --cell-size: 300px;
 }
 .board {
-  width: 50vw;
-  height: 50vh;
+  width: 100vw;
+  height: 100vh;
   display: grid;
   justify-content: left;
   align-content: left;
   /*justify-items: center;*/
   /*align-items: center;*/
-  grid-template-columns: repeat(2, auto);
+  grid-template-columns: repeat(6, auto);
 }
 .boardhelp {
   width: 100vw;
@@ -37,8 +37,10 @@ body {
   grid-template-columns: repeat(4, auto);
 }
 .cell {
-  width: 300px;
-  height: 300px;
+  width: 400px;
+  height: 400px;
+  background-color: black;
+  border: 10px solid white;
 }
 .cellOption {
   border-top: 10px solid white;
@@ -66,6 +68,7 @@ body {
   text-decoration: none;
   display: inline-block;
   font-size: 20px;
+  margin-bottom: 30px;
 }
 .btn1 {
   background-color: blue;
@@ -116,15 +119,7 @@ body {
 .btn1:focus {
   background-color: lightgreen;
 }
-#cont1,
-#cont2,
-#cont3,
-#cont4,
-#cont5,
-#cont6 {
-  position: relative;
-  /*width: 400px;*/
-}
+
 #name {
   /*position: relative;*/
   width: 30%;
@@ -148,7 +143,7 @@ body {
   top: 0;
   width: 100%;
   z-index: 100;
-  border-bottom: 50px;
+  border-bottom: 10px hidden;
   /*padding-bottom: 20px;*/
 }
 /* The container */
@@ -158,8 +153,7 @@ body {
   padding-left: 35px;
   margin-bottom: 12px;
   cursor: pointer;
-  font-size: 15px;
-  font-family: "Lato";
+  font-size: 35px;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -227,13 +221,14 @@ body {
 #overlay0 {
   position: fixed;
   display: none;
-  width: 30%;
+  overflow: auto;
+  width: 27%;
   height: 50%;
-  top: 30%;
-  left: 70%;
+  top: 23vh;
+  /*left: 0;*/
   right: 0;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0.1);
+  background-color: rgba(0,0,0,0.1);
   z-index: 93;
   cursor: pointer;
 }
@@ -282,7 +277,8 @@ body {
   position: relative;
   align-self: flex-start;
   margin-left: 5%;
-  margin-top: 10px;
+  margin-top: 20px;
+  margin-bottom: 5px;
 }
 
 .flex-container {
@@ -357,33 +353,6 @@ body {
   -ms-transform: translate(-50%, -50%);
 }
 
-#back2Top {
-  width: 150px;
-  line-height: 150px;
-  overflow: hidden;
-  z-index: 999;
-  display: none;
-  cursor: pointer;
-  -moz-transform: rotate(270deg);
-  -webkit-transform: rotate(270deg);
-  -o-transform: rotate(270deg);
-  -ms-transform: rotate(270deg);
-  transform: rotate(270deg);
-  position: fixed;
-  bottom: 50px;
-  border-radius: 50%;
-  right: 50px;
-  background-color: #4ee444;
-  color: #555;
-  text-align: center;
-  font-size: 130px;
-  text-decoration: none;
-}
-#back2Top:hover {
-  background-color: #4ee44e;
-  color: #fff;
-}
-
 .atoms {
   display: flex;
   flex-wrap: wrap;
@@ -399,89 +368,28 @@ body {
 }
 
 .slct {
+  border-top: 150px solid #eeeeee;
   display: flex;
+  margin-left: 3rem;
   flex-wrap: wrap;
-  float: center;
-  align-items: center;
-  justify-content: center;
+  float: left;
+  align-items: left;
+  justify-content: left;
 }
 
 .slct > div {
-  flex: 0 50%;
+  flex: 0 40%;
 }
 
-.dotC {
-  height: 50px;
-  width: 50px;
-  float: right;
-  border-radius: 50%;
-  background-color: lightblue;
-  margin-bottom: 10px;
-  /*display: inline-block;*/
-}
 
-.dotO {
-  height: 50px;
-  width: 50px;
-  float: right;
-  border-radius: 50%;
-  background-color: red;
-  margin-bottom: 10px;
-  /*display: inline-block;*/
-}
-
-.dotH {
-  height: 50px;
-  width: 50px;
-  float: right;
-  border-radius: 50%;
-  background-color: silver;
-  margin-bottom: 10px;
-  /*display: inline-block;*/
-}
-
-.image-swap1 {
-  height: 50vh;
-  width: 45vw;
-}
-
+.image-swap1,
 .image-swap2 {
-  height: 25vh;
+  height: 40vh;
   width: 25vw;
 }
 
 #ri,
-#ri1,
-#method {
-  width: 25vw;
-}
-
-table,
-th,
-td {
-  border: 3px solid black;
-  border-collapse: collapse;
-  font-size: 20px;
-  font-family: "Lato";
-  padding-top: 0.5em;
-  padding-bottom: 0.5em;
-  padding-left: 0.5em;
-  padding-right: 0.5em;
-}
-li,
-ul {
-  text-decoration: none;
-}
-#overlay {
-  position: fixed; /* Sit on top of the page content */
-  display: none; /* Hidden by default */
-  width: 60%; /* Full width (cover the whole page) */
-  height: 40%; /* Full height (cover the whole page) */
-  top: 10em;
-  left: 18em;
-  right: 0;
-  bottom: 0;
-  /* Black background with opacity */
-  z-index: 8; /* Specify a stack order in case you're using a different order for other elements */
-  cursor: pointer; /* Add a pointer on hover */
+#ri1 {
+  width: 30%;
+  margin-left: 0rem;
 }
