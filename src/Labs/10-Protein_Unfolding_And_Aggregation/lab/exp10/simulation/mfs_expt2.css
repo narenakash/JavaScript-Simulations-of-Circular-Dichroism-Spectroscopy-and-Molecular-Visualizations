@@ -1,0 +1,353 @@
+* {
+  font-family: "Lato";
+}
+
+body {
+  margin: 0 auto;
+  padding: 0;
+  overflow: hidden;
+}
+
+.container {
+  width: 1080px;
+  height: 715px;
+  position: relative;
+}
+
+h3 {
+  padding-top: 20px;
+  text-align: center;
+  height: 3em;
+  font-size: 2em;
+}
+#skip_btn {
+  left: 790px;
+  position: absolute;
+  cursor: pointer;
+  height: 3em;
+  font-size: 1.3em;
+}
+#reset_btn {
+  margin: auto;
+  display: block;
+  cursor: default;
+  height: 3em;
+  font-size: 1.3em;
+}
+
+#data_buttons {
+  position: absolute;
+  top: 126px;
+}
+
+#manual_button,
+#data_button {
+  position: absolute;
+  left: 106px;
+  cursor: pointer;
+  font-size: 1.3em;
+}
+#data_button {
+  display: none;
+}
+.btn {
+  display: block;
+  cursor: default;
+  height: 3em;
+  width: 10em;
+}
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+  -webkit-animation-name: fadeIn; /* Fade in the background */
+  -webkit-animation-duration: 0.4s;
+  animation-name: fadeIn;
+  animation-duration: 0.4s;
+}
+
+/* Modal Content */
+.modal-content {
+  position: fixed;
+  bottom: 0;
+  background-color: #fefefe;
+  width: 100%;
+  -webkit-animation-name: slideIn;
+  -webkit-animation-duration: 0.4s;
+  animation-name: slideIn;
+  animation-duration: 0.4s;
+}
+
+/* The Close Button */
+.close {
+  color: white;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+}
+.cc {
+  display: flex;
+}
+
+.modal-header {
+  padding: 2px 16px;
+  background-color: black;
+  color: white;
+}
+
+.modal-body {
+  padding: 2px 16px;
+}
+
+/* Add Animation */
+@-webkit-keyframes slideIn {
+  from {
+    bottom: -300px;
+    opacity: 0;
+  }
+  to {
+    bottom: 0;
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    bottom: -300px;
+    opacity: 0;
+  }
+  to {
+    bottom: 0;
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+#apparatus {
+  float: right;
+}
+
+#round-bottom-flask {
+  position: absolute;
+  z-index: 2;
+  width: 10%;
+  height: 56%;
+  left: 15%;
+  top: 17%;
+  cursor: pointer;
+}
+
+#pipette {
+  position: absolute;
+  z-index: 1;
+  width: 3.5%;
+  left: 41%;
+  top: 9%;
+  -ms-transform: rotate(-8deg); /* IE 9 */
+  -webkit-transform: rotate(-8deg); /* Chrome, Safari, Opera */
+  transform: rotate(-8deg);
+}
+
+#cuvette {
+  position: absolute;
+  z-index: 2;
+  width: 3.2%;
+  left: 65%;
+  top: 48%;
+}
+
+#table_with_spec {
+  margin: auto;
+  display: block;
+  width: 85%;
+}
+
+#comp_trans_button {
+  position: absolute;
+  z-index: 2;
+  width: 13.5%;
+  height: 27%;
+  left: 48%;
+  top: 6%;
+}
+
+#spectrolid_trans_button {
+  position: absolute;
+  z-index: 2;
+  width: 5%;
+  height: 21%;
+  left: 34.5%;
+  top: 14%;
+}
+
+#spectrolid_trans_button1 {
+  position: absolute;
+  z-index: 3;
+  width: 4%;
+  height: 18%;
+  left: 35%;
+  top: 2%;
+}
+
+#reference {
+  position: absolute;
+  z-index: 2;
+  width: 15%;
+  left: 40%;
+  top: 0%;
+  visibility: hidden;
+}
+
+#power_trans_button {
+  position: absolute;
+  z-index: 2;
+  left: 15%;
+  top: 42%;
+  width: 2%;
+  height: 8%;
+  visibility: hidden;
+}
+
+#demo {
+  position: absolute;
+  top: 73%;
+  left: 15%;
+  max-width: 66%;
+  color: #fefefe;
+  text-align: left;
+}
+
+#clockScreen {
+  position: absolute;
+  top: 56px;
+  left: 4px;
+  visibility: hidden;
+  z-index: 4;
+  width: 95%;
+  height: 94%;
+}
+
+#clockHand {
+  position: absolute;
+  top: 307.5px;
+  left: 48.5%;
+  visibility: hidden;
+  z-index: 5;
+}
+
+#scan {
+  position: absolute;
+  z-index: 6;
+  top: 76px;
+  left: 15px;
+  visibility: hidden;
+  width: 94%;
+  height: 95%;
+}
+
+#mfs_form1,
+#mfs_form2 {
+  position: absolute;
+  z-index: 8;
+  top: 15%;
+  left: 15%;
+  width: 71%;
+  height: 68%;
+  visibility: hidden;
+}
+
+#ok_btn {
+  position: absolute;
+  z-index: 12;
+  top: 78%;
+  left: 45%;
+  width: 9%;
+  height: 5%;
+  visibility: hidden;
+}
+#select {
+  position: absolute;
+  top: 24%;
+  left: 30%;
+  width: 15%;
+  z-index: 12;
+  visibility: hidden;
+}
+
+#input1 {
+  position: absolute;
+  z-index: 12;
+  top: 48%;
+  left: 30%;
+  width: 9%;
+  height: 5.2%;
+  visibility: hidden;
+}
+
+#input2 {
+  position: absolute;
+  z-index: 12;
+  top: 52.9%;
+  left: 30%;
+  width: 9%;
+  height: 5.2%;
+  visibility: hidden;
+}
+
+#input3 {
+  position: absolute;
+  z-index: 12;
+  top: 58%;
+  left: 30%;
+  width: 9%;
+  height: 5%;
+  visibility: hidden;
+}
+
+.videos {
+  position: absolute;
+  z-index: 18;
+  top: 30%;
+  left: 9%;
+  visibility: hidden;
+}
+
+#disposegraph {
+  position: absolute;
+  z-index: 20;
+  width: 8%;
+  height: 3%;
+  left: 80%;
+  top: 584px;
+}

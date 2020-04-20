@@ -1,0 +1,471 @@
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  background-color: #f4f4f4;
+  color: #fff;
+}
+:root {
+  --cell-size: 300px;
+}
+.board {
+  width: 50vw;
+  height: 50vh;
+  display: grid;
+  justify-content: left;
+  align-content: left;
+  /*justify-items: center;*/
+  /*align-items: center;*/
+  grid-template-columns: repeat(2, auto);
+}
+.boardhelp {
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  justify-content: left;
+  align-content: left;
+  grid-template-columns: repeat(1, auto);
+}
+.boardSR {
+  width: 120vw;
+  height: 120vh;
+  display: grid;
+  justify-content: left;
+  align-content: left;
+
+  grid-template-columns: repeat(4, auto);
+}
+.cell {
+  width: 300px;
+  height: 300px;
+}
+.cellOption {
+  border-top: 10px solid white;
+  width: 400px;
+  height: 400px;
+  border-left: 30px solid white;
+}
+.cellhelp {
+  width: 1500px;
+  height: 500px;
+  border: 20px solid white;
+  display: block;
+}
+#new1 {
+  position: relative;
+  margin-left: 47%;
+  margin-top: 10px;
+}
+
+.btn {
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+}
+.btn1 {
+  background-color: blue;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+}
+.btnI,
+.btnI:focus,
+.btnI:hover {
+  background-color: skyblue;
+}
+.btnP,
+.btnP:focus,
+.btnP:hover {
+  background-color: lightgreen;
+}
+.btnH,
+.btnH:focus,
+.btnH:hover {
+  background-color: #ffcccb;
+}
+.btnC {
+  background-color: skyblue;
+}
+.btnC:focus {
+  background-color: skyblue;
+}
+.btnC:hover {
+  background-color: skyblue;
+}
+.btnH {
+  background-color: silver;
+}
+.btnH:focus {
+  background-color: silver;
+}
+.btnH:hover {
+  background-color: silver;
+}
+.btn1:hover {
+  background-color: lightgreen;
+}
+.btn1:focus {
+  background-color: lightgreen;
+}
+#cont1,
+#cont2,
+#cont3,
+#cont4,
+#cont5,
+#cont6 {
+  position: relative;
+  /*width: 400px;*/
+}
+#name {
+  /*position: relative;*/
+  width: 30%;
+  height: 14px;
+}
+.set {
+  display: grid;
+  font-family: "Lato";
+  /*font-style: oblique;*/
+  justify-content: center;
+  align-content: center;
+  border-bottom: 1px;
+  color: white;
+}
+.up {
+  border-top: 10px;
+}
+.top {
+  background-color: #003152;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+  border-bottom: 50px;
+  /*padding-bottom: 20px;*/
+}
+/* The container */
+.container {
+  display: inline-flex;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 15px;
+  font-family: "Lato";
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default radio button */
+.container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  display: inline;
+}
+
+/* Create a custom radio button */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: white;
+  border-radius: 50%;
+}
+
+/* On mouse-over, add a grey background color */
+.container:hover input ~ .checkmark {
+  background-color: gray;
+}
+
+/* When the radio button is checked, add a blue background */
+.container input:checked ~ .checkmark {
+  background-color: blue;
+}
+
+/* Create the indicator (the dot/circle - hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the indicator (dot/circle) when checked */
+.container input:checked ~ .checkmark:after {
+  display: flex;
+}
+
+/* Style the indicator (dot/circle) */
+.container .checkmark:after {
+  top: 9px;
+  left: 9px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: white;
+}
+.boxes {
+  border-top: 10px solid white;
+  display: grid;
+  position: relative;
+  border-left: 20%;
+  justify-content: center;
+  align-content: center;
+}
+#overlay0 {
+  position: fixed;
+  display: none;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 103;
+  cursor: pointer;
+}
+
+#text {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  font-size: 30px;
+  font-family: "Lato";
+  font-style: oblique;
+  color: silver;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+}
+
+#submitq {
+  background-color: blue;
+}
+
+.flexing {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flexingbutton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flexing1 {
+  flex-direction: column;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flexing cont {
+  width: 100px;
+  height: 100px;
+}
+
+#new {
+  position: relative;
+  align-self: flex-start;
+  margin-left: 5%;
+  margin-top: 10px;
+}
+
+.flex-container {
+  width: 80%;
+  min-height: 300px;
+  margin: 0 auto;
+  display: -webkit-flex; /* Safari */
+  display: flex; /* Standard syntax */
+}
+
+.flex-container .labels {
+  padding: 10px;
+  /*background: #dbdfe5;*/
+  -webkit-flex: 1; /* Safari */
+  -ms-flex: 1; /* IE 10 */
+  flex: 1; /* Standard syntax */
+}
+
+.flex-container .labels1 {
+  padding: 10px;
+}
+
+#overlay1 {
+  position: fixed;
+  display: none;
+  width: 15%;
+  height: 35%;
+  top: 40%;
+  left: 45%;
+  border-radius: 100%;
+  /*background-color: rgba(0, 0, 0, .8);*/
+  z-index: 3;
+  cursor: pointer;
+}
+
+#result {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-size: 50px;
+  font-family: "Lato";
+  font-style: oblique;
+  color: silver;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+}
+
+#overlay2 {
+  position: fixed;
+  display: none;
+  width: 15%;
+  height: 35%;
+  top: 40%;
+  left: 45%;
+  border-radius: 100%;
+  /*right: 0;*/
+  /*bottom: 0;*/
+  /*background-color: rgba(0, 0, 0, .8);*/
+  z-index: 3;
+  cursor: pointer;
+}
+
+#result1 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-size: 50px;
+  font-family: "Lato";
+  font-style: oblique;
+  color: silver;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+}
+
+#back2Top {
+  width: 150px;
+  line-height: 150px;
+  overflow: hidden;
+  z-index: 999;
+  display: none;
+  cursor: pointer;
+  -moz-transform: rotate(270deg);
+  -webkit-transform: rotate(270deg);
+  -o-transform: rotate(270deg);
+  -ms-transform: rotate(270deg);
+  transform: rotate(270deg);
+  position: fixed;
+  bottom: 50px;
+  border-radius: 50%;
+  right: 50px;
+  background-color: #4ee444;
+  color: #555;
+  text-align: center;
+  font-size: 130px;
+  text-decoration: none;
+}
+#back2Top:hover {
+  background-color: #4ee44e;
+  color: #fff;
+}
+
+.atoms {
+  display: flex;
+  flex-wrap: wrap;
+  float: left;
+}
+
+.item {
+  flex-grow: 1;
+}
+
+.item + .item {
+  margin-left: 2%;
+}
+
+.slct {
+  display: flex;
+  flex-wrap: wrap;
+  float: center;
+  align-items: center;
+  justify-content: center;
+}
+
+.slct > div {
+  flex: 0 50%;
+}
+
+.dotC {
+  height: 50px;
+  width: 50px;
+  float: right;
+  border-radius: 50%;
+  background-color: lightblue;
+  margin-bottom: 10px;
+  /*display: inline-block;*/
+}
+
+.dotO {
+  height: 50px;
+  width: 50px;
+  float: right;
+  border-radius: 50%;
+  background-color: red;
+  margin-bottom: 10px;
+  /*display: inline-block;*/
+}
+
+.dotH {
+  height: 50px;
+  width: 50px;
+  float: right;
+  border-radius: 50%;
+  background-color: silver;
+  margin-bottom: 10px;
+  /*display: inline-block;*/
+}
+
+.image-swap1 {
+  height: 50vh;
+  width: 45vw;
+}
+
+.image-swap2 {
+  height: 25vh;
+  width: 25vw;
+}
+
+#ri,
+#ri1,
+#method {
+  width: 25vw;
+}
+
+table,
+th,
+td {
+  border: 3px solid black;
+  border-collapse: collapse;
+  font-size: 20px;
+  font-family: "Lato";
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+}
