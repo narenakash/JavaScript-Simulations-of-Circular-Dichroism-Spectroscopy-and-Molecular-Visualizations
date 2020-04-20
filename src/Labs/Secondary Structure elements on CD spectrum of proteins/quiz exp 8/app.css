@@ -141,7 +141,7 @@ img-final {
 .img-final {
   margin: 10em;
 }
-.btn {
+.btn1 {
   margin-top: 10em;
   margin-left: 2em;
 }
@@ -164,4 +164,8 @@ h1 {
 #finalScore {
   left: 5%;
   top: 5%;
+  padding: 20px;
+}
+h1 {
+  top: 8%;
 }
