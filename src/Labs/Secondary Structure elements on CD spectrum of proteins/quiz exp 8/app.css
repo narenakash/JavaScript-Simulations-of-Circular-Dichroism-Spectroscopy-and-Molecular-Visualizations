@@ -81,7 +81,7 @@ h3 {
 .btn {
   font-size: 1.8rem;
   padding: 1rem 0;
-  width: 20rem;
+  width: 25rem;
   text-align: center;
   border: 0.1rem solid #56a5eb;
   margin-bottom: 1rem;
@@ -157,6 +157,11 @@ h1 {
   color: #333;
 }
 .newclass {
-  margin-left: 50px;
-  margin-top: 30%;
+  top: 55%;
+  left: 10%;
+  position: fixed;
+}
+#finalScore {
+  left: 5%;
+  top: 5%;
 }
