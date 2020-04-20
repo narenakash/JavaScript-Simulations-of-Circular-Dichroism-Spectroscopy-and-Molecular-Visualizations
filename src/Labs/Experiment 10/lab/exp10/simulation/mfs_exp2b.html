@@ -18,6 +18,7 @@
       href="https://fonts.googleapis.com/css?family=Lato&display=swap"
       rel="stylesheet"
     />
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
     <title class="">Measurement of CD Spectra</title>
   </head>
@@ -28,18 +29,18 @@
       <!-- First row consists of title of the experiment and the reset button -->
       <div class="row">
         <div class="col-sm-12">
-          <h3 class="  btn-info">
+          <h3 class="btn-info">
             Measurement of CD Spectra at Different Temperatures
           </h3>
           <div class="cc">
-            <button id="reset_btn" class="btn btn-danger ">
+            <button id="reset_btn" class="btn btn-danger">
               Reset
             </button>
             <input
               id="skip_btn"
               class="btn btn-info"
               type="button"
-              onclick="window.location.href = '../../experiment/g.html' "
+              onclick="window.location.href = './../../../page5.html' "
               value="Skip"
             />
 
@@ -51,14 +52,14 @@
 
       <!-- Second row consists of two columns with one column containing buttons ie manual and data and the other containing shelf with apparatus -->
       <div class="row">
-        <div class="col-sm-6" id="data_buttons">
+        <div class="col-sm-6">
           <!-- Manual image button displays the set of instructions to be followed to perform experiment
         On clicking this button a box modal appears over the page n displays the instruction -->
           <br />
           <br />
 
           <br /><br />
-          <div id="manual" style="z-index:1200" class="modal">
+          <div id="manual" style="z-index: 1200;" class="modal">
             <!-- Modal content -->
             <div class="modal-content">
               <div class="modal-header">
@@ -66,7 +67,10 @@
                 <h2>Manual</h2>
               </div>
 
-              <div class="modal-body" style="text-align:left;">
+              <div
+                class="modal-body"
+                style="text-align: left; font-size: 18px;"
+              >
                 <ol>
                   <li>
                     Click on SOLUTION to bring it to the experiment table.
@@ -91,70 +95,7 @@
                     Close the lid of the sample chamber by clicking on the lid.
                   </li>
                   <li>
-                    To run the Excitation Spectral Scan, open the measurement
-                    set-up screen by clicking on the fluorescence measurement
-                    icon on the computer monitor.
-                  </li>
-                  <li>Select the Excitation Scan Mode on the screen.</li>
-                  <li>
-                    On the screen, enter the Emission wavelength: 515 nm,
-                    Excitation Start Wavelength: 300 nm and Excitation End
-                    wavelength: 600 nm. One chooses the Excitation Slit(nm) and
-                    Emission Slit(nm) values (here 2.5 nm/2.5 nm) and the scan
-                    speed value (here “medium” ) also.
-                  </li>
-                  <li>
-                    Click on the 'OK' button on the set-up screen to start the
-                    wavelength scan for excitation spectrum.
-                  </li>
-                  <li>
-                    Click on 'Close' button when spectral scan is complete. In
-                    real operation, the scan data are stored in the computer.
-                    The instrument stores data and therefore asks for the Sample
-                    File name. One enters a file name to save the data.
-                  </li>
-                  <li>
-                    To run the Emission Spectral Scan of the sample, open the
-                    instrument set-up screen by clicking on the fluorescence
-                    measurement icon on the computer monitor.
-                  </li>
-                  <li>Select the Emission Scan Mode on the screen.</li>
-                  <li>
-                    On the screen, enter the Excitation wavelength: 425 nm,
-                    Emission Start Wavelength: 435 nm and Emission End
-                    wavelength: 700 nm. Emission Start Wavelength value should
-                    be larger than the excitation wavelength. Often the the
-                    maximum absorbance wavelength is chosen as the excitation
-                    wavelength. The Emission End Wavelength value depends on the
-                    sample, instrument, etc. One chooses the Excitation Slit(nm)
-                    and Emission Slit(nm) values (here 2.5 nm/2.5 nm) and the
-                    scan speed value (here “medium” ) also.
-                  </li>
-                  <li>
-                    Click on the 'OK' button on the set-up screen to run the
-                    wavelength scan for emission spectrum. One has to be sure
-                    that the solvent blank does not fluoresce in the wavelength
-                    range of interest.
-                  </li>
-                  <li>
-                    Click on 'Close' button when spectral scan is complete. In
-                    real operation, the scan data are stored in the computer.
-                    The instrument stores data and therefore asks for the Sample
-                    File name. One enters a file name to save the data.
-                  </li>
-                  <li>
-                    To take the cuvette out of the sample chamber, first click
-                    on the sample chamber lid to open it and then on the
-                    cuvette.
-                  </li>
-                  <li>
-                    Close the lid of the sample chamber by clicking on the lid.
-                  </li>
-                  <li>Click on Reset button to start over the measurements.</li>
-                  <li>Collect all data by clicking on the Data tab.</li>
-                  <li>
-                    Find out the maximum excitation and emission wavelengths and
-                    intensities.
+                    Clcik on the Computer Screen
                   </li>
                 </ol>
               </div>

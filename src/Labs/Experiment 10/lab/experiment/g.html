@@ -39,13 +39,15 @@
     ></script>
     <script type="text/javascript">
       var curr;
+      var aa=localStorage.getItem('atom1'),bb=localStorage.getItem('atom2'),cc=localStorage.getItem('atom3')
+      aa=parseInt(aa);bb=parseInt(bb);cc=parseInt(cc)
       var analysisData = new Array(20);
       var helicityFlag = new Array(20);
       var start, end, gap;
       $(document).ready(function() {
-        start = parseInt(document.getElementById("one").value);
-        end = parseInt(document.getElementById("two").value);
-        gap = parseInt(document.getElementById("three").value);
+        start = parseInt(aa);
+        end = parseInt(cc);
+        gap = parseInt(bb);
         curr = start;
         plotStartTemp(start + "C");
       });
@@ -58,12 +60,12 @@
         }
       }
 var count=0
-if (count=0){
+if (count==0){
 
 }
-var start = 5;
-var end = 100;
-var gap = 5;
+var start = aa
+var end = cc
+var gap = bb
 function SubmitFunction(){
   count=count+1;
   start = parseInt(document.getElementById("one").value);
@@ -252,12 +254,15 @@ function SubmitFunction(){
         }
         document.getElementById("graph1_Lower").style.display = "none";
         document.getElementById("graph2_Lower").style.display = "";
-      }
+        document.getElementById('atom11').style.visibility="hidden";     
+       }
 
       function removeAnalysis() {
         plotStartTemp(curr + "C");
         document.getElementById("graph2_Lower").style.display = "none";
         document.getElementById("graph1_Lower").style.display = "";
+        document.getElementById('atom11').style.visibility="visible";     
+
       }
     </script>
     <style type="text/css">
@@ -334,70 +339,6 @@ function SubmitFunction(){
 
 
 
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Selecting Parameters</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <form>
-          <div class="form-group">
-            <label for="recipient-name" class="col-form-label">Starting Temperature:</label>
-            <select name="start" class="form-control" id="one" onchange="getOptions(this.options[this.selectedIndex].value)">
-              <script type="text/javascript">
-                for(var i = 5 ; i <= 100 ; i+=5){
-                  document.write("<option value='"+i+"'>"+i+" C</option>");
-                }
-              </script>
-              </select>
-
-
-          </div>
-          <div class="form-group">
-            <label for="recipient-name" class="col-form-label">Select Final Temperature	:</label>
-            <select name="end" class="form-control"  id="two">
-              <script type="text/javascript">
-                 for(var i = 5 ; i <= 100 ; i+=5){
-                if(i == 100){	
-                      document.write("<option value='"+i+"' selected='true'>"+i+" C</option>");
-                }
-                else{
-                    document.write("<option value='"+i+"'>"+i+" C</option>");
-                }
-                 }
-              </script>
-              </select>
-
-
-
-          </div>
-          <div class="form-group">
-            <label for="recipient-name" class="col-form-label">Select the Step Size	:</label>
-            <select name="gap" class="form-control" id="three">
-              <script type="text/javascript">
-                for(var i = 5 ; i < 25 ; i+=5){
-                  document.write("<option value='"+i+"'>"+i+" C</option>");
-                }
-              </script>
-              </select>
-
-
-
-
-          </div>
-        </form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary" onclick="SubmitFunction()" data-dismiss="modal">Set</button>
-      </div>
-    </div>
-  </div>
-</div>
 
           <p id="hoverdata">
             Mouse Hover Position: (<span id="x">0</span>,
@@ -422,13 +363,13 @@ function SubmitFunction(){
 		</div>
 		<button
 		class="boundingBox1 btn btn-dark"
-		onclick='window.location="./../../quiz exp 8/game.html"'
-		style="margin-left: 50px;"
+		onclick='window.location="./../../quiz_exp_10/game.html"'
+    style="margin-left: 50px;"
+    id="atom11"
 	  >
 		Go To Analysis
     </button>
     &nbsp;&nbsp;
-    <button type="button" class="boundingBox1 btn btn-dark" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Parameters</button>
 
         <div style="margin-left: 50px;display:none;" id="graph2_Lower">
           <center>
@@ -508,9 +449,7 @@ function SubmitFunction(){
           </tr>
         </center>
       </div>
-      <input type="hidden" value="5" id="start" />
-      <input type="hidden" value="100" id="end" />
-      <input type="hidden" value="5" id="gap" />
+
     </div>
 
     <script
