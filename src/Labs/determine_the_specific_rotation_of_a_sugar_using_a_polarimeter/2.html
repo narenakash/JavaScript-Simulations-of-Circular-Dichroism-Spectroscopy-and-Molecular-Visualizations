@@ -60,6 +60,9 @@
         left: 840px;
         top: 130px;
       }
+      .btn1 {
+        width: 10em;
+      }
       .btn {
         border: none;
         color: white;
@@ -127,7 +130,13 @@
         <div class="opt">
           <input type="radio" name="gender" value="1" />1 Deg
           <input type="radio" name="gender" value="5" />5 Deg
-          <input type="radio" name="gender" value="10" />10 Deg
+          <input type="radio" name="gender" value="10" />10 Deg <br /><br />
+          <button
+            class="btn btn-info btn1"
+            onclick="window.location.href='./Quiz/game.html'"
+          >
+            Answer
+          </button>
         </div>
       </div>
       <div class="div-svg">
@@ -235,7 +244,7 @@
         var d2 = degrees;
         degrees = Math.abs(degrees);
         if (degrees != 0 + angleR && degrees < 90 + angleR) {
-          var opacityvalue = (degrees - 1) % 90;
+          var opacityvalue = degrees % 90;
           var perOpac = parseFloat(opacityvalue / 90);
           var valdiv = document.getElementById("kill");
           valdiv.style.opacity = Math.abs(perOpac);
