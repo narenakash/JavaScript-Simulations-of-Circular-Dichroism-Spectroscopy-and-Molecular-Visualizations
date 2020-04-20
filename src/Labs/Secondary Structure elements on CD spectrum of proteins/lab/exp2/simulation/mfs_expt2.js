@@ -42,12 +42,7 @@ window.onload = function () {
 function initial_function() {
     // Intial instruction to be followed
     document.getElementById("demo").innerHTML = "Step1: Prepare a 4.1 × 10<sup>-6</sup> M fluorescein solution in spectroscopy grade ethanol from a 8.2 × 10<sup>-4</sup> M fluorescein stock solution. Click on the volumetric flask containing the fluorescein solution to take it onto the instrument table.";
-    // Get the button that opens the manual modal
-    // Get the <span> element that closes the manual modal
-    var span = document.getElementsByClassName("close")[0];
-    // When the user clicks the button, open the manual modal 
 
-    // When the user clicks on <span> (x), close the modal
 
 }
 
@@ -67,7 +62,6 @@ function addclickEvents() {
     document.getElementById("reset_btn").addEventListener("click", function () {
         window.location.reload();
     }, false);
-
     document.getElementById("round-bottom-flask").addEventListener("click", function () {
         moveFlask();
     }, false);
@@ -174,7 +168,7 @@ function spectrofluorimeter() {
         // Replace the spectrofluorimeter images with the closed spectrophotmeter images.
         images[0] = "../../common_images/specfluor_on_redLight.png";
         images[1] = "../../common_images/specfluor_on_no_redLight.png";
-        document.getElementById("demo").innerHTML = "Step-No 11: To run the Excitation Spectral Scan, open the measurement set-up screen by clicking on the fluorescence measurement icon on the computer monitor.";
+        document.getElementById("demo").innerHTML = "Step-No 11: Click on the Computer Screen!";
         cursorPointers('spectrolid_trans_button1', 'comp_trans_button');
         step_no++;
     }
@@ -184,16 +178,31 @@ function spectrofluorimeter() {
 function scan() {
     //displays the data validation elements by clicking on the computer screen.
     if (step_no == 10) {
+        localStorage.setItem("visit", 1);
+
         //To run the excitation scan mode.
-        $(".data_validation, #mfs_form1, #scan").css("visibility", "visible");
-        document.getElementById("demo").innerHTML = "Step-No 12:On the screen enter the Emission wavelength : 515nm, Excitation start wavelength:300nm and Excitation end wavelength: 600nm. One chooses the Excitation slit (nm) and Emission Slit (nm) values (here 2.5nm/2.5nm) and the scan speed value (here 'medium') also.";
-        step_no++;
+        swal({
+            title: "Nice Work!!",
+            text: "You Completed CD Spectroscopy.",
+            icon: "success",
+            button: "Continue"
+        })
+            .then((value) => {
+                window.location = "./../../../page2.html";
+            });
     }
     else if (step_no == 13) {
-        //To run the emission scan mode.
-        $(".data_validation, #mfs_form2, #scan").css("visibility", "visible");
-        document.getElementById("demo").innerHTML = "Step-No 15:To run the Emission Spectral Scan of the sample, open the instrument set-up screen by clicking on the fluorescence measurement icon on the computer monitor.Select the emission scan mode on the screen.";
-        step_no++;
+        localStorage.setItem("visit", 1);
+
+        swal({
+            title: "Nice Work!!",
+            text: "You Completed CD Spectroscopy.",
+            icon: "success",
+            button: "Continue"
+        })
+            .then((value) => {
+                window.location = "./../../../page2.html";
+            });
     }
     cursorPointers('comp_trans_button', 'ok_btn');
 }
@@ -201,7 +210,9 @@ function scan() {
 //This method is used to select the specific graph from the dropdown menu.
 function selectGraph() {
     dropdown = document.getElementById("select");
+    console.log(dropdown.value, step_no);
     dropdown.onchange = function (event) {
+        console.log(dropdown.value, step_no);
         if (dropdown.value == "Emission" && step_no == 11) {
             $("#select").html("<option value='Excitation'>Excitation</option><option value='Emission'>Emission</option>");
             alert("Select Excitation scan mode");
