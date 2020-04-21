@@ -104,13 +104,19 @@ localStorage.setItem('visit',0)
   }
     function chck(){
         //console.log(1)
+        off(0);
         document.getElementById("img-gif").style.display = "none";
         on11()
         setTimeout(function(){
             off11()
         } ,3000)
+
+        setTimeout(function(){
+          on(0);
+        },3000)
     
         setTimeout( function(){
+          // off(0);
         swal({
           title: "Nitrogen Purge Completed!",
           text: "Oxygen is removed from the Chamber!",
@@ -122,6 +128,7 @@ localStorage.setItem('visit',0)
         document.getElementById("img-gif").style.display = "block";
 
       },3000)
+      // on(0);
     }
 
     </script>
@@ -130,11 +137,11 @@ localStorage.setItem('visit',0)
 
 <body onload="chckfinal()">
     <div class="top">
-      <h3 class="set"><b>Secondary Structure elements<b></h3>
-      <h4 class="set">
+      <h3 class="set" style="margin-top:1vh"><b>Secondary Structure elements<b></h3>
+      <h4 class="set" style="margin-bottom:1vh">
         To Study the effect of Secondary Structure elements on CD spectrum of proteins.      </h4>
     
-    <div class="flexing">
+    <div class="flexing" style="margin-bottom:-3vh">
     <button
       class="btn btn-success"
       id="new"

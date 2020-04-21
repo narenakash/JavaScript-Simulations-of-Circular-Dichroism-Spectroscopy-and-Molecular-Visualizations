@@ -18,23 +18,23 @@
 </head>
 <body>
     <div class="top">
-      <h3 class="set">Animation of Protein Defolding with Temperature
+      <h3 class="set" style="margin-top:1vh">Animation of Protein Defolding with Temperature
       </h3>
-      <h4 class="set">
+      <h4 class="set" style="maring-bottom:1vh">
         Familiarize with Protein Defolding at various temperatures.
       </h4>
     
-    <div class="flexing">
+    <div class="flexing" style="margin-bottom:-3vh;margin-left:-5vw">
       <button
-        class="btn btn-danger"
+        class="btn btn-success"
         id="new"
         onclick="window.location.href = './index.html';"
       >
-      Back!</b>
+      Previous!</b>
       </button>
 
-      <button class="btn btn-warning btn-lg" id="new" onclick="on(0)">
-        Instructions!</b>
+      <button class="btn btn-danger" id="new" onclick="window.location.href = './help1.html';">
+        help!</b>
       </button>
 
       <button
@@ -64,9 +64,6 @@
 <div id="content">
  
   <br />
-  <h2 class="boundingBox  btn-info">
-    Animation of Protein Defolding with Temperature
-  </h2>
   <br />
   <script>
 var vid = document.getElementById("1");
@@ -83,25 +80,25 @@ function pauseVid() {
     </script>
   <div id="leftSection">
     <div class="board">
-      <div data-cell class="cell"  id="cont1" onclick="pauseVid()">
-        <video id="1"  width="280" height="290" autoplay="autoplay" >
+      <div data-cell class="cell"  id="cont1">
+        <video id="1"  width="280" height="290" playsinline autoplay muted loop>
           <source src="./lab/experiment/298K.mp4" type="video/mp4">
         </video>
       </div>
       <div data-cell class="cell"  id="cont2" >
-        <video id='2'  width="280" height="290"  autoplay="autoplay" >
+        <video id='2'  width="280" height="290" playsinline autoplay muted loop>
           <source src="./lab/experiment/358K.mp4" type="video/mp4">
         </video>
       </div>
     
       <div data-cell class="cell"  id="cont3" >
-        <video id='3'  width="280" height="290"  autoplay="autoplay" >
+        <video id='3'  width="280" height="290" playsinline autoplay muted loop>
           <source src="./lab/experiment/388Klong.mp4" type="video/mp4">
         </video>
       </div>
     
       <div data-cell class="cell " id="cont4">
-        <video id='4'  width="280" height="290"  autoplay="autoplay"  >
+        <video id='4'  width="280" height="290" playsinline autoplay muted loop>
           <source src="./lab/experiment/418Klong.mp4" type="video/mp4">
         </video>
       </div>

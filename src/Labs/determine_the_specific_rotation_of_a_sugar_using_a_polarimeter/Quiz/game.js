@@ -10,7 +10,7 @@ let questionCounter = 0;
 let availableQuesions = [];
 var varb2 = localStorage.getItem("samplenum");
 varb2 = parseInt(varb2)
-var rotationar = ["-92,A", "52.7,B", "80.2,C", "-105,D", "66.8,E", "140.7,F"];
+var rotationar = ["-92,D-Fructose", "52.7,D-Glucose", "80.2,D-Galactose", "-105,D-Arabinose", "66.8,D-Sucrose", "140.7,D-Maltose"];
 var answer = rotationar.splice(varb2 - 1, 1)
 answer = answer[0]
 console.log(answer)
