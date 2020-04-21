@@ -136,12 +136,13 @@ height:75%;*/
   position: absolute;
 }
 #next1 {
-  transform: translate(200px, 545px);
+  transform: translate(100px, 445px);
 }
 #next2 {
-  transform: rotate(11deg);
+  /*transform: rotate(11deg);*/
   opacity: 0%;
   cursor: pointer;
+  transform: translate(120px,0px);
 }
 #next3 {
   color: white;
@@ -149,6 +150,6 @@ height:75%;*/
   position: fixed;
   transform: translate(700px, 300px);
 }
-#next4 {
+#next41,#next42 {
   visibility: hidden;
 }

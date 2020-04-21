@@ -176,15 +176,27 @@ body {
   position: fixed;
   display: none;
   overflow: auto;
-  width: 27%;
+  width: 24%;
   height: 100%;
-  top: 23vh;
+  top: 20vh;
   /*left: 0;*/
   right: 0;
   bottom: 0;
   background-color: rgba(0, 0, 0, 0.1);
   z-index: 93;
   cursor: pointer;
+}
+
+#text {
+  position: relative;
+  top: 40%;
+  left: 50%;
+  font-size: 22px;
+  padding: 10px;
+  font-family: "Lato";
+  color: black;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
 }
 
 #submitq {

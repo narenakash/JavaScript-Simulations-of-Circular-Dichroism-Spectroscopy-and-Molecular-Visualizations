@@ -155,11 +155,17 @@ showdata("coord1", 1)
 document.getElementById("next5").onclick = function () {
 	document.getElementById('beaker').src = "./images/beaker.png"
 	document.getElementById("zoomsol").style.visibility = "hidden"
-	document.getElementById('next4').style.visibility = "visible";
-	swal("Please Enter Cell Size:(8ml/10ml)", {
+	swal("Please Enter Cell Size:(8cm/10cm)", {
 		content: "input",
 	})
 		.then((value) => {
+			console.log(value);
+			if(value==8){
+				document.getElementById('next42').style.visibility = "visible";
+			}
+			else{
+	document.getElementById('next41').style.visibility = "visible";
+			}
 			localStorage.setItem("cell", value)
 
 		});
