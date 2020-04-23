@@ -152,3 +152,6 @@ height:75%;*/
 #next4 {
   visibility: hidden;
 }
+#compOn {
+  position: fixed;
+}

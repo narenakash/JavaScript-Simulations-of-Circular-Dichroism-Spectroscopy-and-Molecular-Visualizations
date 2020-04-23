@@ -42,47 +42,80 @@
         footer: '<a href>Why do I have this issue?</a>'
       })
     }
+    function computercstart(){
+      Swal.fire({
+        icon: 'success',
+        title: 'Switched On',
+        text: 'Continue',
+        footer: '<a href>Why do I have this issue?</a>'
+      })
+      document.getElementById('compOn').style.visibility="visible"
+    }
 
    // localStorage.setItem('Selection', 0);
   function n2start(){
-Swal.fire({
-        title: 'Please Set the Value of Nitrogen!',
-        icon: 'info',
+    (async () => {
+
+      const { value: inputValue} = await Swal.fire({
+        title: 'Please fill Nitrogen Value(Lit/min)?',
+        icon: 'question',
         input: 'range',
         inputAttributes: {
-          min: 8,
-          max: 120,
+          min: 0,
+          max: 20,
           step: 1
         },
-        inputValue: 25,
-   
+        inputValue: 10,
       })
-      
+      if (inputValue) {
+        //Swal.fire(text)
+        localStorage.setItem('step1',inputValue)
+      }
 
-
-
+      })()  
   }
   function tempera(){
-    Swal.fire({
-      title: '<strong>HTML <u>example</u></strong>',
-      icon: 'info',
-      html:
-        '<img src="./shapes/14.png"/> ' +
-        'and other HTML tags',
-      showCloseButton: true,
-      showCancelButton: true,
-      focusConfirm: false,
-      confirmButtonText:
-        '<i class="fa fa-thumbs-up"></i> Great!',
 
-    })
+    (async () => {
+
+      const { value: inputValue} = await Swal.fire({
+        title: '',
+        icon: 'success',
+        html:
+          '<img src="./shapes/ti.jpg"/> ' +
+          '',
+          input: 'range',
+          inputAttributes: {
+            min: 8,
+            max: 120,
+            step: 1
+          },
+          inputValue: 25,
+        showCloseButton: true,
+        showCancelButton: true,
+        focusConfirm: false,
+        confirmButtonText:
+          ' Great!',
+  
+      })
+      if (inputValue) {
+        //Swal.fire(text)
+        localStorage.setItem('step4',inputValue)
+      }
+
+      })()  
+
+  }
+  function cdSpectroscope(){
+
+
 
   }
 function n2purge(){
   let timerInterval
   Swal.fire({
     title: 'N2 purging',
-    html: 'I will close in <b></b> milliseconds.',
+    html: 'Nitrogen Will 30 minutes',
     timer: 2000,
     timerProgressBar: true,
     onBeforeOpen: () => {
@@ -106,23 +139,144 @@ function n2purge(){
       console.log('I was closed by the timer')
     }
   })
-}
+  setTimeout(function(){
+    Swal.fire({
+      imageUrl: './shapes/xd.PNG',
 
+      imageAlt: 'A tall image'
+    })
+   setTimeout(function(){
+    (async () => {
+    const { value: fruit } = await Swal.fire({
+      title: 'Select field validation',
+      input: 'select',
+      inputOptions: {
+        apples: '0.01-0.02',
+        bananas: '0.1',
+        grapes: '1.0',      },
+      inputPlaceholder: 'Protien Solution',
+      confirmButtonText:'Next',
+      showCancelButton: true,   
+      showLoading:true,
+      inputValidator: (value) => {
+        return new Promise((resolve) => {
+          if (value ) {
+            resolve()
+          } else {
+            resolve('Please Fill!')
+          }
+        })
+      }
+    })
+
+    
+    if (fruit) {
+      localStorage.setItem('fruit',fruit)
+    }
+    const { value: fruit1 } = await Swal.fire({
+      title: 'Select field validation',
+      input: 'select',
+      inputOptions: {
+        apples: '0.02-1.0',
+        bananas: '0.05-0.2',
+        grapes: '0.005-0.01',      },
+      inputPlaceholder: 'Cuvette Path',
+      showCancelButton: true,
+      confirmButtonText:'Next',
+      showLoading:true,
+      inputValidator: (value) => {
+        return new Promise((resolve) => {
+          if (value ) {
+            resolve()
+          } else {
+            resolve('Please Fill!')
+          }
+        })
+      }
+    })
+
+    
+    if (fruit1) {
+      localStorage.setItem('fruit1',fruit1)
+    }  
+    const { value: fruit2 } = await Swal.fire({
+      title: 'Select field validation',
+      input: 'select',
+      inputOptions: {
+        apples: '10mM Potassium Phospate,100mM KCL',
+        bananas: '20mM Potassium Phospate,100mM Nacl',   },
+      inputPlaceholder: 'Buffers',
+      showCancelButton: true,
+      confirmButtonText:'Finish',
+
+      showLoading:true,
+      inputValidator: (value) => {
+        return new Promise((resolve) => {
+          if (value ) {
+            resolve()
+          } else {
+            resolve('Please Fill!')
+          }
+        })
+      }
+    })
+
+    if (fruit2) {
+      localStorage.setItem('fruit2',fruit2)
+      window.location="./lab/exp2/simulation/mfs_exp2b.html"
+    }
+  })()    
+   
+  
+  
+  
+  
+  },2000); 
+  },2100)
+}
+function waterbath(){
+  
+  (async () => {
+
+    const { value: inputValue} = await Swal.fire({
+      title: 'Water Bath(Degree Celcius)',
+      icon: 'info',
+        input: 'range',
+        inputAttributes: {
+          min: 8,
+          max: 120,
+          step: 1
+        },
+        inputValue: 25,
+      showCloseButton: true,
+      showCancelButton: true,
+      focusConfirm: false,
+      confirmButtonText:
+        ' Great!',
+
+    })
+    if (inputValue) {
+      //Swal.fire(text)
+      localStorage.setItem('step7',inputValue)
+    }
+
+    })()  
+}
     </script>
 
 </head>
 
 <body>
+  <div id="overlay">
+    <img src="./shapes/1.jpg">
+  </div>
     <div class="top">
       <h3 class="set"><b>Secondary Structure elements<b></h3>
       <h4 class="set">
         To Study the effect of Secondary Structure elements on CD spectrum of proteins.      </h4>
     
  
-    <div id="overlay">
-      <img  id="img-six" src="./shapes/93.png">
-      <img id="img-gif" src="./shapes/frames.gif">
-    </div>
+
 </div>
 <div style="width: 100%;height:10%;background-color:#003152;margin-top:9rem"></div>
    
@@ -131,15 +285,18 @@ function n2purge(){
 <div class="row">
         <img id="computer" usemap="#workmap" src="./shapes/1.jpg" />
         <!-- <img id="n2" src="./shapes/Capture.PNG" /> -->
+        <img id="compOn" src="./shapes/c.PNG">
         <svg width=1000 height=700>
 
           <circle cx=100 cy=210 r=20 id="cix" onclick="n2start()"></circle>
           
           
           <circle cx=380 cy=360 r=20 id="cix1" onclick=" spectrocstart()"></circle>
-          <circle cx=850 cy=330  r=20 id="cix2"></circle>
+          <circle cx=850 cy=330  r=20 id="cix2" onclick="computercstart()"></circle>
           <circle cx=750 cy=370 r=30 id="cix3" onclick="tempera()"></circle>
-          <circle cx=690 cy=590  r=20 id="cix4"></circle>
+          <circle cx=690 cy=590  r=20 id="cix4" onclick="waterbath()"></circle>
+          <circle cx=620 cy=330  r=30 id="cix5" onclick="n2purge()"></circle>
+
 
           
                      </svg>
