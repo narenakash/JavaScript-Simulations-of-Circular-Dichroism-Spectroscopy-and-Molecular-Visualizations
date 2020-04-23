@@ -31,99 +31,88 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-  <script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+  <!-- Optional: include a polyfill for ES6 Promises for IE11 -->
+    <script>
+    function spectrocstart(){
+      Swal.fire({
+        icon: 'success',
+        title: 'Switched On',
+        text: 'Continue',
+        footer: '<a href>Why do I have this issue?</a>'
+      })
+    }
+
    // localStorage.setItem('Selection', 0);
-
-function selection(num){
-  //console.log(num)
-
-  // Set the high score to the users' current points
-  // Store the high score
-  localStorage.setItem('Selection', num);
-  num=localStorage.getItem('Selection')
-  num = parseInt(num);
-
-  swal({
-    title: "You Selected  Sample "+ num ,
-    text: "Click to Continue the Experiment!",
-    icon: "success",
-    button: "Continue",
-  })
-
-}
-  // Set the high score to the users' current points
-  function   showanimaation()
-{
-  document.getElementById("img-six").style.display = "none";
-
-}
-
-function chckfinal(){
-  var backvalue=localStorage.getItem('visit')
-  backvalue=parseInt(backvalue)
-  if(backvalue==1){
-    showanimaation()
-
-   on11()
-  setTimeout(function(){
-      off11()
-  } ,6000)
-
-  setTimeout( function(){
-  swal({
-    title: "Processing Done",
-    text: "Click to Continue the Experiment!",
-    icon: "success",
-    button: "Continue",
-  })
-},6000)
-setTimeout(function(){
-  swal(     { title: "Analysis of Graphs!",
-  text: "Click to Continue the Experiment!",
-  icon: "success",}    )
-.then((value) => {
-  window.location.href = './quiz exp 8/game.html';
-});
-}
-,6000)
-localStorage.setItem('visit',0)
-  }
-  
-
-}
-
-
-   function on11() {
-    document.getElementById("overlay").style.display = "block";
-  }
-  
-  function off11() {
-    document.getElementById("overlay").style.display = "none";
-  }
-    function chck(){
-        //console.log(1)
-        document.getElementById("img-gif").style.display = "none";
-        swal("Set Value for N2.[0-20Lit/min]", {
-          content: "input",
-        })
-        .then((value) => {
-          swal(`You typed: ${value}`);
-        });
+  function n2start(){
+Swal.fire({
+        title: 'Please Set the Value of Nitrogen!',
+        icon: 'info',
+        input: 'range',
+        inputAttributes: {
+          min: 8,
+          max: 120,
+          step: 1
+        },
+        inputValue: 25,
+   
+      })
       
 
-  
-      setTimeout( function(){
-        document.getElementById("img-gif").style.display = "block";
 
-      },3000)
+
+  }
+  function tempera(){
+    Swal.fire({
+      title: '<strong>HTML <u>example</u></strong>',
+      icon: 'info',
+      html:
+        '<img src="./shapes/14.png"/> ' +
+        'and other HTML tags',
+      showCloseButton: true,
+      showCancelButton: true,
+      focusConfirm: false,
+      confirmButtonText:
+        '<i class="fa fa-thumbs-up"></i> Great!',
+
+    })
+
+  }
+function n2purge(){
+  let timerInterval
+  Swal.fire({
+    title: 'N2 purging',
+    html: 'I will close in <b></b> milliseconds.',
+    timer: 2000,
+    timerProgressBar: true,
+    onBeforeOpen: () => {
+      Swal.showLoading()
+      timerInterval = setInterval(() => {
+        const content = Swal.getContent()
+        if (content) {
+          const b = content.querySelector('b')
+          if (b) {
+            b.textContent = Swal.getTimerLeft()
+          }
+        }
+      }, 100)
+    },
+    onClose: () => {
+      clearInterval(timerInterval)
     }
+  }).then((result) => {
+    /* Read more about handling dismissals below */
+    if (result.dismiss === Swal.DismissReason.timer) {
+      console.log('I was closed by the timer')
+    }
+  })
+}
 
     </script>
 
 </head>
 
-<body onload="chckfinal()">
+<body>
     <div class="top">
       <h3 class="set"><b>Secondary Structure elements<b></h3>
       <h4 class="set">
@@ -136,39 +125,28 @@ localStorage.setItem('visit',0)
     </div>
 </div>
 <div style="width: 100%;height:10%;background-color:#003152;margin-top:9rem"></div>
-    <div class="flexing">
-	</div>
-	  <div id="content"> <br> <br> <br>
-	    <button
-        class="btn btn-danger"
-        id="new"
-        onclick="chck()"      >
-       N2 purge 
-      </button>
-      <button
-      class="btn btn-info"
-      id="new"
-      onclick="window.location.href = './lab/exp2/simulation/mfs_exp2b.html';"
-    >
-   Measure CD 
-    </button>	  
-
-    <button class="btn btn-dark dropdown-toggle" id="menu1" type="button" data-toggle="dropdown">Secondary Structure
-    <span class="caret"></span></button>
-    <ul class="dropdown-menu" role="menu">
-      <li role="presentation" ><h5 onclick="selection(1)" role="menuitem">Sample 1</h5></li>
-      <li role="presentation" ><h5 onclick="selection(2)" role="menuitem">Sample 2</h5></li>
-      <li role="presentation" ><h5 onclick="selection(3)" role="menuitem">Sample 3</h5></li>
-
    
-    </ul>
+    
 
 <div class="row">
         <img id="computer" usemap="#workmap" src="./shapes/1.jpg" />
         <!-- <img id="n2" src="./shapes/Capture.PNG" /> -->
-  
+        <svg width=1000 height=700>
+
+          <circle cx=100 cy=210 r=20 id="cix" onclick="n2start()"></circle>
+          
+          
+          <circle cx=380 cy=360 r=20 id="cix1" onclick=" spectrocstart()"></circle>
+          <circle cx=850 cy=330  r=20 id="cix2"></circle>
+          <circle cx=750 cy=370 r=30 id="cix3" onclick="tempera()"></circle>
+          <circle cx=690 cy=590  r=20 id="cix4"></circle>
+
+          
+                     </svg>
 
       </div>
+       
+
     </div>
     
 </div>
