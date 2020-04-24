@@ -11,6 +11,7 @@
   
   <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./main.css" />
+  <script src="./overlay.js"></script>
   <script
   src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
   integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
@@ -27,148 +28,329 @@
   crossorigin="anonymous"
 ></script>
 
+<script src="https://cdn.jsdelivr.net/npm/@glidejs/glide"></script>
+<script src="https://unpkg.com/@glidejs/glide"></script>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-  <script>
-   // localStorage.setItem('Selection', 0);
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+  <!-- Optional: include a polyfill for ES6 Promises for IE11 -->
+    <script>
 
-function selection(num){
-  //console.log(num)
-
-  // Set the high score to the users' current points
-  // Store the high score
-  localStorage.setItem('Selection', num);
-  num=localStorage.getItem('Selection')
-  num = parseInt(num);
-
-  swal({
-    title: "You Selected  Sample "+ num ,
-    text: "Click to Continue the Experiment!",
-    icon: "success",
-    button: "Continue",
-  })
-
-}
-  // Set the high score to the users' current points
-  function   showanimaation()
-{
-  document.getElementById("img-six").style.display = "none";
-
-}
-
-function chckfinal(){
-  var backvalue=localStorage.getItem('visit')
-  backvalue=parseInt(backvalue)
-  if(backvalue==1){
-    showanimaation()
-
-   on11()
-  setTimeout(function(){
-      off11()
-  } ,6000)
-
-  setTimeout( function(){
-  swal({
-    title: "Processing Done",
-    text: "Click to Continue the Experiment!",
-    icon: "success",
-    button: "Continue",
-  })
-},6000)
-setTimeout(function(){
-  swal(     { title: "Analysis of Graphs!",
-  text: "Click to Continue the Experiment!",
-  icon: "success",}    )
-.then((value) => {
-  window.location.href = './quiz exp 8/game.html';
-});
-}
-,6000)
-localStorage.setItem('visit',0)
-  }
-  
-
-}
-
-
-   function on11() {
-    document.getElementById("overlay").style.display = "block";
-  }
-  
-  function off11() {
-    document.getElementById("overlay").style.display = "none";
-  }
-    function chck(){
-        //console.log(1)
-        document.getElementById("img-gif").style.display = "none";
-        swal("Set Value for N2.[0-20Lit/min]", {
-          content: "input",
-        })
-        .then((value) => {
-          swal(`You typed: ${value}`);
-        });
-      
-
-  
-      setTimeout( function(){
-        document.getElementById("img-gif").style.display = "block";
-
-      },3000)
+    function spectrocstart(){
+      Swal.fire({
+        icon: 'success',
+        title: 'Switched On',
+        text: 'Continue',
+      })
+    }
+    function computercstart(){
+      Swal.fire({
+        icon: 'success',
+        title: 'Switched On',
+        text: 'Continue',
+      })
+      document.getElementById('compOn').style.visibility="visible"
     }
 
+   // localStorage.setItem('Selection', 0);
+  function n2start(){
+    (async () => {
+
+      const { value: inputValue} = await Swal.fire({
+        title: 'Please fill Nitrogen Value(Lit/min)?',
+        icon: 'question',
+        input: 'range',
+        inputAttributes: {
+          min: 0,
+          max: 20,
+          step: 1
+        },
+        inputValue: 10,
+      })
+      if (inputValue) {
+        //Swal.fire(text)
+        localStorage.setItem('step1',inputValue)
+      }
+
+      })()  
+  }
+  function tempera(){
+
+    (async () => {
+
+      const { value: inputValue} = await Swal.fire({
+        title: '',
+        icon: 'success',
+        html:
+          '<img src="./shapes/ti.jpg"/> ' +
+          '',
+          input: 'range',
+          inputAttributes: {
+            min: 8,
+            max: 120,
+            step: 1
+          },
+          inputValue: 25,
+        showCloseButton: true,
+        showCancelButton: true,
+        focusConfirm: false,
+        confirmButtonText:
+          ' Great!',
+  
+      })
+      if (inputValue) {
+        //Swal.fire(text)
+        localStorage.setItem('step4',inputValue)
+      }
+
+      })()  
+
+  }
+  function cdSpectroscope(){
+    new Glide('.glide', {
+      type: 'carousel',
+      startAt: 0,
+      perView: 3
+    })
+
+
+  }
+function n2purge(){
+  let timerInterval
+  Swal.fire({
+    title: 'N2 purging',
+    html: 'Nitrogen Will 30 minutes',
+    timer: 2000,
+    timerProgressBar: true,
+    onBeforeOpen: () => {
+      Swal.showLoading()
+      timerInterval = setInterval(() => {
+        const content = Swal.getContent()
+        if (content) {
+          const b = content.querySelector('b')
+          if (b) {
+            b.textContent = Swal.getTimerLeft()
+          }
+        }
+      }, 100)
+    },
+    onClose: () => {
+      clearInterval(timerInterval)
+    }
+  }).then((result) => {
+    /* Read more about handling dismissals below */
+    if (result.dismiss === Swal.DismissReason.timer) {
+      console.log('I was closed by the timer')
+    }
+  })
+  setTimeout(function(){
+    Swal.fire({
+      imageUrl: './shapes/xd.PNG',
+
+      imageAlt: 'A tall image'
+    })
+   setTimeout(function(){
+    (async () => {
+    const { value: fruit } = await Swal.fire({
+      title: 'Select field validation',
+      input: 'select',
+      inputOptions: {
+        apples: '0.01-0.02',
+        bananas: '0.1',
+        grapes: '1.0',      },
+      inputPlaceholder: 'Protien Solution',
+      confirmButtonText:'Next',
+      showCancelButton: true,   
+      showLoading:true,
+      inputValidator: (value) => {
+        return new Promise((resolve) => {
+          if (value ) {
+            resolve()
+          } else {
+            resolve('Please Fill!')
+          }
+        })
+      }
+    })
+
+    
+    if (fruit) {
+      localStorage.setItem('fruit',fruit)
+    }
+    const { value: fruit1 } = await Swal.fire({
+      title: 'Select field validation',
+      input: 'select',
+      inputOptions: {
+        apples: '0.02-1.0',
+        bananas: '0.05-0.2',
+        grapes: '0.005-0.01',      },
+      inputPlaceholder: 'Cuvette Path',
+      showCancelButton: true,
+      confirmButtonText:'Next',
+      showLoading:true,
+      inputValidator: (value) => {
+        return new Promise((resolve) => {
+          if (value ) {
+            resolve()
+          } else {
+            resolve('Please Fill!')
+          }
+        })
+      }
+    })
+
+    
+    if (fruit1) {
+      localStorage.setItem('fruit1',fruit1)
+    }  
+    const { value: fruit2 } = await Swal.fire({
+      title: 'Select field validation',
+      input: 'select',
+      inputOptions: {
+        apples: '10mM Potassium Phospate,100mM KCL',
+        bananas: '20mM Potassium Phospate,100mM Nacl',   },
+      inputPlaceholder: 'Buffers',
+      showCancelButton: true,
+      confirmButtonText:'Finish',
+
+      showLoading:true,
+      inputValidator: (value) => {
+        return new Promise((resolve) => {
+          if (value ) {
+            resolve()
+          } else {
+            resolve('Please Fill!')
+          }
+        })
+      }
+    })
+
+    if (fruit2) {
+      localStorage.setItem('fruit2',fruit2)
+      window.location="./lab/exp2/simulation/mfs_exp2b.html"
+    }
+  })()    
+   
+  
+  
+  
+  
+  },2000); 
+  },2100)
+}
+function waterbath(){
+  
+  (async () => {
+
+    const { value: inputValue} = await Swal.fire({
+      title: 'Water Bath(Degree Celcius)',
+      icon: 'info',
+        input: 'range',
+        inputAttributes: {
+          min: 8,
+          max: 120,
+          step: 1
+        },
+        inputValue: 25,
+      showCloseButton: true,
+      showCancelButton: true,
+      focusConfirm: false,
+      confirmButtonText:
+        ' Great!',
+
+    })
+    if (inputValue) {
+      //Swal.fire(text)
+      localStorage.setItem('step7',inputValue)
+    }
+
+    })()  
+}
+
+
+function backfunc(){
+  var getv=localStorage.getItem('backvalue')
+  getv=parseInt(getv)
+  if(getv==1){
+    localStorage.setItem('backvalue',0)
+    document.getElementById('compOn').style.visibility="visible"
+  }
+}
     </script>
 
 </head>
 
-<body onload="chckfinal()">
+<body onload="backfunc()">
+
     <div class="top">
-      <h3 class="set"><b>Secondary Structure elements<b></h3>
+      <h3 class="set"><b>CD Spectrometer </b></h3>
       <h4 class="set">
-        To Study the effect of Secondary Structure elements on CD spectrum of proteins.      </h4>
-    
- 
-    <div id="overlay">
-      <img  id="img-six" src="./shapes/93.png">
-      <img id="img-gif" src="./shapes/frames.gif">
-    </div>
-</div>
-<div style="width: 100%;height:10%;background-color:#003152;margin-top:9rem"></div>
-    <div class="flexing">
-	</div>
-	  <div id="content"> <br> <br> <br>
-	    <button
+        Study the Operational Details of CD Spectrometer  </h4>
+    <div class="flexing" style="margin-bottom:-3vh;">
+    <button
+      class="btn btn-success"
+      id="new"
+      onclick="window.location.href = './index.html';"
+    >
+      <b>Previous!</b>
+    </button>
+
+      <button class="btn btn-warning btn-lg" id="new" onclick="on(0)">
+        <b>Instructions!</b>
+      </button>
+
+     <button
         class="btn btn-danger"
         id="new"
-        onclick="chck()"      >
-       N2 purge 
+        onclick="window.location.href = './lab/exp2/simulation/mfs_exp2b.html';"
+      >
+        <b>Skip!</b>
       </button>
-      <button
-      class="btn btn-info"
-      id="new"
-      onclick="window.location.href = './lab/exp2/simulation/mfs_exp2b.html';"
-    >
-   Measure CD 
-    </button>	  
 
-    <button class="btn btn-dark dropdown-toggle" id="menu1" type="button" data-toggle="dropdown">Secondary Structure
-    <span class="caret"></span></button>
-    <ul class="dropdown-menu" role="menu">
-      <li role="presentation" ><h5 onclick="selection(1)" role="menuitem">Sample 1</h5></li>
-      <li role="presentation" ><h5 onclick="selection(2)" role="menuitem">Sample 2</h5></li>
-      <li role="presentation" ><h5 onclick="selection(3)" role="menuitem">Sample 3</h5></li>
+    </div>
 
+    <div id="overlay0" onclick="off(0)">
+      <div id="text"><b>1) Click on the valve of N2 gas cylinder to open it<br/> <br />
+      2) After that fill the rate of Nitrogen Purging<br /> <br />
+      3) After that open the spectrofluorimeter by pressing the green button<br /> <br />
+      4) After that press the CPU button to switch on the Computer<br /><br />
+      5) After that click of Water bath (black box in front of Table) 
+      6) After that fill the value of temperature of Water Bath in degree celcius<br /><br />
+     7) After that click on peltier(small box on left side of CPU) and set the temperature <br /><br />
+    8) After that click on lid of spectrofluorimeter to open it and fill values of Protein Solution, then Cuvette Path and after that Buffer name.<br /> <br />
+   9) At last click on computer screen for Spectrum measurement of selected Buffer.</b></div>
+    </div>
+    
+ 
+
+</div>
+<div style="width: 100%;height:10%;background-color:#003152;margin-top:9rem"></div>
    
-    </ul>
+    
 
 <div class="row">
         <img id="computer" usemap="#workmap" src="./shapes/1.jpg" />
         <!-- <img id="n2" src="./shapes/Capture.PNG" /> -->
-  
+        <img id="compOn" src="./shapes/c.PNG" onclick="window.location.href='./lab/exp2/simulation/slideshow.html'">
+        <svg width=900 height=700>/
+
+          <circle cx=100 cy=210 r=20 id="cix" onclick="n2start()"></circle>
+          
+          
+          <circle cx=380 cy=360 r=20 id="cix1" onclick=" spectrocstart()"></circle>
+          <circle cx=850 cy=330  r=20 id="cix2" onclick="computercstart()"></circle>
+          <circle cx=750 cy=370 r=30 id="cix3" onclick="tempera()"></circle>
+          <circle cx=690 cy=590  r=20 id="cix4" onclick="waterbath()"></circle>
+          <circle cx=620 cy=330  r=30 id="cix5" onclick="n2purge()"></circle>
+
+
+          
+                     </svg>
 
       </div>
+
     </div>
     
 </div>

@@ -13,24 +13,86 @@
     <script src="../../libraries/jQueryRotate.js"></script>
     <script type="text/javascript" src="mfs_expt2.js"></script>
     <script type="text/javascript" src="mfs2_animations.js"></script>
-    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
 
     <script>
+      const dicta = {
+        a: "0.01-0.02",
+        b: "0.1",
+        c: "1.0",
+      };
+      const dicta2 = {
+        a: "0.02-1.0",
+        b: "0.05-0.2",
+        c: "0.005-0.01",
+      };
+      const dicta3 = {
+        a: "10mM Potassium Phospate,100mM KCL",
+        b: "20mM Potassium Phospate,100mM Nacl",
+      };
+      function getvalues() {
+        var a1 = localStorage.getItem("step1");
+        var a2 = localStorage.getItem("step4");
+        var a3 = localStorage.getItem("step7");
+        var a4 = localStorage.getItem("fruit");
+        var a5 = localStorage.getItem("fruit1");
+        var a6 = localStorage.getItem("fruit2");
+        var b1 = document.getElementById("aa");
+        b1.innerHTML = "WaterBath Temperature: " + a3;
+        var b2 = document.getElementById("b");
+        b2.innerHTML = "Peltier Temperature: " + a2;
+        var b3 = document.getElementById("c");
+        b3.innerHTML = "Short Wavelength Limit: " + a1;
+        if (a4 == "apples") {
+          var b5 = document.getElementById("e");
+          b5.innerHTML = "Concentration of Sample: " + dicta.a;
+        } else if (a4 == "bananas") {
+          var b5 = document.getElementById("e");
+          b5.innerHTML = "Concentration of Sample: " + dicta.b;
+        } else if (a4 == "grapes") {
+          var b5 = document.getElementById("e");
+          b5.innerHTML = "Concentration of Sample: " + dicta.c;
+        }
+        if (a5 == "apples") {
+          var b4 = document.getElementById("d");
+
+          b4.innerHTML = " Curvette Path: " + dicta2.a;
+        } else if (a5 == "bananas") {
+          var b4 = document.getElementById("d");
+
+          b4.innerHTML = " Curvette Path: " + dicta2.b;
+        } else if (a5 == "grapes") {
+          var b4 = document.getElementById("d");
+
+          b4.innerHTML = " Curvette Path: " + dicta2.c;
+        }
+        if (a5 == "apples") {
+          var b6 = document.getElementById("f");
+          b6.innerHTML = "Buffer: " + dicta3.a;
+        } else if (a5 == "bananas") {
+          var b6 = document.getElementById("f");
+          b6.innerHTML = "Buffer: " + dicta3.b;
+        }
+      }
+
       function skipfornow() {
-        localStorage.setItem("visit", 1);
-        swal({
-          title: "Skipped Doing For Now!",
-          text: "Click to Continue the Experiment!",
-          icon: "success",
-        }).then((value) => {
-          window.location.href = "./../../../page2.html";
-        });
+        localStorage.setItem("backvalue", 1);
+        swal
+          .fire({
+            title: "Skipped Doing For Now!",
+            text: "Click to Continue the Experiment!",
+            icon: "success",
+          })
+          .then((value) => {
+            window.location.href = "./../../../page2.html";
+          });
       }
     </script>
     <link
       href="https://fonts.googleapis.com/css?family=Lato&display=swap"
       rel="stylesheet"
     />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
 
     <title class="">Measurement of CD Spectra</title>
   </head>
@@ -52,22 +114,29 @@
               id="skip_btn"
               class="btn btn-info"
               type="button"
-              onclick="skipfornow()"
-              value="Skip"
+              onclick="getvalues()"
+              value="Show Values"
             />
 
             <button
               class="btn btn-primary"
               id="manual_button1"
-              onclick="window.location.href = './../../../page2.html';"
+              onclick="skipfornow()"
             >
-              Go back
+              Skip For Now
             </button>
           </div>
         </div>
       </div>
       <br />
-
+      <div id="fnow">
+        <h4 id="aa"></h4>
+        <h4 id="b"></h4>
+        <h4 id="c"></h4>
+        <h4 id="d"></h4>
+        <h4 id="e"></h4>
+        <h4 id="f"></h4>
+      </div>
       <!-- Second row consists of two columns with one column containing buttons ie manual and data and the other containing shelf with apparatus -->
       <div class="row">
         <div class="col-sm-6" id="apparatus">
@@ -150,12 +219,7 @@
         autocomplete="off"
       />
       <!-- To display the videos on entering the correct input values -->
-      <video id="video1" class="videos">
-        <source src="videos/graph1.mp4" type="video/mp4" />
-      </video>
-      <video id="video2" class="videos">
-        <source src="videos/graph2.mp4" type="video/mp4" />
-      </video>
+
       <!-- To close the graphs video -->
       <img id="disposegraph" src="../../common_images/vertical_button.png" />
     </div>

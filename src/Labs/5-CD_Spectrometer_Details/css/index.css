@@ -48,7 +48,7 @@
   z-index: 2;
 }
 .row {
-  margin-top: 20px;
+  position: fixed;
 }
 
 #menu1 {
@@ -59,9 +59,15 @@ h5:hover {
   cursor: pointer;
   color: #003152;
 }
-#img-six,
-#img-gif {
-  width: 1350px;
-  height: 600px;
-  position: absolute;
+#computer {
+  position: fixed;
+}
+#cix,
+#cix1,
+#cix2,
+#cix3,
+#cix4,
+#cix5 {
+  cursor: pointer;
+  opacity: 0%;
 }

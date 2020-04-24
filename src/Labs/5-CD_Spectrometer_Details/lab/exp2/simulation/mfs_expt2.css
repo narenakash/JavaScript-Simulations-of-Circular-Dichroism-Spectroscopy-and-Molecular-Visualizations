@@ -351,3 +351,8 @@ h3 {
   left: 80%;
   top: 584px;
 }
+#fnow {
+  position: fixed;
+  left: 50px;
+  top: 120px;
+}

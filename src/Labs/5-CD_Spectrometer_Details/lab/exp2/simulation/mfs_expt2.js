@@ -132,32 +132,41 @@ function turnOn() {
 /*This method displays a timer which runs for 30 seconds. There exists two images which are hidden initailly; 
 when this method is called they are made visible and the clock hand is made to rotate.  */
 function showClock() {
-    if (step_no == 6 && count == 6) {
-        // Get the images.
-        var context = document.getElementById('clockScreen');
-        var hand = document.getElementById('clockHand');
-        // Make the visiblility of the obtained images visible
-        context.style.visibility = 'visible';
-        hand.style.visibility = "visible";
-        // Rotate 'clockHand' using jQueryRotate.js
-        var angle = 0;
-        setInterval(function () {
-            angle += 3;
-            $('#clockHand').rotate(angle);
-        }, 50);
-        step_no++;
-        //After 10 secs dispose clock
-        setTimeout("removeClock()", 3000);
-    }
+    localStorage.setItem("backvalue", 1);
+
+    Swal.fire({
+        imageUrl: '../../../shapes/frames.gif',
+        imageHeight: 800,
+        imageWidth: 1000,
+        showCloseButton: false,
+        showCancelButton: false,
+        showConfirmButton: false,
+        width: 800
+    })
+
+    setTimeout(function () {
+        Swal.fire({
+            title: 'Sweet!',
+            text: 'Modal with a custom image.',
+            imageUrl: '../../../shapes/2.gif',
+            imageWidth: 700,
+            imageHeight: 300,
+            width: 800,
+
+            imageAlt: 'Custom image',
+            showCloseButton: false,
+            showCancelButton: false,
+            showConfirmButton: false
+        })
+
+        setTimeout(function () {
+            window.location = "../../../page2.html"
+        }, 39000)
+
+
+    }, 4500)
 }
 
-// After 30 seconds of display of the timer the visibility of clock is changed back to hidden.
-function removeClock() {
-    $('#clockHand, #clockScreen').remove();
-    //Change to next intsruction to be followed.
-    document.getElementById("demo").innerHTML = "Step-No 8: Click on the lid of sample chamber of the spectrofluorimeter to open it for placing the sample in the instrument";
-    cursorPointers('power_trans_button', 'spectrolid_trans_button');
-}
 
 /* First time its called to open the spectrofluorimeter.
    Second time its called to close the spectrofluorimeter. */
