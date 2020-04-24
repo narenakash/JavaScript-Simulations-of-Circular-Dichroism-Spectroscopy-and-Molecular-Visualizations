@@ -11,6 +11,7 @@
   
   <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./main.css" />
+  <script src="./overlay.js"></script>
   <script
   src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
   integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
@@ -282,13 +283,45 @@ function backfunc(){
 </head>
 
 <body onload="backfunc()">
-  <div id="overlay">
 
-  </div>
     <div class="top">
-      <h3 class="set"><b>Secondary Structure elements<b></h3>
+      <h3 class="set"><b>CD Spectrometer </b></h3>
       <h4 class="set">
-        To Study the effect of Secondary Structure elements on CD spectrum of proteins.      </h4>
+        Study the Operational Details of CD Spectrometer  </h4>
+    <div class="flexing" style="margin-bottom:-3vh;">
+    <button
+      class="btn btn-success"
+      id="new"
+      onclick="window.location.href = './index.html';"
+    >
+      <b>Previous!</b>
+    </button>
+
+      <button class="btn btn-warning btn-lg" id="new" onclick="on(0)">
+        <b>Instructions!</b>
+      </button>
+
+     <button
+        class="btn btn-danger"
+        id="new"
+        onclick="window.location.href = './lab/exp2/simulation/mfs_exp2b.html';"
+      >
+        <b>Skip!</b>
+      </button>
+
+    </div>
+
+    <div id="overlay0" onclick="off(0)">
+      <div id="text"><b>1) Click on the valve of N2 gas cylinder to open it<br/> <br />
+      2) After that fill the rate of Nitrogen Purging<br /> <br />
+      3) After that open the spectrofluorimeter by pressing the green button<br /> <br />
+      4) After that press the CPU button to switch on the Computer<br /><br />
+      5) After that click of Water bath (black box in front of Table) 
+      6) After that fill the value of temperature of Water Bath in degree celcius<br /><br />
+     7) After that click on peltier(small box on left side of CPU) and set the temperature <br /><br />
+    8) After that click on lid of spectrofluorimeter to open it and fill values of Protein Solution, then Cuvette Path and after that Buffer name.<br /> <br />
+   9) At last click on computer screen for Spectrum measurement of selected Buffer.</b></div>
+    </div>
     
  
 

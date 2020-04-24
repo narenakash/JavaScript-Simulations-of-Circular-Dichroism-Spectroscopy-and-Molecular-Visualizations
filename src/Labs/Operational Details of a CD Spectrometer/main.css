@@ -227,25 +227,25 @@ body {
 #overlay0 {
   position: fixed;
   display: none;
-  width: 100%;
+  width: 40%;
   height: 100%;
-  top: 0;
-  left: 0;
+  top: 18%;
+  left: 60%;
   right: 0;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(0, 0, 0, 0.1);
   z-index: 103;
   cursor: pointer;
 }
 
 #text {
   position: relative;
-  top: 50%;
+  top: 40%;
   left: 50%;
-  font-size: 30px;
+  font-size: 23px;
   font-family: "Lato";
   font-style: oblique;
-  color: silver;
+  color: black;
   transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
 }
