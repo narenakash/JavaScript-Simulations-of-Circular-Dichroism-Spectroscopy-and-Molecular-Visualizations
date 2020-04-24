@@ -13,7 +13,7 @@
     <script src="../../libraries/jQueryRotate.js"></script>
     <script type="text/javascript" src="mfs_expt2.js"></script>
     <script type="text/javascript" src="mfs2_animations.js"></script>
-    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
 
     <script>
       const dicta = {
@@ -76,14 +76,16 @@
       }
 
       function skipfornow() {
-        localStorage.setItem("visit", 1);
-        swal({
-          title: "Skipped Doing For Now!",
-          text: "Click to Continue the Experiment!",
-          icon: "success",
-        }).then((value) => {
-          window.location.href = "./../../../page2.html";
-        });
+        localStorage.setItem("backvalue", 1);
+        swal
+          .fire({
+            title: "Skipped Doing For Now!",
+            text: "Click to Continue the Experiment!",
+            icon: "success",
+          })
+          .then((value) => {
+            window.location.href = "./../../../page2.html";
+          });
       }
     </script>
     <link
@@ -119,9 +121,9 @@
             <button
               class="btn btn-primary"
               id="manual_button1"
-              onclick="window.location.href = './../../../page2.html';"
+              onclick="skipfornow()"
             >
-              Go back
+              Skip For Now
             </button>
           </div>
         </div>
@@ -217,12 +219,7 @@
         autocomplete="off"
       />
       <!-- To display the videos on entering the correct input values -->
-      <video id="video1" class="videos">
-        <source src="videos/graph1.mp4" type="video/mp4" />
-      </video>
-      <video id="video2" class="videos">
-        <source src="videos/graph2.mp4" type="video/mp4" />
-      </video>
+
       <!-- To close the graphs video -->
       <img id="disposegraph" src="../../common_images/vertical_button.png" />
     </div>

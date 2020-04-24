@@ -474,7 +474,6 @@ ul {
 }
 #overlay {
   position: fixed; /* Sit on top of the page content */
-  display: none; /* Hidden by default */
   /* Black background with opacity */
   z-index: 8; /* Specify a stack order in case you're using a different order for other elements */
 }
@@ -486,4 +485,5 @@ svg {
   top: 403px;
   left: 885px;
   visibility: hidden;
+  cursor: pointer;
 }

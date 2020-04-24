@@ -27,6 +27,8 @@
   crossorigin="anonymous"
 ></script>
 
+<script src="https://cdn.jsdelivr.net/npm/@glidejs/glide"></script>
+<script src="https://unpkg.com/@glidejs/glide"></script>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <meta charset="UTF-8" />
@@ -34,12 +36,12 @@
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
   <!-- Optional: include a polyfill for ES6 Promises for IE11 -->
     <script>
+
     function spectrocstart(){
       Swal.fire({
         icon: 'success',
         title: 'Switched On',
         text: 'Continue',
-        footer: '<a href>Why do I have this issue?</a>'
       })
     }
     function computercstart(){
@@ -47,7 +49,6 @@
         icon: 'success',
         title: 'Switched On',
         text: 'Continue',
-        footer: '<a href>Why do I have this issue?</a>'
       })
       document.getElementById('compOn').style.visibility="visible"
     }
@@ -107,7 +108,11 @@
 
   }
   function cdSpectroscope(){
-
+    new Glide('.glide', {
+      type: 'carousel',
+      startAt: 0,
+      perView: 3
+    })
 
 
   }
@@ -262,13 +267,23 @@ function waterbath(){
 
     })()  
 }
+
+
+function backfunc(){
+  var getv=localStorage.getItem('backvalue')
+  getv=parseInt(getv)
+  if(getv==1){
+    localStorage.setItem('backvalue',0)
+    document.getElementById('compOn').style.visibility="visible"
+  }
+}
     </script>
 
 </head>
 
-<body>
+<body onload="backfunc()">
   <div id="overlay">
-    <img src="./shapes/1.jpg">
+
   </div>
     <div class="top">
       <h3 class="set"><b>Secondary Structure elements<b></h3>
@@ -285,8 +300,8 @@ function waterbath(){
 <div class="row">
         <img id="computer" usemap="#workmap" src="./shapes/1.jpg" />
         <!-- <img id="n2" src="./shapes/Capture.PNG" /> -->
-        <img id="compOn" src="./shapes/c.PNG">
-        <svg width=1000 height=700>
+        <img id="compOn" src="./shapes/c.PNG" onclick="window.location.href='./lab/exp2/simulation/slideshow.html'">
+        <svg width=900 height=700>/
 
           <circle cx=100 cy=210 r=20 id="cix" onclick="n2start()"></circle>
           
@@ -302,7 +317,6 @@ function waterbath(){
                      </svg>
 
       </div>
-       
 
     </div>
     

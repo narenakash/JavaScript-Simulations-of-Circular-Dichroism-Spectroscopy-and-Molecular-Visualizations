@@ -132,18 +132,39 @@ function turnOn() {
 /*This method displays a timer which runs for 30 seconds. There exists two images which are hidden initailly; 
 when this method is called they are made visible and the clock hand is made to rotate.  */
 function showClock() {
+    localStorage.setItem("backvalue", 1);
 
     Swal.fire({
-        title: '<strong>HTML <u>example</u></strong>',
-        icon: 'info',
-        html:
-            '<img src="./../../../shapes/frames.gif"/> ' +
-            '',
-        showCloseButton: true,
-        showCancelButton: true,
-        focusConfirm: false,
-
+        imageUrl: '../../../shapes/frames.gif',
+        imageHeight: 800,
+        imageWidth: 1000,
+        showCloseButton: false,
+        showCancelButton: false,
+        showConfirmButton: false,
+        width: 800
     })
+
+    setTimeout(function () {
+        Swal.fire({
+            title: 'Sweet!',
+            text: 'Modal with a custom image.',
+            imageUrl: '../../../shapes/2.gif',
+            imageWidth: 700,
+            imageHeight: 300,
+            width: 800,
+
+            imageAlt: 'Custom image',
+            showCloseButton: false,
+            showCancelButton: false,
+            showConfirmButton: false
+        })
+
+        setTimeout(function () {
+            window.location = "../../../page2.html"
+        }, 39000)
+
+
+    }, 4500)
 }
 
 
