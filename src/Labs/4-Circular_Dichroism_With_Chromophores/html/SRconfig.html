@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SR Configration</title>
+      <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="../js/ans.js"></script>
+    <script src="../js/swf2js.js"></script>
+    <script type="text/javascript">
+    
+      function test(x,y,form){
+    
+        s="result";
+        console.log(s,y);
+    
+        if(form.elements[0].checked){
+          if(y===1){
+            correctans("R");
+        //     // console.log("m");
+        //     document.getElementById(s).innerHTML = "Correct";
+        //     document.getElementById("overlay1").style.display = "block";
+        //     setTimeout(function(){ 
+        //   document.getElementById(s).innerHTML = "";
+        //   document.getElementById("overlay1").style.display = "none";
+        // }, 500);
+        // document.getElementById(s).style.color = 'white';
+        //     document.getElementById("overlay1").style.backgroundColor="rgba(0,255,0,0.70)";
+          }
+          else{
+              incorrectans("R");
+          }
+        }
+
+        else if(form.elements[1].checked){
+          if(y===2){
+              correctans("S");
+          }
+          else{
+              incorrectans("S");
+          }
+        }
+        // on(1);
+      }
+      </script>
+  </head>
+  <link
+    rel="stylesheet"
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+    crossorigin="anonymous"
+  />
+  <link rel="stylesheet" href="../css/mol.css" />
+  <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
+
+  <body>
+    <div class="top">
+    	<div class="topitem">
+  <div style="height:15%;width:100%;clear:both;"></div>
+      <h3 class="set"><b>Assigning R & S Configuration</b></h3>
+      <h4 class="set">
+        <b>The Asymmetric carbon atoms are coloured in Magenta and Orange. Determine
+        the type of chirality.<b>
+      </h4>
+
+
+    <div class="flexingbutton">
+      <button
+      class="btn btn-success"
+      id="new"
+      onclick="window.location.href = './main.html';"
+    >
+      <b>Previous!</b>
+    </button>
+
+      <button
+        class="btn btn-danger"
+        id="new"
+        onclick="window.location.href = './help2.html';"
+      >
+        <b>Help!</b>
+      </button>
+
+      <button class="btn btn-warning btn-lg" id="new" onclick="on(0)">
+        <b>Instructions!</b>
+      </button>
+       <button class="btn btn-success" id="new" onclick="window.location.href = './ord.html';">
+        <b>Next!</b>
+      </button>
+    </div>
+</div>
+  <div class="topitem">  
+ <div class="atoms">
+   <div class="item">
+      <div style="font-family:'Lato';font-size:20px ; color:white">Carbon &nbsp;</div>
+      <div class="dotC" style="text-align:center;color:white"></div>
+  </div>
+    	<div class="item">
+      <div style="font-family:'Lato';font-size:20px;color:white">Oxygen &nbsp;</div>
+      <div class="dotO" style="text-align:center"></div>
+  </div>
+    	<div class="item">
+      <div style="font-family:'Lato';font-size:20px; color:white">Hydrogen &nbsp;</div>
+      <div class="dotH" style="text-align:center"></div>
+  </div>
+   <div class="item">
+      <div style="font-family:'Lato';font-size:20px ; color:white">1st Chiral Carbon &nbsp;</div>
+      <div class="dotCC1" style="text-align:center;color:white"></div>
+  </div>
+   <div class="item">
+      <div style="font-family:'Lato';font-size:20px ; color:white">2nd Chiral Carbon &nbsp;</div>
+      <div class="dotCC2" style="text-align:center;color:white"></div>
+  </div>
+    <div class="item">
+      <div style="font-family:'Lato';font-size:20px ; color:white">Sulphur &nbsp;</div>
+      <div class="dotS" style="text-align:center;color:white"></div>
+  </div>
+    </div>
+    </div>
+</div>
+
+  <div style="height:100px;width:100%;clear:both;"></div>
+    <div style="height:100px;width:100%;clear:both;"></div>
+    <div style="height:100px;width:100%;clear:both;"></div>
+
+    <div id="overlay0" onclick="off(0)">
+      <div id="text"><b>1) For each sample there are 2 asymmetric carbons coloured in magenta and orange color.<br /><br />
+        2) For each of the 2 carbon atoms you have to find its configuration by rotating the molecule in such a way such that the lowest priority group attached to that carbon will not be visible to you.You can only be able to see the remaining three groups than assign them priority number with highest priority as 1 after that 2 and so on...<br /><br />
+        3) Make an arc from 1->2->3 <br /><br />
+      4) If that arc rotation sense is clockwise than configuration of that atom is R else S<br /><br />
+    5) Select the option (R or S) whatever you get</b></div>
+    </div>
+    <div id="overlay1" onclick="off(1)">
+      <div id="result"></div>
+    </div>
+
+    <div class="boardSR">
+      <div data-cell class="cell" id="cont1"></div>
+      <div data-cell class="cellOption" class="container">
+      <div class="flex-container">
+        <div class="labels">
+          <h2 style="color:magenta">C1 : &emsp;</h2>
+          <form>
+            <label class="container parallel"
+              >R
+              <input type="radio"  name="radio" value="R" onclick="test(1,1,this.form)"/>
+              <span class="checkmark"></span>
+            </label>
+            <label class="container parallel"
+              >S
+              <input type="radio"  name="radio" value="R" onclick="test(1,1,this.form)" value="S"/>
+              <span class="checkmark"></span>
+            </label>
+            <div id="result1"></div>
+          </form>
+        </div>
+        <div class="labels1">
+          <h2 style="color:orange">C4 : &emsp;</h2>
+          <form class="form-horizontal">
+            <label class="container parallel"
+              >R
+              <input type="radio"  name="radio" value="R" onclick="test(2,1,this.form)" style="display=inline" />
+              <span class="checkmark"></span>
+            </label>
+            <label class="container parallel"
+              >S
+              <input type="radio"  name="radio" value="R" onclick="test(2,1,this.form)" />
+              <span class="checkmark"></span>
+            </label>  
+            <div id="result2"></div>
+          </form>
+        </div>
+       </div>
+     </div>
+
+      <div data-cell class="cell" id="cont2"></div>
+      <div data-cell class="cellOption" class="container">
+      <div class="flex-container">
+        <div class="labels">
+          <h2 style="color: orange">C1 : &emsp;</h2>
+          <form>
+            <label class="container parallel"
+              >R
+              <input type="radio"  name="radio" value="R" onclick="test(3,2,this.form)" />
+              <span class="checkmark"></span>
+            </label>
+            <label class="container parallel"
+              >S
+              <input type="radio"  name="radio" value="R" onclick="test(3,2,this.form)" />
+              <span class="checkmark"></span>
+            </label>
+            <div id="result3"></div>
+          </form>
+        </div>
+        <div class="labels">
+          <h2 style="color:magenta">C4 : &emsp;</h2>          <form>
+            <label class="container"
+              >R
+              <input type="radio"  name="radio" value="R" onclick="test(4,2,this.form)" />
+              <span class="checkmark"></span>
+            </label>
+            <label class="container"
+              >S
+              <input type="radio"  name="radio" value="R" onclick="test(4,2,this.form)" />
+              <span class="checkmark"></span>
+            </label>
+            <div id="result4"></div>
+          </form>
+        </div>
+      </div>
+      </div>
+      
+
+    
+
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+    <script src="http://3Dmol.csb.pitt.edu/build/3Dmol-min.js"></script>
+    <script src="../js/mol21.js"></script>
+    <script src="../js/mol22.js"></script>
+    <script src="../js/overlay.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+
+  </body>
+</html>

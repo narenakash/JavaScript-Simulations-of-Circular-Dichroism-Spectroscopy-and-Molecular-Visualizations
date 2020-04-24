@@ -1,0 +1,155 @@
+.btn-info {
+  text-align: center;
+  background-color: #5bc0de;
+  height: 100px;
+  font-size: 50px;
+}
+#know {
+  margin: auto;
+  margin-top: 50px;
+  display: block;
+  size: 100px;
+  height: 3em;
+  font-size: 35px;
+}
+#proceed {
+  margin: auto;
+  margin-top: 50px;
+  display: block;
+  size: 100px;
+  height: 3em;
+  font-size: 35px;
+}
+area {
+  cursor: pointer;
+  display: block;
+}
+#container {
+  top: -250px;
+  position: relative;
+  left: 25%;
+}
+#instruction1 {
+  top: 150px;
+  left: 715px;
+  position: absolute;
+}
+#arrow {
+  top: 325px;
+  left: 60px;
+  position: absolute;
+}
+#zoom {
+  top: 25px;
+  left: 10px;
+  position: absolute;
+  /*width: 75%;
+height:75%;*/
+}
+#eye {
+  top: 50px;
+  position: absolute;
+}
+#light {
+  top: 5px;
+  left: 1px;
+  position: absolute;
+  /*width: 75%;
+height:75%;*/
+}
+#cap {
+  top: 152px;
+  left: 240px;
+  position: absolute;
+  width: 161px;
+  /*max-height:60%;*/
+  /*z-index: 100;*/
+}
+#final {
+  top: 5px;
+  left: 1px;
+  position: absolute;
+  /*width: 75%;
+height:75%;*/
+}
+#click {
+  top: 350px;
+  left: 715px;
+  width: 250px;
+  position: absolute;
+}
+#click1 {
+  top: 350px;
+  left: 715px;
+  width: 250px;
+  position: absolute;
+}
+#last {
+  top: 50px;
+  left: 1px;
+  position: absolute;
+  /*width: 75%;
+height:75%;*/
+}
+#sols {
+  top: 50px;
+  left: 1px;
+  position: absolute;
+  /*width: 75%;
+height:75%;*/
+}
+#zoomsol {
+  top: 50px;
+  left: 1px;
+  position: absolute;
+  /*width: 75%;
+height:75%;*/
+}
+#demo {
+  color: red;
+  left: 20px;
+  top: 125px;
+  position: relative;
+  font-size: 18px;
+}
+#text {
+  margin-left: 750px;
+  margin-top: 400px;
+  position: absolute;
+  height: 50px;
+  width: 100px;
+  font-size: 25px;
+  background-color: #b5e2ff;
+}
+#beaker {
+  top: 50px;
+  left: 1px;
+  position: absolute;
+  /*width: 75%;
+height:75%;*/
+}
+#digarr {
+  color: red;
+  left: 350px;
+  top: 50px;
+  width: 100px;
+  position: absolute;
+}
+#next1 {
+  transform: translate(100px, 445px);
+}
+#next2 {
+  /*transform: rotate(11deg);*/
+  opacity: 0%;
+  cursor: pointer;
+  transform: translate(120px,0px);
+}
+#next3 {
+  color: white;
+  visibility: hidden;
+  position: fixed;
+  transform: translate(700px, 300px);
+}
+#next41,#next42 {
+  visibility: hidden;
+}

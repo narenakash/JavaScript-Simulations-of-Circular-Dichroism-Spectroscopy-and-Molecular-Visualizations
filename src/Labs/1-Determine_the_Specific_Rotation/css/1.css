@@ -1,0 +1,63 @@
+#a,
+#b,
+#c {
+  position: fixed;
+}
+#b {
+  top: 655px;
+  left: 465px;
+}
+#c {
+  color: #efefef;
+  left: 840px;
+  top: 395px;
+}
+.btn1 {
+  width: 10em;
+}
+.btn {
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+  margin-left: 10px;
+}
+#new {
+  position: relative;
+  align-self: flex-start;
+  margin-left: 5%;
+  margin-top: 10px;
+}
+.div-position {
+  position: fixed;
+  top: 550px;
+  height: 50%;
+  left: 820px;
+  width: 500px;
+  color: #fff;
+}
+.opt {
+  font-size: 18px;
+  margin-left: 40px;
+  margin-top: 20px;
+}
+.div-svg {
+  position: fixed;
+  top: 63px;
+  left: 468px;
+}
+.main-div {
+  position: fixed;
+  width: 1200px;
+  height: 1000px;
+  transform: translate(300px, 100px);
+}
+svg {
+  transform: rotate(-90deg);
+}
+#kill {
+  opacity: 0%;
+}

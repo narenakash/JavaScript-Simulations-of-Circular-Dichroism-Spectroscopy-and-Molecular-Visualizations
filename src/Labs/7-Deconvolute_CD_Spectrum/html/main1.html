@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Deconvolute CD Spectrum</title>
+      <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
+      <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="../js/swf2js.js"></script>
+    <script src="../js/ans.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+
+    var ans=[2,4,1,3];
+    var names=["Concavilin A","Myoglobin","Triose-Phosphate-Isomerase","Lysozyme"];
+      $(document).ready(function(){
+        // console.log("Mayank");
+        $("#quiz").hide();
+        $("#k2D").css("display","none");
+        $("#Contin").css("display","none");
+        // $(".image-swap2").css("display","none");
+      });
+        function jsfunc(x){
+          console.log(x);
+          var s=x;
+          var s1=s.replace( /.png/,'wobase.png');
+          $(".image-swap1").css("display","block");
+          $(".image-swap1").attr("src",s1);
+          $("#method").val("none");
+          $(".image-swap1").height("40vh");
+          $(".image-swap1").width("30vw");
+          $(".slct").css('margin-top',"15rem");
+          $("#met").css('margin-top',"-15rem");
+          $("#quiz").hide();
+          $("#k2D").css("display","none");
+          $(".image-swap2").css("display","none");
+          $("#Contin").css("display","none");
+        }
+        function decon(x){
+          var x1=document.getElementById("ri").value;
+          var n = (x1[x1.length-5]);
+          if(x==="cdnn"){
+            var s = n+x;
+            var s1="../images/"+s+".png";
+            $(".image-swap1").css("display","block");
+            $(".image-swap1").attr("src",s1);
+            // $(".image-swap1").width("50vw")
+;           $(".image-swap1").height("25vh");
+            $(".slct").css('margin-top',"15rem");
+            $("#met").css('margin-top',"-3rem");
+            $("#k2D").css("display","none");
+            $("#Contin").css("display","none");
+            $("#quiz").css("margin-top","3rem");
+            $(".image-swap2").css("display","none");
+            $("#quiz").css("margin-left","-55rem");
+            $("#quiz").show();
+          $('.quiz').prop('checked',false);
+          }
+          else if(x==="k2d"){
+            var values=[[0.02,0.51,0.47],[0.60,0.07,0.33],[0.84,0.00,0.16],[0.40,0.16,0.44]]
+            var x2=Number(n);
+            document.getElementById("1").innerHTML=values[x2-1][0];
+            document.getElementById("2").innerHTML=values[x2-1][1];
+            document.getElementById("3").innerHTML=values[x2-1][2];
+            $("#k2D").css("display","block");
+            $("#k2D").css("margin-left","0rem")
+            $(".image-swap1").css("display","none");
+            $(".slct").css("margin-top","15rem");
+            $("#met").css("margin-top","-3rem");
+            $("#quiz").css("margin-top","3rem");
+            $("#quiz").css("margin-left","-55rem");
+            $(".image-swap2").css("display","none");
+            $("#Contin").css("display","none");
+          $("#quiz").show();
+          $('.quiz').prop('checked',false);
+          }
+          else if(x==="contin"){
+            var values=[[[0.05,0.53,0.43,0.944],[0.0075,0.021,0.018]],[[0.45,0.31,0.24,0.987],[0.034,0.041,0.061]],[[0.91,0,0.09,1.016],[0.0018,0.000007,0.034]],[[0.38,0.19,0.43,0.986],[0.012,0.024,0.025]]];
+            var x2= Number(n);
+            for(var i=0;i<2;i++){
+              for(var j=0;j<(4-i);j++){
+                var y1 = i+1;
+                var y2 = j+1;
+                var y11=  y1.toString();
+                var y12=  y2.toString();
+                console.log(y11,y12);
+                var y=y11+y12;
+                console.log(y);
+                document.getElementById(y).innerHTML=values[x2-1][i][j];
+              }
+            }
+            $("#Contin").css("display","block");
+            $("#Contin").css("margin-left","-20rem");
+            $("#k2D").css("display","none");
+            $(".image-swap1").css("display","none");
+            $(".slct").css("margin-top","15rem");
+            $("#met").css("margin-top","0rem");
+            $("#quiz").css("margin-top","3rem");
+            $(".image-swap2").css("display","none");
+            $("#quiz").css("margin-left","-55rem");
+          $("#quiz").show();
+          $('.quiz').prop('checked',false);
+          }
+        }
+        function test(x){
+          var x1=document.getElementById("ri").value;
+          var n1 = x1[x1.length-5];
+          var s1 = "../images/sample"+n1+"pdb.png";
+          var n=Number(n1);
+          n-=1;
+          console.log(n,x,ans[n],s1);
+          if(ans[n]==x){
+            correct(names[n]);
+            $(".image-swap1").css("display","block");
+            $(".image-swap1").attr("src",s1);
+            $("#k2D").css("display","none");
+            $("#Contin").css("display","none");
+            $(".image-swap1").height("35vh");
+            $(".image-swap1").width("30vh");
+            $(".slct").css('margin-top',"15rem");
+            $("#met").css('margin-top',"-13rem");
+            $("#k2D").css("display","none");
+            $("#Contin").css("display","none");
+            $("#quiz").css("margin-top","3rem");
+            $(".image-swap2").css("display","none");
+            $("#quiz").css("margin-left","-55rem");
+            $("#quiz").hide();
+            // $(".image-swap1").width("20vw");
+          }
+          else{
+            incorrect();
+          }
+        }
+    </script>
+  </head>
+  <link
+    rel="stylesheet"
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+    crossorigin="anonymous"
+  />
+  <link rel="stylesheet" href="../css/mol.css" />
+
+  <body>
+    <div class="top">
+      <h3 class="set"><b>Deconvoluting sample</b></h3>
+      <h4 class="set">
+        <b>By using different convoluting method for different samples we can determine its secondary structure</b>
+      </h4>
+   
+
+    <div class="flexingbutton">
+
+      <button
+      class="btn btn-success"
+      id="new"
+      onclick="window.location.href = './main.html';"
+    >
+      <b>Previous!</b>
+    </button>
+
+
+
+      <button class="btn btn-warning btn-lg" id="new" onclick="on(0)">
+        <b>Instructions!</b>
+      </button>
+      
+      <button
+        class="btn btn-danger"
+        id="new"
+        onclick="window.location.href = './finish.html';"
+      >
+        <b>Finish!</b>
+      </button>
+    </div>
+
+    <div style="height:30px;width:100%;clear:both;"></div>
+
+
+    <div id="overlay0" onclick="off(0)">
+      <div id="text"><b>
+        1) Choose one of the four samples.<br/><br />
+        2) Choose one of the three deconvolution samples<br /><br />
+      3) Now you will get some details regarding the sample when we have performed the deconvoluting method selected by you.<br /><br />
+    4) On observing the details, answer the quiz that pops up below selection bar.<br /><br />
+  5) If you are correct than a pop up will appear telling the name of sample and also image of the sample will be displayed on the page.
+  <br />After that go to 1st instruction again and choose another sample<br /><br />
+6)If you are incorrect, than repeat the experiment from 4rth instruction.
+</b></div>
+    </div>
+  </div>
+    <div class="slct" style="margin-top: 14rem;text-align: left;margin-left: 5rem">
+      <div class="form-group" style="margin-top:-5rem">
+       <label for="ri" style="font-family: 'Lato'; font-size:30px"><b>Choose sample: </b></label>
+       <select id="ri" class="form-control" onchange="jsfunc(this.value)">
+          <option value='../images/sample1.png'>Sample 1</option>
+          <option value='../images/sample2.png'>Sample 2</option>
+          <option value='../images/sample3.png'>Sample 3</option>
+          <option value='../images/sample4.png'>Sample 4</option>
+        </select>
+      </div>
+      <div>
+        <img src="../images/sample1wobase.png" class="image-swap1">
+        <div id="k2D">
+          <table>
+            <tr>
+              <th>Structure</th>
+              <th>Percentage</th>
+            </tr>
+            <tr>
+              <th>Alpha</th>
+              <th id="1">Percentage</th>
+            </tr>
+            <tr>
+              <th>Beta</th>
+              <th id="2">Percentage</th>
+            </tr>
+            <tr>
+              <th>Random</th>
+              <th id="3">Percentage</th>
+            </tr>
+          </table>
+      </div>
+      <div id="Contin">
+        <table>
+          <tr>
+            <th>Properties</th>
+            <th>Helix</th>
+            <th>Beta-Sheet</th>
+            <th>Remainder</th>
+            <th>Scale Factor</th>
+          </tr>
+          <tr>
+            <th>Fraction</th>
+            <th id="11">Helix</th>
+            <th id="12">Beta-Sheet</th>
+            <th id="13">Remainder</th>
+            <th id="14">Scale Factor</th>
+          </tr>
+          <tr>
+            <th>Standard Factor</th>
+            <th id="21">Helix</th>
+            <th id="22">Beta-Sheet</th>
+            <th id="23">Remainder</th>
+            <th id="24">Scale Factor</th>
+          </tr>
+        </table>
+        <img src="" class="image-swap2">
+    </div>
+
+      <div class="form-group" id="met" style="margin-top:-15rem;margin-left:-57.5rem">
+       <label for="method" style="font-family: 'Lato'; font-size:20px"><b>Choose a Deconvolution Method: </b></label>
+       <select id="method" class="form-control" onclick="decon(this.value)">
+          <option value="none">None</option>
+          <option value='k2d'>K2D</option>
+          <option value='cdnn'>CDNN</option>
+          <option value='contin'>CONTIN</option>
+        </select>
+      </div>
+    </div>
+    <div id="quiz" style="margin-top:-5rem;margin-left:-45rem">
+          <p style="font-family:'Lato';">
+            <h4>Under which category would you classify this protein ?</h4></p>
+          <form>
+            <label class="container parallel"
+              >Alpha
+              <input type="radio"  name="radio" value="R" onclick="test(1)" class="quiz"/>
+              <span class="checkmark"></span>
+            </label>
+            <label class="container parallel"
+              >Beta
+              <input type="radio"  name="radio" value="R" onclick="test(2)" class="quiz" value="S"/>
+              <span class="checkmark"></span>
+            </label>
+           <label class="container parallel"
+              >Alpha+Beta
+              <input type="radio"  name="radio" value="R" onclick="test(3)" class="quiz" value="S"/>
+              <span class="checkmark"></span>
+            </label>
+            <label class="container parallel"
+              >Alpha/Beta
+              <input type="radio"  name="radio" value="R" onclick="test(4)" class="quiz" value="S"/>
+              <span class="checkmark"></span>
+            </label>
+          </form>
+        </div>
+
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+    <script src="http://3Dmol.csb.pitt.edu/build/3Dmol-min.js"></script>
+    <script src="../js/overlay.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+
+  </body>
+</html>

@@ -1,0 +1,129 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="../libraries/bootstrap-3.3.7-dist/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" type="text/css" href="../css/exp.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+    <script src="../libraries/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+    <script src="../libraries/jQueryRotate.js"></script>
+    <!-- <script type="text/javascript" src="mfs_expt2.js"></script> -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Lato&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../css/main.css">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+  </head>
+
+  <body>
+    <div class="top">
+      <div class="topitem">
+    <div style="height:10%;width:100%;clear:both;"></div>
+  
+        <h1 class="set"><b>Optical Rotation of Sugars<b></h1>
+        <h3 class="set">
+          <b>Experiment to Determine the Specific Rotation of different Sugar samples</b>
+        </h3>
+      
+    
+    </div>
+    </div>
+      <!-- First row consists of title of the experiment and the reset button -->
+      <div class="row" style="margin-top: 150px;">
+        <div class="col-sm-12">
+
+          <img
+            id="know"
+            src="../images/know.png"
+          />
+          <!-- button to scan the sample on the computer-->
+          <img
+            id="proceed"
+            src="../images/proceed.png"
+          />
+        <div id="container">
+          <map name="polarimetermap">
+            <area id="coor" shape="rect" coords="121,227,336,375"/>
+          </map>
+          <img id="instruction1"/>
+          <img id="arrow"/>
+          <img id="equip" usemap="#polarimetermap">
+          <map name="circle">
+            <area id="coor1" shape="circle" coords="840,370,71"/>
+          </map>
+          <img id="zoom" usemap="#circle"/>
+        	<map name="light">
+            	<area id="coor2" shape="rect" coords="235,156,456,208"/>
+          	</map>
+          <img id="eye" usemap="#light" />
+          <img id="digarr"/>
+          <img id="light" usemap="#light1"/>
+          <img id="cap" usemap="#caph"/>
+          <img id="final"/>
+          <img id="click" onclick="window.location.href = './1.html';"/>
+          <img id="last"/>
+          <img id="click1"/>
+          <!-- <map name="exp">
+<area id="11" shape="circle" coords="12cm,10cm,1cm"
+          </map>
+          <img id="prac" usemap="#exp"   href="./images/1363.jpg"  /> -->
+          <map name="tri">
+            	<!-- <area id="coor3" shape="rect" coords="481,78,578,229"/>
+              <area id="coor4" shape="rect" coords="94,71,185,232"/> -->
+              <area id="coord1" shape="circle" coords="100,140,30"/>
+              <area id="coord2" shape="circle" coords="185,140,30"/>
+              <area id="coord3" shape="circle" coords="485,140,30"/>
+              <area id="coord4" shape="circle" coords="570,140,30"/>
+              <area id="coord5" shape="circle" coords="143,220,30"/>
+              <area id="coord6" shape="circle" coords="528,220,30"/>
+
+          </map>
+          <img id="sols" usemap="#tri"/>
+          <img id="zoomsol"/>
+          <img id="beaker"/>
+          <div id="demo"></div>
+          <div class="buttons">
+<h3 id="next3"></h3>
+
+<button class="btn btn-success" id="next5" style="position: fixed; transform:translate(760px,450px); visibility:hidden" > Next Step</button>
+          </div>
+          <!-- <input id="text">
+          <div id="demo1"> -->
+            <img src="../gifs/diag.gif" width="100px" height="100px" style="position: fixed; transform:translate(320px,480px)" id="next41">
+            <img src="../gifs/diag.gif" width="100px" height="100px" style="position: fixed; transform:translate(348px,420px)" id="next42">
+            <div class="div-pos" style="position: fixed;"id="next1">
+              
+              <svg width=400 height=1000>
+
+           <rect width=150 height=200 fill=red  onclick="window.location.href='./2.html'" id="next2"></rect>
+
+
+
+
+
+              </svg>
+
+
+        </div> 
+
+    <script type="text/javascript" src="../js/exp.js"></script>
+<script
+src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+crossorigin="anonymous"
+></script>
+<script
+src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+crossorigin="anonymous"
+></script>
+<script
+src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+crossorigin="anonymous"
+></script>

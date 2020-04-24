@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="../js/overlay.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/main.css" />
+    <link rel="stylesheet" href="../css/1.css" />
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+
+    <title>Document</title>
+    
+  </head>
+  <body>
+    <div class="top">
+      <div class="topitem">
+      <h3 class="set"><b>Determining Optical Rotation</b></h3>
+      <h4 class="set">
+        Using the Polarimeter we are changing angle to see at which angle light polarises.
+      </h4>
+    
+    <div class="flexing" style="margin-bottom:-3vh">
+    <button
+      class="btn btn-success"
+      id="new"
+      onclick="window.location.href = './exp.html';"
+    >
+      Back!</b>
+    </button>
+      <button
+        class="btn btn-warning btn-lg"
+        id="new"
+        onclick="on(0)"
+      >
+        Instructions!</b>
+      </button>
+
+      <button
+      class="btn btn-danger"
+      id="new"
+      onclick="window.location.href = './help1.html';"
+    >
+      Help!</b>
+    </button>
+    </div>
+</div>
+
+  <div id="overlay0" onclick="off(0)">
+      <div id="text" style=""><b>1) Initially angle is set to 0 degree ...<br><br />
+        2) First select the step size for the degree to increase or decrease from the options 1,5,10...<br><br />
+        3) Than click on Plus or minus to increase or decrease the angle with the step size you have chosen...<br><br />
+      4) See how the Intensity of the right part of light changes.<br /><br />
+    5)The moment when Intensity of the right part matches with the left part than the angle of Rotation you got is the Optical Rotation for that sample<br /><br />
+  6) After completion press back and then proceed to Experiment.</b></div>
+    </div>
+
+
+</div style="margin-top:-3vh">
+    <div class="main-div" style="margin-top:-3vh">
+      <map name="test" id="test">
+        <area shape="rect" coords="830,450,1100,550" href="google.com" />
+      </map>
+      <img src="../images/1 .jpg" id="a" usemap="#test" />
+      <h1 id="c"></h1>
+
+      <img src="../images/2.jpg" id="b" />
+      <div class="div-position" style="height:5vh">
+        <div class="" id="new">
+          <button class="btn btn-success" onclick="stepup()">Plus</button>
+          <button class="btn btn-danger" onclick="stepdown()">Minus</button>
+        </div>
+        <div class="opt">
+          <input type="radio" name="gender" value="1" />1 Deg
+          <input type="radio" name="gender" value="5" />5 Deg
+          <input type="radio" name="gender" value="10" />10 Deg<br /><br />
+        </div>
+      </div>
+      <div class="div-svg">
+        <svg width="500px" height="500px">
+          <path d="M0,50 a1,1 0 0,0 100,0" fill="white" id="kill" />
+        </svg>
+      </div>
+    </div>
+
+    <script>
+      var ones = 0,
+        fives = 0,
+        tens = 0;
+      var degrees = 0;
+      var arra = [1, 5, 10];
+      var num = 0,
+        getter;
+      getter = document.getElementsByName("gender");
+      function stepup() {
+        for (i = 0; i <= 2; i++) {
+          if (getter[i].checked) {
+            num = arra[i];
+          }
+        }
+        var bb = document.getElementById("b");
+        if (num == 1) {
+          ones++;
+          degrees += 1;
+          degrees = degrees % 360;
+          var degree = degrees;
+          if(degree>180){
+            degree-=360;
+          }
+          if(degree <= -180){
+            degree+=360;
+          }
+          opa();
+          var aa = document.getElementById("c");
+          aa.innerHTML = "Angle: " + degree + " Deg";
+
+          bb.style.transform = "rotate(" + ones + "deg)";
+        } else if (num == 5) {
+          fives = fives + 5;
+          degrees += 5;
+          degrees = degrees % 360;
+          var degree = degrees;
+          if(degree>180){
+            degree-=360;
+          }
+          if(degree <= -180){
+            degree+=360;
+          }
+          opa();
+
+          var aa = document.getElementById("c");
+          aa.innerHTML = "Angle: " + degree + " Deg";
+
+          bb.style.transform = "rotate(" + fives + "deg)";
+        } else if (num == 10) {
+          tens = tens + 10;
+          degrees += 10;
+          degrees = degrees % 360;
+          var degree = degrees;
+          if(degree>180){
+            degree-=360;
+          }
+          if(degree <=-180){
+            degree+=360;
+          }
+          console.log(degree);
+          opa();
+
+          var aa = document.getElementById("c");
+          aa.innerHTML = "Angle: " + degree + " Deg";
+
+          bb.style.transform = "rotate(" + tens + "deg)";
+        }
+      }
+      function stepdown() {
+        for (i = 0; i <= 2; i++) {
+          if (getter[i].checked) {
+            num = arra[i];
+          }
+        }
+        var bb = document.getElementById("b");
+        if (num == 1) {
+          ones--;
+          degrees -= 1;
+          degrees = degrees % 360;
+          var degree = degrees;
+          if(degree>180){
+            degree-=360;
+          }
+          if(degree <=-180){
+            degree+=360;
+          }
+          console.log(degree);
+          opa();
+          var aa = document.getElementById("c");
+          aa.innerHTML = "Angle: " + degree + " Deg";
+
+          bb.style.transform = "rotate(" + ones + "deg)";
+        } else if (num == 5) {
+          fives = fives - 5;
+          degrees -= 5;
+          degrees = degrees % 360;
+          var degree = degrees;
+          if(degree>180){
+            degree-=360;
+          }
+          if(degree <=-180){
+            degree+=360;
+          }
+          console.log(degree);
+          opa();
+          var aa = document.getElementById("c");
+          aa.innerHTML = "Angle: " + degree + " Deg";
+
+          bb.style.transform = "rotate(" + fives + "deg)";
+        } else if (num == 10) {
+          tens = tens - 10;
+          degrees -= 10;
+          degrees = degrees % 360;
+          var degree = degrees;
+          if(degree>180){
+            degree-=360;
+          }
+          if(degree <=-180){
+            degree+=360;
+          }
+          console.log(degree);
+          opa();
+          var aa = document.getElementById("c");
+          aa.innerHTML = "Angle: " + degree + " Deg";
+
+          bb.style.transform = "rotate(" + tens + "deg)";
+        }
+      }
+      function opa() {
+        var angleR = 0;
+        console.log(angleR);
+        var d2 = degrees;
+        console.log(degrees);
+        degrees+=180;
+        degrees%=360;
+        var temp = angleR+180;
+        var tmp1 = Math.abs(degrees-temp);
+        var opacityvalue = Math.min(tmp1,360-tmp1);
+        var perOpac = parseFloat(opacityvalue/180);
+        perOpac = Math.abs(perOpac);
+        console.log(degrees,opacityvalue,perOpac);
+        var valdiv = document.getElementById("kill");
+        valdiv.style.opacity = perOpac;
+        degrees = d2;
+      }
+    </script>
+  </body>
+</html>

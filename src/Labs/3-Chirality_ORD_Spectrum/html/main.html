@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/mol.css" />
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="../js/ans.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="../js/swf2js.js"></script>
+    <script>
+    $(window).scroll(function(e){
+      var $el = $('.top');
+      var isPositionfixed = ($el.css('position')=='fixed');
+      if($(this).scrollTop()>200 && !isPositionfixed){
+        $el.css({'position':'fixed', 'top':'0px'});
+      }
+      if($(this).scrollTop() <200 && isPositionfixed){
+        $el.css({'position': 'static', 'top': '0px'});
+      }
+    });
+    </script>
+    <title>Experiment 3</title>
+  </head>
+  <body>
+    <div class="top">
+    <div class="topitem">
+      <h3 class="set"><b>Understanding Structure of Chiral Molecules<b></h3>
+      <h4 class="set">
+        <b>Find out the chiral centers and colour the asymmetric carbon in six
+        samples.<b>
+      </h4>
+    
+    <div class="flexing">
+      <button
+        class="btn btn-danger"
+        id="new"
+        onclick="window.location.href = './help1.html';"
+      >
+        <b>Help!</b>
+      </button>
+
+      <button class="btn btn-warning btn-lg" id="new" onclick="on(0)">
+        <b>Instructions!</b>
+      </button>
+
+      <button
+      class="btn btn-success"
+      id="new"
+      onclick="window.location.href = './SRconfig.html';"
+    >
+      <b>Next!</b>
+    </button>
+    </div>
+  </div>
+
+<div class="topitem">  
+ <div class="atoms">
+   <div class="item">
+      <div style="font-family:'Lato';font-size:25px ; color:white">Carbon &nbsp;</div>
+      <div class="dotC" style="text-align:center;color:white"></div>
+  </div>
+      <div class="item">
+      <div style="font-family:'Lato';font-size:25px;color:white">Oxygen &nbsp;</div>
+      <div class="dotO" style="text-align:center"></div>
+  </div>
+      <div class="item">
+      <div style="font-family:'Lato';font-size:25px; color:white">Hydrogen &nbsp;</div>
+      <div class="dotH" style="text-align:center"></div>
+  </div>
+   <div class="item">
+      <div style="font-family:'Lato';font-size:25px; color:white">Chiral Carbon &nbsp;</div>
+      <div class="dotCC" style="text-align:center"></div>
+  </div>
+    </div>
+    </div>
+  </div>
+
+    <div id="overlay0" onclick="off(0)">
+      <div id="text"><b>1) For each of the molecule coloured in blue(carbon atoms) you have to find chiral/asymmetric ones(ones with all four groups attached to it are pairwise different...<br><br />
+        2) If the directly attached atoms are same for two or more groups go to the next attached to these attached atoms until you find some difference...<br><br />
+        3) If atleast two of the attached atoms are same for any carbon atoms than it is for sure not asymmetric...<br><br />
+      4) If you find out some carbon atom to be chiral than click it if it changes color than you are correct otherwise you are wrong, also a popups come to notify you about your answer.</b></div>
+    </div>
+
+    <div id="overlay2" onclick="off(2)">
+      <div id= "result1"></div>
+    </div>
+
+    <div style="height:100px;width:100%;clear:both;"></div>
+    <div style="height:100px;width:100%;clear:both;"></div>
+    <div style="height:100px;width:100%;clear:both;"></div>
+
+    <div class="flexing">
+      
+      <div data-cell class="cell" class="cont" id="cont1"></div>
+
+      <div class="cont" style="height:200px; width:20%;clear:both;"></div>
+
+      <div data-cell class="cell" class="cont" id="cont2"></div>
+
+      <div class="cont" style="height:200px; width:20%;clear:both;"></div>
+
+    </div>
+
+    <div style="height:100px;width:100%;clear:both;"></div>
+
+    <div class="flexing">
+      
+      <div data-cell class="cell" class="cont" id="cont3"></div>
+
+      <div class="cont" style="height:200px; width:20%;clear:both;"></div>
+
+      <div data-cell class="cell" class="cont" id="cont4"></div>
+
+      <div class="cont" style="height:200px; width:20%;clear:both;"></div>
+
+    </div>
+
+    <div style="height:100px;width:100%;clear:both;"></div>
+
+    <div class="flexing">
+      
+      <div data-cell class="cell" class="cont" id="cont5"></div>
+
+      <div class="cont" style="height:200px; width:20%;clear:both;"></div>
+
+      <div data-cell class="cell" class="cont" id="cont6"></div>
+
+      <div class="cont" style="height:200px; width:20%;clear:both;"></div>
+
+    </div>
+
+    <div style="height:100px;width:100%;clear:both;"></div>
+
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="http://3Dmol.csb.pitt.edu/build/3Dmol-min.js"></script>
+    <script src="../js/mol1.js"></script>
+    <script src="../js/mol2.js"></script>
+    <script src="../js/mol3.js"></script>
+    <script src="../js/mol4.js"></script>
+    <script src="../js/mol5.js"></script>
+    <script src="../js/mol6.js"></script>
+    <script src="../js/overlay.js"></script>
+    
+
+
+  </body>
+</html>

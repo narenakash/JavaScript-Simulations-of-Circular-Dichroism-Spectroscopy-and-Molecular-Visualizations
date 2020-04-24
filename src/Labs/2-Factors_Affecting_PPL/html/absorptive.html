@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="../css/main.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Lato&display=swap"
+      rel="stylesheet"
+    />
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Experiment 2</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+      $(document).ready(function() {
+        $("#ri").change(function() {
+          console.log($(this).val());
+          $(".image-swap1").attr("src", $(this).val());
+        });
+      });
+      $(document).ready(function() {
+        $("#ri1").change(function() {
+          $(".image-swap2").attr("src", $(this).val());
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <div class="top">
+      <h2 class="set">
+      	Change in Optical Rotation Due to Change in Extinction Coefficient.
+      </h2>
+      <div class="flexing">
+        <button
+          class="btn btn-danger"
+          id="new"
+          onclick="window.location.href = './helpa.html';"
+        >
+          <b>Help!</b>
+        </button>
+
+        <button class="btn btn-warning btn-lg" id="new" onclick="on()">
+          <b>Instructions!</b>
+        </button>
+
+        <button
+          class="btn btn-success"
+          id="new"
+          onclick="window.location.href = './absorptive2.html';"
+        >
+          <b>Next!</b>
+        </button>
+      </div>
+    </div>
+
+    <div id="overlay0" onclick="off()">
+      <div id="text"><b>
+        Here wavelength of light is fixed and equal to 400nm.
+        <br />
+        <br />
+        Now you are changing extinction coefficient for left and circularly
+        polarised light and see the difference in polarisation for 2 different
+        cases.
+        <br />
+        <br />
+        For more information related to extinction coefficient and polarised
+        ligh refer <b>Help</b>
+        <br />
+      </b>
+      </div>
+    </div>
+
+    <div class="slct">
+      <div class="form-group">
+        <label for="ri" style="font-family: 'Lato'; font-size:30px;width:60%"
+          ><b
+            >Choose extinction coefficient of Left and Right Circular Polarised
+            Light
+          </b></label
+        >
+        <select id="ri" class="form-control">
+          <option value="../images/absorptivegifs/del=0.0.gif">e1=0.00,e2=0.00</option>
+          <option value="../images/absorptivegifs/del=0.15.gif">e1=0.00,e2=0.15</option>
+          <option value="../images/absorptivegifs/del=0.30.gif">e1=0.00,e2=0.30</option>
+          <option value="../images/absorptivegifs/del=(-).15.gif"
+            >e1=0.15,e2=0.00</option
+          >
+          <option value="../images/absorptivegifs/del=(-).30.gif"
+            >e1=0.30,e2=0.00</option
+          >
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="ri" style="font-family: 'Lato'; font-size:30px;width:60%;"
+          ><b
+            >Choose extinction coefficient of Left and Right Circular Polarised
+            Light</b
+          ></label
+        >
+        <select id="ri1" class="form-control">
+          <option value="../images/absorptivegifs/del=0.0.gif">e1=0.00,e2=0.00</option>
+          <option value="../images/absorptivegifs/del=0.15.gif">e1=0.00,e2=0.15</option>
+          <option value="../images/absorptivegifs/del=0.30.gif">e1=0.00,e2=0.30</option>
+          <option value="../images/absorptivegifs/del=(-).15.gif"
+            >e1=0.15,e2=0.00</option
+          >
+          <option value="../images/absorptivegifs/del=(-).30.gif"
+            >e1=0.30,e2=0.00</option
+          >
+        </select>
+      </div>
+      <div>
+        <img src="../images/absorptivegifs/del=0.0.gif" class="image-swap1" />
+      </div>
+      <div>
+        <img src="../images/absorptivegifs/del=0.0.gif" class="image-swap2" />
+      </div>
+    </div>
+
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+    <script src="http://3Dmol.csb.pitt.edu/build/3Dmol-min.js"></script>
+    <script src="../js/overlay.js"></script>
+  </body>
+</html>
