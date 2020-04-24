@@ -216,7 +216,7 @@ function scan() {
             button: "Continue"
         })
             .then((value) => {
-                window.location = "./../../../page5.html";
+                window.location = "./../../../html/page5.html";
             });
     }
     else if (step_no == 13) {
@@ -227,7 +227,7 @@ function scan() {
             button: "Continue"
         })
             .then((value) => {
-                window.location = "./../../../page5.html";
+                window.location = "./../../../html/page5.html";
             });
     }
     cursorPointers('comp_trans_button', 'ok_btn');
