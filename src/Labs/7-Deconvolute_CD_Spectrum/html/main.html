@@ -6,6 +6,7 @@
     <title>CD Spectra</title>
     <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
       <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="../js/overlay.js"></script>
     <script src="./swf2js.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script>
@@ -63,11 +64,11 @@
     <div class="top">
       <h3 class="set"><b>CD Spectra</b></h3>
       <h4 class="set">
-        <b>CD Spectra of different sample along with their experimental details shown<b>
+        <b>CD Spectra of different sample along with their experimental details shown</b>
       </h4>
    
 
-    <div class="flexingbutton">
+    <div class="flexingbutton" style="margin-bottom:-3vh">
 
       <button
         class="btn btn-danger"
@@ -89,22 +90,11 @@
       <b>Next!</b>
     </button>
     </div>
+</div>
 
-    <div style="height:30px;width:100%;clear:both;"></div>
 
-
-    <div id="overlay1" onclick="off(1)">
-      <div id="text"><b>We are given four samples which are unknown to us right now, what we have to do is by using some deconvolution method and also using their experimental details we have to figure out the sample.
-        <br>
-        <br>
-      1) In this page, you can observe experimental details and variation of CD spectra with the wavelength for all the four samples.
-      <br />
-      <br />
-      2) Also you can observe how this samle spectrum differs from baseline spectrum which can be toggled using button present below the graph.</b></div>
-    </div>
-  </div>
-     <div class="slct" style="margin-top: 12rem;text-align: left;margin-left: 5rem">
-      <div class="form-group" style="margin-top:-28rem">
+     <div class="wrapper">
+      <div  class="box1 form-group">
        <label for="ri" style="font-family: 'Lato'; font-size:30px"><b>Choose samples: </b></label>
        <select id="ri" class="form-control" onchange="jsfunc(this.value)">
           <option value='../images/sample1.png'>sample 1</option>
@@ -112,13 +102,7 @@
           <option value='../images/sample3.png'>sample 3</option>
           <option value='../images/sample4.png'>sample 4</option>
         </select>
-      </div>
-      <div style="margin-top:13rem">
-        <img src="../images/sample1.png" class="image-swap1">
-      </div>
-      <input type="button" id="testbtn" value="Remove baseline" class="btn btn-primary" style="margin-top:1.5rem; margin-left:19rem" onclick="change(this.value)">
-    </div>
-    <div style="margin-top:-30rem;margin-left:5rem">
+
       <p style="font-family:'Lato'">
         <h4>Sample and Experimental Details:</h4> </p>
       <table>
@@ -152,6 +136,22 @@
         </tr>
       </table>
     </div>
+    <div class="box3">
+      <div >
+        <img src="../images/sample1.png" class="image-swap1">
+      </div>
+      <input type="button" id="testbtn" style="margin-top:5vh;width:10vw" value="Remove baseline" class="btn2 btn-primary"  onclick="change(this.value)">
+    </div>
+        <div id="overlay1" onclick="off(1)" class="box4">
+      <div id="text"><b>We are given four samples which are unknown to us right now, what we have to do is by using some deconvolution method and also using their experimental details we have to figure out the sample.
+        <br>
+        <br>
+      1) In this page, you can observe experimental details and variation of CD spectra with the wavelength for all the four samples.
+      <br />
+      <br />
+      2) Also you can observe how this samle spectrum differs from baseline spectrum which can be toggled using button present below the graph.</b></div>
+    </div>
+</div>
 
     <script
       src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
@@ -168,9 +168,6 @@
       integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
       crossorigin="anonymous"
     ></script>
-    <script src="http://3Dmol.csb.pitt.edu/build/3Dmol-min.js"></script>
-    <script src="../js/overlay.js"></script>
-
 
   </body>
 </html>

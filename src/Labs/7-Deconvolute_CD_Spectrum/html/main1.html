@@ -8,6 +8,7 @@
       <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script src="../js/swf2js.js"></script>
     <script src="../js/ans.js"></script>
+    <script src="../js/overlay.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script>
 
@@ -27,10 +28,6 @@
           $(".image-swap1").css("display","block");
           $(".image-swap1").attr("src",s1);
           $("#method").val("none");
-          $(".image-swap1").height("40vh");
-          $(".image-swap1").width("30vw");
-          $(".slct").css('margin-top',"15rem");
-          $("#met").css('margin-top',"-15rem");
           $("#quiz").hide();
           $("#k2D").css("display","none");
           $(".image-swap2").css("display","none");
@@ -44,15 +41,9 @@
             var s1="../images/"+s+".png";
             $(".image-swap1").css("display","block");
             $(".image-swap1").attr("src",s1);
-            // $(".image-swap1").width("50vw")
-;           $(".image-swap1").height("25vh");
-            $(".slct").css('margin-top',"15rem");
-            $("#met").css('margin-top',"-3rem");
             $("#k2D").css("display","none");
             $("#Contin").css("display","none");
-            $("#quiz").css("margin-top","3rem");
             $(".image-swap2").css("display","none");
-            $("#quiz").css("margin-left","-55rem");
             $("#quiz").show();
           $('.quiz').prop('checked',false);
           }
@@ -63,12 +54,7 @@
             document.getElementById("2").innerHTML=values[x2-1][1];
             document.getElementById("3").innerHTML=values[x2-1][2];
             $("#k2D").css("display","block");
-            $("#k2D").css("margin-left","0rem")
             $(".image-swap1").css("display","none");
-            $(".slct").css("margin-top","15rem");
-            $("#met").css("margin-top","-3rem");
-            $("#quiz").css("margin-top","3rem");
-            $("#quiz").css("margin-left","-55rem");
             $(".image-swap2").css("display","none");
             $("#Contin").css("display","none");
           $("#quiz").show();
@@ -90,16 +76,11 @@
               }
             }
             $("#Contin").css("display","block");
-            $("#Contin").css("margin-left","-20rem");
             $("#k2D").css("display","none");
             $(".image-swap1").css("display","none");
-            $(".slct").css("margin-top","15rem");
-            $("#met").css("margin-top","0rem");
-            $("#quiz").css("margin-top","3rem");
             $(".image-swap2").css("display","none");
-            $("#quiz").css("margin-left","-55rem");
-          $("#quiz").show();
-          $('.quiz').prop('checked',false);
+            $("#quiz").show();
+            $('.quiz').prop('checked',false);
           }
         }
         function test(x){
@@ -115,17 +96,10 @@
             $(".image-swap1").attr("src",s1);
             $("#k2D").css("display","none");
             $("#Contin").css("display","none");
-            $(".image-swap1").height("35vh");
-            $(".image-swap1").width("30vh");
-            $(".slct").css('margin-top',"15rem");
-            $("#met").css('margin-top',"-13rem");
             $("#k2D").css("display","none");
             $("#Contin").css("display","none");
-            $("#quiz").css("margin-top","3rem");
             $(".image-swap2").css("display","none");
-            $("#quiz").css("margin-left","-55rem");
             $("#quiz").hide();
-            // $(".image-swap1").width("20vw");
           }
           else{
             incorrect();
@@ -149,7 +123,7 @@
       </h4>
    
 
-    <div class="flexingbutton">
+    <div class="flexingbutton" style="margin-bottom:-3vh">
 
       <button
       class="btn btn-success"
@@ -161,7 +135,7 @@
 
 
 
-      <button class="btn btn-warning btn-lg" id="new" onclick="on(0)">
+      <button class="btn btn-warning btn-lg" id="new" onclick="on(1)">
         <b>Instructions!</b>
       </button>
       
@@ -174,23 +148,10 @@
       </button>
     </div>
 
-    <div style="height:30px;width:100%;clear:both;"></div>
-
-
-    <div id="overlay0" onclick="off(0)">
-      <div id="text"><b>
-        1) Choose one of the four samples.<br/><br />
-        2) Choose one of the three deconvolution samples<br /><br />
-      3) Now you will get some details regarding the sample when we have performed the deconvoluting method selected by you.<br /><br />
-    4) On observing the details, answer the quiz that pops up below selection bar.<br /><br />
-  5) If you are correct than a pop up will appear telling the name of sample and also image of the sample will be displayed on the page.
-  <br />After that go to 1st instruction again and choose another sample<br /><br />
-6)If you are incorrect, than repeat the experiment from 4rth instruction.
-</b></div>
-    </div>
   </div>
-    <div class="slct" style="margin-top: 14rem;text-align: left;margin-left: 5rem">
-      <div class="form-group" style="margin-top:-5rem">
+    <div class="wrapper">
+      <div class="box1">
+      <div class="form-group">
        <label for="ri" style="font-family: 'Lato'; font-size:30px"><b>Choose sample: </b></label>
        <select id="ri" class="form-control" onchange="jsfunc(this.value)">
           <option value='../images/sample1.png'>Sample 1</option>
@@ -199,9 +160,46 @@
           <option value='../images/sample4.png'>Sample 4</option>
         </select>
       </div>
-      <div>
+    <div class="form-group" id="met">
+           <label for="method" style="font-family: 'Lato'; font-size:20px"><b>Choose a Deconvolution Method: </b></label>
+           <select id="method" class="form-control" onclick="decon(this.value)">
+              <option value="none">None</option>
+              <option value='k2d'>K2D</option>
+              <option value='cdnn'>CDNN</option>
+              <option value='contin'>CONTIN</option>
+            </select>
+          </div>
+
+        <div id="quiz" style="display:none">
+          <p style="font-family:'Lato';">
+            <h4>Under which category would you classify this protein ?</h4></p>
+          <form>
+            <label class="container parallel"
+              >Alpha
+              <input type="radio"  name="radio" value="R" onclick="test(1)" class="quiz"/>
+              <span class="checkmark"></span>
+            </label>
+            <label class="container parallel"
+              >Beta
+              <input type="radio"  name="radio" value="R" onclick="test(2)" class="quiz" value="S"/>
+              <span class="checkmark"></span>
+            </label>
+           <label class="container parallel"
+              >Alpha+Beta
+              <input type="radio"  name="radio" value="R" onclick="test(3)" class="quiz" value="S"/>
+              <span class="checkmark"></span>
+            </label>
+            <label class="container parallel"
+              >Alpha/Beta
+              <input type="radio"  name="radio" value="R" onclick="test(4)" class="quiz" value="S"/>
+              <span class="checkmark"></span>
+            </label>
+          </form>
+        </div>
+      </div>
+      <div class="box2">
         <img src="../images/sample1wobase.png" class="image-swap1">
-        <div id="k2D">
+        <div id="k2D" style="display:none">
           <table>
             <tr>
               <th>Structure</th>
@@ -221,7 +219,7 @@
             </tr>
           </table>
       </div>
-      <div id="Contin">
+      <div id="Contin" style="display:none">
         <table>
           <tr>
             <th>Properties</th>
@@ -248,42 +246,20 @@
         <img src="" class="image-swap2">
     </div>
 
-      <div class="form-group" id="met" style="margin-top:-15rem;margin-left:-57.5rem">
-       <label for="method" style="font-family: 'Lato'; font-size:20px"><b>Choose a Deconvolution Method: </b></label>
-       <select id="method" class="form-control" onclick="decon(this.value)">
-          <option value="none">None</option>
-          <option value='k2d'>K2D</option>
-          <option value='cdnn'>CDNN</option>
-          <option value='contin'>CONTIN</option>
-        </select>
-      </div>
+      
     </div>
-    <div id="quiz" style="margin-top:-5rem;margin-left:-45rem">
-          <p style="font-family:'Lato';">
-            <h4>Under which category would you classify this protein ?</h4></p>
-          <form>
-            <label class="container parallel"
-              >Alpha
-              <input type="radio"  name="radio" value="R" onclick="test(1)" class="quiz"/>
-              <span class="checkmark"></span>
-            </label>
-            <label class="container parallel"
-              >Beta
-              <input type="radio"  name="radio" value="R" onclick="test(2)" class="quiz" value="S"/>
-              <span class="checkmark"></span>
-            </label>
-           <label class="container parallel"
-              >Alpha+Beta
-              <input type="radio"  name="radio" value="R" onclick="test(3)" class="quiz" value="S"/>
-              <span class="checkmark"></span>
-            </label>
-            <label class="container parallel"
-              >Alpha/Beta
-              <input type="radio"  name="radio" value="R" onclick="test(4)" class="quiz" value="S"/>
-              <span class="checkmark"></span>
-            </label>
-          </form>
-        </div>
+    
+        <div id="overlay1" onclick="off(1)" class="box4">
+      <div id="text"><b>
+        1) Choose one of the four samples.<br/><br />
+        2) Choose one of the three deconvolution samples<br /><br />
+      3) Now you will get some details regarding the sample when we have performed the deconvoluting method selected by you.<br /><br />
+    4) On observing the details, answer the quiz that pops up below selection bar.<br /><br />
+  5) If you are correct than a pop up will appear telling the name of sample and also image of the sample will be displayed on the page.
+  <br />After that go to 1st instruction again and choose another sample<br /><br />
+6)If you are incorrect, than repeat the experiment from 4rth instruction.
+</b></div>
+    </div>
 
     <script
       src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
@@ -300,9 +276,6 @@
       integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
       crossorigin="anonymous"
     ></script>
-    <script src="http://3Dmol.csb.pitt.edu/build/3Dmol-min.js"></script>
-    <script src="../js/overlay.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
 
   </body>

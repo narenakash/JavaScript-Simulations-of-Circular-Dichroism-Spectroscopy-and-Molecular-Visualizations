@@ -69,6 +69,15 @@ body {
   display: inline-block;
   font-size: 20px;
 }
+.btn2 {
+  border: none;
+  color: white;
+  padding: 2vh 1.4vw;
+  text-align: center;
+  text-decoration: bold;
+  display: inline-block;
+  font-size: 1vw;
+}
 .btn1 {
   background-color: blue;
   border: none;
@@ -223,12 +232,10 @@ body {
   position: fixed;
   display: none;
   overflow: auto;
-  width: 27%;
-  height: 80%;
+  width: 27vw;
+  height: 60vh;
   top: 23vh;
-  /*left: 0;*/
-  right: 0;
-  bottom: 0;
+  left: 70vw;
   background-color: rgba(0,0,0,0.1);
   z-index: 93;
   cursor: pointer;
@@ -236,13 +243,13 @@ body {
 
 #text {
   position: relative;
-  top: 50%;
-  left: 50%;
+  top: 30vh;
+  left: 13.5vw;
   font-size: 22px;
   font-family: "Lato";
-  font-style: oblique;
+  /*font-style: oblique;*/
   color: black;
-  transform: translate(-50%, -50%);
+  transform: translate(-13vw, -25vh);
   -ms-transform: translate(-50%, -50%);
 }
 
@@ -305,12 +312,10 @@ body {
   position: fixed;
   display: none;
   overflow: auto;
-  width: 27%;
-  height: 60%;
+  width: 27vw;
+  height: 60vh;
   top: 23vh;
-  /*left: 0;*/
-  right: 0;
-  bottom: 0;
+  left: 70vw;
   background-color: rgba(0,0,0,0.1);
   z-index: 93;
   cursor: pointer;
@@ -396,7 +401,7 @@ body {
   margin-left: 2%;
 }
 
-.slct {
+/*.slct {
   display: flex;
   flex-wrap: wrap;
   float: center;
@@ -406,7 +411,7 @@ body {
 
 .slct>div {
   flex: 0 50%;
-}
+}*/
 
 .dotC {
   height: 50px;
@@ -439,9 +444,9 @@ body {
 }
 
 .image-swap1 {
-  height: 40vh;
-  width: 30vw;
-    margin-left: -20rem;
+  height: 25vh;
+  width: 33vw;
+    /*margin-left: -20rem;*/
 }
 
 .image-swap2 {
@@ -449,20 +454,45 @@ body {
   width:25vw;
 }
 
-#ri,#ri1,#method{
+/*#ri,#ri1,#method{
   width: 15vw;
-}
+}*/
 
 table, th,td {
   border: 3px solid black;
   border-collapse: collapse;
-  font-size: 20px;
+  font-size: 1vw;
   font-family: "Lato";
-  padding-top: .5em;
-  padding-bottom: .5em;
-  padding-left: .5em;
-  padding-right: .5em;
+  padding-top: .2em;
+  padding-bottom: .2em;
+  padding-left: .2em;
+  padding-right: .2em;
 
+}
+
+
+.wrapper 
+{
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  grid-auto-rows: 80vh;
+  grid-gap: 5vw;
+  margin-top: 30vh;
+  position: relative;
+}
+.box1 {
+  margin-left: 10vw;
+}
+.box2{
+  /*margin-top: 15vh;*/
+  /*width:30vw;*/
+  width:10vw;
+}
+.box3{
+  margin-top:15vh;
+}
+.box4 {
+  position: relative;
 }
 
 
